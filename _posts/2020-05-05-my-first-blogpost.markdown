@@ -17,8 +17,8 @@ def hello_world():
 ```R
 ## R
 hello_world <- function() {
-    x <- "Hello, World!"
-    print(x)
+  x <- "Hello, World!"
+  print(x)
 }
 ```
 
