@@ -17,7 +17,7 @@ def hello_world():
 
 ```julia
 ## Julia
-function helloworld():
+function helloworld()
     x = "Hello, World!"
     println(x)
 end
