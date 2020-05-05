@@ -5,7 +5,7 @@ date:   2020-05-05 13:34:00 +0800
 categories: jekyll update
 ---
 
-Hello! Since this is my first blog post using Jekyll, I will be trying out Jekyll's built-in support for code snippets.
+Hello! Since this is my first blog post using Jekyll, I will be trying out Jekyll's built-in support for code snippets with syntax highlighting for various languages.
 
 
 ```python
@@ -22,6 +22,7 @@ function helloworld():
     println(x)
 end
 ```
+
 ```javascript
 // JavaScript
 function helloWorld() {
@@ -29,4 +30,5 @@ function helloWorld() {
   console.log(x);
 }
 ```
+
 Seems pretty decent!
