@@ -38,24 +38,4 @@ function helloWorld() {
 }
 ```
 
-```java
-// Java
-public class Main {
-    public static void main(String[] args) {
-        String x = "Hello, World!";
-        System.out.println(x);
-    }
-}
-```
-
-```c
-// C
-#include <stdio.h>
-
-int main(void) {
-    char x[] = "Hello, World!";
-    printf("%s", x);
-}
-```
-
 Seems pretty decent!
