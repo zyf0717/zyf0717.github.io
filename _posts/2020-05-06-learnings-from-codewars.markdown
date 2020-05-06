@@ -5,13 +5,13 @@ date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
 ---
 
-For the past few weeks I consistently find myself logging back on to [Codewars](https://www.codewars.com/) whenever I have some time to spare. For the most part, the katas (puzzles/challenges) on codewars are decent, and the difficulty ratings are mostly accurate.
+For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/) whenever I have some time to spare. Most of the katas (puzzles/challenges) on codewars are decent written by the community, and the indicative difficulty ratings are reasonably accurate.
 
-To me, the most attractive feature of Codewars is the flexibility it provides -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. This allows me to practice virtually every language I am interested in (or might be interested in) on a single platform.
+Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
-After 100+ katas on Codewars, I set out below some of my key learnings.
+After 100+ katas on Codewars, the following are my thoughts and takeaways.
 
-## 1. Learning a new language
+## 1. Picking up a new language
 
 The fastest way to learn a new languages is to use it to solve problems, or *learning-by-doing*. This forces learners to pick up syntax, check documentations, and maybe conduct other research in order to implement solutions. This is sometimes done with minimal pre-existing knowledge.
 
@@ -19,7 +19,7 @@ I picked up some JavaScript this way, and thoroughly enjoyed the process.
 
 ## 2. Updating existing knowledge
 
-Here's my solution to a kata requiring me to write a function to solve for the area of overlapping circles within a single line and using less than 128 characters:
+Here's my solution to a kata which required a function to solve for the area of overlapping circles within a single line and using less than 128 characters:
 
 ```python
 ## 124 characters (Python 3.6.1)
@@ -31,13 +31,13 @@ from numpy import*;circleIntersection=lambda a,b,r:(lambda d=2*arccos(min(1,hypo
 def circleIntersection((a,b),(c,d),r):from math import*;x=2*acos(min(1,hypot(a-c,b-d)/2/r));return (x-sin(x))*r*r//1
 ```
 
-For a language that I most frequently use, I have to say I had definitely learnt very interesting (though not necessarily useful) things.
+For a language that I use most frequently, I have to say I definitely learnt very interesting (though not necessarily useful) things.
 
-This was also my first golfing challenge.
+This happend to also be my first golfing challenge.
 
-## 3. Mathematics
+## 3. Mathematics, algorithms, and data structures
 
-Besides the obvious use of trigonometry and algebra in the section above, some katas (especially at the higher level) requires a mathematical solution because brute force solutions do not scale.
+Besides the obvious use of trigonometry and algebra in the section above, some katas (especially at the higher level) requires a mathematical solution because brute force solutions do not scale. Knowledge of algorithms and data structures might also be necessary to optimize solutions to pass test cases.
 
 There are, however, some pitfalls to avoid. For example, floating point arithmetic issues when dealing with irrational numbers.
 
@@ -64,8 +64,10 @@ brainfuck_interpreter(code)
 >>> 'Hello, World!'
 ```
 
-## 5. Learning from others
+## 5. Learning from the best
 Learning how others approach and solve the same problems is one very powerful way to learn about the nuances of a particular language and how to effectively make use of such nuances.
+
+Codewars makes this easy by allowing users to vote other solutions as "best practice" and/or "clever", and users can simply sort solutions by either metric.
 
 
 
