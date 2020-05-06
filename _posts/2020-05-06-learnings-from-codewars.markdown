@@ -9,11 +9,11 @@ For the past few weeks I consistently found myself logging back in to [Codewars]
 
 Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
-After 100+ katas on Codewars, the following are my thoughts and takeaways.
+After solving 100+ katas on Codewars, the following are my thoughts and takeaways.
 
 ## 1. Picking up a new language
 
-The fastest way to learn a new languages is to use it to solve problems, or *learning-by-doing*. This forces learners to pick up syntax, check documentations, and maybe conduct other research in order to implement solutions. This is sometimes done with minimal pre-existing knowledge.
+The fastest way to learn a new languages is to use it to solve problems, or learning-by-doing. This forces learners to pick up syntax, check documentations, and maybe conduct other research in order to implement solutions. This is sometimes done with minimal pre-existing knowledge.
 
 I picked up some JavaScript this way, and thoroughly enjoyed the process.
 
@@ -32,8 +32,6 @@ def circleIntersection((a,b),(c,d),r):from math import*;x=2*acos(min(1,hypot(a-c
 ```
 
 For a language that I use most frequently, I have to say I definitely learnt very interesting (though not necessarily useful) things.
-
-This happend to also be my first golfing challenge.
 
 ## 3. Mathematics, algorithms, and data structures
 
