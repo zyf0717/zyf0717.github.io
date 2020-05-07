@@ -13,13 +13,13 @@ After solving 100+ katas on Codewars, the following are my thoughts and takeaway
 
 ## 1. Picking up a new language
 
-The fastest way to learn a new languages is to use it to solve problems, or learning-by-doing. This forces learners to pick up syntax, check documentations, and maybe conduct other research in order to implement solutions. This is sometimes done with minimal pre-existing knowledge.
+The fastest way to learn a new language is to actually use it to solve problems (or better yet, complete an entire project). This forces learners to pick up syntax, check documentations, and perhaps also conduct other language-related research in order to implement solutions.
 
 I picked up some JavaScript this way, and thoroughly enjoyed the process.
 
 ## 2. Updating existing knowledge
 
-Here's my solution to a kata which required a function to solve for the area of overlapping circles within a single line and using less than 128 characters:
+Here are my solution(s) to a kata which required me to write a function returning the area of overlap between 2 identically-sized overlapping circles, using only single line of code with less than 128 characters:
 
 ```python
 ## 124 characters (Python 3.6.1)
@@ -35,9 +35,9 @@ For a language that I use most frequently, I have to say I definitely learnt ver
 
 ## 3. Mathematics, algorithms, and data structures
 
-Besides the obvious use of trigonometry and algebra in the section above, some katas (especially at the higher level) requires a mathematical solution because brute force solutions do not scale. Knowledge of algorithms and data structures might also be necessary to optimize solutions to pass test cases.
+Besides the obvious use of trigonometry and algebra in the section above, some katas (especially at the higher level) requires a mathematical solution because brute-force solutions do not scale well. In addition, knowledge of algorithms and data structures might also be necessary to optimize solutions to pass test cases.
 
-There are, however, some pitfalls to avoid. For example, there might be floating point arithmetic issues when dealing with irrational numbers.
+There are, however, some pitfalls to avoid. For example, there might be floating point arithmetic issues when dealing with irrational numbers:
 
 ```python
 ## Python
@@ -45,11 +45,11 @@ There are, however, some pitfalls to avoid. For example, there might be floating
 >>> False
 ```
 
-Mathematical equations often require the use of irrational numbers, and these have to be handle appropriately and as required.
+Solving katas using mathematically sometimes require the use of irrational numbers, and these have to be handle appropriately and as required.
 
 ## 4. Back to basics
 
-There are a series of katas requiring the solver to write interpreters, usually for esolangs like [brainfuck](https://esolangs.org/wiki/Brainfuck) and derivatives. Concepts such as memory management, memory pointers, etc. come in handy here. Also, data is stored as bits or bytes, and is handled at that level.
+There are a series of katas requiring the solver to write interpreters, usually for [esolangs](https://en.wikipedia.org/wiki/Esoteric_programming_language) like [brainfuck](https://esolangs.org/wiki/Brainfuck) and derivatives. Concepts such as memory management, memory pointers, etc. come in handy here. Also, data is stored as bits or bytes, and is handled at that level.
 
 I would say that the most challenging part about writing brainfuck and [boolfuck](https://esolangs.org/wiki/boolfuck) interpreters (in Python) were the handling of nested loops.
 
@@ -63,6 +63,6 @@ brainfuck_interpreter(code)
 ```
 
 ## 5. Learning from the best
-Learning how others approach and solve the same problems is one very powerful way to learn about the nuances of a particular language and how to effectively make use of such nuances. Once a kata has been completed, solutions submitted by others (in the same language) can be viewed. 
+Learning how others approach and solve the same problems is a very powerful way to understand the nuances of a particular language. Once a kata has been completed, solutions submitted by others (in the same language) can be viewed.
 
-Codewars also implements a solution rating system, which allows users to mark submissions as "best practice" and/or "clever". Users can then simply sort the list of submitted solutions by either metric. There is also a "compare with your solution" for ease of comparison to your own code. 
+Codewars also implements a solution rating system, which allows users to mark submissions as "best practice" and/or "clever". Users can then simply sort the list of submitted solutions by either metric. There is also a "compare with your solution" option for ease of comparison.
