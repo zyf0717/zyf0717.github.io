@@ -37,7 +37,7 @@ For a language that I use most frequently, I have to say I definitely learnt ver
 
 Besides the obvious use of trigonometry and algebra in the section above, some katas (especially at the higher level) requires a mathematical solution because brute force solutions do not scale. Knowledge of algorithms and data structures might also be necessary to optimize solutions to pass test cases.
 
-There are, however, some pitfalls to avoid. For example, floating point arithmetic issues when dealing with irrational numbers.
+There are, however, some pitfalls to avoid. For example, there might be floating point arithmetic issues when dealing with irrational numbers.
 
 ```python
 ## Python
