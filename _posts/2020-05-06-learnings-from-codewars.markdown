@@ -5,7 +5,7 @@ date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
 ---
 
-For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/) whenever I have some time to spare. Most of the katas (puzzles/challenges) on codewars are decent written by the community, and the indicative difficulty ratings are reasonably accurate.
+For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decent written by the community, and the indicative difficulty ratings are reasonably accurate.
 
 Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
@@ -63,11 +63,6 @@ brainfuck_interpreter(code)
 ```
 
 ## 5. Learning from the best
-Learning how others approach and solve the same problems is one very powerful way to learn about the nuances of a particular language and how to effectively make use of such nuances.
+Learning how others approach and solve the same problems is one very powerful way to learn about the nuances of a particular language and how to effectively make use of such nuances. Once a kata has been completed, solutions submitted by others (in the same language) can be viewed. 
 
-Codewars makes this easy by allowing users to vote other solutions as "best practice" and/or "clever", and users can simply sort solutions by either metric.
-
-
-
-
-
+Codewars also implements a solution rating system, which allows users to mark submissions as "best practice" and/or "clever". Users can then simply sort the list of submitted solutions by either metric. There is also a "compare with your solution" for ease of comparison to your own code. 
