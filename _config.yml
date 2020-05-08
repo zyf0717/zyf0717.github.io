@@ -21,10 +21,9 @@
 title: Yifei's GitHub Blog
 email: zyf0717@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my blog! Through this blog, I hope to document and share my
-  tech experiences. I am interested in a variety of topics, and at the moment I 
-  am focusing on cluster computing and about to set up my own simple Raspberry 
-  Pi cluster!
+  Welcome to my blog! Through this blog, I hope to document and share my 
+  experiences.To find out more, please click the "About" button right at the 
+  top.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zyf0717
