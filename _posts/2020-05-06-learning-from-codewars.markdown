@@ -5,7 +5,7 @@ date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
 ---
 
-For the past few weeks I consistently found myself logging back in to [Codewars](www.codewars.com/r/eEMWJA) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decent written by the community, and the indicative difficulty ratings are reasonably accurate.
+For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/r/eEMWJA) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decent written by the community, and the indicative difficulty ratings are reasonably accurate.
 
 Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
