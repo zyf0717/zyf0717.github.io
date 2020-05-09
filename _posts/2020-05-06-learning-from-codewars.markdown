@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learnings from Codewars"
+title:  "Learning from Codewars"
 date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
 ---
