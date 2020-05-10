@@ -53,7 +53,7 @@ There are a series of katas requiring the solver to write interpreters, usually 
 
 I would say that the most challenging part about writing brainfuck and [boolfuck](https://esolangs.org/wiki/boolfuck) interpreters (in Python) were the handling of nested loops.
 
-Here's a sample brainfuck code I had successfully interpreted with my very own Python interpreter:
+Here's a sample brainfuck code I had successfully interpreted with my very own interpreter written in Python:
 
 ```python
 ## Python
