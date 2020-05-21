@@ -19,9 +19,9 @@ I am no expert at optimizations, and the above (along with the rest of this post
 
 *Is my script taking forever to run when it should not? Is this piece of code meant to be reused, or is this once-off? Is the bottleneck something I can optimize, or is this completely beyond my control?*
 
-To determine if there is a need to optimize, the above are some basic questions come to mind. 
+To determine if there is a need to optimize, the above are some preliminary questions come to mind. 
 
-Nobody cares if you are using `string.format()` or [f-strings](https://www.python.org/dev/peps/pep-0498/#raw-f-strings) to print out the final result at the end of your script.
+Nobody is going to care whether `string.format()` or [f-strings](https://www.python.org/dev/peps/pep-0498/#raw-f-strings) was used to format that one final output at the end of a script.
 
 ## 2. 'When'
 
@@ -29,7 +29,7 @@ Nobody cares if you are using `string.format()` or [f-strings](https://www.pytho
 
 Despite the fact that the quote above was written in the 1960s, it is no less relevant right now in 2020. In most cases, optimizations should only take place when scaling occurs (which is what exacerbates inefficient code in the first place), and this usually comes after the prototyping phase. Premature optimizations lead to wasted efforts, especially if the project does not move beyond the prototype phase.
 
-However, if slow-running scripts are getting in the way of even producing a prototype, then there is clearly a need to fix that problem. 
+However, in the event that slow-running scripts are getting in the way of producing even a prototype, there is clearly a need to fix that problem. 
 
 ## 3. 'Where'
 
