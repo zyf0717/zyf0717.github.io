@@ -21,7 +21,7 @@ I am no expert at optimizations, and the above (along with the rest of this post
 
 To determine if there is a need to optimize, the above are some preliminary questions come to mind. 
 
-Nobody is going to care whether `string.format()` or [f-strings](https://www.python.org/dev/peps/pep-0498/#raw-f-strings) was used to format that one final output at the end of a script.
+Nobody is going to care whether `string.format()` or [f-strings](https://www.python.org/dev/peps/pep-0498/#raw-f-strings) was used to format that one final output at the end of a Python script.
 
 ## 2. 'When'
 
