@@ -35,5 +35,5 @@ However, in the event that slow-running scripts are getting in the way of produc
 
 Definitely prioritize the bottlenecks. Massive, nested loops and the use of unsuitable data structures are common sources of bottlenecks. Optimize algorithmically and select the right data structures for the right tasks.
 
-There are also multiple cores and threads on most modern machines for parallelization and asynchronous methods. For certain languages like Python and R, built-in functions and libraries often run way faster self-implemented code.
+There are also multiple cores and threads on most modern machines for parallelization and asynchronous methods. For certain languages like Python and R, built-in functions and libraries often run way faster than self-implemented code.
 
