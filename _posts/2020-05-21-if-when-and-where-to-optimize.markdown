@@ -13,7 +13,7 @@ To which part of my reply was:
 
 *"In general, only optimize if, when, and where necessary. For example, small efficiency gains in a huge loop or nested loops can usually brings runtime down significantly, whereas optimizing code that (i) already runs quickly, and (ii) runs only once usually do not matter as much in the grand scheme of things."*
 
-I am no expert at optimizations, and the above (along with the rest of this post) is simply my take on the subject based on personal experience.
+I am no expert at optimizations, and this blog post is simply my take on the subject based on personal experience.
 
 ## 1. 'If'
 
@@ -36,4 +36,3 @@ However, in the event that slow-running scripts are getting in the way of produc
 Definitely prioritize the bottlenecks. Massive, nested loops and the use of unsuitable data structures are common sources of bottlenecks. Optimize algorithmically and select the right data structures for the right tasks.
 
 There are also multiple cores and threads on most modern machines for parallelization and asynchronous methods. For certain languages like Python and R, built-in functions and libraries often run way faster than self-implemented code.
-
