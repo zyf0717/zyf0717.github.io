@@ -47,7 +47,7 @@ Do not close or stop this terminal.
 Open a second terminal, and run the following command:
 
 ```shell
-$ ssh CNL localhost:8888:localhost:8888 pi@192.168.86.100
+$ ssh -CNL localhost:8888:localhost:8888 pi@192.168.86.100
 ```
 
 This port forwarding command allows me to access the Jupyter server created in the Pi system in step 2, by binding a local port to the remote system’s port (both 8888 in this case).
