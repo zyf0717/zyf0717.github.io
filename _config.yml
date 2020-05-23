@@ -25,7 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   tech journey. To find out more, please click the "About" button at the top
   of this page (or the hamburger button if you are on mobile).
 
-show_excerpts: true
+show_excerpts: false
 
 baseurl: "" # the subpath of your site, e.g. /blog
 
