@@ -11,7 +11,7 @@ After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/docume
 
 A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, I set out below amalgamated steps that ultimately worked for me on the Pi.
 
-## 1. Notebook configuration file
+## Step 1: Notebook configuration file
 
 Start by locating the `jupyter_notebook_config.py` file (located at `/home/pi/.jupyter` on my Pi). If absent, generate one using the following:
 
@@ -33,7 +33,7 @@ Then adding the generated hashed password into `jupyter_notebook_config.py`, by 
 c.NotebookApp.password = u'<insert hashed password from jupyter_notebook_config.json>'
 ```
 
-## 2. SSH into Pi
+## Step 2: SSH into Pi
 
 Moving on to the local machine, open a terminal, SSH into Pi, and start Jupyter Lab (or Jupyter Notebook):
 
@@ -44,7 +44,7 @@ $ jupyter lab --no-browser --port=8888
 
 This command should remain running until the Jupyter session is over.
 
-## 3. SSH tunneling
+## Step 3: SSH tunneling
 
 Open a second terminal, and run the following command:
 
@@ -52,19 +52,17 @@ Open a second terminal, and run the following command:
 $ ssh -CNL localhost:8888:localhost:8888 pi@192.168.86.100
 ```
 
-This port forwarding command allows me to access the Jupyter server created in the Pi system in step 2, by binding a local port to the remote system’s port (both 8888 in this case).
+This port forwarding command allows me to access the Jupyter server created in the Pi system in Step 2, by binding a local port to the remote system’s port (both 8888 in this case).
 
 This command should remain running until the Jupyter session is over.
 
-## 4. Opening Jupyter
+## Step 4: Opening Jupyter
 
-Minimize all the open terminals, open a browser, and go to `https://localhost:8888`. Enter the password created in step 1, and the Jupyter environment loads thereafter.
+Minimize the two opened terminals, open a browser, and go to `https://localhost:8888`. Use the password created in Step 1 to authenticate, and the Jupyter environment loads thereafter.
 
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
 Voilà!
-
-
 
 
 
