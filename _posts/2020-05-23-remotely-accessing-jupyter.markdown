@@ -27,11 +27,13 @@ Verify password: ********
 [NotebookPasswordApp] Wrote hashed password to /home/pi/.jupyter/jupyter_notebook_config.json
 ```
 
-Then adding the generated hashed password into `jupyter_notebook_config.py`, by amending the following line:
+Then amend the following line in `jupyter_notebook_config.py`:
 
 ```shell
-c.NotebookApp.password = u'<insert hashed password from jupyter_notebook_config.json>'
+c.NotebookApp.password = u'<password>'
 ```
+
+`<password>` is the hashed password found in `/home/pi/.jupyter/jupyter_notebook_config.json`, and not the password entered / verified in the terminal
 
 ## Step 2: SSH into Pi
 
@@ -42,6 +44,8 @@ $ ssh pi@192.168.86.100
 $ jupyter lab --no-browser --port=8888
 ```
 
+Where `192.168.86.100` is the Pi's local IP address, verifiable via `$ hostname -I`.
+
 This command should remain running until the Jupyter session is over.
 
 ## Step 3: SSH tunneling
@@ -49,16 +53,16 @@ This command should remain running until the Jupyter session is over.
 Open a second terminal, and run the following command:
 
 ```shell
-$ ssh -CNL localhost:8888:localhost:8888 pi@192.168.86.100
+$ ssh -CNL localhost:9999:localhost:8888 pi@192.168.86.100
 ```
 
-This port forwarding command allows me to access the Jupyter server created in the Pi system in Step 2, by binding a local port to the remote system’s port (both 8888 in this case).
+This port forwarding command allows the local computer to access the Jupyter server created in the Pi system in Step 2, by binding a local port (in this case, 9999) to the remote system’s port (8888 from Step 2).
 
 This command should remain running until the Jupyter session is over.
 
 ## Step 4: Opening Jupyter
 
-Minimize the two opened terminals, open a browser, and go to `https://localhost:8888`. Use the password created in Step 1 to authenticate, and the Jupyter environment loads thereafter.
+Minimize the two opened terminals, open a browser, and go to `https://localhost:9999`. Use the password created in Step 1 to authenticate, and the Jupyter environment loads thereafter.
 
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
