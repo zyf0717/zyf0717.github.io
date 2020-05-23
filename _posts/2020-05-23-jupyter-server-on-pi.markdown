@@ -33,7 +33,7 @@ Then amend the following line in `jupyter_notebook_config.py`:
 c.NotebookApp.password = u'<password>'
 ```
 
-Where `<password>` is the hashed password found in `jupyter_notebook_config.json`, and not the password entered / verified in the terminal
+Where `<password>` is the hashed password found in `jupyter_notebook_config.json`, not the password entered and verified in the terminal.
 
 ## Step 2: SSH into Pi
 
@@ -68,7 +68,7 @@ This command should remain running on the local machine until the Jupyter sessio
 
 ## Step 4: Opening Jupyter
 
-Open a browser, and go to `https://localhost:9999`. Use the password created / verified in Step 1 (not the hashed password) to authenticate, and Jupyter Lab / Notebook loads thereafter.
+Open a browser, and go to `https://localhost:9999`. Use the password entered and verified in Step 1  to authenticate, and Jupyter Lab / Notebook loads thereafter.
 
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
