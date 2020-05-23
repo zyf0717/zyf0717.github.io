@@ -57,3 +57,12 @@ Do not close or stop this terminal.
 ## 4. Opening Jupyter
 
 Minimize all the open terminals, open a browser, and go to `https://localhost:8888`. Enter the password created in step 1, and the Jupyter environment loads thereafter.
+
+![Pi Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
+
+Voilà!
+
+
+
+
+
