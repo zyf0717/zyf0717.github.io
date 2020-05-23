@@ -62,24 +62,3 @@ google_analytics: UA-167364511-1
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-minima:
-
-  # generate social links in footer
-  social_links:
-    twitter: zyf0717
-    github:  zyf0717
-    # devto: jekyll
-    # dribbble: jekyll
-    facebook: zhengyifei
-    flickr:   zhengyifei
-    instagram: zheng_yifei
-    linkedin: zhengyifei
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
