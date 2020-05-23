@@ -7,9 +7,9 @@ categories: jekyll update
 
 ![Pi with Ice Tower](https://zyf0717.github.io/assets/images/pi-ice-tower.jpg)
 
-After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and a [Jupyter](https://jupyter.org/) environment (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I was able to remotely start and access a Jupyter server hosted on the Pi. 
+After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I was able to remotely start and access a Jupyter server hosted on the Pi. 
 
-A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, I set out below amalgamated steps that ultimately worked for me on the Pi.
+A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me.
 
 ## Step 1: Notebook configuration file
 
@@ -37,7 +37,7 @@ c.NotebookApp.password = u'<password>'
 
 ## Step 2: SSH into Pi
 
-Moving on to the local machine, open a terminal, SSH into the Pi:
+Moving on to the local machine, open a terminal and SSH into the Pi:
 
 ```shell
 $ ssh pi@192.168.86.100
@@ -50,9 +50,9 @@ $ jupyter lab --no-browser --port=8888
 ```
 Where `192.168.86.100` is the Pi's local static IP address.
 
-Alternatively, the Jupyter environment could be started in the Pi itself, in which case  this entire Step 2 is no longer necessary on the local machine.
+Alternatively, the Jupyter session could be started in the Pi itself, in which case  this entire Step 2 is no longer necessary on the local machine.
 
-This command should remain running (on either machine) until the Jupyter session is over.
+This command should remain running on either machine until the Jupyter session is over.
 
 ## Step 3: SSH tunneling
 
@@ -64,11 +64,11 @@ $ ssh -CNL localhost:9999:localhost:8888 pi@192.168.86.100
 
 This port forwarding command allows the local computer to access the Jupyter server created in the Pi system in Step 2, by binding a local port (in this case, 9999) to the remote system’s port (8888 from Step 2).
 
-This command should remain running until the Jupyter session is over.
+This command should remain running on the local machine until the Jupyter session is over.
 
 ## Step 4: Opening Jupyter
 
-Minimize the two opened terminals, open a browser, and go to `https://localhost:9999`. Use the password created in Step 1 to authenticate, and the Jupyter environment loads thereafter.
+Open a browser, and go to `https://localhost:9999`. Use the password created in Step 1 to authenticate, and Jupyter Lab / Notebook loads thereafter.
 
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
