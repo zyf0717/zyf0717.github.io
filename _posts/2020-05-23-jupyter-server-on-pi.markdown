@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Jupyter server on Raspberry Pi 4B"
+title:  "Jupyter server on Pi 4B"
 date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
 
 ![Pi with Ice Tower](https://zyf0717.github.io/assets/images/pi-ice-tower.jpg)
 
-After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I was able to remotely start and access a Jupyter server hosted on the Pi. 
+After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I can remotely start and access a Jupyter server hosted on the Pi. 
 
 A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me.
 
