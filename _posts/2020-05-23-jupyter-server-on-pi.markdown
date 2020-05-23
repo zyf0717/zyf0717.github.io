@@ -68,7 +68,7 @@ This command should remain running on the local machine until the Jupyter sessio
 
 ## Step 4: Opening Jupyter
 
-Open a browser, and go to `https://localhost:9999`. Use the password created in Step 1 to authenticate, and Jupyter Lab / Notebook loads thereafter.
+Open a browser, and go to `https://localhost:9999`. Use the password created / verified in Step 1 (not the hashed password) to authenticate, and Jupyter Lab / Notebook loads thereafter.
 
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
