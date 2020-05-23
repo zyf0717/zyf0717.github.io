@@ -5,11 +5,13 @@ date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
 ---
 
+[![Codewars badge](https://www.codewars.com/users/zyf0717/badges/large)](https://www.codewars.com/users/zyf0717)
+
 For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/r/eEMWJA) (referral link) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decently written by the community, and the indicative difficulty ratings are reasonably accurate.
 
 Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
-After solving 100+ katas on Codewars, the following are my thoughts and takeaways.
+After completing around 150 katas on Codewars, the following are my thoughts and takeaways.
 
 ## 1. Picking up a new language
 
