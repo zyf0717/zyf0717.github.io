@@ -37,20 +37,26 @@ c.NotebookApp.password = u'<password>'
 
 ## Step 2: SSH into Pi
 
-Moving on to the local machine, open a terminal, SSH into Pi, and start Jupyter Lab (or Jupyter Notebook):
+Moving on to the local machine, open a terminal, SSH into the Pi:
 
 ```shell
 $ ssh pi@192.168.86.100
-$ jupyter lab --no-browser --port=8888
 ```
 
+And start Jupyter Lab (or Jupyter Notebook):
+
+```shell
+$ jupyter lab --no-browser --port=8888
+```
 Where `192.168.86.100` is the Pi's local IP address, verifiable via `$ hostname -I`.
 
-This command should remain running until the Jupyter session is over.
+Alternatively, the Jupyter environment could be started in the Pi itself, in which case  this entire Step 2 is no longer necessary on the local machine.
+
+This command should remain running (on either machine) until the Jupyter session is over.
 
 ## Step 3: SSH tunneling
 
-Open a second terminal, and run the following command:
+Open a terminal on the local machine, and run the following command:
 
 ```shell
 $ ssh -CNL localhost:9999:localhost:8888 pi@192.168.86.100
@@ -67,6 +73,3 @@ Minimize the two opened terminals, open a browser, and go to `https://localhost:
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
 Voilà!
-
-
-
