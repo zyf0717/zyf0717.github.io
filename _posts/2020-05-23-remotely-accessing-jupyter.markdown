@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Remotely accessing Jupyter"
-date:   2020-05-23 04:25:00 +0800
+date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
 
