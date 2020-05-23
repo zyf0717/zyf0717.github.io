@@ -53,7 +53,7 @@ Solving katas using mathematically sometimes require the use of irrational numbe
 
 There are a series of katas requiring the solver to write interpreters, usually for [esolangs](https://en.wikipedia.org/wiki/Esoteric_programming_language) like [brainfuck](https://esolangs.org/wiki/Brainfuck) and derivatives. Concepts such as memory management, memory pointers, etc. come in handy here. Also, data is stored as bits or bytes, and is handled at that level.
 
-I would say that the most challenging part about writing brainfuck and [boolfuck](https://esolangs.org/wiki/boolfuck) interpreters (in Python) were the handling of nested loops.
+I would say that the most challenging parts about writing brainfuck and [boolfuck](https://esolangs.org/wiki/boolfuck) interpreters (in Python) were the handling of nested loops.
 
 Here's a sample brainfuck code I had successfully interpreted with my very own interpreter written in Python:
 
