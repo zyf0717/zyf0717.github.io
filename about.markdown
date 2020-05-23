@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to my blog! 
 
-Through this blog, I hope to document and share my tech experiences. My interests vary over time, necessitating the creation of this blog to document and keep track of what I have been up to. 
+Through this blog, I hope to document and share my tech journey. My interests vary over time, necessitating the creation of this blog to document and keep track of what I have been up to. 
 
 ## Raspberry Pi
 
