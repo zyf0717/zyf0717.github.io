@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Remotely accessing Jupyter"
+title:  "Jupyter server on Raspberry Pi 4B"
 date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
@@ -48,7 +48,7 @@ And start Jupyter Lab (or Jupyter Notebook):
 ```shell
 $ jupyter lab --no-browser --port=8888
 ```
-Where `192.168.86.100` is the Pi's local IP address, verifiable via `$ hostname -I`.
+Where `192.168.86.100` is the Pi's local static IP address.
 
 Alternatively, the Jupyter environment could be started in the Pi itself, in which case  this entire Step 2 is no longer necessary on the local machine.
 
