@@ -10,7 +10,7 @@ Through this platform, I hope to document and share my tech journey. My interest
 
 ## Raspberry Pi
 
-[Remotely accessing Jupyter](https://zyf0717.github.io/jekyll/update/2020/05/23/remotely-accessing-jupyter.html)
+[Jupyter server on Pi 4B](https://zyf0717.github.io/jekyll/update/2020/05/23/jupyter-server-on-pi.html)
 
 ## General
 
