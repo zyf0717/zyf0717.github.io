@@ -33,7 +33,7 @@ Then amend the following line in `jupyter_notebook_config.py`:
 c.NotebookApp.password = u'<password>'
 ```
 
-`<password>` is the hashed password found in `/home/pi/.jupyter/jupyter_notebook_config.json`, and not the password entered / verified in the terminal
+Where `<password>` is the hashed password found in `jupyter_notebook_config.json`, and not the password entered / verified in the terminal
 
 ## Step 2: SSH into Pi
 
