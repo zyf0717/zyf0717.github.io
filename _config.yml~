@@ -24,15 +24,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my blog! Through this platform, I hope to document and share my
   tech journey. To find out more, please click the "About" button at the top
   of this page (or the hamburger button if you are on mobile).
-
-show_excerpts: true
-
 baseurl: "" # the subpath of your site, e.g. /blog
-
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
 twitter_username: zyf0717
-
 github_username:  zyf0717
 
 # Build settings
@@ -62,24 +56,3 @@ google_analytics: UA-167364511-1
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-minima:
-
-  # generate social links in footer
-  social_links:
-    twitter: zyf0717
-    github:  zyf0717
-    # devto: jekyll
-    # dribbble: jekyll
-    facebook: zhengyifei
-    flickr:   zhengyifei
-    instagram: zheng_yifei
-    linkedin: zhengyifei
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
