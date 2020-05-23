@@ -9,7 +9,7 @@ categories: jekyll update
 
 After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and a [Jupyter](https://jupyter.org/) environment (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I was able to remotely start and access a Jupyter server hosted on the Pi. 
 
-A quick search yielded a guides with varying instructions. After a couple of rounds of trials-and-errors, I set out below streamlined instructions that ultimately worked for me on the Pi.
+A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, I set out below amalgamated steps that ultimately worked for me on the Pi.
 
 ## 1. Notebook configuration file
 
@@ -19,7 +19,7 @@ Start by locating the `jupyter_notebook_config.py` file (located at `/home/pi/.j
 $ jupyter notebook --generate-config
 ```
 
-Next would be to setup a password:
+Next would be to setup a password, using the following command:
 ```shell
 $ jupyter notebook password
 Enter password:  ********
@@ -27,10 +27,10 @@ Verify password: ********
 [NotebookPasswordApp] Wrote hashed password to /home/pi/.jupyter/jupyter_notebook_config.json
 ```
 
-Followed by adding the generated hashed password into `jupyter_notebook_config.py`, by amending the following line to:
+Then adding the generated hashed password into `jupyter_notebook_config.py`, by amending the following line:
 
 ```shell
-c.NotebookApp.password = u'<hashed password from jupyter_notebook_config.json>'
+c.NotebookApp.password = u'<insert hashed password from jupyter_notebook_config.json>'
 ```
 
 ## 2. SSH into Pi
@@ -42,7 +42,7 @@ $ ssh pi@192.168.86.100
 $ jupyter lab --no-browser --port=8888
 ```
 
-Do not close or stop this terminal.
+This command should remain running until the Jupyter session is over.
 
 ## 3. SSH tunneling
 
@@ -54,7 +54,7 @@ $ ssh -CNL localhost:8888:localhost:8888 pi@192.168.86.100
 
 This port forwarding command allows me to access the Jupyter server created in the Pi system in step 2, by binding a local port to the remote system’s port (both 8888 in this case).
 
-Do not close or stop this terminal.
+This command should remain running until the Jupyter session is over.
 
 ## 4. Opening Jupyter
 
