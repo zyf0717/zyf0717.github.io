@@ -7,11 +7,13 @@ categories: jekyll update
 
 [![Codewars badge](https://www.codewars.com/users/zyf0717/badges/large)](https://www.codewars.com/users/zyf0717)
 
-For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/r/eEMWJA) (referral link) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decently written by the community, and the indicative difficulty ratings are reasonably accurate.
+For the past few weeks I consistently found myself logging back in to [Codewars](https://www.codewars.com/) (sign up referral link [here](https://www.codewars.com/r/eEMWJA)) whenever I have some time to spare. Most of the katas (puzzles/challenges) on Codewars are decently written by the community, and the indicative difficulty ratings are reasonably accurate.
 
 Personally, the most attractive feature of Codewars is language flexibility -- Codewars currently supports over 50 programming languages (some in beta), including R, Julia and SQL. I can use and practice virtually every language I am interested in (or might be interested in in the near future) on a single platform.
 
 After completing around 150 katas on Codewars, the following are my thoughts and takeaways.
+
+---
 
 ## 1. Picking up a new language
 
@@ -68,3 +70,6 @@ brainfuck_interpreter(code)
 Learning how others approach and solve the same problems is a very powerful way to understand the nuances of a particular language. Once a kata has been completed, solutions submitted by others (in the same language) can be viewed.
 
 Codewars also implements a solution rating system, which allows users to mark submissions as "best practice" and/or "clever". Users can then simply sort the list of submitted solutions by either metric. There is also a "compare with your solution" option for ease of comparison.
+
+---
+
