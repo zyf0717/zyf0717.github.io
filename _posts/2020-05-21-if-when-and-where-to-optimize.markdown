@@ -15,8 +15,6 @@ To which part of my reply was:
 
 I am no expert at optimizations, and this blog post is simply my take on the subject based on personal experience.
 
----
-
 ## 1. 'If'
 
 > *Is my script taking forever to run when it should not? Is this piece of code meant to be reused, or is this once-off? Is the bottleneck something I can optimize, or is this completely beyond my control?*
@@ -38,5 +36,3 @@ However, in the event that slow-running scripts are getting in the way of produc
 Definitely prioritize the bottlenecks. Massive, nested loops and the use of unsuitable data structures are common sources of bottlenecks. Optimize algorithmically and select the right data structures for the right tasks.
 
 There are also multiple cores and threads on most modern machines for parallelization and asynchronous methods. For certain languages like Python and R, built-in functions and libraries often run way faster than self-implemented code.
-
----

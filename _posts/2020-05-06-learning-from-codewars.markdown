@@ -13,8 +13,6 @@ Personally, the most attractive feature of Codewars is language flexibility -- C
 
 After completing around 150 katas on Codewars, the following are my thoughts and takeaways.
 
----
-
 ## 1. Picking up a new language
 
 The fastest way to learn a new language is to actually use it to solve problems (or better yet, complete an entire project). This forces learners to pick up syntax, check documentations, and perhaps also conduct other language-related research in order to implement solutions.
@@ -70,6 +68,3 @@ brainfuck_interpreter(code)
 Learning how others approach and solve the same problems is a very powerful way to understand the nuances of a particular language. Once a kata has been completed, solutions submitted by others (in the same language) can be viewed.
 
 Codewars also implements a solution rating system, which allows users to mark submissions as "best practice" and/or "clever". Users can then simply sort the list of submitted solutions by either metric. There is also a "compare with your solution" option for ease of comparison.
-
----
-

@@ -11,8 +11,6 @@ After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/docume
 
 A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me.
 
----
-
 ## Step 1: Notebook configuration file
 
 Start by locating the `jupyter_notebook_config.py` file (located at `/home/pi/.jupyter` on my Pi). If absent, generate one using the following:
@@ -75,6 +73,4 @@ Open a browser, and go to `https://localhost:9999`. Use the password entered and
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
 Voilà!
-
----
 
