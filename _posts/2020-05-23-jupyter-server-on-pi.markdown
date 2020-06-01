@@ -9,7 +9,7 @@ categories: jekyll update
 
 After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I can remotely start and access a Jupyter server hosted on the Pi. 
 
-A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me.
+A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me. Everything below was done in Conda environments ( `(<environment name>)<computer name>:~$` in terminal).
 
 ## Step 1: Notebook configuration file
 
