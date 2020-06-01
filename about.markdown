@@ -14,6 +14,8 @@ Through this platform, I hope to document and share my tech journey. My interest
 
 ## General
 
+[Fluttering and Darting](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html)
+
 [If, when, and where to optimize](https://zyf0717.github.io/jekyll/update/2020/05/21/if-when-and-where-to-optimize.html)
 
 [Learning from Codewars](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html)
