@@ -21,7 +21,7 @@ I picked up some JavaScript and Dart this way, and thoroughly enjoyed the proces
 
 ## 2. Updating existing knowledge
 
-Here are my solution(s) to a kata which required me to write a function returning the area of overlap between 2 identically-sized overlapping circles, using only single line of code with less than 128 characters:
+Here are my solution(s) to a kata which required me to write a function returning the area of overlap between two identically-sized overlapping circles, using only single line of code with less than 128 characters:
 
 ```python
 ## 124 characters (Python 3.6.1)

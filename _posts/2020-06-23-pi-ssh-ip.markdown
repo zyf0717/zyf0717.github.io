@@ -5,7 +5,7 @@ date:   2020-06-23 17:00:00 +0800
 categories: jekyll update
 ---
 
-I am using an [ODYSSEY](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node (running Ubuntu 20.04 desktop), and 3 Raspberry Pi 4 Model Bs running Ubuntu 20.04 server (instead of Raspbian or Raspberry Pi OS) for the worker nodes. Please see my previous post [Pi cluster (hardware)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html) for more details.
+I am using an [Odyssey mini PC](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) with Ubuntu desktop 20.04  for the master node, and three Raspberry Pi 4 Model Bs with Ubuntu server 20.04 for the worker nodes. Please see my previous post [Pi cluster (hardware)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html) for more details.
 
 SSH is enabled by default on the Ubuntu 20.04 server, so simply SSH with `ssh ubuntu@<IP address>`.
 
@@ -49,7 +49,7 @@ network:
 
 Run `sudo netplan try` to check for syntax errors, by pressing ENTER to keep settings. Network configuration should be accepted if nothing goes wrong.
 
-To make changes permanent run `sudo netplan apply` and reboot with `sudo reboot`. SSH into the Pi to ensure IP has been set.
+To make changes permanent run `sudo netplan apply` and reboot with `sudo reboot`. SSH into the Pi to confirm that a static IP has been set.
 
 ## 3. SSH alias
 
@@ -72,6 +72,3 @@ Host pi3
 User ubuntu
 Hostname 10.42.0.141
 ```
-
-
-
