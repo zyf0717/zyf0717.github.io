@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "Pi cluster: SSH and static IP"
+date:   2020-06-23 17:00:00 +0800
+categories: jekyll update
+---
+
+I am using three Pi 4Bs running Ubuntu 20.04 server (instead of Raspbian or Raspberry Pi OS), and also using an [ODYSSEY](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node (running Ubuntu 20.04 desktop).
+
+SSH is enabled by default on the Ubuntu 20.04 server, so simply SSH with `ssh ubuntu@<IP address>`.
+
+## 0. IP configurations
+
+`ip a` to check internal IP address of each machine.
+
+`systemd-resolve --status | grep Current` to check for currently used DNS server IP address
+
+`ip r` to display default gateway IP address.
+
+## 1. Change hostname
+
+Use `sudo hostnamectl set-hostname <new hostname>` to change hostname of each Pi. Default name is ubuntu, which will be confusing if left unchanged.
+
+Run `sudo nano /etc/hosts`, appending `10.42.0.XXX <device hostname> ` for every Pi in the cluster, resulting in the following:
+
+```
+10.42.0.1 odyssey
+10.42.0.139 pi1
+10.42.0.140 pi2
+10.42.0.141 pi3
+```
+
+## 2. Configuring static IP
+
+Make sure that the network interface is not managed by CloudInit. Open the configuration file with `sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
+
+Open the Netplan configuration file with `sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with: 
+
+```
+network:
+  version: 2
+  ethernets:
+    eth0:
+      addresses: [10.42.0.141/24]
+      gateway4: 10.42.0.1
+      nameservers:
+        addresses: [10.42.0.1, 255.255.255.0]
+```
+
+Run `sudo netplan try` to check for syntax errors, by pressing ENTER to keep settings. Network configuration should be accepted if nothing goes wrong.
+
+To make changes permanent run `sudo netplan apply` and reboot with `sudo reboot`. SSH into the Pi to ensure IP has been set.
+
+## 3. SSH alias
+
+Run `sudo nano .ssh/config` and insert the following to simplify the SSH process to just `ssh <name>`:
+
+```
+Host odyssey
+User zyf0717
+Hostname 10.42.0.1
+
+Host pi1
+User ubuntu
+Hostname 10.42.0.139
+
+Host pi2
+User ubuntu
+Hostname 10.42.0.140
+
+Host pi3
+User ubuntu
+Hostname 10.42.0.141
+```
+
+
+
