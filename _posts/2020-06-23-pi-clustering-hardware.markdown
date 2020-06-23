@@ -13,7 +13,7 @@ After many weeks, the hardware I procured to set up my very own compute cluster 
 
 I have decided to use the [Odyssey mini PC](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node. It has a Intel Celeron J4105 processor, 8GB RAM and 64GB eMMC. It is no powerhouse, but it is more powerful than any worker node in this cluster while still maintaining low power consumption. Ubuntu desktop 20.04 will be installed on this machine.
 
-## 2. Worker nodes and networking
+## 2. Worker nodes
 
 ![Rapsberry Pi 4B, PoE HAT, network switch](https://zyf0717.github.io/assets/images/pi-cluster.jpg)
 
@@ -21,18 +21,18 @@ For worker nodes, I chose [Raspberry Pi 4 Model Bs](https://www.raspberrypi.org/
 
 I decided to power the three Pis through [PoE HATs](https://www.raspberrypi.org/products/poe-hat/) rather than through the default USB-C. This arrangement reduces the amount of cables and wires significantly, though it costs more than the USB-C option.
 
-Note that a PoE network switch would be necessary to power the Pis, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can *technically* power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W). I do have a forth Pi arriving (shipping delayed by 1.5 months and counting), and will update this page after testing.
+[Samsung EVO Plus MicroSDs](https://www.samsung.com/sg/memory-storage/evo-plus-microsd-card-with-sd-adapter-100/MB-MC64GAAPC/) were used for its decent read and write speeds and low cost, particularly after a discount at time of purchase.
+
+## 3. Networking
+
+A PoE network switch would be necessary to power the Pis throught PoE HAT, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can *technically* power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W). I do have a forth Pi arriving (shipping delayed by 1.5 months and counting), and will update this page after testing.
 
 At least four ethernet cables are needed to connect all four machines to the network switch -- three for the Pis and one for the Odyssey. I have also used a fifth ethernet cable to also connect the Odyssey to my Google Home network. Since the Pis have gigabit ethernet, all cables used should preferably support gigabit speeds.
 
-[Samsung EVO Plus MicroSDs](https://www.samsung.com/sg/memory-storage/evo-plus-microsd-card-with-sd-adapter-100/MB-MC64GAAPC/) were used for its decent read and write speeds and low cost, particularly after a discount at time of purchase.
-
-The [cluster case](https://www.amazon.sg/dp/B07MW3GM1T/ref=pe_12283492_374736162_TE_item) I used was purchased from Amazon. The fans provided with the cluster case were not used.
-
-## 3. Final setup
+## 4. Final setup
 
 ![Odyssey-Pi cluster](https://zyf0717.github.io/assets/images/odyssey-pi-cluster.jpg)
 
-Ta-da!
+The [cluster case](https://www.amazon.sg/dp/B07MW3GM1T/ref=pe_12283492_374736162_TE_item) I used for the Pi stack was purchased on Amazon. The fans provided with the cluster case were not used as the PoE HATs I purchased come with CPU fans.
 
-Next up in this series: [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-ssh-ip.html)
+A keyboard, mouse, a monitor, a HDMI cable as well as a Mini HDMI to HDMI adapter was also used for software setup in the next post of this series: [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-ssh-ip.html).
