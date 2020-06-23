@@ -5,7 +5,7 @@ date:   2020-06-23 17:00:00 +0800
 categories: jekyll update
 ---
 
-I am using three Pi 4Bs running Ubuntu 20.04 server (instead of Raspbian or Raspberry Pi OS), and also using an [ODYSSEY](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node (running Ubuntu 20.04 desktop).
+I am using an [ODYSSEY](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node (running Ubuntu 20.04 desktop), and 3 Raspberry Pi 4 Model Bs running Ubuntu 20.04 server (instead of Raspbian or Raspberry Pi OS) for the worker nodes. Please see my previous post [Pi cluster (hardware)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html) for more details.
 
 SSH is enabled by default on the Ubuntu 20.04 server, so simply SSH with `ssh ubuntu@<IP address>`.
 
