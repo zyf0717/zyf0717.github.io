@@ -54,7 +54,7 @@ Run `$ sudo nano /etc/hosts` and add in the following:
 
 Make sure that the network interface is not managed by CloudInit. Open the configuration file with `$ sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
 
-Open the Netplan configuration file with `sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with: 
+Open the Netplan configuration file with `$ sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with: 
 
 ```
 network:
@@ -93,7 +93,7 @@ User ubuntu
 Hostname 10.42.0.141
 ```
 
-Copy this file into every device with `scp ~/.ssh/config piX:~/.ssh/config`
+Copy this file into every device with `$ scp ~/.ssh/config piX:~/.ssh/config`
 
 ## 4. Setting up public / private key pairs
 
