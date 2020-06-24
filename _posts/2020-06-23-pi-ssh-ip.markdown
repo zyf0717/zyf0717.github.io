@@ -53,7 +53,7 @@ To make changes permanent run `sudo netplan apply` and reboot with `sudo reboot`
 
 ## 3. SSH alias
 
-Run `sudo nano .ssh/config` and insert the following to simplify the SSH process to just `ssh <name>`:
+Run `sudo nano .ssh/config` on the master node and insert the following to simplify the SSH process to just `ssh <Host>`:
 
 ```
 Host odyssey
@@ -72,3 +72,31 @@ Host pi3
 User ubuntu
 Hostname 10.42.0.141
 ```
+
+Copy this file into every device with `scp ~/.ssh/config piX:~/.ssh/config`
+
+## 4. Setting up public / private key pairs
+
+On every node run the following command: `ssh-keygen –t ed25519`, which generate a public and private key pair (default location for is in `~/.ssh/` folder).
+
+Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the command `cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'`. Also insert public key of master node into `authorized_keys` with `cat .ssh/id_ed25519.pub >> .ssh/authorized_keys`.
+
+Copy this `authorized_keys` file into every worker node with `scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys`, after which ssh connection can be established between any node with just `ssh <Host>`.
+
+## 5. Cluster command
+
+In the master node, define some shortcuts by adding the following lines to `~/.bashrc`:
+
+```
+# To get hostname of all worker nodes.
+function clusternodes {
+  grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
+}
+
+# To send command to all worker nodes.
+function clustercmd {
+  for pi in $(clusternodes); do ssh $pi "$@"; done
+}
+```
+
+Commands can now be run across all worker nodes, e.g., to reboot cluster, simply run `clustercmd sudo reboot`.
