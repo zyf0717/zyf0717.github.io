@@ -1,27 +1,47 @@
 ---
 layout: post
 title:  "Pi cluster (SSH and static IP)"
-date:   2020-06-23 17:00:00 +0800
+date:   2020-06-24 22:00:00 +0800
 categories: jekyll update
 ---
 
 I am using an Odyssey mini PC with Ubuntu desktop 20.04  for the master node, and three Raspberry Pi 4 Model Bs with Ubuntu server 20.04 for the worker nodes. Please see my previous post [Pi cluster (hardware)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html) for more details.
 
-SSH is enabled by default on the Ubuntu 20.04 server, so simply SSH with `ssh ubuntu@<IP address>`.
+SSH is enabled by default on the Ubuntu 20.04 server, so by default SSH is simply:
+
+```
+$ ssh ubuntu@<IP address>
+```
 
 ## 0. IP configurations
 
-`ip a` to check internal IP address of each machine.
+To check internal IP address of each machine, use:
 
-`systemd-resolve --status | grep Current` to check for currently used DNS server IP address
+```
+ip a
+```
 
-`ip r` to display default gateway IP address.
+To check for currently used DNS server IP address
+
+```
+systemd-resolve --status | grep Current
+```
+
+To display default gateway IP address:
+
+```
+ip r
+```
 
 ## 1. Change hostname
 
-Use `sudo hostnamectl set-hostname <new hostname>` to change hostname of each Pi. Default name is ubuntu, which will be confusing if left unchanged.
+Default hostname of every Pi is ubuntu, which will be confusing if left unchanged. To change hostname of each Pi, use:
 
-Run `sudo nano /etc/hosts`, appending `10.42.0.XXX <device hostname> ` for every Pi in the cluster, resulting in the following:
+```
+sudo hostnamectl set-hostname <new hostname> 
+```
+
+Run `$ sudo nano /etc/hosts` and add in the following:
 
 ```
 10.42.0.1 odyssey
@@ -32,7 +52,7 @@ Run `sudo nano /etc/hosts`, appending `10.42.0.XXX <device hostname> ` for every
 
 ## 2. Configuring static IP
 
-Make sure that the network interface is not managed by CloudInit. Open the configuration file with `sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
+Make sure that the network interface is not managed by CloudInit. Open the configuration file with `$ sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
 
 Open the Netplan configuration file with `sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with: 
 
@@ -47,13 +67,13 @@ network:
         addresses: [10.42.0.1, 255.255.255.0]
 ```
 
-Run `sudo netplan try` to check for syntax errors, by pressing ENTER to keep settings. Network configuration should be accepted if nothing goes wrong.
+Run `$ sudo netplan try` to check for syntax errors, by pressing ENTER to keep settings. Network configuration should be accepted if nothing goes wrong.
 
-To make changes permanent run `sudo netplan apply` and reboot with `sudo reboot`. SSH into the Pi to confirm that a static IP has been set.
+To make changes permanent run `$ sudo netplan apply` and reboot with `$ sudo reboot`. SSH into the Pi to confirm that a static IP has been set.
 
 ## 3. SSH alias
 
-Run `sudo nano .ssh/config` on the master node and insert the following to simplify the SSH process to just `ssh <Host>`:
+Run `$ sudo nano .ssh/config` on the master node and insert the following to simplify the SSH process to just `$ ssh <Host>`:
 
 ```
 Host odyssey
@@ -77,11 +97,31 @@ Copy this file into every device with `scp ~/.ssh/config piX:~/.ssh/config`
 
 ## 4. Setting up public / private key pairs
 
-On every node run the following command: `ssh-keygen –t ed25519`, which generate a public and private key pair (default location for is in `~/.ssh/` folder).
+On every node run the following command to generate a public and private key pair (default location for is in `~/.ssh/` folder):
 
-Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the command `cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'`. Also insert public key of master node into `authorized_keys` with `cat .ssh/id_ed25519.pub >> .ssh/authorized_keys`.
+```
+$ ssh-keygen –t ed25519
+```
 
-Copy this `authorized_keys` file into every worker node with `scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys`, after which ssh connection can be established between any node with just `ssh <Host>`.
+Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the following command:
+
+```
+$ cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'
+```
+
+ Also insert public key of master node into `~/.ssh/authorized_keys` with:
+
+```
+$ cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
+```
+
+Copy `~/.ssh/authorized_keys` into every worker node with:
+
+```
+$ scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys
+```
+
+SSH connections can now be established between any nodes with just `ssh <Host>`.
 
 ## 5. Cluster command
 
@@ -99,4 +139,8 @@ function clustercmd {
 }
 ```
 
-Commands can now be run across all worker nodes, e.g., to reboot cluster, simply run `clustercmd sudo reboot`.
+Commands can now be run across all worker nodes, e.g., to reboot cluster, simply run:
+
+```
+$ clustercmd sudo reboot
+```
