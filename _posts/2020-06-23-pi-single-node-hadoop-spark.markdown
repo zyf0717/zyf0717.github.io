@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Pi cluster (Hadoop and Spark)"
+title:  "Pi cluster (single-node Hadoop and Spark)"
 date:   2020-06-25 00:05:00 +0800
 categories: jekyll update
 ---
 
 ## 0. Install JRE
 
-On master node, use the following:
+On the master node, use the following:
 
 ```
 $ sudo apt install openjdk-8-jre-headless
@@ -21,7 +21,7 @@ $ clustercmd sudo apt install openjdk-8-jre-headless
 
 ## 1. Apache Hadoop
 
-Download and install Hadoop on master node with the following:
+Download and install Hadoop on the master node with the following:
 
 ```
 $ cd && wget https://apachemirror.sg.wuchna.com/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz

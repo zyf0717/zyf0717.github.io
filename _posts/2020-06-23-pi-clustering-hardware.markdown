@@ -17,7 +17,7 @@ I have decided to use the [Odyssey mini PC](https://www.seeedstudio.com/ODYSSEY-
 
 ![Rapsberry Pi 4B, PoE HAT, network switch](https://zyf0717.github.io/assets/images/pi-cluster.jpg)
 
-For worker nodes, I chose [Raspberry Pi 4 Model Bs](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). A few weeks back, the 8GB RAM models were not released, so I went with the 4GB RAM models. Notwithstanding, 4GB RAM seems more than sufficient for a headless Ubuntu server 20.04 setup.
+For the worker nodes, I chose [Raspberry Pi 4 Model Bs](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). A few weeks back, the 8GB RAM models were not released, so I went with the 4GB RAM models. Notwithstanding, 4GB RAM seems more than sufficient for a headless Ubuntu server 20.04 setup.
 
 I decided to power the three Pis through [PoE HATs](https://www.raspberrypi.org/products/poe-hat/) rather than through the default USB-C. This arrangement reduces the amount of cables and wires significantly, though it costs more than the USB-C option.
 

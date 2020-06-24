@@ -109,7 +109,7 @@ Each public key will need to be concatenated to the `~/.ssh/authorized_keys` fil
 $ cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'
 ```
 
- Also insert public key of master node into `~/.ssh/authorized_keys` with:
+ Also insert public key of the master node into `~/.ssh/authorized_keys` with:
 
 ```
 $ cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
@@ -121,7 +121,7 @@ Copy `~/.ssh/authorized_keys` into every worker node with:
 $ scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys
 ```
 
-SSH connections can now be established between any nodes with just `ssh <Host>`.
+SSH connections can now be established between any of the master or worker nodes with just `ssh <Host>`.
 
 ## 5. Cluster command
 
