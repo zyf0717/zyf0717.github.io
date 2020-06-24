@@ -18,19 +18,19 @@ $ ssh ubuntu@<IP address>
 To check internal IP address of each machine, use:
 
 ```
-ip a
+$ ip a
 ```
 
 To check for currently used DNS server IP address
 
 ```
-systemd-resolve --status | grep Current
+$ systemd-resolve --status | grep Current
 ```
 
 To display default gateway IP address:
 
 ```
-ip r
+$ ip r
 ```
 
 ## 1. Change hostname
@@ -38,7 +38,7 @@ ip r
 Default hostname of every Pi is ubuntu, which will be confusing if left unchanged. To change hostname of each Pi, use:
 
 ```
-sudo hostnamectl set-hostname <new hostname> 
+$ sudo hostnamectl set-hostname <new hostname> 
 ```
 
 Run `$ sudo nano /etc/hosts` and add in the following:
