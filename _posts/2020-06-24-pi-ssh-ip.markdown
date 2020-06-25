@@ -9,7 +9,7 @@ I am using an Odyssey mini PC with Ubuntu desktop 20.04  for the master node, an
 
 SSH is enabled by default on the Ubuntu 20.04 server, so by default SSH is simply:
 
-```
+```bash
 $ ssh ubuntu@<IP address>
 ```
 
@@ -17,19 +17,19 @@ $ ssh ubuntu@<IP address>
 
 To check internal IP address of each machine, use:
 
-```
+```bash
 $ ip a
 ```
 
 To check for currently used DNS server IP address
 
-```
+```bash
 $ systemd-resolve --status | grep Current
 ```
 
 To display default gateway IP address:
 
-```
+```bash
 $ ip r
 ```
 
@@ -37,7 +37,7 @@ $ ip r
 
 Default hostname of every Pi is ubuntu, which will be confusing if left unchanged. To change hostname of each Pi, use:
 
-```
+```bash
 $ sudo hostnamectl set-hostname <new hostname> 
 ```
 
@@ -101,25 +101,25 @@ Copy this file into every device with `$ scp ~/.ssh/config piX:~/.ssh/config`
 
 On every node run the following command to generate a public and private key pair (default location for is in `~/.ssh/` folder):
 
-```
+```bash
 $ ssh-keygen –t ed25519
 ```
 
 Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the following command:
 
-```
+```bash
 $ cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'
 ```
 
  Also insert public key of the master node into `~/.ssh/authorized_keys` with:
 
-```
+```bash
 $ cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
 ```
 
 Copy `~/.ssh/authorized_keys` into every worker node with:
 
-```
+```bash
 $ scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys
 ```
 
@@ -129,7 +129,7 @@ SSH connections can now be established between any of the master or worker nodes
 
 In the master node, define some shortcuts by adding the following lines to `~/.bashrc`:
 
-```
+```bash
 # To get hostname of all worker nodes.
 function clusternodes {
   grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
@@ -143,6 +143,9 @@ function clustercmd {
 
 Commands can now be run across all worker nodes, e.g., to reboot cluster, simply run:
 
-```
+```bash
 $ clustercmd sudo reboot
 ```
+
+To continue with setting up Hadoop, Spark and HDFS, please proceed to my next post [Pi cluster (single-node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/24/pi-single-node-hadoop-spark.html).
+
