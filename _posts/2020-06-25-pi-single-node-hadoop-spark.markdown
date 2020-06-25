@@ -135,7 +135,7 @@ Also, create the following directories and configure ownership:
 ```bash
 $ sudo mkdir -p /opt/hadoop_tmp/hdfs/datanode
 $ sudo mkdir -p /opt/hadoop_tmp/hdfs/namenode
-$ sudo chown pi:pi -R /opt/hadoop_tmp
+$ sudo chown $USER: -R /opt/hadoop_tmp
 ```
 
 The next file is `mapred-site.xml`:
