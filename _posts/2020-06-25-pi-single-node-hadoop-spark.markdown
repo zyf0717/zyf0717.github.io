@@ -41,7 +41,6 @@ $ sudo chown $USER: -R /opt/hadoop
 Edit `~/.bashrc` by appending the following:
 
 ```bash
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/opt/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
@@ -85,7 +84,7 @@ $ spark-shell --version
 
 In my case I had the following warning messages due to the master node being connected to two networks:
 
-```
+```bash
 WARN Utils: Your hostname, odyssey resolves to a loopback address: 127.0.1.1; using 10.42.0.1 instead (on interface enp2s0)
 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 ```
@@ -94,7 +93,6 @@ To resolve, I created the Spark environment configuration file with `$ gedit /op
 
 ```bash
 #!/usr/bin/env bash
-
 export SPARK_LOCAL_IP=10.42.0.1
 ```
 
