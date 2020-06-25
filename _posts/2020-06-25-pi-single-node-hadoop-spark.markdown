@@ -47,7 +47,7 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 Edit `/opt/hadoop/etc/hadoop/hadoop-env.sh` by adding the following:
 
 ```
-export JAVA_HOME=${JAVA_HOME}
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
 
 Verify that Hadoop has been installed correctly by checking the version:

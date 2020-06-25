@@ -50,6 +50,8 @@ Run `$ sudo nano /etc/hosts` and add in the following:
 10.42.0.141 pi3
 ```
 
+I also had to comment out other references to `odyssey`.
+
 ## 2. Configuring static IP
 
 Make sure that the network interface is not managed by CloudInit. Open the configuration file with `$ sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
