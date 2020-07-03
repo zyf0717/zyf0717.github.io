@@ -15,7 +15,7 @@ On the master node, use the following:
 $ sudo apt install openjdk-8-jdk
 ```
 
-To install on the worker nodes, use the following:
+To install on all worker nodes, use the following (`clustercmd` was previously defined):
 
 ```bash
 $ clustercmd sudo apt install openjdk-8-jdk-headless

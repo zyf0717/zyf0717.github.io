@@ -45,6 +45,7 @@ Run `$ sudo nano /etc/hosts` and add in the following:
 
 ```
 10.42.0.1 odyssey
+10.42.0.138 pi0
 10.42.0.139 pi1
 10.42.0.140 pi2
 10.42.0.141 pi3
@@ -75,12 +76,16 @@ To make changes permanent run `$ sudo netplan apply` and reboot with `$ sudo reb
 
 ## 3. SSH alias
 
-Run `$ sudo nano .ssh/config` on the master node and insert the following to simplify the SSH process to just `$ ssh <Host>`:
+Run `$ sudo nano .ssh/config` on every node and insert the following to simplify the SSH process to just `$ ssh <Host>`:
 
 ```
 Host odyssey
 User zyf0717
 Hostname 10.42.0.1
+
+Host pi0
+User ubuntu
+Hostname 10.42.0.138
 
 Host pi1
 User ubuntu
@@ -95,14 +100,12 @@ User ubuntu
 Hostname 10.42.0.141
 ```
 
-Copy this file into every device with `$ scp ~/.ssh/config piX:~/.ssh/config`
-
 ## 4. Setting up public / private key pairs
 
 On every node run the following command to generate a public and private key pair (default location for is in `~/.ssh/` folder):
 
 ```bash
-$ ssh-keygen –t ed25519
+$ ssh-keygen -t ed25519
 ```
 
 Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the following command:
