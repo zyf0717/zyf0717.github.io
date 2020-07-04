@@ -134,13 +134,13 @@ In the master node, define some shortcuts by adding the following lines to `~/.b
 
 ```bash
 # To get hostname of all worker nodes.
-function clusternodes {
+function workernodes {
   grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
 }
 
 # To send command to all worker nodes.
 function clustercmd {
-  for pi in $(clusternodes); do ssh $pi "$@"; done
+  for pi in $(workernodes); do ssh $pi "$@"; done
 }
 ```
 

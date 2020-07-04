@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pi cluster (single-node Hadoop and Spark)"
+title:  "Pi cluster (master node Hadoop and Spark)"
 date:   2020-06-25 21:00:00 +0800
 categories: jekyll update
 ---
@@ -13,12 +13,6 @@ On the master node, use the following:
 
 ```bash
 $ sudo apt install openjdk-8-jdk
-```
-
-To install on all worker nodes, use the following (`clustercmd` was previously defined):
-
-```bash
-$ clustercmd sudo apt install openjdk-8-jdk-headless
 ```
 
 ## 1. Apache Hadoop
@@ -55,6 +49,7 @@ Verify that Hadoop has been installed correctly by checking the version:
 
 ```bash
 $ cd && hadoop version | grep Hadoop
+Hadoop 3.2.1
 ```
 
 ## 2. Apache Spark
@@ -177,9 +172,10 @@ $ start-dfs.sh
 $ start-yarn.sh
 ```
 
-Test if HDFS is running properly with `$ jps`. Output should be something like:
+Test if HDFS is running properly:
 
 ```bash
+$ jps
 3040 NameNode
 3762 NodeManager
 4037 Jps
