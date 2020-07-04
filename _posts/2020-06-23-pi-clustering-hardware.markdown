@@ -17,17 +17,19 @@ I have decided to use the [Odyssey mini PC](https://www.seeedstudio.com/ODYSSEY-
 
 ![Rapsberry Pi 4B, PoE HAT, network switch](https://zyf0717.github.io/assets/images/pi-cluster.jpg)
 
+**Picture taken prior to the arrival of the forth Pi.*
+
 For the worker nodes, I chose [Raspberry Pi 4 Model Bs](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). A few weeks back, the 8GB RAM models were not released, so I went with the 4GB RAM models. Notwithstanding, 4GB RAM seems more than sufficient for a headless Ubuntu server 20.04 setup.
 
-I decided to power the three Pis through [PoE HATs](https://www.raspberrypi.org/products/poe-hat/) rather than through the default USB-C. This arrangement reduces the amount of cables and wires significantly, though it costs more than the USB-C option.
+I decided to power the three Pis through [PoE HATs](https://www.raspberrypi.org/products/poe-hat/) rather than through the def ault USB-C. This arrangement reduces the amount of cables and wires significantly, though it costs more than the USB-C option.
 
-[Samsung EVO Plus MicroSDs](https://www.samsung.com/sg/memory-storage/evo-plus-microsd-card-with-sd-adapter-100/MB-MC64GAAPC/) were used for its decent read and write speeds and low cost, particularly after a discount at time of purchase.
+[Samsung EVO Plus MicroSDs](https://www.samsung.com/sg/memory-storage/evo-plus-microsd-card-with-sd-adapter-100/MB-MC64GAAPC/) were used for its decent read and write speeds and low cost, particularly after a discount at time of purchase. Perhaps at some point I might migrate the setup to USB storage when USB boot is fully supported.
 
 ## 3. Networking
 
-A PoE network switch would be necessary to power the Pis throught PoE HAT, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can *technically* power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W). I do have a forth Pi arriving (shipping delayed by 1.5 months and counting), and will update this page after testing.
+A PoE network switch would be necessary to power the Pis throught PoE HAT, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W). ~~I do have a forth Pi arriving (shipping delayed by 1.5 months and counting), and will update this page after testing.~~
 
-At least four ethernet cables are needed to connect all four machines to the network switch -- three for the Pis and one for the Odyssey. I have also used a fifth ethernet cable to also connect the Odyssey to my Google Home network. Since the Pis have gigabit ethernet, all cables used should preferably support gigabit speeds.
+At least five ethernet cables are needed to connect all five machines to the network switch -- four for the Pis and one for the Odyssey. I have also used a sixth ethernet cable to also connect the Odyssey to my Google Home network. Since the Pis have gigabit ethernet, all cables used should preferably support gigabit speeds.
 
 ## 4. Final setup
 
