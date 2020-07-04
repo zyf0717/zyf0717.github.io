@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Pi cluster (worker node Hadoop and Spark)"
+title:  "Pi cluster (cluster Hadoop and Spark)"
 date:   2020-07-04 12:00:00 +0800
 categories: jekyll update
 ---
 
-This post follows my previous post [Pi cluster ()](), and is basically a documentation of my setup of Hadoop and Spark on the worker nodes of my cluster.
+This post follows my previous post [Pi cluster ()](), and is a continuation to setup Hadoop and Spark on the entire cluster.
 
 ## 0. Install JDK
 
@@ -19,7 +19,7 @@ $ clustercmd sudo apt install openjdk-8-jdk-headless
 
 Create  directories first with:
 
-```
+```bash
 $ clustercmd sudo mkdir -p /opt/hadoop_tmp/hdfs
 $ clustercmd sudo chown ubuntu: -R /opt/hadoop_tmp
 $ clustercmd sudo mkdir -p /opt/hadoop
@@ -28,24 +28,212 @@ $ clustercmd sudo chown ubuntu: /opt/hadoop
 
 Copy the files in `/opt/hadoop` from the master node to every worker node using:
 
-```
+```bash
 $ for pi in $(workernodes); do rsync -avxP $HADOOP_HOME $pi:/opt; done
 ```
 
 Because the Pi's run on ARM64 (rather than the AMD64 of the master node), run the following in each worker node:
 
-```
+```bash
 $ sudo echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
-$ echo 'export HADOOP_HOME=/opt/hadoop' >> .bashrc
-$ echo 'export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin' >> .bashrc
 ```
 
-Verify that the above is done correctly with:
+The following exports should be inserted in to `.bashrc` *at the top* of the file:
 
+```bash
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+export HADOOP_HOME=/opt/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export HADOOP_HOME_WARN_SUPPRESS=1
+export HADOOP_ROOT_LOGGER="WARN,DRFA"
+
+function workernodes {
+  grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
+}
+
+function clustercmd {
+  for pi in $(workernodes); do ssh $pi "$@"; done
+}
+
+function clusterscp {
+  for pi in $(workernodes); do
+    cat $1 | ssh $pi "sudo tee $1" > /dev/null 2>&1
+  done
+}
+
+# If not running interactively, don't do anything
+...
 ```
-$ hadoop version | grep Hadoop
+
+Verify that the above is done correctly, by running the following from the master node:
+
+```bash
+$ clustercmd hadoop version | grep Hadoop
+Hadoop 3.2.1
+Hadoop 3.2.1
+Hadoop 3.2.1
 Hadoop 3.2.1
 ```
+
+## 2. Hadoop Distributed File System
+
+Next, the configuration files of the master node have to be changed. Files are located at `/opt/hadoop/etc/hadoop/`.
+
+The first is `core-site.xml`:
+
+```xml
+<configuration>
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://odyssey:9000</value>
+  </property>
+</configuration>
+```
+
+The next is `hdfs-site.xml`:
+
+```xml
+<configuration>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/opt/hadoop_tmp/hdfs/datanode</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>/opt/hadoop_tmp/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.replication</name>
+    <value>4</value>
+  </property>
+</configuration> 
+```
+
+The next file is `mapred-site.xml`:
+
+```xml
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
+  </property>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+    <value>512</value>
+  </property>
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>256</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>256</value>
+  </property>
+</configuration> 
+```
+
+Final file is `yarn-site.xml`:
+
+```xml
+<configuration>
+  <property>
+    <name>yarn.acl.enable</name>
+    <value>0</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>odyssey</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.auxservices.mapreduce.shuffle.class</name>  
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>1536</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>1536</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>128</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>
+</configuration> 
+```
+
+Push the above configuration files to the worker nodes with the following:
+
+```bash
+$ scp /opt/hadoop/etc/hadoop/* pi0:/opt/hadoop/etc/hadoop/
+$ scp /opt/hadoop/etc/hadoop/* pi1:/opt/hadoop/etc/hadoop/
+$ scp /opt/hadoop/etc/hadoop/* pi2:/opt/hadoop/etc/hadoop/
+$ scp /opt/hadoop/etc/hadoop/* pi3:/opt/hadoop/etc/hadoop/
+```
+
+Clean up all the worker nodes with:
+
+```
+$ clustercmd rm –rf /opt/hadoop_tmp/hdfs/datanode/*
+$ clustercmd rm –rf /opt/hadoop_tmp/hdfs/namenode/*
+```
+
+Format the HDFS with:
+
+```bash
+$ hdfs namenode -format -force
+```
+
+Start HDFS with:
+
+```bash
+$ start-dfs.sh && start-yarn.sh
+```
+
+To check if HDFS is running properly across worker nodes, simply create an empty folder to test. On the master node, run:
+
+```bash
+$ hadoop fs -mkdir /tmp
+$ clustercmd hadoop fs -ls /
+Found 1 items
+drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
+Found 1 items
+drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
+Found 1 items
+drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
+Found 1 items
+drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
+```
+
+## 3. Apache Spark
 
 [**TBC**]
 

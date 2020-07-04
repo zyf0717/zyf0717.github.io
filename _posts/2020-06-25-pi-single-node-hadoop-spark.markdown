@@ -42,7 +42,7 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 Edit `/opt/hadoop/etc/hadoop/hadoop-env.sh` by adding the following:
 
 ```bash
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ```
 
 Verify that Hadoop has been installed correctly by checking the version:
@@ -93,7 +93,7 @@ export SPARK_LOCAL_IP=10.42.0.1
 
 ## 3. Hadoop Distributed File System
 
-Setup HDFS by modifying some configuration files. Files are within `/opt/hadoop/etc/hadoop`. 
+Setup HDFS by modifying some configuration files. Files are within `/opt/hadoop/etc/hadoop/`. 
 
 The first is `core-site.xml`:
 
@@ -165,11 +165,10 @@ Format the HDFS with:
 $ hdfs namenode -format -force
 ```
 
-Boot HDFS with:
+Start HDFS with:
 
 ```bash
-$ start-dfs.sh
-$ start-yarn.sh
+$ start-dfs.sh && start-yarn.sh
 ```
 
 Test if HDFS is running properly:
