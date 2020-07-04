@@ -138,15 +138,15 @@ The next file is `mapred-site.xml`:
   </property>
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>
-    <value>512</value>
+    <value>1024</value>
   </property>
   <property>
     <name>mapreduce.map.memory.mb</name>
-    <value>256</value>
+    <value>512</value>
   </property>
   <property>
     <name>mapreduce.reduce.memory.mb</name>
-    <value>256</value>
+    <value>512</value>
   </property>
 </configuration> 
 ```
@@ -177,11 +177,11 @@ Final file is `yarn-site.xml`:
   </property>
   <property>
     <name>yarn.scheduler.maximum-allocation-mb</name>
-    <value>1536</value>
+    <value>3072</value>
   </property>
   <property>
     <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>128</value>
+    <value>256</value>
   </property>
   <property>
     <name>yarn.nodemanager.vmem-check-enabled</name>
