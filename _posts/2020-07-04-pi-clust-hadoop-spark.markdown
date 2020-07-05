@@ -17,7 +17,7 @@ $ clustercmd sudo apt install openjdk-8-jdk-headless
 
 ## 1. Setting up Hadoop Distributed File System
 
-Create directories first with:
+First, create directories in the worker nodes with the following:
 
 ```bash
 $ clustercmd sudo mkdir -p /opt/hadoop_tmp/hdfs
@@ -219,7 +219,7 @@ Start HDFS with:
 $ start-dfs.sh && start-yarn.sh
 ```
 
-To check if HDFS is running properly across worker nodes, simply create an empty folder to test. On the master node, run:
+To check if HDFS is running properly across worker nodes, create an empty folder to test. On the master node, run:
 
 ```bash
 $ hadoop fs -mkdir /tmp
@@ -233,6 +233,10 @@ drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
+
+Also, navigating to http://odyssey:9870 opens the Haddop web UI, and under "Datanodes", the following can be seen:
+
+![Hadoop datanodes](https://zyf0717.github.io/assets/images/datanodes.png)
 
 ## 2. Configuring Apache Spark
 
