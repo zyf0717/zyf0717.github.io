@@ -202,8 +202,8 @@ $ scp /opt/hadoop/etc/hadoop/* pi3:/opt/hadoop/etc/hadoop/
 Clean up all the worker nodes with:
 
 ```
-$ clustercmd rm –rf /opt/hadoop_tmp/hdfs/datanode/*
-$ clustercmd rm –rf /opt/hadoop_tmp/hdfs/namenode/*
+$ clustercmd rm -rf /opt/hadoop_tmp/hdfs/datanode/*
+$ clustercmd rm -rf /opt/hadoop_tmp/hdfs/namenode/*
 ```
 
 Format the HDFS with:
