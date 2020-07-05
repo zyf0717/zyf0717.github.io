@@ -55,6 +55,10 @@ The next is `hdfs-site.xml`:
     <name>dfs.replication</name>
     <value>4</value>
   </property>
+  <property>
+    <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+    <value>false</value>
+  </property>
 </configuration> 
 ```
 
@@ -230,7 +234,48 @@ Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
 
-## 2. Installing Apache Spark
+## 2. Configuring Apache Spark
 
-[**TBC**]
+Add the following two lines to `.bashrc` on the master node:
+
+```bash
+export SPARK_HOME=/opt/spark
+export PATH=$PATH:$SPARK_HOME/bin
+```
+
+Next, create the Spark configuration file with the following:
+
+```bash
+$ cd $SPARK_HOME/conf
+$ sudo mv spark-defaults.conf.template spark-defaults.conf
+```
+
+Add the following lines to the newly created `spark-defaults.conf`:
+
+```
+spark.master            yarn
+spark.driver.memory     2688m
+spark.yarn.am.memory    2688m
+spark.executor.memory   2688m
+spark.executor.cores    4
+```
+
+Restart the cluster:
+
+```bash
+$ stop-dfs.sh && stop-yarn.sh
+$ start-dfs.sh && start-yarn.sh
+```
+
+To check that Spark is actually running across the cluster, run the following to estimate value of Pi (π):
+
+```bash
+$ spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.12-3.0.0.jar 7
+...
+2020-07-06 00:04:49,211 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 33.719672 s
+Pi is roughly 3.1430273471819246
+...
+```
+
+
 
