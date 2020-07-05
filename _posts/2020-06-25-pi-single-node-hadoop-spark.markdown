@@ -15,7 +15,7 @@ On the master node, use the following:
 $ sudo apt install openjdk-8-jdk
 ```
 
-## 1. Apache Hadoop
+## 1. Installing Apache Hadoop
 
 Download and install Hadoop on the master node with the following:
 
@@ -42,7 +42,7 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 Edit `/opt/hadoop/etc/hadoop/hadoop-env.sh` by adding the following:
 
 ```bash
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
 
 Verify that Hadoop has been installed correctly by checking the version:
@@ -52,7 +52,7 @@ $ cd && hadoop version | grep Hadoop
 Hadoop 3.2.1
 ```
 
-## 2. Apache Spark
+## 2. Installing Apache Spark
 
 The process for Spark is very similar to the above. Install with the following commands:
 
@@ -91,7 +91,7 @@ To resolve, I created the Spark environment configuration file with `$ gedit /op
 export SPARK_LOCAL_IP=10.42.0.1
 ```
 
-## 3. Hadoop Distributed File System
+## 3. Configuring Hadoop Distributed File System
 
 Setup HDFS by modifying some configuration files. Files are within `/opt/hadoop/etc/hadoop/`. 
 
@@ -183,3 +183,4 @@ $ jps
 2687 DataNode
 ```
 
+If this were just a single-node "cluster", configuration would stop here. However, I still have four worker nodes to setup, and the next steps are at: [Pi cluster (cluster Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/07/04/pi-clust-hadoop-spark.html)

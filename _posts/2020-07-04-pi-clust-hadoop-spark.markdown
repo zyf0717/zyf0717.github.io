@@ -5,7 +5,7 @@ date:   2020-07-04 12:00:00 +0800
 categories: jekyll update
 ---
 
-This post follows my previous post [Pi cluster ()](), and is a continuation to setup Hadoop and Spark on the entire cluster.
+This post follows my previous post [Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html), and is a continuation for a multi-node Hadoop and Spark setup.
 
 ## 0. Install JDK
 
@@ -15,9 +15,9 @@ Install JDK on all workers nodes with the following (`clustercmd` was previously
 $ clustercmd sudo apt install openjdk-8-jdk-headless
 ```
 
-## 1. Apache Hadoop
+## 1. Installing Apache Hadoop
 
-Create  directories first with:
+Create directories first with:
 
 ```bash
 $ clustercmd sudo mkdir -p /opt/hadoop_tmp/hdfs
@@ -78,7 +78,7 @@ Hadoop 3.2.1
 Hadoop 3.2.1
 ```
 
-## 2. Hadoop Distributed File System
+## 2. Configuring Hadoop Distributed File System
 
 Next, the configuration files of the master node have to be changed. Files are located at `/opt/hadoop/etc/hadoop/`.
 
@@ -190,13 +190,22 @@ Final file is `yarn-site.xml`:
 </configuration> 
 ```
 
-Push the above configuration files to the worker nodes with the following:
+Copy the above configuration files one of the worker nodes (pi0 in this case) with the following:
 
 ```bash
 $ scp /opt/hadoop/etc/hadoop/* pi0:/opt/hadoop/etc/hadoop/
-$ scp /opt/hadoop/etc/hadoop/* pi1:/opt/hadoop/etc/hadoop/
-$ scp /opt/hadoop/etc/hadoop/* pi2:/opt/hadoop/etc/hadoop/
-$ scp /opt/hadoop/etc/hadoop/* pi3:/opt/hadoop/etc/hadoop/
+```
+
+SSH into that worker node (pi0), and amend the `hadoop-env.sh` -- this is because in my case the master node has a AMD64 processor, while the worker nodes are using ARM64 processors:
+
+```bash
+$ echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
+```
+
+Copy the amended `hadoop-env.sh` from that worker node (pi0) to all the other worker nodes with:
+
+```
+$ clusterscp /opt/hadoop/etc/hadoop/hadoop-env.sh
 ```
 
 Clean up all the worker nodes with:
@@ -206,7 +215,7 @@ $ clustercmd rm -rf /opt/hadoop_tmp/hdfs/datanode/*
 $ clustercmd rm -rf /opt/hadoop_tmp/hdfs/namenode/*
 ```
 
-Format the HDFS with:
+Now, back to the master node. Format the HDFS with:
 
 ```bash
 $ hdfs namenode -format -force
@@ -233,7 +242,7 @@ Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
 
-## 3. Apache Spark
+## 3. Installing Apache Spark
 
 [**TBC**]
 
