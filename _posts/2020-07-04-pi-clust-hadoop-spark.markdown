@@ -15,7 +15,7 @@ Install JDK on all workers nodes with the following (`clustercmd` was previously
 $ clustercmd sudo apt install openjdk-8-jdk-headless
 ```
 
-## 1. Installing Apache Hadoop
+## 1. Setting up Hadoop Distributed File System
 
 Create directories first with:
 
@@ -25,60 +25,6 @@ $ clustercmd sudo chown ubuntu: -R /opt/hadoop_tmp
 $ clustercmd sudo mkdir -p /opt/hadoop
 $ clustercmd sudo chown ubuntu: /opt/hadoop
 ```
-
-Copy the files in `/opt/hadoop` from the master node to every worker node using:
-
-```bash
-$ for pi in $(workernodes); do rsync -avxP $HADOOP_HOME $pi:/opt; done
-```
-
-Because the Pi's run on ARM64 (rather than the AMD64 of the master node), run the following in each worker node:
-
-```bash
-$ sudo echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
-```
-
-The following exports should be inserted in to `.bashrc` *at the top* of the file:
-
-```bash
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-export HADOOP_HOME=/opt/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-export HADOOP_HOME_WARN_SUPPRESS=1
-export HADOOP_ROOT_LOGGER="WARN,DRFA"
-
-function workernodes {
-  grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
-}
-
-function clustercmd {
-  for pi in $(workernodes); do ssh $pi "$@"; done
-}
-
-function clusterscp {
-  for pi in $(workernodes); do
-    cat $1 | ssh $pi "sudo tee $1" > /dev/null 2>&1
-  done
-}
-
-# If not running interactively, don't do anything
-...
-```
-
-Verify that the above is done correctly, by running the following from the master node:
-
-```bash
-$ clustercmd hadoop version | grep Hadoop
-Hadoop 3.2.1
-Hadoop 3.2.1
-Hadoop 3.2.1
-Hadoop 3.2.1
-```
-
-## 2. Configuring Hadoop Distributed File System
 
 Next, the configuration files of the master node have to be changed. Files are located at `/opt/hadoop/etc/hadoop/`.
 
@@ -190,22 +136,64 @@ Final file is `yarn-site.xml`:
 </configuration> 
 ```
 
-Copy the above configuration files one of the worker nodes (pi0 in this case) with the following:
+Copy the files in `/opt/hadoop` from the master node to every worker node using:
 
 ```bash
-$ scp /opt/hadoop/etc/hadoop/* pi0:/opt/hadoop/etc/hadoop/
+$ for pi in $(workernodes); do rsync -avxP $HADOOP_HOME $pi:/opt; done
 ```
 
-SSH into that worker node (pi0), and amend the `hadoop-env.sh` -- this is because in my case the master node has a AMD64 processor, while the worker nodes are using ARM64 processors:
+SSH into one of the worker nodes (pi0). The following exports should be inserted in to `.bashrc` *at the top* of the file:
+
+```bash
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+export HADOOP_HOME=/opt/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export HADOOP_HOME_WARN_SUPPRESS=1
+export HADOOP_ROOT_LOGGER="WARN,DRFA"
+
+function workernodes {
+  grep "pi" /etc/hosts | awk '{print $2}' | grep -v $(hostname)
+}
+
+function clustercmd {
+  for pi in $(workernodes); do ssh $pi "$@"; done
+}
+
+function clusterscp {
+  for pi in $(workernodes); do
+    cat $1 | ssh $pi "sudo tee $1" > /dev/null 2>&1
+  done
+}
+
+# If not running interactively, don't do anything
+...
+```
+
+After `$ source .bashrc`, run `$ clusterscp .bashrc` to copy the updated `.bashrc` to all the other worker nodes.
+
+Continue by amending the `hadoop-env.sh` in the worker node (pi0) -- this is because in my case the master node has a AMD64 processor, while the worker nodes are using ARM64 processors:
 
 ```bash
 $ echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
 ```
 
-Copy the amended `hadoop-env.sh` from that worker node (pi0) to all the other worker nodes with:
+Then copy the amended `hadoop-env.sh` from that worker node (pi0) to all the other worker nodes with:
 
 ```
 $ clusterscp /opt/hadoop/etc/hadoop/hadoop-env.sh
+```
+
+Back to the master node. Verify that Hadoop is correctly installed by running the following:
+
+```bash
+$ clustercmd hadoop version | grep Hadoop
+Hadoop 3.2.1
+Hadoop 3.2.1
+Hadoop 3.2.1
+Hadoop 3.2.1
 ```
 
 Clean up all the worker nodes with:
@@ -215,7 +203,7 @@ $ clustercmd rm -rf /opt/hadoop_tmp/hdfs/datanode/*
 $ clustercmd rm -rf /opt/hadoop_tmp/hdfs/namenode/*
 ```
 
-Now, back to the master node. Format the HDFS with:
+Format the HDFS with:
 
 ```bash
 $ hdfs namenode -format -force
@@ -242,7 +230,7 @@ Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
 
-## 3. Installing Apache Spark
+## 2. Installing Apache Spark
 
 [**TBC**]
 
