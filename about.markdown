@@ -16,6 +16,10 @@ Through this platform, I hope to document and share my tech journey. My interest
 
 [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-ssh-ip.html)
 
+[Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html)
+
+[Pi cluster (cluster Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/07/04/pi-clust-hadoop-spark.html)
+
 ## General
 
 [Jekyll syntax highlighting](https://zyf0717.github.io/jekyll/update/2020/05/05/jekyll-syntax-highlighting.html)
