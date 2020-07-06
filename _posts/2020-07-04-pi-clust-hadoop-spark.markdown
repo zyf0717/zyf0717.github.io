@@ -279,8 +279,8 @@ Test run the a Spark job across the entire cluster:
 ```bash
 $ spark-submit --num-executors 4 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
 ...
-2020-07-06 17:39:27,852 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 117.875031 s
-Pi is roughly 3.1416181431416184
+2020-07-06 18:10:16,906 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 123.901486 s
+Pi is roughly 3.141580963141581
 ...
 ```
 
@@ -289,7 +289,7 @@ Test run the same Spark job using only a single executor by setting `--num-execu
 ```bash
 $ spark-submit --num-executors 1 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
 ...
-2020-07-06 17:45:12,722 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 272.968774 s
-Pi is roughly 3.1416485071416487
+2020-07-06 18:16:11,514 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 282.108079 s
+Pi is roughly 3.1416482831416483
 ...
 ```
