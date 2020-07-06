@@ -150,5 +150,5 @@ Commands can now be run across all worker nodes, e.g., to reboot cluster, simply
 $ clustercmd sudo reboot
 ```
 
-To continue with setting up Hadoop, Spark and HDFS, please proceed to my next post [Pi cluster (single-node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/24/pi-single-node-hadoop-spark.html).
+To continue with setting up Hadoop, Spark and HDFS, please proceed to my next post [Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html).
 

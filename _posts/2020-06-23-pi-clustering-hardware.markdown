@@ -37,4 +37,4 @@ At least five ethernet cables are needed to connect all five machines to the net
 
 The [cluster case](https://www.amazon.sg/dp/B07MW3GM1T/ref=pe_12283492_374736162_TE_item) I used for the Pi stack was purchased on Amazon. The fans provided with the cluster case were not used as the PoE HATs I purchased come with CPU fans.
 
-A keyboard, mouse, a monitor, a HDMI cable as well as a Mini HDMI to HDMI adapter was also used for software setup in the next post of this series: [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-ssh-ip.html).
+A keyboard, mouse, a monitor, a HDMI cable as well as a Mini HDMI to HDMI adapter was also used for software setup in the next post of this series: [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/24/pi-ssh-ip.html).
