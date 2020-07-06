@@ -271,15 +271,22 @@ $ stop-dfs.sh && stop-yarn.sh
 $ start-dfs.sh && start-yarn.sh
 ```
 
-To check that Spark is actually running across the cluster, run the following to estimate value of Pi (π):
+Test run the a Spark job across the entire cluster:
 
 ```bash
-$ spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.12-3.0.0.jar 7
+$ spark-submit --num-executors 32 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
 ...
-2020-07-06 00:04:49,211 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 33.719672 s
-Pi is roughly 3.1430273471819246
+2020-07-06 17:00:38,309 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 144.046296 s
+Pi is roughly 3.1416783591416784
 ...
 ```
 
+Test run the same Spark job using only a single executor by setting `--num-executors`:
 
-
+```bash
+$ spark-submit --num-executors 1 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
+...
+2020-07-06 17:09:05,237 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 376.810414 s
+Pi is roughly 3.141528079141528
+...
+```
