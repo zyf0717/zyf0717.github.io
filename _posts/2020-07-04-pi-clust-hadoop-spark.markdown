@@ -257,11 +257,14 @@ $ sudo mv spark-defaults.conf.template spark-defaults.conf
 Add the following lines to the newly created `spark-defaults.conf`:
 
 ```
-spark.master            yarn
-spark.driver.memory     2688m
-spark.yarn.am.memory    2688m
-spark.executor.memory   2688m
-spark.executor.cores    4
+spark.master                    yarn
+spark.driver.memory             2688m
+spark.yarn.am.memory            2688m
+spark.executor.memory           2688m
+spark.executor.cores            1
+spark.driver.cores              1
+spark.shuffle.service.enabled   false
+spark.dynamicAllocation.enabled false
 ```
 
 Restart the cluster:
@@ -274,19 +277,19 @@ $ start-dfs.sh && start-yarn.sh
 Test run the a Spark job across the entire cluster:
 
 ```bash
-$ spark-submit --num-executors 32 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
+$ spark-submit --num-executors 4 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
 ...
-2020-07-06 17:00:38,309 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 144.046296 s
-Pi is roughly 3.1416783591416784
+2020-07-06 17:39:27,852 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 117.875031 s
+Pi is roughly 3.1416181431416184
 ...
 ```
 
-Test run the same Spark job using only a single executor by setting `--num-executors`:
+Test run the same Spark job using only a single executor by setting `--num-executors 1`:
 
 ```bash
 $ spark-submit --num-executors 1 --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples*.jar 10000
 ...
-2020-07-06 17:09:05,237 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 376.810414 s
-Pi is roughly 3.141528079141528
+2020-07-06 17:45:12,722 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 272.968774 s
+Pi is roughly 3.1416485071416487
 ...
 ```
