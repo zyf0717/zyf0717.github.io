@@ -33,7 +33,7 @@ I will make it a point to complete the [Machine Learning](https://www.coursera.o
 The courses on this platform are divided into bite-sized portions, making them very suitable for learning on-the-go. I went through most of the three aforementioned courses this way.
 
 ## Ubuntu
-I have also moved from Windows to Ubuntu, briefly experimenting with various Ubuntu-based operating systems on various devices, including a low-powered Chromebook. Currently I am on [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation, and Ubuntu 20.04 on my ultrabook, and will likely stick with either or both of these.
+I have also moved from Windows to Ubuntu, briefly experimenting with various Ubuntu-based operating systems on various devices, including a low-powered Chromebook. Currently I am using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation, and Ubuntu 20.04 on my ultrabook and mini-PC.
 
 ## JetBrains Academy
 To further my understanding of object-oriented programming, I decided to turn to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects, during which I completed most of the OOP tutorials available, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
@@ -45,15 +45,15 @@ JetBrains Academy has recently come out of beta, and unfortunately it is now sub
 ## Julia
 “Walk like Python, run like C” is a popular phrase in the [Julia](https://julialang.org/) community. Founded in 2012, Julia is young, and there are relatively fewer resources available to learners compared to Python, R, Java etc. My main learning resource for Julia was the tutorials found on [GitHub](https://github.com/JuliaComputing/JuliaBoxTutorials).
 
-With a Python background, the learning curve for Julia is rather flat, and I have already used Julia at work go get around runtime issues. Scripts written in Python and R, which originally took days and hours to run, ran in mere minutes and seconds when transpiled to Julia. Multi-threading can be as simple as using `Threads.@threads` during for-loops, with caveats of course.
+With a Python background and basic static typing knowledge, the learning curve for Julia is rather flat, and I have already used Julia at work to get around absurd runtimes. Scripts written in Python and R, which originally took days or hours to run, ran in a couple of minutes or even seconds when transpiled to Julia. Multi-threading can be as simple as using `Threads.@threads` during for-loops (with various caveats).
 
 It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) has also recently been set up, and there is also a new course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
-For about a month was obsessed Codewars, and I have written a [separate blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this.
+For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this.
 
 ## Blogging
-Finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review post would not be this long.
+I finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review blogpost will not have be this long.
 
 ## Flutter and Dart
 The creation and deployment of Apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming.
@@ -64,10 +64,10 @@ My current (and likely continued) obsession with [Scala](https://www.scala-lang.
 Up till this point, I have not studied any language to this extent or depth. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language.
 
 ## Cluster computing
-Detailed the hardware and software setup of my Odyssey and Raspberry Pi cluster in four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
+I have acquired and set up my very own compute cluster. Details span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
-The following briefly outlines my upcoming plans (and blogposts):
+The following briefly outlines my upcoming plans (and blogposts) over the next few months:
 - Beef up Scala and Spark knowledge
 - Work on Python and Scala projects (data science or otherwise)
 - Spark and Hadoop projects

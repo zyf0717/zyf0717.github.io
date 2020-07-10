@@ -27,7 +27,7 @@ I decided to power the three Pis through [PoE HATs](https://www.raspberrypi.org/
 
 ## 3. Networking
 
-A PoE network switch would be necessary to power the Pis through PoE HATs, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W). ~~I do have a forth Pi arriving (shipping delayed by 1.5 months and counting), and will update this page after testing.~~
+A PoE network switch would be necessary to power the Pis through PoE HATs, and I chose the [TL-SG1005P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1005p/) which has four PoE ports (for the Pis) and one uplink port (for the Odyssey). This network switch has a total PoE budget of 56W, and can power up to four Pis (each requiring at least 5V and 2.5A, or 12.5W).
 
 At least five ethernet cables are needed to connect all five machines to the network switch -- four for the Pis and one for the Odyssey. I have also used a sixth ethernet cable to also connect the Odyssey to my Google Home network. Since the Pis have gigabit ethernet, all cables used should preferably support gigabit speeds.
 
