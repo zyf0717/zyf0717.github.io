@@ -36,7 +36,7 @@ The courses on this platform are divided into bite-sized portions, making them v
 I have also moved from Windows to Ubuntu, briefly experimenting with various Ubuntu-based operating systems on various devices, including a low-powered Chromebook. Currently I am using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation, and Ubuntu 20.04 on my ultrabook and mini-PC.
 
 ## JetBrains Academy
-To further my understanding of object-oriented programming, I decided to turn to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects, during which I completed most of the OOP tutorials available, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
+To further my understanding of object-oriented programming, I decided to turn to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects, during which I completed most of the object-oriented programming tutorials available, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
 
 My wife has also picked up programming through the Python track on JetBrains Academy. She has since completed around half of all available Python tutorials, and her experience has been positive. I would say that this platform is an excellent non-lecture way to pick up programming. 
 
@@ -50,13 +50,16 @@ With a Python background and basic static typing knowledge, the learning curve f
 It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) has also recently been set up, and there is also a new course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
-For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this.
+For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Greatly improved my problem solving skills, as well as my familiarity with Python and JavaScript.
 
 ## Blogging
 I finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review blogpost will not have be this long.
 
 ## Flutter and Dart
-The creation and deployment of Apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming.
+The creation and deployment of Apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
+
+## Exercism and HackerRank
+I have also been solving problems on [Exercism](https://exercism.io/) and [HackerRank](https://www.hackerrank.com/) mainly using Scala and Python. Exercism is a unique site offering both learning and mentoring opportunities, while HackerRank is similar to Codewars. I will elaborate more on these two sites in a future blogpost.
 
 ## Scala
 My current (and likely continued) obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise: the combination of object-oriented and functional programming in one high level language which is run on the JVM. I have already completed a [Udemy course on Scala](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/), and currently I am working on going through two books on Scala, with plans to also complete the Udemy courses on [advanced Scala](https://www.udemy.com/course/advanced-scala/) and [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/).
@@ -64,11 +67,14 @@ My current (and likely continued) obsession with [Scala](https://www.scala-lang.
 Up till this point, I have not studied any language to this extent or depth. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language.
 
 ## Cluster computing
-I have acquired and set up my very own compute cluster. Details span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
+I have acquired and set up my very own compute cluster. Through having to configure headless Raspberry Pis, I have picked up quite a few Linux terminal commands, as well as some shell scripting.
+
+Details of my setup span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
 The following briefly outlines my upcoming plans (and blogposts) over the next few months:
 - Beef up Scala and Spark knowledge
-- Work on Python and Scala projects (data science or otherwise)
-- Spark and Hadoop projects
-- Linux terminal commands and Shell scripting (for headless)
+- Work on Python and Scala projects
+- Deploy Spark jobs on my compute cluster
+- Learn and experiment with Hadoop on my compute cluster
+- Focus on problem solving in a declarative and functional manner
