@@ -18,7 +18,7 @@ Next, I completed the following courses on Udacity:
 - [Data Analysis and Visualization](https://www.udacity.com/course/data-analysis-and-visualization--ud404) (UD404)
 - [Data Analysis with R](https://www.udacity.com/course/data-analysis-with-r--ud651) (UD651)
 
-I would say that courses above provides sufficient fundamental knowledge in computer science, data analysis, as well as Python.
+I would say that courses above were sufficient for a decent introductions to computer science, data analysis, as well as Python and R, and also provides some fundamental programming skills.
 
 ## Coursera
 The [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) was the first course I completed on [Coursera](https://www.coursera.org/). This was done partly as a recap and review of most of my previous courses, as well as to round out my fundamentals understanding of data science with a fully structured 9-course specialization.
