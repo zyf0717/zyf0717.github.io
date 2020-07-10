@@ -43,7 +43,7 @@ My wife has also picked up programming through the Python track on JetBrains Aca
 JetBrains Academy has recently come out of beta, and unfortunately it is now subscription-based after a short trial period of up to two months.
 
 ## Julia
-“Walk like Python, run like C” is a popular phrase in the [Julia](https://julialang.org/) community. Founded in 2012, Julia is young, and there are relatively fewer resources available to learners compared to Python, R, Java etc. My main learning resource for Julia was the tutorials found on [GitHub](https://github.com/JuliaComputing/JuliaBoxTutorials).
+“Walk like Python, run like C” is a popular phrase in the [Julia](https://julialang.org/) community. Founded in 2012, Julia is young with relatively fewer resources available to learners compared to mainstream languages. My main learning resource for Julia were the JuliaBox tutorials found on [GitHub](https://github.com/JuliaComputing/JuliaBoxTutorials).
 
 With a Python background and basic static typing knowledge, the learning curve for Julia is rather flat, and I have already used Julia at work to get around absurd runtimes. Scripts written in Python and R, which originally took days or hours to run, ran in a couple of minutes or even seconds when transpiled to Julia. Multi-threading can be as simple as using `Threads.@threads` during for-loops (with various caveats).
 
