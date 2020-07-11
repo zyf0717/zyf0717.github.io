@@ -14,7 +14,7 @@ Through this platform, I hope to document and share my tech journey. My interest
 
 [Pi cluster (hardware)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html)
 
-[Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-ssh-ip.html)
+[Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/24/pi-ssh-ip.html)
 
 [Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html)
 
