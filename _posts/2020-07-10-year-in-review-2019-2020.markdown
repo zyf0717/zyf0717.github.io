@@ -27,6 +27,8 @@ Next, I completed the acclaimed [Deep Learning Specialization](https://www.cours
 
 I will make it a point to complete the [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Andrew Ng at some point. The main downside is that this course is taught in Octave or Matlab. Perhaps I would attempt to complete this course in Python, R or Julia.
 
+I am also thankful for my background in economics -- prior knowledge of linear algebra, statistics and econometrics definitely expedited my progress through many of the courses.
+
 ## Stepik
 [Stepik](https://stepik.org/) is a fantastic platform for cross-device use (both app- and browser-based), only hindered by the lack of available courses. Notwithstanding, both the [Data Structures](https://stepik.org/course/579/promo) and [Python Functional Programming](https://stepik.org/course/2057/promo) courses are excellent and I highly recommend them. [JavaScript for Beginners](https://stepik.org/course/3432/promo) is also a pretty decent introduction to the language.
 
@@ -66,21 +68,25 @@ I have also been active on both [Exercism](https://exercism.io/) and [HackerRank
 ## Scala
 > _Scala combines object-oriented and functional programming in one concise, high-level language. Scala's static types help avoid bugs in complex applications, and its JVM and JavaScript runtimes let you build high-performance systems with easy access to huge ecosystems of libraries._
 
-My newfound obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise above. I have already completed a [Udemy course on Scala](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/), and currently I am working on going through two books on Scala, with plans to also complete the Udemy courses on [advanced Scala](https://www.udemy.com/course/advanced-scala/) and [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/).
+My newfound obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise above. I have already completed a [basic Scala course](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) (not basic at all -- do not attempt without any programming knowledge), working my way through the [advanced Scala course](https://www.udemy.com/course/advanced-scala/), and plan to supplement and consolidate my understanding with few books thereafter. The [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/) course on Udemy is also on my radar.
 
-Up till this point, I have not studied any language to this extent or depth. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language.
+Up till this point, I have not studied any language to this extent. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language, and subsequently complete projects using this language.
 
 ## Cluster computing
-I have acquired and set up my very own compute cluster. Through having to configure headless Raspberry Pis, I have picked up quite a few Linux terminal commands and some shell scripting.
+I have acquired and set up my very own compute cluster, which looks like this:
+
+![Odyssey-Pi cluster](https://zyf0717.github.io/assets/images/odyssey-pi-cluster.jpg)
+
+Through having to configure headless Raspberry Pis, I have picked up a few Linux terminal commands and some shell scripting.
 
 Details of my setup process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
 The following briefly outlines my upcoming plans (and blogposts):
 - Focus on problem solving in a declarative and functional manner 
-- Beef up Scala and Spark knowledge
+- Beef up Python and Scala knowledge
 - Work on Python and Scala projects
-- Deploy Spark jobs on my compute cluster
+- Learn Spark and deploy jobs on my compute cluster
 - Learn and experiment with Hadoop on my compute cluster
 - Contribute to open source
 - Continue mentoring on Exercism
