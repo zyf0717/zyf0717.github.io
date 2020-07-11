@@ -52,26 +52,28 @@ With a Python background and basic static typing knowledge, the learning curve f
 It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) has also recently been set up, and there is also a new course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
-For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Katas on this platform greatly improved my problem solving skills and my familiarity with Python and JavaScript.
+For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
 
 ## Blogging
 I finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review blogpost will not have be as lengthy as this one.
 
 ## Flutter and Dart
-The creation and deployment of Apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
+The creation and deployment of mobile apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
 
 ## Exercism and HackerRank
 I have also been active on both [Exercism](https://exercism.io/) and [HackerRank](https://www.hackerrank.com/). Exercism is a unique site offering both learning and mentoring opportunities, while HackerRank is similar to Codewars. I will elaborate more on these two sites in a future blogpost.
 
 ## Scala
-My current (and likely continued) obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise: the combination of object-oriented and functional programming in one high level language which is run on the JVM. I have already completed a [Udemy course on Scala](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/), and currently I am working on going through two books on Scala, with plans to also complete the Udemy courses on [advanced Scala](https://www.udemy.com/course/advanced-scala/) and [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/).
+> _Scala combines object-oriented and functional programming in one concise, high-level language. Scala's static types help avoid bugs in complex applications, and its JVM and JavaScript runtimes let you build high-performance systems with easy access to huge ecosystems of libraries._
+
+My newfound obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise above. I have already completed a [Udemy course on Scala](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/), and currently I am working on going through two books on Scala, with plans to also complete the Udemy courses on [advanced Scala](https://www.udemy.com/course/advanced-scala/) and [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/).
 
 Up till this point, I have not studied any language to this extent or depth. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language.
 
 ## Cluster computing
 I have acquired and set up my very own compute cluster. Through having to configure headless Raspberry Pis, I have picked up quite a few Linux terminal commands and some shell scripting.
 
-Details of my set up process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
+Details of my setup process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
 The following briefly outlines my upcoming plans (and blogposts):
