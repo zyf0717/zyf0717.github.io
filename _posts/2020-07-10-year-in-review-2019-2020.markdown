@@ -73,7 +73,7 @@ My newfound obsession with [Scala](https://www.scala-lang.org/) was born out of 
 Up till this point, I have not studied any language to this extent. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language, and subsequently complete projects using this language.
 
 ## Cluster computing
-I have acquired and set up my very own compute cluster, which looks like this:
+I have built my very own compute cluster, which looks like this:
 
 ![Odyssey-Pi cluster](https://zyf0717.github.io/assets/images/odyssey-pi-cluster.jpg)
 
@@ -82,7 +82,7 @@ Through having to configure headless Raspberry Pis, I have picked up a few Linux
 Details of my setup process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
-The following briefly outlines my upcoming plans (and blogposts):
+I set out below my upcoming plans (and blogposts):
 - Focus on problem solving in a declarative and functional manner 
 - Beef up Python and Scala knowledge
 - Work on Python and Scala projects
@@ -91,4 +91,4 @@ The following briefly outlines my upcoming plans (and blogposts):
 - Contribute to open source
 - Continue mentoring on Exercism
 
-This past year has been extremely rewarding. Besides working on more projects and gaining more knowledge, I also look forward to making contributions to the programming community this upcoming year.
+My past year has been both challenging and extremely rewarding. For my upcoming year, besides working on more projects and gaining more knowledge and experience, I also look forward to making contributions to the programming community.
