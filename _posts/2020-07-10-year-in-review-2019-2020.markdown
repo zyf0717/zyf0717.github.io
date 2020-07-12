@@ -21,7 +21,7 @@ Next, I completed the following courses on Udacity:
 I would say that courses above were sufficient for decent introductions to computer science, data analysis, as well as Python and R. Going through the courses also equips learners with basic programming skills.
 
 ## Coursera
-The [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) was the first course I have ever completed on Coursera. This was done partly as a recap and review of most of my previous courses, and partly to round out my fundamentals understanding of data science with a fully structured 9-course specialization.
+The [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) was the first course I have ever completed on Coursera. This was done partly as a recap and of most of my previous courses, and partly to round out my fundamental understanding of data science with a fully structured 9-course specialization.
 
 Next, I completed the acclaimed [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng. The courses were challenging, but extremely rewarding. To-date, I would consider the lectures and content delivered in this five-course specialization the best I have ever come across.
 
