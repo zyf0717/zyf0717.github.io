@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jupyter server on Pi 4B"
+title:  "Jupyter server on Pi"
 date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
