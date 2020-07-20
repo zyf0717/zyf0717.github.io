@@ -47,7 +47,9 @@ WhatsApp interaction count was lower on weekends than weekdays, confirming my ob
 WhatsApp interactions drop off sharply at 0030, suggesting that one or both users have gone to bed. The rest of the histogram corresponds to morning commutes at around 0800 to 0900, and evening commutes at 1830 to 1930. Any meetups generally happen after 1930 and end by 2100, which explains the corresponding dip in WhatsApp interactions.
 
 ## Topics of discussion
-![WhatsApp wordcloud](https://github.com/zyf0717/zyf0717.github.io/blob/master/assets/images/whatsapp-wordcloud.png)
+![WhatsApp wordcloud](https://zyf0717.github.io/assets/images/whatsapp-wordcloud.png)
+
+
 A word cloud generated from all WhatsApp messages show that some of the most commonly used words include 'lol', 'haha/hahaha', 'la', 'u', 'like'. These words are clearly fillers and do not appear to revolve around any particular topic.
 
 ```
