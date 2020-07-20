@@ -44,7 +44,7 @@ WhatsApp interaction count was lower on weekends than weekdays, confirming my ob
 
 {% include count_by_time.html %}
 
-It is quite obvious from the above that bed time for either or both users was around 0030. The rest of the histogram corresponds to our morning commute at around 0800 to 0900, and our evening commute at 1830 to 1930. Any meetups generally happen after 1930 and end by 2100, which explains the corresponding dip in WhatsApp interactions.
+WhatsApp interactions drop off sharply at 0030, suggesting that one or both of the users have gone to sleep. The rest of the histogram corresponds to morning commutes at around 0800 to 0900, and evening commutes at 1830 to 1930. Any meetups generally happen after 1930 and end by 2100, which explains the corresponding dip in WhatsApp interactions.
 
 ## Topics of discussion
 ![WhatsApp wordcloud](https://github.com/zyf0717/zyf0717.github.io/blob/master/assets/images/whatsapp-wordcloud.png)
@@ -66,7 +66,7 @@ A word cloud generated from all WhatsApp messages show that some of the most com
     Topic #4:
     okay know alr dunno leh got day sia place true
 ```
-Conducting simple [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) yields the above. Topics of conversation seem fairly accurate to me, and generally revolve around:
+Conducting simple [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) yields the above. Topics of conversation seem to generally revolve around:
 0. other peoples' lives
 1. our life in general (or the lack thereof)
 2. eating/food
