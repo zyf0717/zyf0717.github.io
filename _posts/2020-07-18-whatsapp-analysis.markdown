@@ -11,6 +11,8 @@ I thought it might be interesting to ultimately create a dashboard using Plotly 
 
 My repository on GitHub for this project can be found [here](https://github.com/zyf0717/whatsapp-chats-analysis).
 
+_Note: Most of the interactive diagrams below are generated with [Plotly](https://plotly.com/) and are not very suitable for mobile view/use._
+
 ## Basic stats
 ```
     User: User 1
