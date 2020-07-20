@@ -70,7 +70,7 @@ Conducting simple [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/La
 0. other peoples' lives
 1. our life in general (or the lack thereof)
 2. eating/food
-3. future plans (running, food)
+3. future plans (exercising, food)
 4. places (usually dining venues)
 
 ## User sentiments
