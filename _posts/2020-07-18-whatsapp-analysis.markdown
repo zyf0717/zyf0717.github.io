@@ -66,7 +66,7 @@ A word cloud generated from all WhatsApp messages show that some of the most com
     Topic #4:
     okay know alr dunno leh got day sia place true
 ```
-Conducting simple [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) yields the above. Topics of conversation seem to generally revolve around:
+Conducting a [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) yields the above. Topics of conversation seem to generally revolve around:
 0. other peoples' lives
 1. our life in general (or the lack thereof)
 2. eating/food
