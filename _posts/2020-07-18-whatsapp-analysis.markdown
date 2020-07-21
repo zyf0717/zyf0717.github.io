@@ -5,7 +5,7 @@ date:   2020-07-18 14:30:00 +0800
 categories: jekyll update
 ---
 
-A few days back I came across a post whereby the author conducted a thorough analysis of one of his/her WhatsApp chats. A quick Google search yielded a few more posts of a similar nature. Analysis was often done in Python or R, and various plotting/graphing packages were used. 
+A few days back I came across a post whereby the author conducted a thorough analysis of one of his/her WhatsApp chats. A quick Google search yielded a few more posts similar in nature. Analysis was often done in Python or R, and various plotting/graphing packages were used. 
 
 I thought it might be interesting to ultimately create a dashboard using Plotly and Dash rather than simply analysing chats via Jupyter Notebooks. Accordingly, this blogpost is the first in a series where I set out some preliminary analysis of WhatsApp chat contents. If all goes well, the next blogpost will be about the dashboard process and outcome.
 
@@ -80,4 +80,4 @@ Conducting a [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_
 
 {% include sentiments_User_2.html %}
 
-Sentiment scores appear to be quite consistent throughout the years.
+Sentiment scores appear to be quite consistent throughout the years. Not much inference can be made from the two charts above.
