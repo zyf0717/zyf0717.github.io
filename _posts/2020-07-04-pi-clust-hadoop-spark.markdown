@@ -234,7 +234,7 @@ Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
 
-Also, navigating to http://odyssey:9870 opens the Haddop web UI, and under "Datanodes", the following can be seen:
+Also, navigating to http://odyssey:9870 opens the Haddop web UI, and under the 'Datanodes' tab, the following can be seen:
 
 ![Hadoop datanodes](https://zyf0717.github.io/assets/images/datanodes.png)
 
