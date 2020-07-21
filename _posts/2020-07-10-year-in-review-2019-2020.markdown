@@ -18,7 +18,7 @@ Next, I completed the following courses on Udacity:
 - [Data Analysis and Visualization](https://www.udacity.com/course/data-analysis-and-visualization--ud404) (UD404)
 - [Data Analysis with R](https://www.udacity.com/course/data-analysis-with-r--ud651) (UD651)
 
-I would say that courses above were sufficient for decent introductions to computer science, data analysis, as well as Python and R. Going through the courses also equips learners with basic programming skills.
+I would say that courses above were sufficient for decent introductions to programming (in Python and R), computer science, data analysis, and data visualization.
 
 ## Coursera
 The [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) was the first course I have ever completed on Coursera. This was done partly as a recap and of most of my previous courses, and partly to round out my fundamental understanding of data science with a fully structured 9-course specialization.
@@ -38,7 +38,7 @@ The courses on this platform are divided into bite-sized portions, making them v
 I have also moved from Windows to Linux, briefly experimenting with various Ubuntu-based operating systems on various devices. At the moment, I am using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation and Ubuntu 20.04 on my ultrabook and mini-PC.
 
 ## JetBrains Academy
-To further my understanding of object-oriented programming, I turned to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects. I completed most of the object-oriented programming tutorials available in the Java track, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
+To deepen my understanding of object-oriented programming, I turned to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects. I completed most of the object-oriented programming tutorials available in the Java track, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
 
 My wife has also picked up programming through the Python track on JetBrains Academy. She has since completed around half of all available Python tutorials, and her experience has been quite positive.
 
@@ -84,7 +84,7 @@ Details of my setup process span four blog posts, starting from [this one](https
 ## Upcoming plans
 I set out below my upcoming plans (and blogposts):
 - Focus on problem solving in a declarative and functional manner 
-- Beef up Python and Scala knowledge
+- Improve my Python and Scala skills and knowledge
 - Work on Python and Scala projects
 - Learn Spark and deploy jobs on my compute cluster
 - Learn and experiment with Hadoop on my compute cluster
