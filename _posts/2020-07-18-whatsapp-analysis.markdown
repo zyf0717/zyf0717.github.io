@@ -33,6 +33,12 @@ _Note: the interactive charts in this blogpost are generated using [Plotly](http
 ```
 It seems that User 1 sends shorter messages on a more frequent basis than User 2, and employs a wider range of emoticons. Upon investigation, both max length messages were confirmed to be a copy-paste of bodies of text rather than actual WhatsApp messages.
 
+{% include message_length_user_1.html %}
+
+{% include message_length_user_2.html %}
+
+The distribution plots above summarizes message length distributions for messages not longer than 50 words.
+
 ## User interactions
 {% include count_by_MMYYY.html %}
 
@@ -45,6 +51,10 @@ WhatsApp interaction count was lower on weekends than weekdays, confirming my ob
 {% include count_by_time.html %}
 
 WhatsApp interactions drop off sharply at 0030, suggesting that one or both users have gone to bed. The rest of the histogram corresponds to morning commutes at around 0800 to 0900, and evening commutes at 1830 to 1930. Any meetups generally happen after 1930 and end by 2100, which explains the corresponding dip in WhatsApp interactions.
+
+{% include count_by_day_time.html %}
+
+The heatmap above also shows that conversations generally occur towards the end of the day.
 
 ## Topics of discussion
 ![WhatsApp wordcloud](https://zyf0717.github.io/assets/images/whatsapp-wordcloud.png)
@@ -76,8 +86,8 @@ Conducting a [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_
 4. places (usually dining venues)
 
 ## User sentiments
-{% include sentiments_User_1.html %}
+{% include sentiments_user_1.html %}
 
-{% include sentiments_User_2.html %}
+{% include sentiments_user_2.html %}
 
 Sentiment scores appear to be quite consistent throughout the years. Not much inference can be made from the two charts above.
