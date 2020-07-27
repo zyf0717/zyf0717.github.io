@@ -33,12 +33,6 @@ _Note: the interactive charts in this blogpost are generated using [Plotly](http
 ```
 It seems that User 1 sends shorter messages on a more frequent basis than User 2, and employs a wider range of emoticons. Upon investigation, both max length messages were confirmed to be a copy-paste of bodies of text rather than actual WhatsApp messages.
 
-{% include message_length_user_1.html %}
-
-{% include message_length_user_2.html %}
-
-The distribution plots above summarizes message length distributions for messages not longer than 50 words.
-
 ## User interactions
 {% include count_by_MMYYY.html %}
 
