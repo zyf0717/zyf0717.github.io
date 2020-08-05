@@ -32,15 +32,15 @@ I am also thankful for my background in economics -- prior knowledge of linear a
 ## Stepik
 [Stepik](https://stepik.org/) is a fantastic platform for cross-device use (both app- and browser-based), only hindered by the lack of available courses. Notwithstanding, both the [Data Structures](https://stepik.org/course/579/promo) and [Python Functional Programming](https://stepik.org/course/2057/promo) courses are excellent and I highly recommend them. [JavaScript for Beginners](https://stepik.org/course/3432/promo) is also a pretty decent introduction to the language.
 
-The courses on this platform are divided into bite-sized portions, making them very suitable for learning on-the-go. I went through most of the three aforementioned courses in this manner.
+The courses on this platform are divided into bite-sized portions, making them very suitable for learning on-the-go. I went through most of the three aforementioned courses while commuting.
 
 ## Ubuntu
-I have also moved from Windows to Linux, briefly experimenting with various Ubuntu-based operating systems on various devices. At the moment, I am using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation and Ubuntu 20.04 on my ultrabook and mini-PC.
+I have also moved from Windows to Linux, briefly experimenting with various Ubuntu-based operating systems on various devices. I am currently using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation, and Ubuntu 20.04 on my ultrabook and mini-PC.
 
 ## JetBrains Academy
 To deepen my understanding of object-oriented programming, I turned to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects. I completed most of the object-oriented programming tutorials available in the Java track, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
 
-My wife has also picked up programming through the Python track on JetBrains Academy. She has since completed around half of all available Python tutorials, and her experience has been quite positive.
+My wife has also picked up programming through the Python track on JetBrains Academy. She has since completed more than half of all available Python tutorials and projects, and her experience has been quite positive.
 
 JetBrains Academy has recently come out of beta, and unfortunately it is now subscription-based with a short trial period of up to two months.
 
@@ -51,7 +51,7 @@ Founded in 2012, [Julia](https://julialang.org/) is a relatively young language 
 
 With a Python background and basic static typing knowledge, the learning curve for Julia is rather flat, and I have already used Julia at work to get around crazy runtimes. Scripts written in Python and R, which originally took days or hours to run, ran in a couple of minutes or even seconds when transpiled to Julia. Multi-threading can be as simple as using `Threads.@threads` during for-loops (with various caveats of course).
 
-It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is a good free resource, and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
+It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good resource (free since 2019), and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
 For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
@@ -68,7 +68,7 @@ I have also been active on both [Exercism](https://exercism.io/) and [HackerRank
 ## Scala
 > _Scala combines object-oriented and functional programming in one concise, high-level language. Scala's static types help avoid bugs in complex applications, and its JVM and JavaScript runtimes let you build high-performance systems with easy access to huge ecosystems of libraries._
 
-My newfound obsession with [Scala](https://www.scala-lang.org/) was born out of its intriguing premise above. I have already completed a [basic Scala course](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) (not basic at all -- do not attempt without any programming knowledge), working my way through an [advanced Scala course](https://www.udemy.com/course/advanced-scala/), and plan to supplement and consolidate my understanding with few books thereafter. The [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/) course on Udemy is also on my radar.
+My newfound obsession with [Scala](https://www.scala-lang.org/) was due to its intriguing premise above. I have already completed a [basic Scala course](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) (not basic at all -- do not attempt without any programming knowledge), working my way through an [advanced Scala course](https://www.udemy.com/course/advanced-scala/), and plan to supplement and consolidate my understanding with few books thereafter. The [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/) course on Udemy is also on my radar.
 
 Up till this point, I have not studied any language to this extent. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language, and subsequently complete projects using this language.
 
