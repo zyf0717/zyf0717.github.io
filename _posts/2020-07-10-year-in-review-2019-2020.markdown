@@ -51,7 +51,7 @@ Founded in 2012, [Julia](https://julialang.org/) is a relatively young language 
 
 With a Python background and basic static typing knowledge, the learning curve for Julia is rather flat, and I have already used Julia at work to get around crazy runtimes. Scripts written in Python and R, which originally took days or hours to run, ran in a couple of minutes or even seconds when transpiled to Julia. Multi-threading can be as simple as using `Threads.@threads` during for-loops (with various caveats of course).
 
-It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good resource (free since 2019), and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
+It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good resource (entirely free since 2019), and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
 For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
