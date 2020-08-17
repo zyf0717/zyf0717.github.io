@@ -1,21 +1,23 @@
 ---
 layout: post
-title:  "Deploying Dash on GCP"
-date:   2020-08-18 20:00:00 +0800
+title:  "Apache web server on GCP"
+date:   2020-08-18 01:00:00 +0800
 categories: jekyll update
 ---
 
 My previous post described how I created a Dash app designed to generate basic stats, charts and diagrams based on any WhatsApp chat export. However, it would not be very useful to anyone besides myself should the dashboard be limited to only running locally.
 
-This blogpost would be about how I managed to deploy the aforementioned dashboard onto [Google Cloud Platform](https://cloud.google.com/) (GCP) for anyone with Internet access to use.
+This blogpost is a natural continuation on how a web server can be set up on [Google Cloud Platform](https://cloud.google.com/) (GCP). The next post will be on how the dashboard created can be made available online for anyone with Internet access to use. This will be done either via GCP or from my very own local machine.
 
 ## 1. Setting up virtual machine instance
 
-Firstly, a virtual machine (VM) instance (Compute Engine > VM instances) is created on GCP to host whatever Dash serves. My configurations for a free instance can be found [here]().
+Firstly, a virtual machine (VM) instance (Compute Engine > VM instances) is created on GCP to host the web server. The configurations I used for an indefinitely-free instance can be found [here](). Also, check out the "always free products" on GCP [here](https://cloud.google.com/free).
+
+The following is then displayed under VM instances:
 
 ![VM instance](https://zyf0717.github.io/assets/images/vm-instance.png)
 
-## 2. Apache web server
+## 2. Install Apache web server
 
 SSH into the newly-created VM and run the following to install Apache:
 
@@ -30,7 +32,7 @@ UFW firewall is inactive by default, so no configuration is required. Use the fo
 $ sudo systemctl status apache2
 ```
 
-## 3. Apache virtual hosts (optional)
+## 3. Setting up virtual hosts
 
 Create a folder in `/var/www/`. In my case since my domain is [yifei.sg](https://yifei.sg), I simply created a folder called `yifei.sg` with the following command:
 
@@ -44,13 +46,13 @@ Create an `index.html` page within the newly-created folder:
 $ sudo nano /var/www/yifei.sg/index.html
 ```
 
-Create a config file for the domain:
+Next, create a config file for the domain:
 
 ```bash
 $ sudo nano /etc/apache2/sites-available/yifei.sg.conf
 ```
 
-Edit the config file accordingly, with "ServerName" being the IP address of the VM:
+Edit the config file accordingly:
 
 ```
 <VirtualHost *:80>
@@ -65,7 +67,7 @@ Edit the config file accordingly, with "ServerName" being the IP address of the 
 Enable the site with the following:
 
 ```bash
-$ sudo a2ensite example.com.conf
+$ sudo a2ensite yifei.sg.conf
 ```
 
 Disable the default site defined in `000-default.conf`:
@@ -80,7 +82,7 @@ Restart Apache:
 $ sudo systemctl restart apache2
 ```
 
-## 4. Secure Apache with Let's Encrypt
+## 4. Secure with Let's Encrypt
 
 Install the Let's Encrypt certbot with the following:
 
@@ -94,5 +96,5 @@ Enable HTTPS for the relevant domains with the following:
 $ sudo certbot --apache
 ```
 
-At this point, the domain can be accessed through HTTPS (https://yifei.sg in my case), with `index.html` displayed.
+At this point, the domain can be accessed through HTTPS (https://yifei.sg in my case), with the contents of `index.html` displayed.
 
