@@ -32,6 +32,8 @@ UFW firewall is inactive by default, so no configuration is required. Use the fo
 $ sudo systemctl status apache2
 ```
 
+At this point, the Apache2 Ubuntu Default Page can be seen (at http://34.83.24.53 in my case).
+
 ## 3. Setting up virtual hosts
 
 Create a folder in `/var/www/`. In my case since my domain is [yifei.sg](https://yifei.sg), I simply created a folder called `yifei.sg` with the following command:
@@ -68,12 +70,6 @@ Enable the site with the following:
 
 ```bash
 $ sudo a2ensite yifei.sg.conf
-```
-
-Disable the default site defined in `000-default.conf`:
-
-```bash
-$ sudo a2dissite 000-default.conf
 ```
 
 Restart Apache:
