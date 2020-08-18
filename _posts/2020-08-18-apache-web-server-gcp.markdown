@@ -7,7 +7,7 @@ categories: jekyll update
 
 Following my [previous post](https://blog.yifei.sg/jekyll/update/2020/07/18/whatsapp-analysis.html), I have since designed a dashboard to generate basic stats, charts and diagrams based on any WhatsApp chat export. However, it would not be very useful to anyone besides myself should the dashboard be limited to only running locally.
 
-This blogpost is about how a web server can be set up on [Google Cloud Platform](https://cloud.google.com/) (GCP). The next post will be on how the dashboard created can be made available online for anyone with Internet access to use. This will be done either via GCP or from my very own local machine.
+This blogpost is about how a web server can be set up on [Google Cloud Platform](https://cloud.google.com/) (GCP). In my next post, I will be exploring how dashboards created can be made available to anyone with browser and Internet access, via either GCP or from my very own server.
 
 ## 1. Setting up virtual machine instance
 
@@ -35,6 +35,8 @@ $ sudo systemctl status apache2
 At this point, the Apache2 Ubuntu Default Page can be seen (at http://34.83.24.53 in my case).
 
 ## 3. Setting up virtual hosts
+
+To host web pages, a virtual host is required for each domain.
 
 Create a folder in `/var/www/`. In my case since my domain is [yifei.sg](https://yifei.sg), I simply created a folder called `yifei.sg` with the following command:
 
@@ -86,11 +88,32 @@ Install the Let's Encrypt certbot with the following:
 $ sudo apt install certbot python3-certbot-apache
 ```
 
-Enable HTTPS for the relevant domains with the following:
+Enable https for the relevant domains with the following:
 
 ```bash
 $ sudo certbot --apache
 ```
 
-At this point, the domain can be accessed through HTTPS (https://yifei.sg in my case), with the contents of `index.html` displayed.
+There will be a couple of options, including redirecting all http requests to https.
 
+At this point, the domain can be accessed through https (https://yifei.sg in my case) and `index.html` is displayed.
+
+## 5. Create Swap space
+
+Due to the limited VM memory provided under GCP's free tier, I would recommend creating a swap file (4GB in this case) with the following commands:
+
+```bash
+$ sudo fallocate -l 4G /swapfile
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+```
+
+Check that swap is working with:
+
+```bash
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:          576Mi       191Mi        94Mi       1.0Mi       290Mi       280Mi
+Swap:         4.0Gi          0B       4.0Gi
+```
