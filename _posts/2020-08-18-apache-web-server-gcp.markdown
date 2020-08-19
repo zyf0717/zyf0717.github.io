@@ -11,7 +11,7 @@ This blogpost is about how a web server can be set up on [Google Cloud Platform]
 
 ## 1. Setting up virtual machine instance
 
-Firstly, a virtual machine (VM) instance (Compute Engine > VM instances) is created on GCP to host the web server. The configurations I used for an indefinitely-free instance can be found [here](https://zyf0717.github.io/assets/images/vm-configuration.png). Also, check out the "always free products" on GCP [here](https://cloud.google.com/free).
+Firstly, a virtual machine (VM) instance (Compute Engine > VM instances) is created on GCP to host the web server. The configurations I used for an indefinitely-free instance can be found [here](https://zyf0717.github.io/assets/images/vm-configurations.png). Also, check out the "always free products" on GCP [here](https://cloud.google.com/free).
 
 The following is then displayed under VM instances:
 
