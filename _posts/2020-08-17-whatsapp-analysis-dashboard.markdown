@@ -17,3 +17,5 @@ Next, I will be attempting to deploy this dashboard on my own site hosted on eit
 
 My repository on GitHub for this project can be found [here](https://github.com/zyf0717/whatsapp-chats-analysis), and my dashboard can be accessed at [http://34.83.24.53:8050/](http://34.83.24.53:8050/) for now.
 
+*Update: It seems that different phones export WhatsApp chats differently, and thus the dashboard does not work for most exports other than those from my own phone.*
+

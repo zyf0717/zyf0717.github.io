@@ -56,3 +56,5 @@ My configurations can be found [here](https://zyf0717.github.io/assets/images/gc
 
 At this point, the dashboard can be accessed over the Internet, (mine is at [http://34.83.24.53:8050/](http://34.83.24.53:8050/) for now).
 
+*Update: It seems that different phones export WhatsApp chats differently, and thus the dashboard does not work for most exports other than those from my own phone.*
+
