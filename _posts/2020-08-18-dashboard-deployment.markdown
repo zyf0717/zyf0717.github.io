@@ -9,7 +9,7 @@ After the development of the dashboard, the logical next step is to deploy it. F
 
 ## 1. Environment setup
 
-On the GCP VM, install Anaconda on the with the following:
+SSH into the GCP VM, and install Anaconda on the with the following:
 
 ```bash
 $ cd /tmp
@@ -40,15 +40,19 @@ You might notice that there is a warning on not using the Dash server for produc
 
 This method used is probably one of the quickest and easiest ways to deploy a dashboard online even though it is not recommended.
 
+In order to be able to close the SSH terminal, use `nohup` and `&` to allow the Python script to run in the background instead:
+
+```bash
+$ nohup python dashboard_v0.4.py &
+```
+
+To kill the process use: `$ ps ax | grep dashboard_v0.4.py`
+
 ## 3. GCP firewall
 
 Head over to GCP and create a new firewall rule under "VM instances" to allow access to port 8050 (default Dash server port).
 
 My configurations can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png).
 
-At this point, the dashboard can be accessed over the Internet, (mine was at http://34.83.24.53:8050/).
-
-## 4. Reverse proxy
-
-TBC
+At this point, the dashboard can be accessed over the Internet, (mine is at [http://34.83.24.53:8050/]() for now).
 
