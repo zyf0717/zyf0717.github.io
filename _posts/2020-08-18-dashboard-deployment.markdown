@@ -54,5 +54,5 @@ Head over to GCP and create a new firewall rule under "VM instances" to allow ac
 
 My configurations can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png).
 
-At this point, the dashboard can be accessed over the Internet, (mine is at [http://34.83.24.53:8050/]() for now).
+At this point, the dashboard can be accessed over the Internet, (mine is at [http://34.83.24.53:8050/](http://34.83.24.53:8050/) for now).
 
