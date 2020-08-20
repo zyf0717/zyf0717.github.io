@@ -15,5 +15,5 @@ During this dashboard-creation process, I have also completed a [Plotly and Dash
 
 Next, I will be attempting to deploy this dashboard on my own site hosted on either a Google Cloud Platform virtual machine or my own server. 
 
-My repository on GitHub for this project can be found [here](https://github.com/zyf0717/whatsapp-chats-analysis).
+My repository on GitHub for this project can be found [here](https://github.com/zyf0717/whatsapp-chats-analysis), the dashboard can be accessed at [http://34.83.24.53:8050/]() for now.
 
