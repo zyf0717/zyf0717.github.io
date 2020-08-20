@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "WhatsApp chat dashboard deployment"
+title:  "Dashboard deployment on web server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
 ---
 
-After the development of the dashboard, the logical next step is to deploy it. Following my [previous post](https://blog.yifei.sg/jekyll/update/2020/08/17/apache-web-server-gcp.html) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash for access via any browser with Internet connection.
+After the development of the dashboard, the logical next step is to deploy it. Following my [previous post](https://blog.yifei.sg/jekyll/update/2020/08/17/apache-web-server-gcp.html) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash. As long as the Dash Python script is running, the dashboard can be accessed via any browser with Internet connection.
 
 ## 1. Environment setup
 
