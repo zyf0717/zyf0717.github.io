@@ -13,7 +13,7 @@ Do check out the event here, especially if you are interested in learning how to
 
 ![#MahjulahGCP swags](https://zyf0717.github.io/assets/images/mahjulah-gcp-swags.jpg)
 
-You will be given 1 month of free access to [Qwiklabs](https://www.qwiklabs.com/) to complete Quests upon registration to complete Quests and Labs.
+You will be given 1 month of free access to [Qwiklabs](https://www.qwiklabs.com/) upon registration to complete Quests and Labs.
 
 My public profile can be found [here](https://www.qwiklabs.com/public_profiles/bbb345e6-19fc-4b7a-a0ab-507877cf9ef2), and I am already looking forward to receiving my swags. :grin:
 
