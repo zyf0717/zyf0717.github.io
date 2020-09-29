@@ -15,5 +15,5 @@ Do check out the event here, especially if you are interested in learning how to
 
 You will be given 1 month of free access to [Qwiklabs](https://www.qwiklabs.com/) upon registration to complete Quests and Labs.
 
-My public profile can be found [here](https://www.qwiklabs.com/public_profiles/bbb345e6-19fc-4b7a-a0ab-507877cf9ef2), and I am already looking forward to receiving my swags. :grin:
+My public profile can be found [here](https://www.qwiklabs.com/public_profiles/bbb345e6-19fc-4b7a-a0ab-507877cf9ef2), and I am already looking forward to receiving my swags. 😬
 
