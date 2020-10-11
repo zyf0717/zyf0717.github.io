@@ -5,7 +5,7 @@ date:   2020-08-17 12:30:00 +0800
 categories: jekyll update
 ---
 
-Following my [previous post](https://blog.yifei.sg/jekyll/update/2020/07/18/whatsapp-analysis.html), I have created a dashboard using [Dash](https://plotly.com/dash/) capable to taking in any WhatsApp chat export (in .txt form), including group chats. Basic stats are generated, along with a couple of interactive Plotly charts similar to those described in my previous post. A user filter was implemented, and date range can also be specified.
+Following my [previous post](https://blog.yifei.sg/jekyll/update/2020/07/18/whatsapp-chat-analysis.html), I have created a dashboard using [Dash](https://plotly.com/dash/) capable to taking in any WhatsApp chat export (in .txt form), including group chats. Basic stats are generated, along with a couple of interactive Plotly charts similar to those described in my previous post. A user filter was implemented, and date range can also be specified.
 
 The dashboard has not been fully deployed online, so only a screen capture is available for now. The WhatsApp chat used below is identical to that in my previous post.
 
