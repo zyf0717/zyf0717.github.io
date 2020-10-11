@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Basic WhatsApp chat analysis"
+title:  "WhatsApp chat analysis"
 date:   2020-07-18 14:30:00 +0800
 categories: jekyll update
 ---
