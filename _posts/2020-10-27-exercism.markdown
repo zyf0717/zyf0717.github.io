@@ -114,6 +114,10 @@ hamming <- function(strand1, strand2) {
 
 Mentoring is another great aspect of Exercism, where one takes the role of a reviewer rather than the student. To put it succinctly, code review fleshes out gaps in reviewers' understanding, especially when responding to complicated queries. Contributing back to the Exercism platform via mentoring also a great way to share working knowledge, and rounds out the Exercism experience.
 
+Students are offered the option of leaving testimonials for their mentors, and it is heartening to receive testimonials like these:
+
+![Exercism testimonials](https://zyf0717.github.io/assets/images/exercism-testimonials.png)
+
 ## 4. Other contributions
 
 It is also possible to contribute to Exercism as a track maintainer, or create pull requests from the [Exercism repository](https://github.com/exercism/). I do not have experience in either -- perhaps I will undertake either/both of these in the future.
