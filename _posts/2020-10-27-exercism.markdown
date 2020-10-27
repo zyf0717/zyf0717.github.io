@@ -15,7 +15,7 @@ My Exercism profile can be found [here](https://exercism.io/profiles/zyf0717).
 
 Besides obvious syntax differences, it is almost immediately apparent that languages differ greatly in terms of the built-in functionalities, and this seems to be correlated with the level of abstraction from machine language. 
 
-Languages such as Python and Scala offer a plethora of built in functions or methods to iterate through or manipulate arrays, often leading to very concise, expressive and readable code. My implementation of Hamming distance method in Scala:
+Languages such as Python and Scala offer a plethora of built in functions or methods to iterate through or manipulate arrays, often leading to very concise, expressive and readable code. My implementation of Hamming distance method in Scala is as follows:
 
 ```scala
 object Hamming {
@@ -26,7 +26,7 @@ object Hamming {
 }
 ```
 
-In C, the same is often accomplished using pointers and loops, and while more convoluted, is expected to compile to more performant binary code. My implementation of Hamming distance function in C:
+In C, the same is often accomplished using pointers and loops, and while more convoluted, is expected to compile to more performant binary code. My implementation of Hamming distance function in C is as follows:
 
 ```c
 #include <string.h>
@@ -52,9 +52,9 @@ int compute(const char *lhs, const char *rhs)
 }
 ```
 
-It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy is written in both Python and C.
+It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy (a library for Python) is written with both Python and C.
 
-One noteworthy exception is Julia. Despite being dynamically typed (with optional type declarations) and having rather high levels of abstraction (similar to Python and R), a just-in-time LLVM compiler compiles Julia code into machine code. As a result, properly written Julia code is extremely performant, [almost comparable C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia:
+One noteworthy exception is Julia. Despite being dynamically typed (with optional type declarations) and having rather high levels of abstraction (similar to and influenced by Python and R), a just-in-time LLVM compiler compiles Julia code into machine code. As a result, properly written Julia code is extremely performant, [almost comparable to C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia is as follows:
 
 ```julia
 function distance(a::String, b::String)
@@ -71,7 +71,7 @@ There is a great emphasis on performance when writing code in C++ or C, and this
 
 Given that Scala is both object-oriented and functional, the emphasis is shifted towards writing functional expressions within an object-oriented paradigm. To-date, I find writing Scala code to be the most enjoyable.
 
-For Python, I generally focus on getting students to write Pythonic code, and to follow the [Python style guide](https://www.python.org/dev/peps/pep-0008/). List comprehensions and using built-in methods or functions are recurring themes. After all, Python code is meant to be clear, concise and maintainable because of its simplicity. My implementation of Hamming distance function in Python:
+For Python, I generally focus on getting students to write Pythonic code, and to follow the [Python style guide](https://www.python.org/dev/peps/pep-0008/). List comprehensions and using built-in methods or functions are recurring themes. After all, Python code is meant to be clear, concise and maintainable because of its simplicity. My implementation of Hamming distance function in Python is as follows:
 
 ```python
 def distance(strand_a, strand_b):
@@ -80,7 +80,7 @@ def distance(strand_a, strand_b):
     return sum(a != b for a, b in zip(strand_a, strand_b))
 ```
 
-Other languages like Bash and R have different domains, and focus is more on scripting (properly) and vectorization respectively. My implementation of Hamming distance in Bash and R respectively:
+Other languages like Bash and R have different domains, and focus is more on scripting (properly) and vectorization respectively. My implementation of Hamming distance in Bash and R respectively are as follows:
 
 ```bash
 #!/usr/bin/env bash
@@ -128,4 +128,4 @@ Students are offered the option of leaving testimonials for their mentors, and i
 
 ## 4. Other contributions
 
-It is also possible to contribute to Exercism as a track maintainer, or create pull requests from the [Exercism repository](https://github.com/exercism/). I do not have experience in either -- perhaps I will undertake either/both of these in the future.
+It is also possible to contribute to Exercism as a track maintainer, or create pull requests from the [Exercism repository](https://github.com/exercism/). I do not have experience in either -- perhaps I might undertake either/both of these in the future.
