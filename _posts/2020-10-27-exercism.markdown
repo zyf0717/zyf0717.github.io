@@ -54,6 +54,15 @@ int compute(const char *lhs, const char *rhs)
 
 It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy is written in both Python and C.
 
+One noteworthy exception is Julia. Despite being dynamically typed (with optional type declarations) and having rather high levels of abstraction (similar to Python and R), a just-in-time LLVM compiler compiles Julia code into machine code. As a result, properly written Julia code is extremely performant, [almost comparable C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia:
+
+```julia
+function distance(a::String, b::String)
+    length(a) == length(b) || throw(ArgumentError("Different strand lengths"))
+    sum(split(a, "") .!= split(b, ""))
+end
+```
+
 ## 2. Language focus
 
 Based on mentor feedback, it is also apparent that the focus or usage of each language is different. Notwithstanding, readability is a recurring theme.
@@ -68,11 +77,10 @@ For Python, I generally focus on getting students to write Pythonic code, and to
 def distance(strand_a, strand_b):
     if len(strand_a) != len(strand_b):
         raise ValueError('Length of strands not equal')
-
     return sum(a != b for a, b in zip(strand_a, strand_b))
 ```
 
-Other languages like Bash and R have different domains, and focus is more on scripting (correctly) and vectorization respectively. My implementation of Hamming distance in Bash and R respectively:
+Other languages like Bash and R have different domains, and focus is more on scripting (properly) and vectorization respectively. My implementation of Hamming distance in Bash and R respectively:
 
 ```bash
 #!/usr/bin/env bash
