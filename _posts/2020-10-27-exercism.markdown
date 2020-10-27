@@ -5,9 +5,9 @@ date:   2020-10-27 14:00:00 +0800
 categories: jekyll update
 ---
 
-[Exercism](https://exercism.io/) is a language-learning platform with a strong focus on mentorship. Unlike [Codewars](https://www.codewars.com/), [HackerRank](https://www.hackerrank.com/) and [LeetCode](https://leetcode.com/) etc., users have the option of submitting code for human review, resulting in a strong focus on iterations and best practices besides simply clearing exercise test cases.
+[Exercism](https://exercism.io/) is a language-learning platform with an element of mentorship. Unlike [Codewars](https://www.codewars.com/), [HackerRank](https://www.hackerrank.com/) and [LeetCode](https://leetcode.com/) etc., users have the option of submitting code for human review. This results in a strong focus on best practices and improvements via iterations. Notwithstanding, the basis of complete submissions is still the clearing of test cases.
 
-Recently, my primary motivation for using Exercism is to understand (on a broad, basic level) how similar things are done across different languages, and what various languages have to offer. Along the way, due to the great comments I have received from various mentors, I have also picked up some computer science concepts.
+Currently, my primary motivation for using Exercism is to understand (on a broad, basic level) how similar tasks are accomplished across different languages, and the offerings of each of these languages. To-date, I have completed the core exercises in the Bash, C++, Julia, R, and Scala tracks, and working my way through the C, Dart, and Go tracks. I am also mentoring on the Python track.
 
 My Exercism profile can be found [here](https://exercism.io/profiles/zyf0717).
 
@@ -62,12 +62,12 @@ There is a great emphasis on performance when writing code in C++ or C, and this
 
 Given that Scala is both object-oriented and functional, the emphasis is shifted towards writing functional expressions within an object-oriented paradigm. To-date, I find writing Scala code to be the most enjoyable.
 
-For Python, I generally focus on getting mentees to write Pythonic code and to follow the [Python style guide](https://www.python.org/dev/peps/pep-0008/). List comprehensions and using built-in methods or functions are recurring themes. After all, Python code is meant to be clear, concise and maintainable because of its simplicity. My implementation of Hamming distance function in Python:
+For Python, I generally focus on getting students to write Pythonic code, and to follow the [Python style guide](https://www.python.org/dev/peps/pep-0008/). List comprehensions and using built-in methods or functions are recurring themes. After all, Python code is meant to be clear, concise and maintainable because of its simplicity. My implementation of Hamming distance function in Python:
 
 ```python
 def distance(strand_a, strand_b):
     if len(strand_a) != len(strand_b):
-        raise ValueError("Length of strands not equal")
+        raise ValueError('Length of strands not equal')
 
     return sum(a != b for a, b in zip(strand_a, strand_b))
 ```
@@ -112,7 +112,7 @@ hamming <- function(strand1, strand2) {
 
 ## 3. Mentoring
 
-Mentoring is another great aspect of Exercism, where one takes the role of a reviewer rather than the student. To put it succinctly, code review fleshes out gaps in reviewers' understanding, especially when responding to complicated queries. Contributing back to the Exercism platform via mentoring also a great way to share working knowledge, and rounds out the entire Exercism experience.
+Mentoring is another great aspect of Exercism, where one takes the role of a reviewer rather than the student. To put it succinctly, code review fleshes out gaps in reviewers' understanding, especially when responding to complicated queries. Contributing back to the Exercism platform via mentoring also a great way to share working knowledge, and rounds out the Exercism experience.
 
 ## 4. Other contributions
 
