@@ -79,9 +79,9 @@ distance xs ys =
 
 ## 2. Language focus
 
-Based on mentor feedback, it is also apparent that the focus or usage of each language is different. Notwithstanding, readability is a recurring theme.
+Based on mentor feedback, it is also apparent that the focus or usage of each language is different. Notwithstanding, readability and simplicity are recurring themes.
 
-There is a great emphasis on performance when writing code in C++ or C, and this is not surprising since these languages are used for systems or embedded programming, or performance-critical applications. Feedback received from mentors generally lead towards writing performant but readable code conforming to certain code style standards. Similarly for Julia, mentors often comment on performance or optimization.
+There is a great emphasis on performance when writing C++ or C, and this is not surprising since these languages are used for systems or embedded programming, or performance-critical applications. Feedback received from mentors generally lead towards writing performant but readable code conforming to certain code style standards. Similarly for Julia, mentors often comment on performance or optimization.
 
 Given that Scala is both object-oriented and functional, the emphasis is shifted towards writing functional expressions within an object-oriented paradigm. To-date, I find writing Scala code to be the most enjoyable.
 
@@ -131,8 +131,6 @@ hamming <- function(strand1, strand2) {
   sum(strsplit(strand1, split = "")[[1]] != strsplit(strand2, split = "")[[1]])
 }
 ```
-
-Finally, certain languages have a strong focus on specific programming paradigms, resulting in code being written in specific ways. Python is very versatile and is multi-paradigm, Scala mainly encourages simultaneous functional and object-oriented programming, while Haskell is completely functional (non-optional).
 
 ## 3. Mentoring
 
