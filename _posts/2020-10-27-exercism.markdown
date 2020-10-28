@@ -13,7 +13,7 @@ My Exercism profile can be found [here](https://exercism.io/profiles/zyf0717).
 
 ## 1. Abstraction and performance
 
-Besides obvious syntax differences, it is almost immediately apparent that languages differ greatly in terms of the built-in functionalities. While lower levels of abstraction (from machine code) almost certainly means higher performance, the opposite is not always true. 
+Besides obvious syntax differences, it is almost immediately obvious that languages differ greatly in terms of the built-in functionalities. While lower levels of abstraction (from machine code) almost certainly means higher performance, the opposite is not always true. 
 
 Languages such as Python and Scala offer a plethora of built in functions or methods to iterate through or manipulate arrays, often leading to very concise, expressive and readable code. My implementation of Hamming distance method in Scala is as follows:
 
@@ -52,11 +52,11 @@ int compute(const char *lhs, const char *rhs)
 }
 ```
 
-Python and Scala source codes are compiled to Python and Java byte codes respectively, and then executed by virtual machines. Unsurprisingly, neither of these languages come close to the performance of C where since C is compiled to assembly code which is much closer to machine code.
+Python and Scala source codes are compiled to Python and Java byte codes respectively, and then executed by virtual machines. Unsurprisingly, neither of these languages come close to the performance of C where since C is compiled to assembly code which is then assembled by an assembler to machine code.
 
 It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy (a library for Python) is written with both Python and C.
 
-Despite being dynamically typed (with optional type declarations) and having rather high levels of abstraction (similar to and influenced by Python and R), a just-in-time LLVM compiler compiles Julia into machine code. As a result, well-written Julia is extremely performant, [almost comparable to C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia is as follows:
+Despite being dynamically typed (with optional type declarations) and having a rather high level of abstraction (similar to Python and R), a just-in-time LLVM compiler compiles Julia into machine code. As a result, well-written Julia is extremely performant, [almost comparable to C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia is as follows:
 
 ```julia
 function distance(a::String, b::String)
@@ -65,7 +65,7 @@ function distance(a::String, b::String)
 end
 ```
 
-Another language with very high level of abstractions is Haskell. However, the Glasgow Haskell Compiler compiles Haskell to C ultimately resulting in performance close to that of C. My implementation of Hamming distance function in Haskell is as follows:
+Another language with a very high level of abstraction is Haskell. However, the Glasgow Haskell Compiler compiles Haskell to C ultimately resulting in performance close to that of C. My implementation of Hamming distance function in Haskell is as follows:
 
 ```haskell
 module Hamming (distance) where
