@@ -56,7 +56,7 @@ Python and Scala source codes are compiled to Python and Java byte codes respect
 
 It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy (a library for Python) is written with both Python and C.
 
-Despite being dynamically typed (with optional type declarations) and having a rather high level of abstraction (similar to Python and R), a just-in-time LLVM compiler compiles Julia into machine code. As a result, well-written Julia is extremely performant, [almost comparable to C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia is as follows:
+Despite being dynamically typed (with optional type declarations) and having a rather high level of abstraction (similar to Python and R), Julia is [compiled just-in-time](https://en.m.wikipedia.org/wiki/Just-in-time_compilation) into machine code by an LLVM compiler. As a result, well-written Julia is extremely performant, [almost comparable to C code](https://julialang.org/benchmarks/). My implementation of Hamming distance function in Julia is as follows:
 
 ```julia
 function distance(a::String, b::String)
