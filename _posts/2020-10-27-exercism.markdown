@@ -52,7 +52,7 @@ int compute(const char *lhs, const char *rhs)
 }
 ```
 
-Python and Scala source codes are compiled to Python and Java byte codes respectively, and then executed by virtual machines. Unsurprisingly, neither of these languages come close to the performance of C where since C is compiled to assembly code which is then assembled by an assembler to machine code.
+Python and Scala source codes are compiled to Python and Java byte codes respectively, and then executed by virtual machines. Unsurprisingly, neither of these languages come close to the performance of C -- C is compiled to assembly code which is then assembled into machine code.
 
 It is worth noting that the built-in modules of higher-level languages (like Python and R) are often written in highly performant lower-level languages like C or Fortran. Such languages also often have libraries written in or interfacing with lower-level languages and their libraries. For example, NumPy (a library for Python) is written with both Python and C.
 
