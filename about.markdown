@@ -6,7 +6,21 @@ permalink: /about/
 
 Welcome to my blog! 
 
-Through this platform, I hope to document and share my tech journey. My interests vary over time, necessitating the creation of this blog to document and keep track of what I have been up to. 
+Through this platform, I hope to document and share my tech journey. I have a wide variety of interests, and therefore this blog is necessary to document and keep track of what I have been up to.
+
+## Data science
+
+[WhatsApp chat analysis](https://blog.yifei.sg/jekyll/update/2020/07/18/whatsapp-chat-analysis.html)
+
+[WhatsApp chat dashboard](https://blog.yifei.sg/jekyll/update/2020/08/17/whatsapp-chat-dashboard.html)
+
+[Dashboard deployment on web server](https://blog.yifei.sg/jekyll/update/2020/08/18/dashboard-deployment.html)
+
+## Cloud computing
+
+[Apache web server on GCP](https://blog.yifei.sg/jekyll/update/2020/08/17/apache-web-server-gcp.html)
+
+[#MahjulahGCP (Season 2)](https://blog.yifei.sg/jekyll/update/2020/09/29/mahjulahgcp-season-2.html)
 
 ## Raspberry Pi
 
@@ -26,11 +40,9 @@ Through this platform, I hope to document and share my tech journey. My interest
 
 [Learning from Codewars](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html)
 
-[If, when, and where to optimize](https://zyf0717.github.io/jekyll/update/2020/05/21/if-when-and-where-to-optimize.html)
-
 [Fluttering and Darting](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html)
 
 [Year in review (August 2019 to July 2020)](https://zyf0717.github.io/jekyll/update/2020/07/10/year-in-review-2019-2020.html)
 
-
+[Learning and mentoring on Exercism](https://blog.yifei.sg/jekyll/update/2020/10/27/exercism.html)
 
