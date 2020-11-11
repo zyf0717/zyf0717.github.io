@@ -34,7 +34,7 @@ Through this platform, I hope to document and share my tech journey. I have a wi
 
 [Pi cluster (cluster Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/07/04/pi-clust-hadoop-spark.html)
 
-## General
+## Other
 
 [Jekyll syntax highlighting](https://zyf0717.github.io/jekyll/update/2020/05/05/jekyll-syntax-highlighting.html)
 
