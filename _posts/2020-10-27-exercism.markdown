@@ -5,7 +5,7 @@ date:   2020-10-27 14:00:00 +0800
 categories: jekyll update
 ---
 
-[Exercism](https://exercism.io/) is a language-learning platform with an element of mentorship. Unlike [Codewars](https://www.codewars.com/), [HackerRank](https://www.hackerrank.com/) and [LeetCode](https://leetcode.com/) etc., users have the option of submitting code for human review. This results in a strong focus on best practices and improvements via iterations. Notwithstanding, the basis of complete submissions is still the clearing of test cases.
+[Exercism](https://exercism.io/) is a language-learning platform with an element of mentorship. Unlike [Codewars](https://www.codewars.com/), [HackerRank](https://www.hackerrank.com/) and [LeetCode](https://leetcode.com/) etc., users have the option of submitting code for human review, leading to a strong focus on best practices and improvements via iterations. Notwithstanding, the basis of complete submissions is still the clearing of test cases.
 
 Currently, my primary motivation for using Exercism is to understand (on a broad, basic level) how similar tasks are accomplished across different languages, and the offerings of each of these languages. To-date, I have completed the core exercises in the Bash, C++, Julia, R, and Scala tracks, and working my way through the C, Dart, Go, and Haskell tracks. I am also mentoring on the Python track.
 
@@ -94,7 +94,7 @@ def distance(strand_a, strand_b):
     return sum(a != b for a, b in zip(strand_a, strand_b))
 ```
 
-Languages like Bash and R have different domains, and focus is more on scripting (properly) and vectorization respectively. My implementation of Hamming distance in Bash and R respectively are as follows:
+Languages like Bash and R have different domains, and focus is more on scripting (properly) and vectorization respectively. My implementations of Hamming distance in Bash and R respectively are as follows:
 
 ```bash
 #!/usr/bin/env bash
@@ -142,4 +142,4 @@ Students are offered the option of leaving testimonials for their mentors, and i
 
 ## 4. Other contributions
 
-It is also possible to contribute to Exercism as a track maintainer, or create pull requests from the [Exercism repository](https://github.com/exercism/). I do not have experience in either -- perhaps I might undertake either/both of these in the future.
+It is also possible to contribute to Exercism as a track maintainer, or create pull requests from the [Exercism repository](https://github.com/exercism/). I do not have experience in either -- perhaps I might try either/both of these in the future.
