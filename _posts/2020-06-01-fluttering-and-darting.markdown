@@ -7,7 +7,7 @@ categories: jekyll update
 
 ![Screenshot of my Flutter Android app](https://zyf0717.github.io/assets/images/to-do-screenshot.png)
 
-During this lockdown period, my plans to setup my own Raspberri Pi compute cluster were pushed back due to extreme delays in shipping. Instead, I completed a [Flutter development course on Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/). Despite being completely foreign to mobile app development, I thoroughly enjoyed the course and what Flutter and Dart have to offer.
+During this lockdown period, my plans to setup my own Raspberry Pi compute cluster were pushed back due to extreme delays in shipping. Instead, I completed a [Flutter development course on Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/). Despite being completely foreign to mobile app development, I thoroughly enjoyed the course and what Flutter and Dart have to offer.
 
 Overall, I feel that Flutter and Dart significantly lower the barriers to entry to mobile app development. Flutter is Google's UI toolkit, and allows powerful and beautiful UI to be created easily. Dart is the programming language used in Flutter, and is syntactically similar to Java.
 
