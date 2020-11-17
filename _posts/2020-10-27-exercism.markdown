@@ -40,9 +40,9 @@ int compute(const char *lhs, const char *rhs)
     }
 
     int hamming = 0;
-    for (size_t i = 0; i < strlen(lhs); i++)
+    for (; *lhs != '\0'; lhs++, rhs++)
     {
-        if (lhs[i] != rhs[i])
+        if (*lhs != *rhs)
         {
             hamming++;
         }
