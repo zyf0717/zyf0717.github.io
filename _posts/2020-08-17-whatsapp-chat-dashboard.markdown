@@ -11,7 +11,7 @@ The dashboard has not been fully deployed online, so only a screen capture is av
 
 ![Dash dashboard](https://zyf0717.github.io/assets/images/dash-dashboard.png)
 
-During this dashboard-creation process, I have also completed a [Plotly and Dash Udemy course](https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/), which provided me a basical level of Dash knowledge to be able to create my own dashboards. Important takeaways were callbacks with and without state, and layout updating.
+During this dashboard-creation process, I have also completed a [Plotly and Dash Udemy course](https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/), which provided a basic level of Dash knowledge. Important takeaways were callbacks with and without state, and layout updating.
 
 Next, I will be attempting to deploy this dashboard on my own site hosted on either a Google Cloud Platform virtual machine or my own server. 
 
