@@ -54,7 +54,7 @@ Head over to GCP and create a new firewall rule under "VM instances" to allow ac
 
 My configurations can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png).
 
-At this point, the dashboard can be accessed over the Internet, (mine is at [http://34.83.24.53:8050/](http://34.83.24.53:8050/) for now).
+*As at 29 September 2021, my dashboard can no longer accessed over the Internet.*
 
 *Update: It seems that different phones export WhatsApp chats differently, and thus the dashboard does not work for most exports other than those from my own phone.*
 
