@@ -49,7 +49,7 @@ There are, however, some pitfalls to avoid, e.g., floating point arithmetic issu
 >>> False
 ```
 
-Solving katas using mathematically sometimes require the use of irrational numbers, and these have to be handle appropriately and as required.
+Solving katas mathematically sometimes require the use of irrational numbers, and these have to be handle appropriately and as required.
 
 ## 4. Back to basics
 
