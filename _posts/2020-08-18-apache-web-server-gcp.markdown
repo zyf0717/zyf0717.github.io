@@ -5,7 +5,7 @@ date:   2020-08-18 01:00:00 +0800
 categories: jekyll update
 ---
 
-Following [one of my previous posts](https://blog.yifei.sg/jekyll/update/2020/07/18/whatsapp-chat-analysis.html), I have since designed a dashboard to generate basic stats, charts and diagrams based on any WhatsApp chat export. However, it would not be very useful to anyone besides myself should the dashboard be limited to only running locally.
+Following [one of my previous posts](https://zyf0717.github.io/jekyll/update/2020/07/18/whatsapp-chat-analysis.html), I have since designed a dashboard to generate basic stats, charts and diagrams based on any WhatsApp chat export. However, it would not be very useful to anyone besides myself should the dashboard be limited to only running locally.
 
 This blogpost is about how a web server can be set up on [Google Cloud Platform](https://cloud.google.com/) (GCP). In my next post, I will be exploring how dashboards created can be made available to anyone with browser and Internet access, via either GCP or from my very own server.
 
