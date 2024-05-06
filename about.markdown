@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to my blog! 
 
-Through this platform, I hope to document and share my tech journey. I have a wide variety of interests, and therefore this blog is necessary to document and keep track of what I have been up to.
+I have a wide variety of interests, and this blog is meant to document and keep track of what I have been up to in the tech space.
 
 ## Data science
 
