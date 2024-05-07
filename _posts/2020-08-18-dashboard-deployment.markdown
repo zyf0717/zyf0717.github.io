@@ -49,7 +49,7 @@ In order to be able to close the SSH terminal, use `nohup` and `&` to allow the 
 $ nohup python dashboard_v0.4.py &
 ```
 
-To kill the process use: `$ ps ax | grep dashboard_v0.4.py`
+To kill the process use: `$ pkill -f dashboard_v0.4.py`
 
 ## 3. GCP firewall
 
