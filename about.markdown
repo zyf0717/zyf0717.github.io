@@ -16,7 +16,7 @@ I have a wide variety of interests, and this blog is meant to document and keep 
 
 [Dashboard deployment on web server](https://zyf0717.github.io/jekyll/update/2020/08/18/dashboard-deployment.html)
 
-[Dashboard deploymnet on AWS](https://zyf0717.github.io/jekyll/update/2024/05/07/dashboard-deployment-aws.html)
+[Dashboard deployment on AWS](https://zyf0717.github.io/jekyll/update/2024/05/07/dashboard-deployment-aws.html)
 
 ## Cloud computing
 
