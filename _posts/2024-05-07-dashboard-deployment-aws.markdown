@@ -13,4 +13,4 @@ Following my previous [post](https://zyf0717.github.io/jekyll/update/2020/08/18/
 
 After having familiarised myself with the AWS stack over the past few years, I chose to use the free-tier EC2 on AWS for this current redeployment.
 
-The dashboard can now be accessed [here](http://3.26.22.14:8050/).
+The dashboard can now be accessed [here](http://3.106.32.71:8050/).
