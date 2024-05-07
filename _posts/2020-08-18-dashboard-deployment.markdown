@@ -4,7 +4,7 @@ title:  "Dashboard deployment on web server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
 ---
-*Update: As at 6 May 2024, the dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://13.238.217.142:8050/).*
+*Update (6 May 2024): The current dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://13.238.217.142:8050/).*
 
 *Note: It appears that WhatsApp chat exports differ between various phones. So far the dashboard is tested to work on most 1-1 chats exported from iOS devices.*
 
