@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to my blog! 
 
-I have a wide variety of interests, and this blog is meant to document and keep track of what I have been up to in the tech space.
+I have a variety of interests within tech, and this blog is meant to be an informal document and tracking of what I have been up to.
 
 ## Data science
 
