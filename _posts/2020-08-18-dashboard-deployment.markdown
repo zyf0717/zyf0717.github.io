@@ -4,10 +4,6 @@ title:  "Dashboard deployment on web server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
 ---
-*Update (6 May 2024): The current dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://3.26.22.14:8050/).*
-
-*Note: It appears that WhatsApp chat exports differ between various phones. So far the dashboard is tested to work on most 1-1 chats exported from iOS devices.*
-
 After the development of the dashboard, the logical next step is to deploy it. Following my [previous post](https://zyf0717.github.io/jekyll/update/2020/08/17/apache-web-server-gcp.html) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash. As long as the Dash Python script is running, the dashboard can be accessed via any browser with Internet connection.
 
 ## 1. Environment setup
@@ -57,3 +53,6 @@ Head over to GCP and create a new firewall rule under "VM instances" to allow ac
 
 My configurations can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png).
 
+*Update (6 May 2024): The current dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://3.26.22.14:8050/).*
+
+*Note: It appears that WhatsApp chat exports differ between various phones. So far the dashboard is tested to work on most 1-1 chats exported from iOS devices.*
