@@ -42,10 +42,10 @@ This method used is probably one of the quickest and easiest ways to deploy a da
 In order to be able to close the SSH terminal, use `nohup` and `&` to allow the Python script to run in the background instead:
 
 ```bash
-$ nohup python dashboard_v0.4.py &
+$ nohup python dashboard_v0.6.py &
 ```
 
-To kill the process use: `$ pkill -f dashboard_v0.4.py`
+To kill the process use: `$ pkill -f dashboard_v0.6.py`
 
 ## 3. GCP firewall
 
