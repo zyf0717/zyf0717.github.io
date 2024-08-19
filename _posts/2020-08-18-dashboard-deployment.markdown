@@ -47,11 +47,11 @@ $ nohup python dashboard_v0.6.py &
 
 To kill the process use: `$ pkill -f dashboard_v0.6.py`
 
-## 3. GCP firewall
+## 3. Opening Port
 
-Head over to GCP and create a new firewall rule under "VM instances" to allow access to port 8050 (default Dash server port).
+The default Dash server port (8050) has to be allowed to allow incoming traffic.
 
-My configurations can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png).
+My configurations for GCP can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png), and for AWS [here](https://zyf0717.github.io/assets/images/aws-dash-port-settings.png)
 
 *Update (6 May 2024): The current dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://18.142.41.111:8050/).*
 
