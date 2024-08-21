@@ -7,7 +7,7 @@ categories: jekyll update
 
 ## Update
 
-Following my previous [post](https://zyf0717.github.io/jekyll/update/2020/08/18/dashboard-deployment.html), the current dashboard has been updated to support Telegram (JSON exports via desktop app) in addition to WhatsApp (text file exports via phone, so only confirmed to work for certain devices and/or settings).
+Following my [previous post](https://zyf0717.github.io/jekyll/update/2020/08/18/dashboard-deployment.html), the current dashboard has been updated to support Telegram (JSON exports via desktop app) in addition to WhatsApp (text file exports via phone, so only confirmed to work for certain devices and/or settings).
 
 ## Migration and redeployment
 
