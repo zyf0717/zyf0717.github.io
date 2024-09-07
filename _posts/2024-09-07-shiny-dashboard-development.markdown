@@ -8,4 +8,4 @@ Shiny for Python is now available, and so I am taking this opportunity to rewrit
 
 A future blogpost will further detail this process as there are still ongoing changes.
 
-The interim functional dashboard is currently accessible [here](http://http://18.142.41.111:8000/).
+The interim functional dashboard is currently accessible [here](http://18.142.41.111:8000/).
