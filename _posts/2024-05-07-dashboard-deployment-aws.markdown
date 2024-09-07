@@ -13,4 +13,4 @@ Following my [previous post](https://zyf0717.github.io/jekyll/update/2020/08/18/
 
 After having familiarised myself with the AWS stack over the past few years, I chose to use the free-tier EC2 on AWS for this current redeployment.
 
-The dashboard can now be accessed [here](http://18.142.41.111:8050/).
+*Update: The deployed dashboard has since been taken down to make way for an updated version. Details can be found [here](https://zyf0717.github.io/jekyll/update/2024/09/07/shiny-dashboard-development.html).*

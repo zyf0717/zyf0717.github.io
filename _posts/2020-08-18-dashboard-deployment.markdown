@@ -53,4 +53,4 @@ The default Dash server port (8050) has to be allowed to allow incoming traffic.
 
 My configurations for GCP can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png), and for AWS [here](https://zyf0717.github.io/assets/images/aws-dash-port-settings.png).
 
-*Update: The current dashboard has been updated and migrated to EC2 on AWS, and can be accessed [here](http://18.142.41.111:8050/). See [update post](https://zyf0717.github.io/jekyll/update/2024/05/07/dashboard-deployment-aws.html)* for more information.
+*Update: The current dashboard has been updated and migrated to EC2 on AWS. See [update post](https://zyf0717.github.io/jekyll/update/2024/05/07/dashboard-deployment-aws.html)* for more information.
