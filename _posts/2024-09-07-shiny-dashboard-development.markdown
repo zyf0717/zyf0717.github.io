@@ -8,7 +8,7 @@ Shiny for Python is now available, and so I am taking this opportunity to rewrit
 
 Updates so far: group-chats are supported, WhatsApp-support for a greater variety of Android devices have been implemented, and UI changes are being made to make the front-end more user-friendly. 
 
-![Shiny Dashboard](https://zyf0717.github.io/assets/images/shiny-dashboard-wa-groupchat.png.png)
+![Shiny Dashboard](https://zyf0717.github.io/assets/images/shiny-dashboard-wa-groupchat.png)
 
 A future blogpost will further detail this process as there are still ongoing changes.
 
