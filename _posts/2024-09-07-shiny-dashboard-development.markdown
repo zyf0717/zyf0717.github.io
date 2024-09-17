@@ -12,4 +12,4 @@ Updates so far: group-chats are supported, WhatsApp-support for a greater variet
 
 A future blogpost will further detail this process as there are still ongoing changes.
 
-The interim functional dashboard is currently accessible [here](http://18.142.41.111:8000/).
+The updated and functional dashboard is currently accessible at [https://chats-dashboard.yifei.sg](https://chats-dashboard.yifei.sg).
