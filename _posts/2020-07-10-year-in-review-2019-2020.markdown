@@ -27,7 +27,7 @@ Next, I completed the acclaimed [Deep Learning Specialization](https://www.cours
 
 I will make it a point to complete the [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Andrew Ng at some point. The main downside is that this course is taught in Octave or Matlab. Perhaps I would attempt to complete this course in Python, R or Julia.
 
-I am also thankful for my background in economics--prior knowledge of linear algebra, statistics and econometrics definitely expedited my progress through many of the courses.
+I am also thankful for my background in economics---prior knowledge of linear algebra, statistics and econometrics definitely expedited my progress through many of the courses.
 
 ## Stepik
 [Stepik](https://stepik.org/) is a fantastic platform for cross-device use (both app- and browser-based), only hindered by the lack of available courses. Notwithstanding, both the [Data Structures](https://stepik.org/course/579/promo) and [Python Functional Programming](https://stepik.org/course/2057/promo) courses are excellent and I highly recommend them. [JavaScript for Beginners](https://stepik.org/course/3432/promo) is also a pretty decent introduction to the language.
