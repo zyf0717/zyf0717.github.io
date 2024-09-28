@@ -12,4 +12,4 @@ Updates so far: group-chats are supported, WhatsApp-support for a greater variet
 
 A future blogpost will further detail this process as there are still ongoing changes.
 
-The updated and functional dashboard is currently accessible at [https://chats-dashboard.yifei.sg](https://chats-dashboard.yifei.sg).
+The updated and functional dashboard is currently accessible at [https://shiny-dashboard.yifei.sg](https://shiny-dashboard.yifei.sg).
