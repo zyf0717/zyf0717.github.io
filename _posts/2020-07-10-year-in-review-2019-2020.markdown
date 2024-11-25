@@ -13,7 +13,7 @@ My journey started on [Udacity](https://www.udacity.com), with Intro to Computer
 Next, I completed the following courses on Udacity:
 - [Intro to Algorithms](https://www.udacity.com/course/intro-to-algorithms--cs215) (CS215)
 - Programming Foundations with Python (UD036)
-- [Intro to Data analysis](https://www.udacity.com/course/intro-to-data-analysis--ud170) (UD170)
+- [Intro to Data Analysis](https://www.udacity.com/course/intro-to-data-analysis--ud170) (UD170)
 - [Intro to Data Science](https://www.udacity.com/course/intro-to-data-science--ud359) (UD359)
 - [Data Analysis and Visualization](https://www.udacity.com/course/data-analysis-and-visualization--ud404) (UD404)
 - [Data Analysis with R](https://www.udacity.com/course/data-analysis-with-r--ud651) (UD651)
