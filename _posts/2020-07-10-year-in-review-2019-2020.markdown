@@ -54,7 +54,7 @@ With a Python background and basic static typing knowledge, the learning curve f
 It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good resource (entirely free since 2019), and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
-For about a month was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
+For about a month I was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
 
 ## Blogging
 I finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review blogpost will not have be as lengthy as this one.
