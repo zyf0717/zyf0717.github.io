@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2025 year-to-date: systems, pipelines, and infrastructure"
+title:  "Year-to-date: data, systems, and infrastructure"
 date:   2025-05-01 21:30:00 +0800
 categories: jekyll update
 ---
