@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dashboard deployment on web server"
+title:  "Dashboard Deployment on Web Server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
 ---
@@ -20,11 +20,11 @@ $ bash anaconda.sh
 Next, clone the repository (mine is [here](https://github.com/zyf0717/whatsapp-chats-analysis)) and create a conda environment using `environment.yml`:
 
 ```bash
-$ conda activate
-$ conda env create -f environment.yml
+conda activate
+conda env create -f environment.yml
 ```
 
-## 2. Serving the dashboard 
+## 2. Serving the dashboard
 
 To easily serve the dashboard using the built-in development server (despite the warning), use `host='0.0.0.0'` as a parameter to `app.run_server()` in the dashboard Python script:
 
@@ -33,16 +33,16 @@ if __name__ == '__main__':
     app.run_server(host='0.0.0.0', debug=False)
 ```
 
-Start dashboard by activating the created conda environment and running the dashboard Python script. 
+Start dashboard by activating the created conda environment and running the dashboard Python script.
 
-You might notice that there is a warning on not using the Dash server for production. As Dash is based on Flask, there are proper ways to deploy the Dash app for production. 
+You might notice that there is a warning on not using the Dash server for production. As Dash is based on Flask, there are proper ways to deploy the Dash app for production.
 
 This method used is probably one of the quickest and easiest ways to deploy a dashboard online even though it is not recommended.
 
 In order to be able to close the SSH terminal, use `nohup` and `&` to allow the Python script to run in the background instead:
 
 ```bash
-$ nohup python dashboard_v0.6.py &
+nohup python dashboard_v0.6.py &
 ```
 
 To kill the process use: `$ pkill -f dashboard_v0.6.py`

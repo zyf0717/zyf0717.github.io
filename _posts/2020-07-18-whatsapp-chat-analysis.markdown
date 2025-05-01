@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "WhatsApp chat analysis"
+title:  "WhatsApp Chat Analysis"
 date:   2020-07-18 14:30:00 +0800
 categories: jekyll update
 ---
 
-A few days back I came across a post whereby the author conducted a thorough analysis of one of his/her WhatsApp chats. A quick Google search yielded a few more posts similar in nature. Analysis was often done in Python or R, and various plotting/graphing packages were used. 
+A few days back I came across a post whereby the author conducted a thorough analysis of one of his/her WhatsApp chats. A quick Google search yielded a few more posts similar in nature. Analysis was often done in Python or R, and various plotting/graphing packages were used.
 
 I thought it might be interesting to ultimately create a dashboard using Plotly and Dash rather than simply analysing chats via Jupyter Notebooks. Accordingly, this blogpost is the first in a series where I set out some preliminary analysis of WhatsApp chat contents. If all goes well, the next blogpost will be about the dashboard process and outcome.
 
@@ -14,6 +14,7 @@ My repository on GitHub for this project can be found [here](https://github.com/
 _Note: the interactive charts in this blogpost are generated using [Plotly](https://plotly.com/) and are not very suitable for mobile view/use._
 
 ## Basic stats
+
 ```
     User: User 1
     Messages sent: 23305
@@ -31,9 +32,11 @@ _Note: the interactive charts in this blogpost are generated using [Plotly](http
     Standard deviation: 9.783061988703912
     Top emojis: ['👍', '🏻', '✌', '😂', '👌', '💪', '♀', '🙄', '🤷']
 ```
+
 It seems that User 1 sends shorter messages on a more frequent basis than User 2, and employs a wider range of emoticons. Upon investigation, both max length messages were confirmed to be a copy-paste of bodies of text rather than actual WhatsApp messages.
 
 ## User interactions
+
 {% include count_by_MMYYY.html %}
 
 According to the histogram above, the month with the greatest amount of user interaction was December 2016. There does not seem to be any seasonality in our WhatsApp interactions.
@@ -51,8 +54,8 @@ WhatsApp interactions drop off sharply at 0030, suggesting that one or both user
 The heatmap above also shows that conversations generally occur towards the end of the day.
 
 ## Topics of discussion
-![WhatsApp wordcloud](https://zyf0717.github.io/assets/images/whatsapp-wordcloud.png)
 
+![WhatsApp wordcloud](https://zyf0717.github.io/assets/images/whatsapp-wordcloud.png)
 
 A word cloud generated from all WhatsApp messages show that some of the most commonly used words include 'lol', 'haha/hahaha', 'la', 'u', 'like'. These words are clearly fillers and do not appear to revolve around any particular topic.
 
@@ -72,14 +75,17 @@ A word cloud generated from all WhatsApp messages show that some of the most com
     Topic #4:
     okay know alr dunno leh got day sia place true
 ```
+
 Conducting a [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) yields the above. Topics of conversation seem to generally revolve around:
 0. other peoples' lives
+
 1. our life in general (or the lack thereof)
 2. eating/food
 3. future plans (exercising, food)
 4. places (usually dining venues)
 
 ## User sentiments
+
 {% include sentiments_user_1.html %}
 
 {% include sentiments_user_2.html %}

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pi cluster (master node Hadoop and Spark)"
+title:  "Pi Cluster (Master Node Hadoop and Spark)"
 date:   2020-06-25 21:00:00 +0800
 categories: jekyll update
 ---
@@ -12,7 +12,7 @@ This post follows my previous post [Pi cluster (SSH and static IP)](https://zyf0
 On the master node, use the following:
 
 ```bash
-$ sudo apt install openjdk-8-jdk
+sudo apt install openjdk-8-jdk
 ```
 
 ## 1. Installing Apache Hadoop
@@ -20,16 +20,16 @@ $ sudo apt install openjdk-8-jdk
 Download and install Hadoop on the master node with the following:
 
 ```bash
-$ cd && wget https://apachemirror.sg.wuchna.com/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-$ sudo tar -xvf hadoop-3.2.1.tar.gz -C /opt/
-$ rm hadoop-3.2.1.tar.gz && cd /opt
-$ sudo mv hadoop-3.2.1 hadoop
+cd && wget https://apachemirror.sg.wuchna.com/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+sudo tar -xvf hadoop-3.2.1.tar.gz -C /opt/
+rm hadoop-3.2.1.tar.gz && cd /opt
+sudo mv hadoop-3.2.1 hadoop
 ```
 
 Change the permissions on this directory:
 
 ```bash
-$ sudo chown $USER: -R /opt/hadoop
+sudo chown $USER: -R /opt/hadoop
 ```
 
 Edit `~/.bashrc` by appending the following:
@@ -57,11 +57,11 @@ Hadoop 3.2.1
 The process for Spark is very similar to the above. Install with the following commands:
 
 ```bash
-$ wget https://apachemirror.sg.wuchna.com/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
-$ sudo tar -xvf spark-3.0.0-bin-hadoop3.2.tgz -C /opt/
-$ rm spark-3.0.0-bin-hadoop3.2.tgz && cd /opt/
-$ sudo mv spark-3.0.0-bin-hadoop3.2 spark
-$ sudo chown $USER: -R /opt/spark
+wget https://apachemirror.sg.wuchna.com/spark/spark-3.0.0/spark-3.0.0-bin-hadoop3.2.tgz
+sudo tar -xvf spark-3.0.0-bin-hadoop3.2.tgz -C /opt/
+rm spark-3.0.0-bin-hadoop3.2.tgz && cd /opt/
+sudo mv spark-3.0.0-bin-hadoop3.2 spark
+sudo chown $USER: -R /opt/spark
 ```
 
 Edit `~/.bashrc` by appending the following:
@@ -74,7 +74,7 @@ export PATH=$PATH:$SPARK_HOME/bin
 Check that Spark has been installed correctly with:
 
 ```bash
-$ spark-shell --version
+spark-shell --version
 ```
 
 In my case I had the following warning messages due to the master node being connected to two networks:
@@ -93,7 +93,7 @@ export SPARK_LOCAL_IP=10.42.0.1
 
 ## 3. Configuring Hadoop Distributed File System
 
-Setup HDFS by modifying some configuration files. Files are within `/opt/hadoop/etc/hadoop/`. 
+Setup HDFS by modifying some configuration files. Files are within `/opt/hadoop/etc/hadoop/`.
 
 The first is `core-site.xml`:
 
@@ -128,9 +128,9 @@ The next is `hdfs-site.xml`:
 Also, create the following directories and configure ownership:
 
 ```bash
-$ sudo mkdir -p /opt/hadoop_tmp/hdfs/datanode
-$ sudo mkdir -p /opt/hadoop_tmp/hdfs/namenode
-$ sudo chown $USER: -R /opt/hadoop_tmp
+sudo mkdir -p /opt/hadoop_tmp/hdfs/datanode
+sudo mkdir -p /opt/hadoop_tmp/hdfs/namenode
+sudo chown $USER: -R /opt/hadoop_tmp
 ```
 
 The next file is `mapred-site.xml`:
@@ -162,13 +162,13 @@ Final file is `yarn-site.xml`:
 Format the HDFS with:
 
 ```bash
-$ hdfs namenode -format -force
+hdfs namenode -format -force
 ```
 
 Start HDFS with:
 
 ```bash
-$ start-dfs.sh && start-yarn.sh
+start-dfs.sh && start-yarn.sh
 ```
 
 Test if HDFS is running properly:

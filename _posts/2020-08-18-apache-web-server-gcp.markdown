@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Apache web server on GCP"
+title:  "Apache Web Server on GCP"
 date:   2020-08-18 01:00:00 +0800
 categories: jekyll update
 ---
@@ -22,17 +22,17 @@ The following is then displayed under VM instances:
 SSH into the newly-created VM and run the following to install Apache:
 
 ```bash
-$ sudo apt update
-$ sudo apt install apache2
+sudo apt update
+sudo apt install apache2
 ```
 
 UFW firewall is inactive by default, so no configuration is required. Use the following command to ensure that the web server has started:
 
 ```bash
-$ sudo systemctl status apache2
+sudo systemctl status apache2
 ```
 
-At this point, the Apache2 Ubuntu Default Page can be seen (at http://34.83.24.53 in my case).
+At this point, the Apache2 Ubuntu Default Page can be seen (at <http://34.83.24.53> in my case).
 
 ## 3. Setting up virtual hosts
 
@@ -41,19 +41,19 @@ To host web pages, a virtual host is required for each domain.
 Create a folder in `/var/www/`. In my case since my domain is [yifei.sg](https://yifei.sg), I simply created a folder called `yifei.sg` with the following command:
 
 ```bash
-$ sudo mkdir /var/www/yifei.sg
+sudo mkdir /var/www/yifei.sg
 ```
 
-Create an `index.html` page within the newly-created folder: 
+Create an `index.html` page within the newly-created folder:
 
 ```bash
-$ sudo nano /var/www/yifei.sg/index.html
+sudo nano /var/www/yifei.sg/index.html
 ```
 
 Next, create a config file for the domain:
 
 ```bash
-$ sudo nano /etc/apache2/sites-available/yifei.sg.conf
+sudo nano /etc/apache2/sites-available/yifei.sg.conf
 ```
 
 Edit the config file accordingly:
@@ -71,13 +71,13 @@ Edit the config file accordingly:
 Enable the site with the following:
 
 ```bash
-$ sudo a2ensite yifei.sg.conf
+sudo a2ensite yifei.sg.conf
 ```
 
 Restart Apache:
 
 ```bash
-$ sudo systemctl restart apache2
+sudo systemctl restart apache2
 ```
 
 ## 4. Secure with Let's Encrypt
@@ -85,28 +85,28 @@ $ sudo systemctl restart apache2
 Install the Let's Encrypt certbot with the following:
 
 ```bash
-$ sudo apt install certbot python3-certbot-apache
+sudo apt install certbot python3-certbot-apache
 ```
 
 Enable https for the relevant domains with the following:
 
 ```bash
-$ sudo certbot --apache
+sudo certbot --apache
 ```
 
 There will be a couple of options, including redirecting all http requests to https.
 
-At this point, the domain can be accessed through https (https://yifei.sg in my case) and `index.html` is displayed.
+At this point, the domain can be accessed through https (<https://yifei.sg> in my case) and `index.html` is displayed.
 
 ## 5. Create Swap space
 
 Due to the limited VM memory provided under GCP's free tier, I would recommend creating a swap file (4GB in this case) with the following commands:
 
 ```bash
-$ sudo fallocate -l 4G /swapfile
-$ sudo chmod 600 /swapfile
-$ sudo mkswap /swapfile
-$ sudo swapon /swapfile
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 ```
 
 Check that swap is working with:

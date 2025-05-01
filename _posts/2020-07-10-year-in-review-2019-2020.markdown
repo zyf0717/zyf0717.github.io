@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Year in review (August 2019 to July 2020)"
+title:  "Year in Review (August 2019 to July 2020)"
 date:   2020-07-10 10:00:00 +0800
 categories: jekyll update
 ---

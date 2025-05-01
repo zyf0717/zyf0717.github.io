@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learning and mentoring on Exercism"
+title:  "Learning and Mentoring on Exercism"
 date:   2020-10-27 14:00:00 +0800
 categories: jekyll update
 ---
@@ -13,7 +13,7 @@ My Exercism profile can be found [here](https://exercism.io/profiles/zyf0717).
 
 ## 1. Abstraction and performance
 
-Besides syntax differences, it is also almost immediately obvious that languages differ greatly in terms of the built-in functionalities. While lower levels of abstraction (from machine code) almost certainly means higher performance, the opposite is not always true. 
+Besides syntax differences, it is also almost immediately obvious that languages differ greatly in terms of the built-in functionalities. While lower levels of abstraction (from machine code) almost certainly means higher performance, the opposite is not always true.
 
 Languages such as Python and Scala offer a plethora of built in functions or methods to iterate through or manipulate arrays, often leading to very concise, expressive and readable code. My implementation of Hamming distance method in Scala is as follows:
 

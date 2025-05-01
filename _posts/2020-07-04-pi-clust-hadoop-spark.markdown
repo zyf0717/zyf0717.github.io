@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pi cluster (cluster Hadoop and Spark)"
+title:  "Pi Cluster (Worker Node Hadoop and Spark)"
 date:   2020-07-04 12:00:00 +0800
 categories: jekyll update
 ---
@@ -12,7 +12,7 @@ This post follows my previous post [Pi cluster (master node Hadoop and Spark)](h
 Install JDK on all workers nodes with the following (`clustercmd` was previously defined):
 
 ```bash
-$ clustercmd sudo apt install openjdk-8-jdk-headless
+clustercmd sudo apt install openjdk-8-jdk-headless
 ```
 
 ## 1. Setting up Hadoop Distributed File System
@@ -20,10 +20,10 @@ $ clustercmd sudo apt install openjdk-8-jdk-headless
 First, create directories in the worker nodes with the following:
 
 ```bash
-$ clustercmd sudo mkdir -p /opt/hadoop_tmp/hdfs
-$ clustercmd sudo chown ubuntu: -R /opt/hadoop_tmp
-$ clustercmd sudo mkdir -p /opt/hadoop
-$ clustercmd sudo chown ubuntu: /opt/hadoop
+clustercmd sudo mkdir -p /opt/hadoop_tmp/hdfs
+clustercmd sudo chown ubuntu: -R /opt/hadoop_tmp
+clustercmd sudo mkdir -p /opt/hadoop
+clustercmd sudo chown ubuntu: /opt/hadoop
 ```
 
 Next, the configuration files of the master node have to be changed. Files are located at `/opt/hadoop/etc/hadoop/`.
@@ -143,7 +143,7 @@ Final file is `yarn-site.xml`:
 Copy the files in `/opt/hadoop` from the master node to every worker node using:
 
 ```bash
-$ for pi in $(workernodes); do rsync -avxP $HADOOP_HOME $pi:/opt; done
+for pi in $(workernodes); do rsync -avxP $HADOOP_HOME $pi:/opt; done
 ```
 
 SSH into one of the worker nodes (pi0). The following exports should be inserted in to `.bashrc` *at the top* of the file:
@@ -181,13 +181,13 @@ After `$ source .bashrc`, run `$ clusterscp .bashrc` to copy the updated `.bashr
 Continue by amending the `hadoop-env.sh` in the worker node (pi0) -- this is because in my case the master node has a AMD64 processor, while the worker nodes are using ARM64 processors:
 
 ```bash
-$ echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
+echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> /opt/hadoop/etc/hadoop/hadoop-env.sh
 ```
 
 Then copy the amended `hadoop-env.sh` from that worker node (pi0) to all the other worker nodes with:
 
 ```
-$ clusterscp /opt/hadoop/etc/hadoop/hadoop-env.sh
+clusterscp /opt/hadoop/etc/hadoop/hadoop-env.sh
 ```
 
 Back to the master node. Verify that Hadoop is correctly installed by running the following:
@@ -203,20 +203,20 @@ Hadoop 3.2.1
 Clean up all the worker nodes with:
 
 ```
-$ clustercmd rm -rf /opt/hadoop_tmp/hdfs/datanode/*
-$ clustercmd rm -rf /opt/hadoop_tmp/hdfs/namenode/*
+clustercmd rm -rf /opt/hadoop_tmp/hdfs/datanode/*
+clustercmd rm -rf /opt/hadoop_tmp/hdfs/namenode/*
 ```
 
 Format the HDFS with:
 
 ```bash
-$ hdfs namenode -format -force
+hdfs namenode -format -force
 ```
 
 Start HDFS with:
 
 ```bash
-$ start-dfs.sh && start-yarn.sh
+start-dfs.sh && start-yarn.sh
 ```
 
 To check if HDFS is running properly across worker nodes, create an empty folder to test. On the master node, run:
@@ -234,7 +234,7 @@ Found 1 items
 drwxr-xr-x   - zyf0717 supergroup          0 2020-07-04 22:38 /tmp
 ```
 
-Also, navigating to http://odyssey:9870 opens the Haddop web UI, and under the 'Datanodes' tab, the following can be seen:
+Also, navigating to <http://odyssey:9870> opens the Haddop web UI, and under the 'Datanodes' tab, the following can be seen:
 
 ![Hadoop datanodes](https://zyf0717.github.io/assets/images/datanodes.png)
 
@@ -250,8 +250,8 @@ export PATH=$PATH:$SPARK_HOME/bin
 Next, create the Spark configuration file with the following:
 
 ```bash
-$ cd $SPARK_HOME/conf
-$ sudo mv spark-defaults.conf.template spark-defaults.conf
+cd $SPARK_HOME/conf
+sudo mv spark-defaults.conf.template spark-defaults.conf
 ```
 
 Add the following lines to the newly created `spark-defaults.conf`:
@@ -270,8 +270,8 @@ spark.dynamicAllocation.enabled false
 Restart the cluster:
 
 ```bash
-$ stop-dfs.sh && stop-yarn.sh
-$ start-dfs.sh && start-yarn.sh
+stop-dfs.sh && stop-yarn.sh
+start-dfs.sh && start-yarn.sh
 ```
 
 Test run the a Spark job across the entire cluster:

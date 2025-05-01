@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Jupyter server on Pi"
+title:  "Jupyter Server on Pi"
 date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
 
 ![Pi with Ice Tower](https://zyf0717.github.io/assets/images/pi-ice-tower.jpg)
 
-After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I can remotely start and access a Jupyter server hosted on the Pi. 
+After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I can remotely start and access a Jupyter server hosted on the Pi.
 
 A quick search yielded quite a few guides, all with different instructions. After a couple of rounds of trials-and-errors, below are the steps that worked for me. Everything below was done in Conda environments ( `(<environment name>)<computer name>:~$` in terminal).
 
@@ -16,10 +16,11 @@ A quick search yielded quite a few guides, all with different instructions. Afte
 Start by locating the `jupyter_notebook_config.py` file (located at `/home/pi/.jupyter` on my Pi). If absent, generate one using the following:
 
 ```shell
-$ jupyter notebook --generate-config
+jupyter notebook --generate-config
 ```
 
 Next would be to setup a password, using the following command:
+
 ```shell
 $ jupyter notebook password
 Enter password:  ********
@@ -40,14 +41,15 @@ Where `<password>` is the hashed password found in `jupyter_notebook_config.json
 Moving on to the local machine, open a terminal and SSH into the Pi:
 
 ```shell
-$ ssh pi@192.168.86.100
+ssh pi@192.168.86.100
 ```
 
 And start Jupyter Lab (or Jupyter Notebook):
 
 ```shell
-$ jupyter lab --no-browser --port=8888
+jupyter lab --no-browser --port=8888
 ```
+
 Where `192.168.86.100` is the Pi's local static IP address.
 
 Alternatively, the Jupyter session could be started in the Pi itself, in which case  this entire Step 2 is no longer necessary on the local machine.
@@ -59,7 +61,7 @@ This command should remain running on either machine until the Jupyter session i
 Open a terminal on the local machine, and run the following command:
 
 ```shell
-$ ssh -CNL localhost:9999:localhost:8888 pi@192.168.86.100
+ssh -CNL localhost:9999:localhost:8888 pi@192.168.86.100
 ```
 
 This port forwarding command allows the local computer to access the Jupyter server created in the Pi system in Step 2, by binding a local port (in this case, 9999) to the remote system’s port (8888 from Step 2).
@@ -73,4 +75,3 @@ Open a browser, and go to `https://localhost:9999`. Use the password entered and
 ![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
 
 Voilà!
-

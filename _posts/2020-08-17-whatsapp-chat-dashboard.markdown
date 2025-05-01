@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "WhatsApp chat dashboard"
+title:  "WhatsApp Chat Dashboard"
 date:   2020-08-17 12:30:00 +0800
 categories: jekyll update
 ---
@@ -13,6 +13,6 @@ The dashboard has not been fully deployed online, so only a screen capture is av
 
 During this dashboard-creation process, I have also completed a [Plotly and Dash Udemy course](https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/), which provided a basic level of Dash knowledge. Important takeaways were callbacks with and without state, and layout updating.
 
-Next, I will be attempting to deploy this dashboard on my own site hosted on either a Google Cloud Platform virtual machine or my own server. 
+Next, I will be attempting to deploy this dashboard on my own site hosted on either a Google Cloud Platform virtual machine or my own server.
 
 My repository on GitHub for this project can be found [here](https://github.com/zyf0717/whatsapp-chats-analysis).

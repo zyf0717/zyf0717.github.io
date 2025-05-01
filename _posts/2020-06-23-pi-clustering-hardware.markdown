@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pi cluster (hardware)"
+title:  "Pi Cluster (Hardware)"
 date:   2020-06-23 16:30:00 +0800
 categories: jekyll update
 ---

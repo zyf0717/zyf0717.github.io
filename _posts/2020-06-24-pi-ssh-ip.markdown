@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pi cluster (SSH and static IP)"
+title:  "Pi Cluster (SSH and Static IP)"
 date:   2020-06-24 22:00:00 +0800
 categories: jekyll update
 ---
@@ -10,7 +10,7 @@ I am using an Odyssey mini PC with Ubuntu desktop 20.04  for the master node, an
 SSH is enabled by default on the Ubuntu 20.04 server, so by default SSH is simply:
 
 ```bash
-$ ssh ubuntu@<IP address>
+ssh ubuntu@<IP address>
 ```
 
 ## 0. IP configurations
@@ -18,19 +18,19 @@ $ ssh ubuntu@<IP address>
 To check internal IP address of each machine, use:
 
 ```bash
-$ ip a
+ip a
 ```
 
 To check for currently used DNS server IP address
 
 ```bash
-$ systemd-resolve --status | grep Current
+systemd-resolve --status | grep Current
 ```
 
 To display default gateway IP address:
 
 ```bash
-$ ip r
+ip r
 ```
 
 ## 1. Change hostname
@@ -38,7 +38,7 @@ $ ip r
 Default hostname of every Pi is ubuntu, which will be confusing if left unchanged. To change hostname of each Pi, use:
 
 ```bash
-$ sudo hostnamectl set-hostname <new hostname> 
+sudo hostnamectl set-hostname <new hostname> 
 ```
 
 Run `$ sudo nano /etc/hosts` and add in the following:
@@ -57,7 +57,7 @@ I also had to comment out other references to `odyssey`.
 
 Make sure that the network interface is not managed by CloudInit. Open the configuration file with `$ sudo nano /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg` and append `network: {config: disabled}`.
 
-Open the Netplan configuration file with `$ sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with: 
+Open the Netplan configuration file with `$ sudo nano /etc/netplan/00-installer-config.yaml` and replace everything with:
 
 ```
 network:
@@ -105,25 +105,25 @@ Hostname 10.42.0.141
 On every node run the following command to generate a public and private key pair (default location for is in `~/.ssh/` folder):
 
 ```bash
-$ ssh-keygen -t ed25519
+ssh-keygen -t ed25519
 ```
 
 Each public key will need to be concatenated to the `~/.ssh/authorized_keys` file on every other device. Starting from the master node, ssh into each Pi and run the following command:
 
 ```bash
-$ cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'
+cat ~/.ssh/id_ed25519.pub | ssh zyf0717@odyssey 'cat >> .ssh/authorized_keys'
 ```
 
  Also insert public key of the master node into `~/.ssh/authorized_keys` with:
 
 ```bash
-$ cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
+cat .ssh/id_ed25519.pub >> .ssh/authorized_keys
 ```
 
 Copy `~/.ssh/authorized_keys` into every worker node with:
 
 ```bash
-$ scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys
+scp ~/.ssh/authorized_keys <Host>:~/.ssh/authorized_keys
 ```
 
 SSH connections can now be established between any of the master or worker nodes with just `ssh <Host>`.
@@ -147,8 +147,7 @@ function clustercmd {
 Commands can now be run across all worker nodes, e.g., to reboot cluster, simply run:
 
 ```bash
-$ clustercmd sudo reboot
+clustercmd sudo reboot
 ```
 
 To continue with setting up Hadoop, Spark and HDFS, please proceed to my next post [Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html).
-

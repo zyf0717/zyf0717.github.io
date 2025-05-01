@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dashboard deployment on AWS"
+title:  "Dashboard Deployment on AWS"
 date:   2024-05-07 12:15:00 +0800
 categories: jekyll update
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jekyll syntax highlighting"
+title:  "Jekyll Syntax Highlighting"
 date:   2020-05-05 13:34:00 +0800
 categories: jekyll update
 ---
