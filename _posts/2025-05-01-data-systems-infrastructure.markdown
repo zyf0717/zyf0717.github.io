@@ -40,7 +40,7 @@ Key highlights:
 - GitHub Actions workflows for `plan` and `apply`, with manual approvals for `stg` and `prd`  
 - Remote state stored in S3 with workspace isolation and DynamoDB locking  
 - Secrets managed per environment via AWS SSM Parameter Store  
-- Static front-ends (e.g., S3-hosted SPAs) also managed as part of IaC  
+- Static frontends (S3-hosted SPA served via CloudFront or Lambda) managed through IaC
 
 ## CI/CD and Containerization
 
