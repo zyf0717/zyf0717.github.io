@@ -5,15 +5,15 @@ date:   2025-05-01 21:30:00 +0800
 categories: jekyll update
 ---
 
-This year marked a deliberate shift—not just in the tools I use, but in how I design, shape, and hold systems.
+This year marked a deliberate shift—not just in the tools I use, but in how I design, shape, and structure systems.
 
 ## Data Engineering
 
-This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written to database only when meaningful, and backed up to S3 with versioning for audit and recovery.
+This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. The ingestion workflows were designed and deployed with a focus on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written to database only when meaningful, and backed up to S3 with versioning for audit and recovery.
 
 Incremental ingestion was prioritized by scoping historical lookbacks against recent writes, reducing redundancy while preserving data freshness. Failures were isolated early using stop mechanisms and per-task boundaries to prevent cascading issues. Authentication-sensitive flows, such as SingPass integration, were handled end-to-end—including PKCE, secure token exchange, and encrypted claim extraction.
 
-Ongoing refinements include decoupling retrieval from processing, shifting from scheduled triggers to queue-based invocation, introducing fault-tolerant retry logic, and re-architecting not by convention, but by what each context requires and can hold.
+Ongoing refinements include decoupling retrieval from processing, shifting from scheduled triggers to queue-based invocation, introducing fault-tolerant retry logic, and re-architecting not by convention, but by what each context requires and can support.
 
 ## Infrastructure as Code (IaC)
 
