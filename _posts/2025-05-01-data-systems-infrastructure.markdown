@@ -9,93 +9,38 @@ The start of this year has marked a significant shift in how I approach software
 
 ## Data Engineering
 
-Designed and deployed several data ingestion and processing pipelines focused on scalability, reliability, and idempotence.
+This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written only when meaningful, and stored with audit-oriented S3 versioning.
 
-The pipelines featured:
+Incremental ingestion was prioritized, with historical lookbacks scoped by recent writes. Failures were contained through early-stop mechanisms and task isolation. When integrating with SingPass, I implemented full OIDC flow handling with PKCE, encrypted payload decryption, and nonce-bound state tracking.
 
-- Event-driven triggers using AWS EventBridge or Lambda  
-- Chaining of multiple Lambdas for stateless, modular ETL
-- Asynchronous pipelines for parallel ingestion and reduced latency  
-- DynamoDB used as an upsert store, with secondary indices for flexible retrieval  
-- S3 for raw data backup with versioning enabled for recovery and audit  
-- Unit tests for ETL and transformation logic to ensure schema consistency and error handling  
-- Full SingPass OIDC integration with PKCE, token handling, and encrypted claim extraction  
-
-**Work-in-progress:**
-
-- Decoupling data retrieval from processing to enable retry logic and improve throughput  
-- Queue-based triggers, likely using AWS SQS  
-- Hybrid on-prem and cloud solution with failover handling  
-- Scaling pipelines horizontally and vertically based on real-time load  
-- Refactoring based on structural clarity and contextual fit, not standardized patterns  
+Ongoing refinements include decoupling retrieval from processing using queues, introducing fault-tolerant retry logic, and re-architecting around context-fit rather than pattern adherence.
 
 ## Infrastructure as Code (IaC)
 
-Terraform was used extensively to manage cloud infrastructure across `dev`, `stg`, and `prd` environments. CLI-based workflows were restructured into GitHub Actions pipelines. IAM roles and policies follow the principle of least privilege, scoped to specific services and actions.
+Infrastructure is now fully defined through Terraform, with distinct environments (`dev`, `stg`, `prd`) deployed via GitHub Actions. All modules are parameterized to reduce duplication, with remote backends, environment-scoped secrets, and shared ECR repositories provisioned during bootstrap. Role boundaries follow least-privilege access models, with SSM-based credential separation and clear IAM scoping.
 
-Key highlights:
-
-- Parameterized Terraform modules to reduce duplication across environments  
-- Bootstrap process provisions remote backends, SSM parameters, and shared ECR repositories
-- GitHub Actions workflows for Terraform `plan` and `apply`, with manual approvals for `stg` and `prd`  
-- Remote state stored in S3 with workspace isolation and DynamoDB locking  
-- Secrets managed per environment via AWS SSM Parameter Store  
-- Static frontends (S3-hosted SPA served via CloudFront or Lambda) managed through IaC
+Frontend deployments—including S3-hosted SPAs behind CloudFront—are also codified in the same structure, allowing for end-to-end infra lifecycle ownership.
 
 ## CI/CD and Containerization
 
-Application and infrastructure code are now fully integrated into CI/CD pipelines. Repositories follow standardized branching and release workflows. Builds are reproducible using Docker.
-
-CI/CD structure includes:
-
-- GitHub Actions for building and pushing Docker images to ECR
-- Docker images tagged by Git SHA and environment for traceable, environment-specific deployment
-- Terraform `plan` and `apply` steps run post-build to deploy infrastructure updates
-- Squash merges for feature branches; rebase required before merging to `stg` or `prd`  
+CI/CD has moved from ad-hoc deployments to traceable, reproducible pipelines. Docker images are built and pushed through GitHub Actions, tagged by Git SHA and environment, with Terraform `plan`/`apply` steps embedded post-build. Branch workflows enforce squash merges for features, with rebases required for promotion branches—ensuring change history reflects intent, not iteration.
 
 ## Observability and Diagnostics
 
-Observability was built into every layer of the system to ensure operational traceability, real-time debugging, and audit readiness across pipelines and infrastructure.
+Instrumentation was introduced early and uniformly. Structured logs with consistent IDs and timestamp formats support trace-level inspection across async workloads. Conditional log levels allow different verbosity per environment, and CloudWatch is used as the central sink, with lifecycle management enabled for retention cost control.
 
-Highlights include:
-
-- Structured logging with consistent timestamp formats and IDs across containerized tasks  
-- Conditional logging levels (info, warn, error) enabled per environment for signal-to-noise control  
-- CloudWatch used as environment-aware log sinks, with lifecycle rules for retention and cost management  
-
-**Work-in-progress:**
-
-- Storing and version-tracking Terraform plans and apply outputs for deployment traceability  
-- Lightweight telemetry for function runtimes, memory usage, and throttling patterns  
-- Diagnostic utilities scripting for querying pipeline run histories, failed job payloads, and ETL edge cases
+In-progress refinements include storing Terraform plans as artifacts for change traceability, collecting minimal runtime metrics (e.g. function duration, memory usage, throttling events), and scripting lightweight diagnostics to trace ingestion failures or payload anomalies without full replay.
 
 ## Development Environment and Tooling
 
-Development environments are now consistent, secure, and easily accessible.
+Local and remote development environments have been aligned to support fast context switches and secure access. Cloudflare Tunnel enables protected access to headless dev machines, while Code-server and VS Code (SSH/tunnel-based) provide full IDE support in any environment. Scripts are being developed to streamline the development process and improve day-to-day workflow efficiency.
 
-Tooling upgrades include:
+## LLM-Assisted Development
 
-- Cloudflare Tunnel for secure, password-protected remote access  
-- Code-server deployed on local and remote machines for browser-accessible IDEs  
-- VS Code used for remote development over SSH and tunnel-based access
+LLMs were used selectively and deliberately—primarily for audit, secondarily for generation. Their strength was in surfacing edge cases, validating assumptions, and improving alignment across config, code, and infra. I used them to review shell scripts, ETL control flow, and Terraform modules, often prompting simplifications or clearer phrasing. Scaffolds were generated only when the internal structure was already decided.
 
-**Work-in-progress:**
-
-- Shell scripting for common operations (e.g., build, test, deploy)
-
-## Acceleration by LLMs
-
-LLMs were used primarily for audit, and secondarily for generation. Their highest leverage came from surfacing edge cases, interrogating assumptions, and reinforcing consistency across data workflows and infrastructure code.
-
-Usage patterns included:
-
-- Auditing ETL logic, shell scripts, and Terraform modules for robustness and alignment  
-- Suggesting simplifications or refactoring without altering core intent  
-- Verifying consistency in schema expectations, naming conventions, and fallback logic  
-- Generating initial scaffolds only when intended structure was already defined
-
-LLMs were not treated as co-authors, but as external validators—most effective when used to confirm or refine already-formed ideas.
+LLMs functioned less as collaborators and more as external validators, reinforcing clarity already present rather than inventing on my behalf.
 
 ## Looking Ahead
 
-Focus remains on deepening architectural coherence, refining asynchronous workflows, and preparing infrastructure for broader multi-environment orchestration.
+The emphasis remains on refining architectural separation—between orchestration and logic, between intention and implementation—while improving the reliability and observability of asynchronous workflows. The goal is not to scale complexity, but to contain it through principled structure and execution fit.
