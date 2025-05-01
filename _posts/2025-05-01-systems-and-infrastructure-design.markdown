@@ -77,12 +77,11 @@ Tooling upgrades include:
 
 - Cloudflare Tunnel for secure, password-protected remote access  
 - Code-server deployed on local and remote machines for browser-accessible IDEs  
-- VS Code used for remote development over SSH and tunnel-based access  
-- Bash scripting utilities for environment setup, task automation, and teardown  
+- VS Code used for remote development over SSH and tunnel-based access
 
 **Work-in-progress:**
 
-- Enhancing shell utilities for common operations (e.g., build, test, deploy)
+- Shell scripting for common operations (e.g., build, test, deploy)
 
 ## Looking Ahead
 
