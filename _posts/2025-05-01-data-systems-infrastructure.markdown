@@ -36,7 +36,7 @@ Terraform was used extensively to manage cloud infrastructure across `dev`, `stg
 Key highlights:
 
 - Parameterized Terraform modules to reduce duplication across environments  
-- Bootstrap process provisions remote backends, SSM parameters, and baseline roles  
+- Bootstrap process provisions remote backends, SSM parameters, and shared ECR repositories
 - GitHub Actions workflows for `plan` and `apply`, with manual approvals for `stg` and `prd`  
 - Remote state stored in S3 with workspace isolation and DynamoDB locking  
 - Secrets managed per environment via AWS SSM Parameter Store  
@@ -48,10 +48,10 @@ Application and infrastructure code are now fully integrated into CI/CD pipeline
 
 CI/CD structure includes:
 
-- GitHub Actions for building and pushing Docker images to ECR  
+- GitHub Actions for building and pushing Docker images to ECR
+- Docker images tagged by Git SHA and environment for traceable, environment-specific deployment
 - Terraform `plan` and `apply` steps run post-build to deploy infrastructure updates
 - Squash merges for feature branches; rebase required before merging to `stg` or `prd`  
-- Docker images tagged by Git SHA and environment for traceable, environment-specific deployment
 
 ## Observability and Diagnostics
 
@@ -59,7 +59,7 @@ Observability was built into every layer of the system to ensure operational tra
 
 Highlights include:
 
-- Structured logging with consistent timestamp formats and correlation IDs across containerized tasks  
+- Structured logging with consistent timestamp formats and IDs across containerized tasks  
 - Conditional logging levels (info, warn, error) enabled per environment for signal-to-noise control  
 - CloudWatch used as environment-aware log sinks, with lifecycle rules for retention and cost management  
 
