@@ -9,7 +9,7 @@ This year marked a deliberate shift—not just in the tools used, but in how sys
 
 ## Data Engineering
 
-Focus has not been on building pipelines *per se*, but on governing data flow through structure and orchestration. Ingestion workflows are designed and deployed to take advantage of idempotence, with a focus on reliability and runtime separation. Data is shaped close to the source, upserted to DynamoDB only when semantically meaningful, and backed up to S3 with versioning for audit and recovery. Concurrent async design and DynamoDB-backed deduplication forms the baseline pattern across all ingestion paths. Failures are caught early using stop mechanisms and per-task boundaries to prevent cascading issues.
+Focus has not been on building pipelines *per se*, but on governing data flow through structure and orchestration. Concurrent async design and DynamoDB-backed deduplication forms the baseline pattern across all ingestion paths. Data is shaped close to the source, upserted to DynamoDB only when semantically meaningful, and backed up to S3 with versioning for audit and recovery. Failures are caught early and handled gracefully, using stop mechanisms and per-task boundaries to prevent cascading issues.
 
 Authentication-sensitive flows, such as SingPass integration, are handled end-to-end with stateless Lambda chaining—including PKCE, secure token exchange, and encrypted claim extraction.
 
