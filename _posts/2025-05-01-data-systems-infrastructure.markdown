@@ -5,15 +5,15 @@ date:   2025-05-01 21:30:00 +0800
 categories: jekyll update
 ---
 
-The start of this year has marked a significant shift in how I approach software and infrastructure—not just in terms of tools and technologies, but in architectural mindset and execution.
+This year marked a deliberate shift—not just in the tools I use, but in how I design, shape, and hold systems.
 
 ## Data Engineering
 
-This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written to DynamoDB only when meaningful, and backed up to S3 with versioning for audit and recovery.
+This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written to database only when meaningful, and backed up to S3 with versioning for audit and recovery.
 
-Incremental ingestion was prioritized, with historical lookbacks scoped by recent writes. Failures were contained through early-stop mechanisms and task isolation. I implemented full SingPass OIDC integration, including PKCE support, secure token handling, and encrypted claim extraction.
+Incremental ingestion was prioritized by scoping historical lookbacks against recent writes, reducing redundancy while preserving data freshness. Failures were isolated early using stop mechanisms and per-task boundaries to prevent cascading issues. Authentication-sensitive flows, such as SingPass integration, were handled end-to-end—including PKCE, secure token exchange, and encrypted claim extraction.
 
-Ongoing refinements include decoupling retrieval from processing, shifting from scheduled triggers to queue-based invocation, introducing fault-tolerant retry logic, and re-architecting around contextual fit rather than adherence to predefined patterns.
+Ongoing refinements include decoupling retrieval from processing, shifting from scheduled triggers to queue-based invocation, introducing fault-tolerant retry logic, and re-architecting not by convention, but by what each context requires and can hold.
 
 ## Infrastructure as Code (IaC)
 
@@ -39,7 +39,7 @@ Local and remote development environments have been aligned to support fast cont
 
 LLMs were used selectively and deliberately—primarily for audit, secondarily for generation. Their strength was in surfacing edge cases, validating assumptions, and improving alignment across config, code, and infra. I used them to review shell scripts, ETL control flow, and Terraform modules, often prompting simplifications or clearer phrasing. Scaffolds were generated only when the internal structure was already decided.
 
-LLMs functioned less as collaborators and more as external validators, reinforcing clarity already present rather than inventing on my behalf.
+LLMs functioned less as collaborators and more as external validators, used not to invent, but to reflect what was already clear.
 
 ## Looking Ahead
 
