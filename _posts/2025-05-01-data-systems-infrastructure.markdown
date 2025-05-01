@@ -37,7 +37,7 @@ Key highlights:
 
 - Parameterized Terraform modules to reduce duplication across environments  
 - Bootstrap process provisions remote backends, SSM parameters, and shared ECR repositories
-- GitHub Actions workflows for `plan` and `apply`, with manual approvals for `stg` and `prd`  
+- GitHub Actions workflows for Terraform `plan` and `apply`, with manual approvals for `stg` and `prd`  
 - Remote state stored in S3 with workspace isolation and DynamoDB locking  
 - Secrets managed per environment via AWS SSM Parameter Store  
 - Static frontends (S3-hosted SPA served via CloudFront or Lambda) managed through IaC
