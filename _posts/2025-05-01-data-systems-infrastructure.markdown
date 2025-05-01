@@ -9,17 +9,17 @@ The start of this year has marked a significant shift in how I approach software
 
 ## Data Engineering
 
-Designed and deployed several data ingestion and processing pipelines focused on scalability, reliability, and idempotence. Key workflows involved authenticated API access, including integration with SingPass.
+Designed and deployed several data ingestion and processing pipelines focused on scalability, reliability, and idempotence.
 
 The pipelines featured:
 
 - Event-driven triggers using AWS EventBridge or Lambda  
-- Chaining of multiple Lambdas for stateless, modular ETL  
+- Chaining of multiple Lambdas for stateless, modular ETL
 - Asynchronous pipelines for parallel ingestion and reduced latency  
-- Full SingPass OIDC integration with PKCE, token handling, and encrypted claim extraction  
 - DynamoDB used as an upsert store, with secondary indices for flexible retrieval  
 - S3 for raw data backup with versioning enabled for recovery and audit  
 - Unit tests for ETL and transformation logic to ensure schema consistency and error handling  
+- Full SingPass OIDC integration with PKCE, token handling, and encrypted claim extraction  
 
 **Work-in-progress:**
 
