@@ -69,7 +69,7 @@ Highlights include:
 - Lightweight telemetry for function runtimes, memory usage, and throttling patterns  
 - Diagnostic utilities scripting for querying pipeline run histories, failed job payloads, and ETL edge cases
 
-## Tooling and Local Development
+## Development Environment and Tooling
 
 Development environments are now consistent, secure, and easy to replicate—supporting both cloud-native and edge-device workflows.
 
@@ -82,6 +82,19 @@ Tooling upgrades include:
 **Work-in-progress:**
 
 - Shell scripting for common operations (e.g., build, test, deploy)
+
+## Acceleration by LLMs
+
+LLMs were used primarily for audit, and secondarily for generation. Their highest leverage came from surfacing edge cases, interrogating assumptions, and reinforcing consistency across data workflows and infrastructure code.
+
+Usage patterns included:
+
+- Auditing ETL logic, shell scripts, and Terraform modules for robustness and alignment  
+- Suggesting simplifications or refactoring without altering core intent  
+- Verifying consistency in schema expectations, naming conventions, and fallback logic  
+- Generating initial scaffolds only when intended structure was already defined
+
+LLMs were not treated as co-authors, but as external validators—most effective when used to confirm or refine already-formed ideas.
 
 ## Looking Ahead
 
