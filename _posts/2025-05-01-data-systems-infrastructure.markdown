@@ -5,7 +5,7 @@ date:   2025-05-01 21:30:00 +0800
 categories: jekyll update
 ---
 
-This year marked a deliberate shift—not just in the tools I use, but in how I design, shape, and structure systems.
+This year marked a deliberate shift—not just in the tools used, but in how systems were designed, shaped, and structured.
 
 ## Data Engineering
 
@@ -37,7 +37,7 @@ Local and remote development environments have been aligned to support fast cont
 
 ## LLM-Assisted Development
 
-LLMs were used selectively and deliberately—primarily for audit, secondarily for generation. Their strength was in surfacing edge cases, validating assumptions, and improving alignment across config, code, and infra. I used them to review shell scripts, ETL control flow, and Terraform modules, often prompting simplifications or clearer phrasing. Scaffolds were generated only when the internal structure was already decided.
+LLMs were used selectively and deliberately—primarily for audit, secondarily for generation. Their strength was in surfacing edge cases, validating assumptions, and improving alignment across config, code, and infra. Scaffolds were generated only after the internal structure was firmly defined, and iterative audits were targeted and uncompromising.
 
 LLMs functioned less as collaborators and more as external validators, used not to invent, but to reflect what was already clear.
 
