@@ -71,7 +71,7 @@ Highlights include:
 
 ## Development Environment and Tooling
 
-Development environments are now consistent, secure, and easy to replicate—supporting both cloud-native and edge-device workflows.
+Development environments are now consistent, secure, and easily accessible.
 
 Tooling upgrades include:
 
