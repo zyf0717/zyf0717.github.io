@@ -8,9 +8,11 @@ categories: jekyll update
 It has been almost a year since I began my committed journey into programming and data science. It only seems appropriate to look back and review what I have been doing over the past year, and highlight what I have learnt. The sections below occur mostly in chronological order, with some overlaps.
 
 ## Udacity
+
 My journey started on [Udacity](https://www.udacity.com), with Intro to Computer Science (CS101) taught in Python 2. With the end-of-life of Python 2, CS101 has been replaced by [Introduction to Python Programming](https://www.udacity.com/course/introduction-to-python--ud1110) (UD1110). The former course places a much greater emphasis on computer science rather than the Python language. Personally, I prefer the CS101 course and the usage of Python 2 is only a minor shortcoming.
 
 Next, I completed the following courses on Udacity:
+
 - [Intro to Algorithms](https://www.udacity.com/course/intro-to-algorithms--cs215) (CS215)
 - Programming Foundations with Python (UD036)
 - [Intro to Data Analysis](https://www.udacity.com/course/intro-to-data-analysis--ud170) (UD170)
@@ -21,6 +23,7 @@ Next, I completed the following courses on Udacity:
 I would say that courses above were sufficient for decent introductions to programming (in Python and R), computer science, data analysis, and data visualization.
 
 ## Coursera
+
 The [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) was the first course I have ever completed on Coursera. This was done partly as a recap, and partly to round out my fundamental understanding of data science with a fully structured 9-course specialization.
 
 Next, I completed the acclaimed [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng. The courses were challenging, but extremely rewarding. To-date, I would consider the lectures and content delivered in this five-course specialization the best I have ever come across.
@@ -30,14 +33,17 @@ I will make it a point to complete the [Machine Learning](https://www.coursera.o
 I am also thankful for my background in economics---prior knowledge of linear algebra, statistics and econometrics definitely expedited my progress through many of the courses.
 
 ## Stepik
+
 [Stepik](https://stepik.org/) is a fantastic platform for cross-device use (both app- and browser-based), only hindered by the lack of available courses. Notwithstanding, both the [Data Structures](https://stepik.org/course/579/promo) and [Python Functional Programming](https://stepik.org/course/2057/promo) courses are excellent and I highly recommend them. [JavaScript for Beginners](https://stepik.org/course/3432/promo) is also a pretty decent introduction to the language.
 
 The courses on this platform are divided into bite-sized portions, making them very suitable for learning on-the-go. I went through most of the three aforementioned courses while commuting.
 
 ## Ubuntu
+
 I have also moved from Windows to Linux, briefly experimenting with various Ubuntu-based operating systems on various devices. I am currently using [Elementary OS 5.1 Hera](https://elementary.io/) (which is based on Ubuntu 18.04) on my workstation, and Ubuntu 20.04 on my ultrabook and mini-PC.
 
 ## JetBrains Academy
+
 To deepen my understanding of object-oriented programming, I turned to [JetBrains Academy](https://www.jetbrains.com/academy/). Specifically, I went through few Java projects. I completed most of the object-oriented programming tutorials available in the Java track, familiarised myself with Java syntax, and got a taste of what it is like to work with a statically-typed and compiled programming language.
 
 My wife has also picked up programming through the Python track on JetBrains Academy. She has since completed more than half of all available Python tutorials and projects, and her experience has been quite positive.
@@ -45,6 +51,7 @@ My wife has also picked up programming through the Python track on JetBrains Aca
 JetBrains Academy has recently come out of beta, and unfortunately it is now subscription-based with a short trial period of up to two months.
 
 ## Julia
+>
 > _Walk like Python, run like C._
 
 Founded in 2012, [Julia](https://julialang.org/) is a relatively young language with relatively fewer learning resources compared to older and more established languages. My main learning resource for Julia were the JuliaBox tutorials found on [GitHub](https://github.com/JuliaComputing/JuliaBoxTutorials).
@@ -54,18 +61,23 @@ With a Python background and basic static typing knowledge, the learning curve f
 It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good resource (entirely free since 2019), and there is also a course on Coursera called [Julia Scientific Programming](https://www.coursera.org/learn/julia-programming).
 
 ## Codewars
+
 For about a month I was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
 
 ## Blogging
-I finally got around to creating this blog in May this year, and I am determined to update it regularly so that my next year-in-review blogpost will not have be as lengthy as this one.
+
+In May, I finally created this blog and I am determined to update it regularly so that my next year-in-review blogpost will not have to be as lengthy as this one.
 
 ## Flutter and Dart
+
 The creation and deployment of mobile apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
 
 ## Exercism and HackerRank
+
 I have also been active on both [Exercism](https://exercism.io/) and [HackerRank](https://www.hackerrank.com/). Exercism is a unique site offering both learning and mentoring opportunities, while HackerRank is similar to Codewars. I will elaborate more on these two sites in a future blogpost.
 
 ## Scala
+>
 > _Scala combines object-oriented and functional programming in one concise, high-level language. Scala's static types help avoid bugs in complex applications, and its JVM and JavaScript runtimes let you build high-performance systems with easy access to huge ecosystems of libraries._
 
 My newfound obsession with [Scala](https://www.scala-lang.org/) was due to its intriguing premise above. I have already completed a [basic Scala course](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) (not basic at all -- do not attempt without any programming knowledge), working my way through an [advanced Scala course](https://www.udemy.com/course/advanced-scala/), and plan to supplement and consolidate my understanding with few books thereafter. The [Spark and big data with Scala](https://www.udemy.com/course/spark-essentials/) course on Udemy is also on my radar.
@@ -73,6 +85,7 @@ My newfound obsession with [Scala](https://www.scala-lang.org/) was due to its i
 Up till this point, I have not studied any language to this extent. Despite the high learning curve, I am determined to delve deep into this complex and wonderful language, and subsequently complete projects using this language.
 
 ## Cluster computing
+
 I have built my very own compute cluster, which looks like this:
 
 ![Odyssey-Pi cluster](https://zyf0717.github.io/assets/images/odyssey-pi-cluster.jpg)
@@ -82,8 +95,10 @@ Through having to configure headless Raspberry Pis, I have picked up a few Linux
 Details of my setup process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
 
 ## Upcoming plans
+
 I set out below my upcoming plans (and blogposts):
-- Focus on problem solving in a functional manner 
+
+- Focus on problem solving in a functional manner
 - Improve my Python and Scala skills and knowledge
 - Work on Python and Scala projects
 - Learn Spark and deploy jobs on my compute cluster
