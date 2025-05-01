@@ -9,11 +9,11 @@ The start of this year has marked a significant shift in how I approach software
 
 ## Data Engineering
 
-This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written only when meaningful, and stored with audit-oriented S3 versioning.
+This year’s focus has not been on building pipelines for their own sake, but on refining how data flows are structured, governed, and surfaced. I designed and deployed multiple ingestion workflows anchored on reliability, idempotence, and runtime separation. Stateless Lambda chaining, concurrency-aware async design, and DynamoDB-backed deduplication formed the baseline pattern across ingestion paths. Data was shaped close to the source, written to DynamoDB only when meaningful, and backed up to S3 with versioning for audit and recovery.
 
-Incremental ingestion was prioritized, with historical lookbacks scoped by recent writes. Failures were contained through early-stop mechanisms and task isolation. When integrating with SingPass, I implemented full OIDC flow handling with PKCE, encrypted payload decryption, and nonce-bound state tracking.
+Incremental ingestion was prioritized, with historical lookbacks scoped by recent writes. Failures were contained through early-stop mechanisms and task isolation. I implemented full SingPass OIDC integration, including PKCE support, secure token handling, and encrypted claim extraction.
 
-Ongoing refinements include decoupling retrieval from processing using queues, introducing fault-tolerant retry logic, and re-architecting around context-fit rather than pattern adherence.
+Ongoing refinements include decoupling retrieval from processing, shifting from scheduled triggers to queue-based invocation, introducing fault-tolerant retry logic, and re-architecting around contextual fit rather than adherence to predefined patterns.
 
 ## Infrastructure as Code (IaC)
 
@@ -29,7 +29,7 @@ CI/CD has moved from ad-hoc deployments to traceable, reproducible pipelines. Do
 
 Instrumentation was introduced early and uniformly. Structured logs with consistent IDs and timestamp formats support trace-level inspection across async workloads. Conditional log levels allow different verbosity per environment, and CloudWatch is used as the central sink, with lifecycle management enabled for retention cost control.
 
-In-progress refinements include storing Terraform plans as artifacts for change traceability, collecting minimal runtime metrics (e.g. function duration, memory usage, throttling events), and scripting lightweight diagnostics to trace ingestion failures or payload anomalies without full replay.
+In-progress refinements include storing Terraform plans as artifacts for traceable infrastructure changes, introducing lightweight telemetry on function duration, memory use, and throttling behavior, and scripting diagnostic utilities to isolate ingestion failures or anomalous payloads without requiring full replay.
 
 ## Development Environment and Tooling
 
@@ -43,4 +43,4 @@ LLMs functioned less as collaborators and more as external validators, reinforci
 
 ## Looking Ahead
 
-The emphasis remains on refining architectural separation—between orchestration and logic, between intention and implementation—while improving the reliability and observability of asynchronous workflows. The goal is not to scale complexity, but to contain it through principled structure and execution fit.
+The emphasis remains on refining architectural separation—between orchestration and logic, between intention and implementation—while improving the reliability and observability of asynchronous workflows. The goal is not to scale complexity, but to contain it through structural clarity, bounded interfaces, and execution that fits context rather than convention.
