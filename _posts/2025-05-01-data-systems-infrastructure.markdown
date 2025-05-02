@@ -16,49 +16,53 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
-This year marked a deliberate shift—not just in the tools used, but in how systems were designed, shaped, and structured.
+This year marked a foundational shift—not merely in tooling, but in how systems are architected, governed, and evolved.
 
 ## Data Engineering
 
-Focus has not been on building pipelines *per se*, but on governing data flow through structure and orchestration. Concurrent async design and Pandas-backed processing and transformation form the baseline pattern across all ingestion paths. Data is shaped close to the source, further deduplicated through DynamoDB upserts, and backed up to S3 with versioning for audit and recovery. Failures are caught early and handled gracefully, using stop mechanisms and per-task boundaries to prevent cascading issues.
+The focus transitioned from constructing pipelines to engineering resilient, observable data flows through structured orchestration. The core ingestion pattern leverages asynchronous concurrency and Pandas-based dataframes for transformation. Data is preprocessed near the source, upserted into DynamoDB to ensure each record reflects the most recent valid state, and versioned to S3 for auditability and recovery.
 
-Authentication-sensitive flows, such as SingPass integration, are handled end-to-end with stateless Lambda chaining—including PKCE, secure token exchange, and encrypted claim extraction.
+Error handling is proactive: early-stage validation, task-scoped failure boundaries, and immediate termination on rate-limiting (e.g., HTTP 429) ensure fault isolation and recovery integrity.
 
-Ongoing refinements include separating data retrieval from processing, shifting from task-based schedules to queue-based triggers, introducing fault-tolerant retry logic designed to overcome failure, and context-specific refactoring instead of convention.
+Authentication-bound flows, such as SingPass integration, are implemented through stateless AWS Lambda chains—comprising PKCE flows, secure token exchanges, and claim decryption—with no persistent context between invocations.
+
+Refinements are ongoing: decoupling extraction from transformation, replacing cron-based triggers with event-driven queues (e.g., SQS), and embedding structured retry logic and failure auditing. Refactoring emphasizes semantic clarity over convention.
 
 ## Infrastructure as Code (IaC)
 
-AWS infrastructure is fully defined through Terraform, with distinct environments (`dev`, `stg`, `prd`) deployed via GitHub Actions. Modules are parameterized to reduce duplication, with remote backends, environment-scoped secrets, and shared ECR repositories provisioned during bootstrap. Role boundaries follow least-privilege access models, with SSM-based credential separation and clear IAM scoping.
+All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state is managed through S3 with locking via DynamoDB.
 
-Front-end deployments—including S3-hosted SPAs behind CloudFront—are also codified in the same structure, allowing end-to-end infra lifecycle authorship.
+Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repositories are bootstrapped for container reuse.
+
+Static front-end applications (e.g., S3 + CloudFront SPAs) are also codified in Terraform, enabling full-stack reproducibility.
 
 ## CI/CD and Containerization
 
-CI/CD has moved from ad-hoc deployments to GitHub Actions workflows. Docker images are built and pushed when triggered by certain commits, tagged using Git SHA and environment, followed by Terraform `plan`/`apply` steps gated by environment-specific approval.
+CI/CD pipelines are managed through GitHub Actions. Docker images are built and tagged using Git commit SHAs and environment labels, then pushed to ECR. Subsequent Terraform `plan` and `apply` steps are gated behind environment-specific approvals.
 
-Branch workflows use squash merges for features, with rebases for promotion branches—ensuring change history reflects intent, not iteration.
+Development follows a squash-merge workflow for feature branches, with deployment branches (`stg`, `prd`) kept linear via rebases. This ensures commit history reflects architectural intent, not development noise.
 
 ## Observability and Diagnostics
 
-Structured logs with consistent IDs and timestamp formats support trace-level inspection across async workloads. Conditional log levels allow different verbosity per environment, and CloudWatch is used as the central sink, with lifecycle management enabled for retention cost control.
+Logging is structured and traceable—logs include correlation IDs, standardized timestamps, and context tags. CloudWatch is the central log sink, with log group lifecycle policies configured to balance traceability and storage cost.
 
-Upcoming refinements include storing Terraform plans as artifacts for traceable infrastructure changes, introducing lightweight telemetry on functions (duration, memory use, and throttling behavior), and developing diagnostic utilities to isolate ingestion failures or anomalous payloads.
+Planned enhancements include artifact retention for Terraform plans, lightweight telemetry on Lambda functions (e.g., execution duration, memory usage, throttle counts), and diagnostics to pinpoint ingest failures or malformed inputs.
 
 ## Development Environment and Tooling
 
-Local and remote development environments have been aligned to support fast context switches and secure access. Cloudflare Tunnel enables protected access to headless servers, while Code-server and VS Code (SSH/tunnel-based) provide full IDE support in any environment.
+Local and cloud development environments are standardized for consistency and rapid context switching. Secure tunnels (via Cloudflare Tunnel) enable remote access to headless environments, while IDE support is delivered through code-server and VS Code over SSH or remote tunnel.
 
-Scripts are being developed to streamline the development process and improve day-to-day workflow efficiency.
+Custom scripting is underway to streamline setup, automate repetitive tasks, and enforce environment parity.
 
 ## LLM-Assisted Development
 
-LLMs are used selectively and deliberately—primarily for audit, secondarily for generation—their strength is in identifying edge cases, challenging or validating assumptions, and suggesting alignment across config, code, and infrastructure. Scaffolds are generated only after internal structures are fixed, and iterative audits are targeted and uncompromising.
+LLMs are used as structured audit tools rather than generative agents. They validate edge cases, surface misalignments across codebases, and reinforce structural clarity. Generation is used sparingly—only when underlying logic and contracts are already defined.
 
-LLMs function less as collaborators and more as external validators, used not to invent, but to reflect what is already clear.
+Rather than collaborators, LLMs function as external verifiers—accelerating audit cycles over authoring design.
 
 ## Looking Ahead
 
-Emphasis remains on architectural separation—between orchestration and logic, intention and implementation—while improving the reliability and observability of asynchronous workflows. The goal is not to scale complexity, but to contain it through structural clarity, bounded interfaces, and context-driven execution.
+The emphasis remains on architectural clarity: separating orchestration from business logic, behavior from configuration, and system design from runtime execution. The direction is not toward scaling complexity, but toward containing it—through clean interfaces, observable systems, and composition by intent.
 
 </div>
 
@@ -76,7 +80,7 @@ Rather than building pipelines as a goal in itself, attention was directed towar
 - Records are further streamlined by leveraging DynamoDB's conditional insert or update.
 - Backups are written to S3 with version control, supporting traceability and recovery.
 
-Failures are contained within isolated tasks, preventing cascading effects.
+Failures are isolated to specific tasks. This prevents errors from spreading across the system.
 
 Authentication-related workflows (such as SingPass integration) are handled using stateless Lambda sequences. This includes secure handling of login protocols (PKCE), access tokens, and encrypted identity claims—all without compromising sensitivity between steps.
 
@@ -103,9 +107,9 @@ Front-end deployments (e.g., SPAs on S3 served through CloudFront) were brought 
 Code deployments were moved from manual processes to automated GitHub Actions workflows.
 
 - Docker images are built and tagged with Git SHAs on relevant commits.
-- Terraform `plan` and `apply` steps are gated behind review and approval workflows.
+- Infrastructure changes are gated behind review and approval workflows using Terraform’s planning and application steps.
 - Feature branches are merged using squash strategies.
-- Promotion branches are rebased to preserve coherent, intentional change history.
+- Staging and production branches are kept clean and linear, using rebases to maintain a clear, intentional history of changes.
 
 This transition ensures deployments reflect deliberate architectural intent rather than accumulated iteration.
 
@@ -139,7 +143,7 @@ Language models (LLMs) are used selectively—their role is mainly post-design v
 - Infrastructure, configuration, and implementation are cross-checked for consistency.
 - Suggestions are offered only after internal structures are defined.
 
-LLMs functioned as external validators—reflecting clarity already present, rather than producing new architectural material.
+Think of them more as code reviewers than authors—they help validate what’s built, rather than create from scratch.
 
 ## Looking Ahead
 
