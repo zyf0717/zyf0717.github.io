@@ -19,7 +19,7 @@ Ongoing refinements include separating data retrieval from processing, shifting 
 
 AWS infrastructure is fully defined through Terraform, with distinct environments (`dev`, `stg`, `prd`) deployed via GitHub Actions. Modules are parameterized to reduce duplication, with remote backends, environment-scoped secrets, and shared ECR repositories provisioned during bootstrap. Role boundaries follow least-privilege access models, with SSM-based credential separation and clear IAM scoping.
 
-Front-end deployments—including S3-hosted SPAs behind CloudFront—are also codified in the same structure, allowing for end-to-end infra lifecycle ownership.
+Front-end deployments—including S3-hosted SPAs behind CloudFront—are also codified in the same structure, allowing end-to-end infra lifecycle authorship.
 
 ## CI/CD and Containerization
 
