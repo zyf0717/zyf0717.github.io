@@ -23,7 +23,7 @@ Front-end deployments—including S3-hosted SPAs behind CloudFront—are also co
 
 ## CI/CD and Containerization
 
-CI/CD has moved from ad-hoc deployments to GitHub Actions workflows. Docker images are built and pushed when triggerd by certain commits, tagged using Git SHA and environment, followed by Terraform `plan`/`apply` steps gated by environment-specific approval.
+CI/CD has moved from ad-hoc deployments to GitHub Actions workflows. Docker images are built and pushed when triggered by certain commits, tagged using Git SHA and environment, followed by Terraform `plan`/`apply` steps gated by environment-specific approval.
 
 Branch workflows use squash merges for features, with rebases for promotion branches—ensuring change history reflects intent, not iteration.
 
