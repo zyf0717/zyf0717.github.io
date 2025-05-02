@@ -7,10 +7,11 @@ categories: jekyll update
 
 <!-- Toggle Buttons -->
 <div>
+    <strong>View Mode Toggles:</strong>
   <button onclick="toggleVersion('original')">Original (Default)</button>
   <button onclick="toggleVersion('english')">Plain English</button>
 </div>
-<br>
+<hr style="margin: 1.5em 0;">
 
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
