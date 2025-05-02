@@ -20,7 +20,7 @@ This year marked a deliberate shift—not just in the tools used, but in how sys
 
 ## Data Engineering
 
-Focus has not been on building pipelines *per se*, but on governing data flow through structure and orchestration. Concurrent async design and Pandas-backed processing and transformation form the baseline pattern across all ingestion paths. Data is shaped close to the source, further deduplicated through DynamoDB writes, and backed up to S3 with versioning for audit and recovery. Failures are caught early and handled gracefully, using stop mechanisms and per-task boundaries to prevent cascading issues.
+Focus has not been on building pipelines *per se*, but on governing data flow through structure and orchestration. Concurrent async design and Pandas-backed processing and transformation form the baseline pattern across all ingestion paths. Data is shaped close to the source, further deduplicated through DynamoDB upserts, and backed up to S3 with versioning for audit and recovery. Failures are caught early and handled gracefully, using stop mechanisms and per-task boundaries to prevent cascading issues.
 
 Authentication-sensitive flows, such as SingPass integration, are handled end-to-end with stateless Lambda chaining—including PKCE, secure token exchange, and encrypted claim extraction.
 
