@@ -13,7 +13,7 @@ categories: jekyll update
 <br>
 
 <!-- DENSE VERSION -->
-<div id="original" style="display: block;">
+<div id="original" style="display: block;" markdown="1">
 
 This year marked a deliberate shift—not just in the tools used, but in how systems were designed, shaped, and structured.
 
@@ -62,7 +62,7 @@ Emphasis remains on architectural separation—between orchestration and logic, 
 </div>
 
 <!-- ENGLISH VERSION -->
-<div id="english" style="display: none;">
+<div id="english" style="display: none;" markdown="1">
 
 This year marked a shift—not only in tools adopted, but in how systems were designed and maintained. The emphasis was placed on building with reliability, clarity, and long-term manageability in mind.
 
