@@ -84,10 +84,10 @@ Authentication-related workflows (such as SingPass integration) are handled usin
 
 Further improvements to be introduced over time:
 
-- Retrieval and processing were separated to increase modularity.
-- Timed schedules were replaced with event-driven triggers.
-- Retries were made fault-tolerant and context-aware.
-- Refactoring was applied selectively, based on actual system needs.
+- Separate data retrieval and processing to increase modularity.
+- Replace timed schedules with event-driven triggers.
+- Make retries fault-tolerant and context-aware.
+- Selectively apply refactoring based on actual system needs.
 
 ## Infrastructure as Code (IaC)
 
