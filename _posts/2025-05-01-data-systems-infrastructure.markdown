@@ -78,7 +78,7 @@ Rather than building pipelines as a goal in itself, attention was directed towar
 
 Failures are contained within isolated tasks, preventing cascading effects.
 
-Authentication-related workflows (such as SingPass integration) are handled using stateless Lambda sequences. This includes secure handling of login protocols (PKCE), access tokens, and encrypted identity claims—without retaining sensitive state between steps.
+Authentication-related workflows (such as SingPass integration) are handled using stateless Lambda sequences. This includes secure handling of login protocols (PKCE), access tokens, and encrypted identity claims—all without compromising sensitivity between steps.
 
 Further improvements to be introduced over time:
 
