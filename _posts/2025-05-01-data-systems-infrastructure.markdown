@@ -56,9 +56,7 @@ Custom scripting is underway to streamline setup, automate repetitive tasks, and
 
 ## LLM-Assisted Development
 
-LLMs are used as structured audit tools rather than generative agents. They validate edge cases, surface misalignments across codebases, and reinforce structural clarity. Generation is used sparingly—only when underlying logic and contracts are already defined.
-
-Rather than collaborators, LLMs function as external verifiers—accelerating audit cycles over authoring design.
+LLMs are used primarily as structured audit tools, not generative agents. Their role is to validate assumptions, surface inconsistencies across configuration, infrastructure, and code, and reinforce architectural coherence. Design suggestions are secondary—only introduced after core logic and structural contracts are clearly established. Generation is applied sparingly, and never ahead of intent.
 
 ## Looking Ahead
 
@@ -143,7 +141,7 @@ Language models (LLMs) are used selectively—their role is mainly post-design v
 - Infrastructure, configuration, and implementation are cross-checked for consistency.
 - Suggestions are offered only after internal structures are defined.
 
-Think of them more as code reviewers than authors—they help validate what’s built, rather than create from scratch.
+Think of them more as code reviewers than authors—they help confirm what’s built, not invent from scratch.
 
 ## Looking Ahead
 
