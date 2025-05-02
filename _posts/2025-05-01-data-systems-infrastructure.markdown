@@ -67,7 +67,7 @@ The emphasis remains on architectural clarity: separating orchestration from bus
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The year 2025 marked a shift—not only in tools adopted, but in how systems were designed and maintained. The emphasis was placed on building with reliability, clarity, and long-term manageability in mind.
+The year 2025 marked a shift—not only in tools adopted, but in how systems were designed and maintained. Emphasis is placed on building with reliability, clarity, and long-term manageability in mind.
 
 ## Data Engineering
 
