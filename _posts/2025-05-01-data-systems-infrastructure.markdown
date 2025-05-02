@@ -79,7 +79,7 @@ Failures are contained within isolated tasks, preventing cascading effects.
 
 Authentication-related workflows (such as SingPass integration) are handled using stateless Lambda sequences. This includes secure handling of login protocols (PKCE), access tokens, and encrypted identity claims—without retaining sensitive state between steps.
 
-Further improvements were introduced over time:
+Further improvements to be introduced over time:
 
 - Retrieval and processing were separated to increase modularity.
 - Timed schedules were replaced with event-driven triggers.
