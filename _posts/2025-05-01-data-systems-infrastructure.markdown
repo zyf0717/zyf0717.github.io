@@ -30,7 +30,7 @@ Authentication-bound flows, such as SingPass integration, are implemented throug
 
 ## Infrastructure as Code (IaC)
 
-All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state is managed through S3 with locking via DynamoDB.
+All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state with locking is managed through S3.
 
 Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repositories are bootstrapped for container reuse.
 
