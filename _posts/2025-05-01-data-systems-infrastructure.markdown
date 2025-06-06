@@ -32,7 +32,7 @@ Authentication-bound flows, such as SingPass integration, are implemented throug
 
 All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state with locking is managed through S3.
 
-Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repository are bootstrapped for container promotion across environments.
+Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repository was bootstrapped for container promotion across environments.
 
 Static front-end applications (e.g., S3 + CloudFront SPAs) are also codified in Terraform, enabling full-stack reproducibility.
 
