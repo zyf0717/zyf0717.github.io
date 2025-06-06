@@ -32,7 +32,7 @@ Authentication-bound flows, such as SingPass integration, are implemented throug
 
 All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state with locking is managed through S3.
 
-Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repositories are bootstrapped for container reuse.
+Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repository are bootstrapped for container promotion across environments.
 
 Static front-end applications (e.g., S3 + CloudFront SPAs) are also codified in Terraform, enabling full-stack reproducibility.
 
@@ -40,7 +40,7 @@ Static front-end applications (e.g., S3 + CloudFront SPAs) are also codified in 
 
 CI/CD pipelines are managed through GitHub Actions. Docker images are built and tagged using Git commit SHAs and environment labels, then pushed to ECR. Lambda artifacts are packaged, versioned, and uploaded to S3 buckets. Promotion across environments is handled by reference—passing ECR image tags or copying S3-backed Lambda artifacts without rebuilding. Subsequent Terraform `plan` and `apply` steps are gated behind environment-specific approvals.
 
-Unit tests are already implemented using pytest, and will be executed during the CI process prior to any build or deployment steps. Test coverage includes core data logic and Lambda handlers, with failure conditions blocking downstream stages to ensure reliability and functional correctness.
+Unit tests are implemented using pytest, and executed during the CI process prior to any build or deployment steps. Test coverage includes core data logic and Lambda handlers, with failure conditions blocking downstream stages to ensure reliability and functional correctness.
 
 ## Observability and Diagnostics
 
