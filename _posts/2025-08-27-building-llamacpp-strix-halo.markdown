@@ -132,8 +132,8 @@ predicted_per_token_ms: 21.96
 predicted_per_second: 45.53
 ```
 
-For reference, deployments with LM Studio (CLI v0.0.46) shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s, even with trivially short contexts.
+For reference, deployments with LM Studio (CLI v0.0.46) and its shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s, even with trivially short contexts.
 
 ## 5. Conclusion
 
-A Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-49 t/s. This is a real and significant uplift of 50-63%, just under GPT-5's prediction of ~67%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path for now.
+A Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-49 t/s. This is a real and significant uplift of 50-63%, just slightly under GPT-5's prediction of ~67%. Clearly, for anyone chasing maximum performance and full runtime control, building locally remains the clear path for now.
