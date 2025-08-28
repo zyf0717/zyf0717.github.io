@@ -127,7 +127,7 @@ predicted_per_token_ms: 21.72
 predicted_per_second: 46.03
 ```
 
-For reference, similar runs with LM Studio (CLI v0.0.46) shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s except in trivially short contexts.
+For reference, similar runs with LM Studio (CLI v0.0.46) shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s, even with trivially short contexts.
 
 ## 5. Conclusion
 
