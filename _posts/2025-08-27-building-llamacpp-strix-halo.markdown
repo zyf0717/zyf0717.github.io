@@ -98,14 +98,13 @@ MODEL="$MODEL_DIR/gpt-oss-120b-MXFP4-00001-of-00002.gguf"
 
 ./build/bin/llama-bench -m "$MODEL" -ngl 999 -t 8 -pg 256,128 -b 512 -ub 256 -fa 1
 
-> ggml_vulkan: 0 = AMD ... (radv) | uma: 1 | fp16: 1 | warp size: 64 | matrix cores: KHR_coopmat
-ggml_vulkan: Found 1 Vulkan devices:
-ggml_vulkan: 0 = AMD Radeon Graphics (RADV GFX1151) (radv) | uma: 1 | fp16: 1 | bf16: 0 | warp size: 64 | shared memory: 65536 | int dot: 1 | matrix cores: KHR_coopmat
-| model                          |       size |     params | backend    | ngl | threads | n_batch | n_ubatch | fa |            test |                  t/s |
-| ------------------------------ | ---------: | ---------: | ---------- | --: | ------: | ------: | -------: | -: | --------------: | -------------------: |
-| gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           pp512 |       339.22 ± 14.16 |
-| gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           tg128 |         48.88 ± 0.05 |
-| gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |     pp256+tg128 |        111.92 ± 0.24 |
+> ggml_vulkan: Found 1 Vulkan devices:
+> ggml_vulkan: 0 = AMD Radeon Graphics (RADV GFX1151) (radv) | uma: 1 | fp16: 1 | bf16: 0 | warp size: 64 | shared memory: 65536 | int dot: 1 | matrix cores: KHR_coopmat
+> | model                          |       size |     params | backend    | ngl | threads | n_batch | n_ubatch | fa |            test |                  t/s |
+> | ------------------------------ | ---------: | ---------: | ---------- | --: | ------: | ------: | -------: | -: | --------------: | -------------------: |
+> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           pp512 |       339.22 ± 14.16 |
+> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           tg128 |         48.88 ± 0.05 |
+> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |     pp256+tg128 |        111.92 ± 0.24 |
 ```
 
 Running the bench with more combinations of `-pg` `-b` `-ub` `-fa` yield very similar tg128 results. E.g.:
