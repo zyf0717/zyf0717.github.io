@@ -1,4 +1,3 @@
-# Keep your existing site metadata...
 title: Yifei's Blog
 email: zyf0717@gmail.com
 description: >-
@@ -8,11 +7,18 @@ description: >-
 url: https://blog.yifei.sg
 baseurl: ""
 
-# IMPORTANT: use remote_theme (not theme:)
+# Use Minima (v3) via remote_theme
 remote_theme: jekyll/minima
+
+# GitHub Pages–allowed plugins only
 plugins:
   - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
 
-# Minima v3 skin (dark/light/auto)
+# Minima v3 skin (dark/light/auto follows system preference)
 minima:
   skin: auto
+
+# Cleaner URLs
+permalink: pretty
