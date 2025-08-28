@@ -10,7 +10,7 @@ Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. 
 - They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
 - There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
 
-*Specifically: GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). Accordingly, it also expects real-world improvement of ~30 to ~50 t/s, an uplift of ~67%.*
+*Specifically: GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). Accordingly, it also predicts a real-world improvement from ~30 to ~50 t/s for gpt-oss-120b, an uplift of ~67%.*
 
 As such, for improved performance on Strix Halo (e.g. with gpt-oss-120b), building a custom `llama.cpp` *should* unlock the Vulkan "fast" path and give greater control over runtime flags.
 
