@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Building Llama.cpp with Vulkan to support Strix Halo"
+title:  "Strix Halo Matrix Cores with llama.cpp"
 date:   2025-08-27 23:30:00 +0800
 categories: jekyll update
 ---
