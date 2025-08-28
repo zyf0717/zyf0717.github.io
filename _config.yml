@@ -19,6 +19,3 @@ plugins:
 # Minima v3 skin (dark/light/auto follows system preference)
 minima:
   skin: auto
-
-# Cleaner URLs
-permalink: pretty
