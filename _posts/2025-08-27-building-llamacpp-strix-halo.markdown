@@ -113,21 +113,21 @@ Running the bench with more combinations of `-pg` `-b` `-ub` `-fa` yield very si
 - `-pg 64,256 -b 128 -ub 128 -fa 1`: 48.81 ± 0.08
 - `-pg 64,256 -b 192 -ub 96 -fa 0`: 48.61 ± 0.41
 
-The above results hold up well in actual usage with a larger context window (`-c 32768 -b 2048 -ub 128 --flash-attn`):
+And the above results hold up reasonably well with a much longer context and `-c 32768 -b 4096 -ub 256 --flash-attn`:
 
 ```bash
-prompt_n: 1832
-prompt_ms: 10085.03
-prompt_per_token_ms: 5.50
-prompt_per_second: 181.66
-predicted_n: 3127
-predicted_ms: 67929.82
-predicted_per_token_ms: 21.72
-predicted_per_second: 46.03
+prompt_n: 1996
+prompt_ms: 7023.54
+prompt_per_token_ms: 3.52
+prompt_per_second: 284.19
+predicted_n: 3514
+predicted_ms: 77176.74
+predicted_per_token_ms: 21.96
+predicted_per_second: 45.53
 ```
 
 For reference, similar runs with LM Studio (CLI v0.0.46) shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s, even with trivially short contexts.
 
 ## 5. Conclusion
 
-As shown above, a Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to nearly 50 t/s. For anyone chasing maximum performance and full runtime control, building locally remains the clear path.
+As shown above, a Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-50 t/s, an uplift of 50-67%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path.
