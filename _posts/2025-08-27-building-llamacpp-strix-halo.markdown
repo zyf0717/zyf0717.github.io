@@ -61,7 +61,7 @@ glslc --version
 > Target: SPIR-V 1.0
 ```
 
-## 3. Building `llama.cpp`
+## 3. Building llama.cpp
 
 Cooperative-matrix matmul is introduced when `vulkan-shaders-gen` compiles and embeds the `OpCooperativeMatrix*` shaders.
 
