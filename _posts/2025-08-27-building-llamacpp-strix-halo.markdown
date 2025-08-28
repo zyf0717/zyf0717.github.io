@@ -10,15 +10,13 @@ Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. 
 - They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
 - There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
 
-*Specifically: GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). Accordingly, it also predicts a real-world improvement from ~30 to ~50 t/s for gpt-oss-120b, an uplift of ~67%.*
+In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). Accordingly, in the case of gpt-oss-120b, it also predicts a real-world improvement from ~30 t/s to ~50 t/s—an uplift of ~67%.
 
-As such, for improved performance on Strix Halo (e.g. with gpt-oss-120b), building a custom `llama.cpp` *should* unlock the Vulkan "fast" path and give greater control over runtime flags.
-
-The following was done in Ubuntu 24.04; it is unclear at this date if the same could be done on Windows.
+Results do indeed show that with Strix Halo, building a localized `llama.cpp` *does* unlock a significantly faster Vulkan path on Ubuntu 24.04—it is unclear at this date if the same could be done on Windows.
 
 ## 1. RADV + Vulkan SDK
 
-Provides the driver and API support required for cooperative-matrix matmul.
+First, the driver and API support required for cooperative-matrix matmul.
 
 ```bash
 # base toolchain
@@ -34,9 +32,9 @@ sudo apt install -y glslang-tools spirv-tools
 
 ## 2. Build glslc
 
-Supplies the tooling to compile cooperative-matrix shader coder.
+This supplies the tooling to compile cooperative-matrix shader code.
 
-This step may be necessary if `sudo apt install shaderc` fails.
+`sudo apt install shaderc`; if this fails, build and install with the following:
 
 ```bash
 sudo apt update
@@ -86,7 +84,7 @@ ninja -C build
 
 ## 4. Verify with llama-bench
 
-Cooperative-matrix matmul is confirmed at runtime when logs show `matrix cores: KHR_coopmat`
+Cooperative-matrix matmul is confirmed at runtime when benchmark logs show `matrix cores: KHR_coopmat`
 
 ```bash
 export GGML_LOG_LEVEL=2
@@ -138,4 +136,4 @@ For reference, similar runs with LM Studio (CLI v0.0.46) shipped `llama.cpp-linu
 
 ## 5. Conclusion
 
-As shown above, a Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-49 t/s. This is a real and significant uplift of 50-63%, just under GPT-5's prediction of ~67%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path for now.
+A Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-49 t/s. This is a real and significant uplift of 50-63%, just under GPT-5's prediction of ~67%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path for now.
