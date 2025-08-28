@@ -100,20 +100,28 @@ MODEL="$MODEL_DIR/gpt-oss-120b-MXFP4-00001-of-00002.gguf"
 
 > ggml_vulkan: Found 1 Vulkan devices:
 > ggml_vulkan: 0 = AMD Radeon Graphics (RADV GFX1151) (radv) | uma: 1 | fp16: 1 | bf16: 0 | warp size: 64 | shared memory: 65536 | int dot: 1 | matrix cores: KHR_coopmat
-> | model                          |       size |     params | backend    | ngl | threads | n_batch | n_ubatch | fa |            test |                  t/s |
-> | ------------------------------ | ---------: | ---------: | ---------- | --: | ------: | ------: | -------: | -: | --------------: | -------------------: |
-> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           pp512 |       339.22 ± 14.16 |
-> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |           tg128 |         48.88 ± 0.05 |
-> | gpt-oss 120B MXFP4 MoE         |  59.02 GiB |   116.83 B | Vulkan     | 999 |       8 |     512 |      256 |  1 |     pp256+tg128 |        111.92 ± 0.24 |
+> | model                          |...| n_batch | n_ubatch | fa |            test |                  t/s |
+> | ------------------------------ |...| ------: | -------: | -: | --------------: | -------------------: |
+> | gpt-oss 120B MXFP4 MoE         |...|     512 |      256 |  1 |           pp512 |       339.22 ± 14.16 |
+> | gpt-oss 120B MXFP4 MoE         |...|     512 |      256 |  1 |           tg128 |         48.88 ± 0.05 |
+> | gpt-oss 120B MXFP4 MoE         |...|     512 |      256 |  1 |     pp256+tg128 |        111.92 ± 0.24 |
 ```
 
-Running the bench with more combinations of `-pg` `-b` `-ub` `-fa` yield very similar tg128 results. E.g.:
+And for a longer-context benchmark:
 
-- `-pg 64,256 -b 256 -ub 64  -fa 1`: 48.83 ± 0.05
-- `-pg 64,256 -b 128 -ub 128 -fa 1`: 48.81 ± 0.08
-- `-pg 64,256 -b 192 -ub 96 -fa 0`: 48.61 ± 0.41
+```bash
+./build/bin/llama-bench -m "$MODEL" -ngl 999 -t 8 -pg 2048,128 -b 4096 -ub 256 -fa 1
 
-And the above results hold up reasonably well with a much longer context and `-c 32768 -b 4096 -ub 256 --flash-attn`:
+> ggml_vulkan: Found 1 Vulkan devices:
+> ggml_vulkan: 0 = AMD Radeon Graphics (RADV GFX1151) (radv) | uma: 1 | fp16: 1 | bf16: 0 | warp size: 64 | shared memory: 65536 | int dot: 1 | matrix cores: KHR_coopmat
+> | model                          |...| n_batch | n_ubatch | fa |            test |                  t/s |
+> | ------------------------------ |...| ------: | -------: | -: | --------------: | -------------------: |
+> | gpt-oss 120B MXFP4 MoE         |...|    4096 |      256 |  1 |           pp512 |       339.07 ± 15.09 |
+> | gpt-oss 120B MXFP4 MoE         |...|    4096 |      256 |  1 |           tg128 |         48.95 ± 0.02 |
+> | gpt-oss 120B MXFP4 MoE         |...|    4096 |      256 |  1 |    pp2048+tg128 |        242.73 ± 0.67 |
+```
+
+The above results hold up reasonably well in deployment `-c 32768 -b 4096 -ub 256 --flash-attn`:
 
 ```bash
 prompt_n: 1996
@@ -130,4 +138,4 @@ For reference, similar runs with LM Studio (CLI v0.0.46) shipped `llama.cpp-linu
 
 ## 5. Conclusion
 
-As shown above, a Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-50 t/s, an uplift of 50-67%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path.
+As shown above, a Vulkan build of `llama.cpp` unlocks cooperative-matrix support missing in the current LM Studio’s runtimes, boosting Strix Halo throughput from ~30 t/s to 45-49 t/s, an uplift of 50-63%. For anyone chasing maximum performance and full runtime control, building locally remains the clear path.
