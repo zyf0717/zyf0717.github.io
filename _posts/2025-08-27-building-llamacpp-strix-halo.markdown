@@ -14,7 +14,7 @@ In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `
 
 Following a build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
 
-*NB: it is unclear if the same could be done on Windows yet, at this point.*
+*NB: it is unclear if the same could be done on Windows at this point.*
 
 ## 1. RADV + Vulkan SDK
 
