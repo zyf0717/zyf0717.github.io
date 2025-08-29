@@ -138,7 +138,7 @@ For reference, deployments with LM Studio (CLI v0.0.46) and its shipped `llama.c
 
 ## 5. Conclusion
 
-A custom Vulkan build of `llama.cpp` enables cooperative-matrix support absent in LM Studio’s packaged runtimes. On Strix Halo, this translates into a measurable throughput gain: from ~30 t/s to 45–49 t/s—an uplift of 50–63%.
+A local Vulkan build of `llama.cpp` enables cooperative-matrix support absent in LM Studio’s packaged runtimes. On Strix Halo, this translates into a measurable throughput gain: from ~30 t/s to 45–49 t/s—an uplift of 50–63%.
 
 The improvement is not just incremental—it directly reflects hardware capabilities that LM Studio does not expose yet. GPT-5’s projected ~67% uplift proved directionally correct, with benchmarks and real-world performance landing only slightly lower.
 
