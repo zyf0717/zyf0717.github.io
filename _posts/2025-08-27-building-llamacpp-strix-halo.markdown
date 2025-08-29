@@ -10,9 +10,11 @@ Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. 
 - They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
 - There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
 
-In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). Accordingly, in the case of gpt-oss-120b, it also predicts a real-world improvement from ~30 t/s to ~50 t/s—an uplift of ~67%.
+In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). In the case of gpt-oss-120b, it also predicts a token-generation improvement from ~30 t/s to ~50 t/s—an uplift of 67%—when cooperative matrix multiplication is enabled.
 
-Results do indeed show that with Strix Halo, building a localized `llama.cpp` *does* unlock a significantly faster Vulkan path on Ubuntu 24.04—it is unclear at this date if the same could be done on Windows.
+Following the build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
+
+*Note: it is unclear at this point if the same could be done on Windows.*
 
 ## 1. RADV + Vulkan SDK
 
