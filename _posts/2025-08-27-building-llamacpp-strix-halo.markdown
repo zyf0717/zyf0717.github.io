@@ -28,7 +28,7 @@ sudo apt install -y build-essential git cmake ninja-build pkg-config libcurl4-op
 # Vulkan user/runtime + diagnostics
 sudo apt install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
 
-# Optional but useful for shader compiles/validation
+# For shader compiles/validation
 sudo apt install -y glslang-tools spirv-tools
 ```
 
