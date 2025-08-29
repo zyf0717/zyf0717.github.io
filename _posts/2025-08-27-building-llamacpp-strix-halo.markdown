@@ -36,11 +36,9 @@ sudo apt install -y glslang-tools spirv-tools
 
 This supplies the tooling to compile cooperative-matrix shader code.
 
-`sudo apt install shaderc`; if this fails, build and install with the following:
-
 ```bash
 sudo apt update
-sudo apt install git cmake ninja-build g++ python3 python3-pip -y
+sudo apt install -y g++ python3 python3-pip
 
 git clone https://github.com/google/shaderc.git
 cd shaderc
