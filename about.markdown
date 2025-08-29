@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Welcome to my blog! 
-
-I have a variety of interests within tech, and this blog is meant to be an informal document and tracking of what I have been up to.
+Welcome to my blog!
 
 ## Data science
 

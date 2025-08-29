@@ -1,9 +1,7 @@
 title: Yifei's Blog
+
 email: zyf0717@gmail.com
-description: >-
-  Welcome to my blog! Through this platform, I hope to document and share my
-  tech journey. To find out more, please click the "About" button at the top
-  of this page (or the hamburger button if you are on mobile).
+
 url: https://blog.yifei.sg
 baseurl: ""
 
@@ -15,7 +13,12 @@ plugins:
   - jekyll-remote-theme
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Minima v3 skin (dark/light/auto follows system preference)
 minima:
   skin: auto
+  social_links:
+    - title: "Email"
+      icon: envelope
+      url: "mailto:zyf0717@gmail.com"
