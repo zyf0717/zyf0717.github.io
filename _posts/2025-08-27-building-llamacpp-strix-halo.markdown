@@ -66,7 +66,7 @@ glslc --version
 Cooperative-matrix matmul is introduced when `vulkan-shaders-gen` compiles and embeds the `OpCooperativeMatrix*` shaders.
 
 ```bash
-git clone https://github.com/yourusername/llama.cpp.git
+git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp
 
 cmake -S . -B build -G Ninja \
