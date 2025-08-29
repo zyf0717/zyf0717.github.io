@@ -14,7 +14,7 @@ In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `
 
 Following a build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
 
-*NB: it is unclear if the same could be done on Windows at this point in time.*
+*NB: Windows builds are possible, but AMD cooperative matrix support is not consistently exposed in Windows drivers yet.*
 
 ## 1. RADV + Vulkan SDK
 
@@ -49,8 +49,8 @@ python3 utils/git-sync-deps
 
 mkdir build && cd build
 cmake -GNinja .. -DCMAKE_BUILD_TYPE=Release
-ninja glslc
-sudo install -m 0755 bin/glslc /usr/local/bin/glslc
+ninja
+sudo install -m 0755 ./glslc/glslc /usr/local/bin/glslc
 hash -r
 glslc --version
 
