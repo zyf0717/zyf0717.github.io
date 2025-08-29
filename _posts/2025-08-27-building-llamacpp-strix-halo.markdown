@@ -10,11 +10,11 @@ Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. 
 - They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
 - There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
 
-In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). In the case of gpt-oss-120b, it also predicts a token-generation improvement from ~30 t/s to ~50 t/s—an uplift of 67%—when cooperative matrix multiplication is enabled.
+In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). In the case of gpt-oss-120b, it also predicted a token-generation improvement from ~30 t/s to ~50 t/s—an uplift of 67%—when cooperative matrix multiplication is enabled.
 
-Following the build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
+Following a build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
 
-*Note: it is unclear at this point if the same could be done on Windows.*
+*NB: it is unclear if the same could be done on Windows yet, at this point.*
 
 ## 1. RADV + Vulkan SDK
 
@@ -148,3 +148,5 @@ The takeaway is clear:
 - For convenience, LM Studio’s bundled builds are sufficient but capped.
 
 Until the `llama.cpp` builds bundled with LM Studio and other frontends ship with cooperative-matrix support, anyone chasing efficiency on Strix Halo (or similar GPUs) should invest in compiling `llama.cpp` locally.
+
+*NB: Models like GPT-5 can accelerate workflows by spotting missing features, predicting performance gains, and guiding system-level build choices—effectively serving as a copilot for optimization, not just for code generation.*
