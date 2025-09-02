@@ -10,7 +10,7 @@ Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. 
 - They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
 - There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
 
-In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions). In the case of gpt-oss-120b on Strix Halo, GPT-5 also estimated a token-generation improvement from ~30 t/s to ~50 t/s—an uplift of 67%—if this cooperative matrix multiplication is enabled.
+In particular, GPT-5 highlighted that as of 27 Aug 2025, LM Studio’s shipped `llama.cpp` runtimes have not been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix` (or newer cooperative-matrix extensions).
 
 Following a build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
 
@@ -138,7 +138,7 @@ For reference, deployments with LM Studio (CLI v0.0.46) and its shipped `llama.c
 
 A local Vulkan build of `llama.cpp` enables cooperative-matrix support absent in LM Studio’s packaged runtimes. On Strix Halo, this translates into a measurable throughput gain: from ~30 t/s to 45–49 t/s—an uplift of 50–63%.
 
-The improvement is not just incremental—it directly reflects hardware capabilities that LM Studio does not expose yet. GPT-5’s projected ~67% uplift proved directionally correct, with benchmarks and real-world performance landing only slightly lower.
+The improvement is not just incremental—it directly reflects hardware capabilities that LM Studio does not expose yet.
 
 The takeaway is clear:
 
@@ -146,5 +146,3 @@ The takeaway is clear:
 - For convenience, LM Studio’s bundled builds are sufficient but capped.
 
 Until the `llama.cpp` builds bundled with LM Studio and other frontends ship with cooperative-matrix support, anyone chasing efficiency on Strix Halo (or similar GPUs) should invest in compiling `llama.cpp` locally.
-
-*NB: Models like GPT-5 can accelerate workflows by spotting missing features, predicting performance gains, and guiding system-level build choices—effectively serving as a copilot for optimization, not just for code generation.*
