@@ -113,7 +113,7 @@ And for a longer-context benchmark:
 > | gpt-oss 120B MXFP4 MoE         |...|    4096 |      256 |  1 |    pp2048+tg128 |        242.73 ± 0.67 |
 ```
 
-The above benchmarks hold up reasonably well in deployment, e.g. with `-c 32768 -b 4096 -ub 256 --flash-attn`:
+The above results hold up reasonably well in deployment, e.g. with `-c 32768 -b 4096 -ub 256 --flash-attn`:
 
 ```bash
 prompt_n: 1996
