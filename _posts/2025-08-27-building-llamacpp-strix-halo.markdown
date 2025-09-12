@@ -5,24 +5,20 @@ date:   2025-08-27 23:30:00 +0800
 categories: jekyll update
 ---
 
-Most LLM GUI frontends (e.g. LM Studio) ship with their own `llama.cpp` builds. These are fine for general use, but:
+Most current laptops and mini-PCs with AMD’s Strix Halo APU expose matrix cores through Vulkan (`VK_KHR_cooperative_matrix`). These units can accelerate the large GEMMs that dominate LLM inference—but only if the runtime actually compiles and dispatches the right shader paths.
 
-- They may not enable Vulkan cooperative matrix support (`VK_KHR_cooperative_matrix`).
-- There may only be GUI control over per-model parameters (flash-attention, KV quantization, offloading etc.), making headless operation inconvenient.
+Off-the-shelf GUI frontends such as LM Studio ship their own `llama.cpp` builds for convenience. These builds are designed for broad compatibility, not peak performance. Depending on how they’re compiled and how the GUI orchestrates generation, key optimizations (e.g. cooperative-matrix matmul, Flash Attention, KV cache quantization) may or may not be in play.
 
-In particular, GPT-5 highlighted that given the ~30 t/s token generation, LM Studio’s shipped `llama.cpp` runtimes likely have *not* been built with Vulkan SDK versions that enable `VK_KHR_cooperative_matrix`.
+To see what Strix Halo can really do, it helps to build `llama.cpp` locally with Vulkan shaders compiled against a recent RADV + Vulkan SDK toolchain. The sections below walk through setup, build, and benchmark results.
 
-Following a build on Ubuntu 24.04, results show that a local build of `llama.cpp` does indeed unlock a significantly faster Vulkan path for Strix Halo.
+## 1. Drivers and SDKs
 
-*NB: Windows builds are possible, but AMD cooperative matrix support is not consistently exposed in Windows drivers yet.*
-
-## 1. RADV + Vulkan SDK
-
-First, the driver and API support required for cooperative-matrix matmul.
+On Linux, RADV (Mesa’s AMD Vulkan driver) exposes `VK_KHR_cooperative_matrix`. A local Vulkan build of `llama.cpp` can make direct use of this path. The build requires:
 
 ```bash
-# base toolchain
 sudo apt update
+
+# base toolchain
 sudo apt install -y build-essential git cmake ninja-build pkg-config libcurl4-openssl-dev
 
 # Vulkan user/runtime + diagnostics
@@ -32,9 +28,7 @@ sudo apt install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
 sudo apt install -y glslang-tools spirv-tools
 ```
 
-## 2. Build glslc
-
-This supplies the tooling to compile cooperative-matrix shader code.
+For shader compilation:
 
 ```bash
 sudo apt update
@@ -59,9 +53,9 @@ glslc --version
 > Target: SPIR-V 1.0
 ```
 
-## 3. Building llama.cpp
+## 2. Building llama.cpp
 
-Cooperative-matrix matmul is introduced when `vulkan-shaders-gen` compiles and embeds the `OpCooperativeMatrix*` shaders.
+Enable Vulkan and allow shader generation:
 
 ```bash
 git clone https://github.com/ggerganov/llama.cpp.git
@@ -82,9 +76,11 @@ ninja -C build
 > [261/261] Linking CXX executable bin/llama-server
 ```
 
-## 4. Verify with llama-bench
+At build time, the shaders include cooperative-matrix variants if the driver supports it.
 
-Cooperative-matrix matmul is confirmed at runtime when benchmark logs show `matrix cores: KHR_coopmat`
+## 3. Verify with llama-bench
+
+GPU support for cooperative-matrix matmul is confirmed when benchmark logs show `matrix cores: HR_coopmat`.
 
 ```bash
 export GGML_LOG_LEVEL=2
@@ -119,7 +115,7 @@ And for a longer-context benchmark:
 > | gpt-oss 120B MXFP4 MoE         |...|    4096 |      256 |  1 |    pp2048+tg128 |        242.73 ± 0.67 |
 ```
 
-The above results hold up reasonably well in deployment `-c 32768 -b 4096 -ub 256 --flash-attn`:
+The above benchmarks hold up reasonably well in deployment, e.g. with `-c 32768 -b 4096 -ub 256 --flash-attn`:
 
 ```bash
 prompt_n: 1996
@@ -134,15 +130,17 @@ predicted_per_second: 45.53
 
 For reference, deployments with LM Studio (CLI v0.0.46) and its shipped `llama.cpp-linux-x86_64-vulkan-avx2-1.46.0` runtime never yielded more than ~30 t/s, even with trivially short contexts.
 
-## 5. Conclusion
+## 4. Conclusion
 
-A local Vulkan build of `llama.cpp` enables cooperative-matrix support absent in LM Studio’s packaged runtimes. On Strix Halo, this translates into a measurable throughput gain: from ~30 t/s to 45–49 t/s—an uplift of 50–63%.
+On Strix Halo, local Vulkan builds of `llama.cpp` consistently sustain ~45–50 tok/s on 120B-class MoE models, while LM Studio’s packaged runtimes are capped at ~30 tok/s.
 
-The improvement is not just incremental—it directly reflects hardware capabilities that LM Studio does not expose yet.
+Several factors likely contribute to this gap:
 
-The takeaway is clear:
+- **Shader paths**. A custom build guarantees cooperative-matrix kernels are present and can be selected for dense workloads. Packaged binaries may omit them or fall back to generic matmuls, especially on less common quantization formats.
+- **Runtime orchestration**. LM Studio introduces additional IPC and JSON streaming layers. This simplifies GUI and API integration but adds measurable per-token latency.
+- **Defaults and flags**. Local builds can be tuned with larger batch/ubatch sizes, FlashAttention toggles, and architecture-specific flags. GUI defaults are more conservative.
+
+Regardless, the takeaway is clear:
 
 - For maximum performance and control, local compilation remains mandatory.
 - For convenience, LM Studio’s bundled builds are sufficient but capped.
-
-Until the `llama.cpp` builds bundled with LM Studio and other frontends ship with cooperative-matrix support, anyone chasing efficiency on Strix Halo (or similar GPUs) should invest in compiling `llama.cpp` locally.
