@@ -5,8 +5,6 @@ date:   2025-08-27 23:30:00 +0800
 categories: jekyll update
 ---
 
-Most current laptops and mini-PCs with AMD’s Strix Halo APU expose matrix cores through Vulkan (`VK_KHR_cooperative_matrix`). These units can accelerate the large GEMMs that dominate LLM inference—but only if the runtime actually compiles and dispatches the right shader paths.
-
 Off-the-shelf GUI frontends such as LM Studio ship their own `llama.cpp` builds for convenience. These builds are designed for broad compatibility, not peak performance. Depending on how they’re compiled and how the GUI orchestrates generation, key optimizations (e.g. cooperative-matrix matmul, Flash Attention, KV cache quantization) may or may not be in play.
 
 To see what Strix Halo can really do, it helps to build `llama.cpp` locally with Vulkan shaders compiled against a recent RADV + Vulkan SDK toolchain. The sections below walk through setup, build, and benchmark results.
