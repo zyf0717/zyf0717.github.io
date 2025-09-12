@@ -132,11 +132,11 @@ For reference, deployments with LM Studio (CLI v0.0.46) and its shipped `llama.c
 
 On Strix Halo, local Vulkan builds of `llama.cpp` consistently sustain ~45–50 tok/s on 120B-class MoE models, while LM Studio’s packaged runtimes are capped at ~30 tok/s.
 
-Several factors likely contribute to this gap:
+A combination of several factors potentially contribute to this gap, including:
 
 - **Shader paths**. A custom build guarantees cooperative-matrix kernels are present and can be selected for dense workloads. Packaged binaries may omit them or fall back to generic matmuls, especially on less common quantization formats.
 - **Runtime orchestration**. LM Studio introduces additional IPC and JSON streaming layers. This simplifies GUI and API integration but adds measurable per-token latency.
-- **Defaults and flags**. Local builds can be tuned with larger batch/ubatch sizes, FlashAttention toggles, and architecture-specific flags. GUI defaults are more conservative.
+- **Defaults and flags**. Local builds can be tuned with larger batch/ubatch sizes, Flash Attention toggles, and architecture-specific flags. GUI defaults are more conservative.
 
 Regardless, the takeaway is clear:
 
