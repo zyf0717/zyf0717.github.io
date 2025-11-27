@@ -20,17 +20,17 @@ The year 2025 marked a foundational shift—not merely in tooling, but in how sy
 
 ## Data Engineering
 
-The focus transitioned from constructing pipelines to engineering resilient, observable data flows through structured orchestration. The core ingestion pattern leverages asynchronous concurrency and Pandas-based dataframes for transformation. Data is preprocessed near the source, upserted into DynamoDB to ensure each record reflects the most recent valid state, and versioned to S3 for auditability and recovery.
+The focus transitioned from constructing pipelines to engineering resilient, observable data flows through properly-structured orchestration. The core ingestion patterns include asynchronous concurrency and Pandas-based dataframes for transformation. Data is preprocessed near source, upserted into DynamoDB to ensure each record reflects the most recent valid state, and versioned to S3 for auditability, recovery, and downstream analysis.
 
-Jobs are triggered through a mix of event-driven and scheduled (cron-based) mechanisms, with buffers like SQS decoupling execution—allowing workloads to scale horizontally with greater flexibility and resilience under variable load.
+Jobs are triggered through a mix of event-driven and scheduled mechanisms. Buffers like SQS decouple execution, allowing workloads to scale flexibly, remaining resilient under variable load.
 
-Error handling is proactive: early-stage validation, task-scoped failure boundaries, and immediate termination on rate-limiting (e.g., HTTP 429) ensure fault isolation and recovery integrity.
+Error handling is proactive: early-stage validation, task-scoped failure boundaries, and immediate termination on rate-limiting (HTTP 429) ensure fault isolation and data integrity.
 
-Authentication-bound flows, such as SingPass integration, are implemented through stateless AWS Lambda chains—comprising PKCE flows, secure token exchanges, and claim decryption—with no persistent context between invocations.
+Authentication-bound flows, such as SingPass integration, are implemented through stateless AWS Lambda chains—including PKCE flows, secure token exchanges, and claim decryption—with no persistent context between invocations.
 
 ## Infrastructure as Code (IaC)
 
-All infrastructure is declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state with locking is managed through S3.
+Infrastructure is deliberately and declaratively provisioned using Terraform. Workspaces (`dev`, `stg`, `prd`) isolate environments, with deployments automated via GitHub Actions. Modules are parameterized to maximize reuse, and remote state with locking is managed through S3.
 
 Security follows the principle of least privilege: IAM roles are scoped tightly, environment-specific credentials are stored in AWS SSM Parameter Store, and ECR repository was bootstrapped for container promotion across environments.
 
@@ -38,27 +38,27 @@ Static front-end applications (e.g., S3 + CloudFront SPAs) are also codified in 
 
 ## CI/CD and Containerization
 
-CI/CD pipelines are managed through GitHub Actions. Docker images are built and tagged using Git commit SHAs and environment labels, then pushed to ECR. Lambda artifacts are packaged, versioned, and uploaded to S3 buckets. Promotion across environments is handled by reference—passing ECR image tags or copying S3-backed Lambda artifacts without rebuilding. Subsequent Terraform `plan` and `apply` steps are gated behind environment-specific approvals.
+CI/CD pipelines are managed through GitHub Actions. Docker images are built and tagged using Git commit SHAs and environment labels, then pushed to ECR. Lambda artifacts are packaged, versioned, and uploaded to S3 buckets. Promotion across environments is handled by reference—passing ECR image tags or copying S3-versioned Lambda artifacts without rebuilding. Subsequent Terraform `plan` and `apply` steps are gated behind environment-specific approvals.
 
-Unit tests are implemented using pytest, and executed during the CI process prior to any build or deployment steps. Test coverage includes core data logic and Lambda handlers, with failure conditions blocking downstream stages to ensure reliability and functional correctness.
+Unit tests are implemented with pytest, and executed during the CI process prior to any build or deployment steps. Test coverage includes core data logic and Lambda handlers, with failure conditions blocking downstream stages.
 
 ## Observability and Diagnostics
 
-Logging is structured and traceable—logs include correlation IDs, standardized timestamps, and context tags. CloudWatch is the central log sink, with log group lifecycle policies configured to balance traceability and storage cost.
+Logging is structured and traceable, and includes correlation IDs, standardized timestamps, and context tags. CloudWatch is the central log sink, with log group lifecycle policies configured to balance traceability and storage cost.
 
-Planned enhancements include lightweight telemetry on Lambda functions (e.g., execution duration, memory usage, throttle counts), and diagnostics to pinpoint ingest failures or malformed inputs.
+Planned enhancements include lightweight telemetry on Lambda functions (e.g., execution duration, memory usage, throttle counts), and diagnostics to pinpoint ingest failures, malformed inputs, or data anomalies.
 
 ## Development Environment and Tooling
 
-Local and cloud development environments are standardized for consistency and rapid context switching. Secure tunnels (via Cloudflare Tunnel) enable remote access to headless environments, while IDE support is delivered through code-server and VS Code over SSH or remote tunnel.
+Local and cloud development environments are standardized for consistency and rapid context switching. Secure Cloudflare Tunnels enable remote access to headless environments, while IDE support is delivered through code-server, VS Code remote tunnels, and SSH.
 
 ## LLM-Assisted Development
 
-LLMs are used primarily as structured audit tools, not generative agents. Their role is to validate assumptions, surface inconsistencies across configuration, infrastructure, and code, and reinforce architectural coherence. Design suggestions are secondary—only introduced after core logic and structural contracts are clearly established. Generation is used mainly for boilerplate or tightly scoped tasks, and is otherwise applied sparingly—and never ahead of clear intent.
+LLMs are used primarily as structured audit tools, not generative agents. Their role is to validate assumptions, surface inconsistencies across configuration, infrastructure, and code, and reinforce architectural coherence. Design suggestions are secondary—only introduced after core logic and structural contracts are clearly established. Generation is used mainly for boilerplate or tightly scoped tasks, and is otherwise applied sparingly—and never ahead of deliberate intent.
 
 ## Looking Ahead
 
-The emphasis remains on architectural clarity: separating orchestration from business logic, behavior from configuration, and system design from runtime execution. The direction is not toward scaling complexity, but toward containing it—through clean interfaces, observable systems, and composition by intent.
+The emphasis remains on architectural clarity: separating orchestration from business logic, behavior from configuration, and system design from runtime execution. The direction is not toward scaling complexity, but toward containing it through clean interfaces, observable systems, and composition by intent.
 
 </div>
 
