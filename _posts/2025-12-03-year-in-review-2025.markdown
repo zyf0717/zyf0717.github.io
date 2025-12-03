@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Year in Review (2025)"
+title:  "Year in Review (2025): Infrastructure over Implementation"
 date:   2025-12-03 12:00:00 +0800
 categories: jekyll update
 ---
@@ -16,6 +16,8 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
+The theme for 2025 was Infrastructure over Implementation. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+
 ## Zero-Trust Wearables Data Ingestion
 
 The foundational pillar of the 2025 roadmap was an infrastructure platform engineered to link consumer wearable biometrics with verified national identity layers. This system bridges Polar AccessLink (biometrics) and SingPass MyInfo (identity), solving the critical challenge of ingesting high-sensitivity health data without exposing Personally Identifiable Information (PII) to intermediate states or database administrators.
@@ -24,7 +26,7 @@ The platform was architected as a strictly event-driven, serverless ecosystem on
 
 - **Infrastructure as Code & Multi-Environment Strategy**: The entire stack is defined in Terraform, utilizing a modular architecture to enforce strict separation of concerns between networking, storage, and compute. Deployment consistency is guaranteed through workspace-based isolation (dev, stg, prd) and a rigid artifact promotion strategy where immutable build artifacts are propagated from staging to production, ensuring that the code tested is exactly the code deployed.
 
-- **Hybrid Encryption & Identity Federation**: One significant engineering complexity was the "Zero Trust" handling of NRIC data. A custom hybrid encryption scheme was implemented: data is secured in transit using AES-256-GCM and at rest using RSA/ECC asymmetric encryption. This ensures that only data custodians with private key access can decrypt sensitive fields—effectively keeping data anonymized throughout subsequent processing, storage and analysis pipeline.
+- **Hybrid Encryption & Identity Federation**: One significant engineering complexity was the "Zero Trust" handling of NRIC data. A custom hybrid encryption scheme was implemented: data is secured in transit using AES-256 and at rest using RSA-2048 asymmetric encryption. This ensures that only data custodians with private key access can decrypt sensitive fields—effectively keeping data anonymized throughout subsequent processing, storage and analysis pipeline.
 
 - **Asynchronous Polling Architecture**: To decouple ingestion from external API constraints, the system utilizes a robust Polling Pattern rather than relying on brittle webhooks for data transfer. A scheduled "Poller" Lambda actively queries the provider for outstanding transaction IDs and pushes them to an SQS Queue, acting as a shock absorber for bursty data availability.
 
@@ -81,6 +83,8 @@ Some key features of the system include:
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
+The theme for 2025 was Infrastructure over Implementation. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+
 ## Zero-Trust Wearables Data Ingestion
 
 The core of the 2025 roadmap was an infrastructure platform that safely connects everyday wearable devices to verified national identity—without ever exposing sensitive personal data to people running the system.
@@ -95,7 +99,7 @@ The platform runs entirely on AWS as a fully event-driven, serverless system. In
 
 - **Hybrid Encryption & Identity Federation**
   Handling NRIC and other identity data is treated as a “zero trust” problem: the system assumes no internal component or operator should be trusted with raw identity information.
-  Data is encrypted while travelling through the system using modern symmetric encryption (AES-256-GCM), and then stored using asymmetric methods (RSA/ECC). Only a very small set of data custodians hold the private keys needed to decrypt identity fields. Everyone else—including database admins—only ever sees anonymised or pseudonymised records. The system can still link records correctly, but the real identity remains protected.
+  Data is encrypted while travelling through the system using modern symmetric encryption (AES-256), and then stored using asymmetric methods (RSA-2048). Only a very small set of data custodians hold the private keys needed to decrypt identity fields. Everyone else—including database admins—only ever sees anonymised or pseudonymised records. The system can still link records correctly, but the real identity remains protected.
 
 - **Asynchronous Polling Architecture**
   Instead of relying on fragile webhooks from external providers, the platform uses a controlled polling model. A scheduled “poller” function regularly asks the wearable provider for new or updated records and places the resulting transaction IDs into an SQS queue.
