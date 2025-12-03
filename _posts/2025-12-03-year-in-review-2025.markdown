@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Year in Review (2025): Systems Engineering for Data Integrity"
+title:  "Year in Review (2025): Systems Engineering"
 date:   2025-12-03 12:00:00 +0800
 categories: jekyll update
 ---
@@ -16,7 +16,7 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
-The theme for 2025 was Systems Engineering for Data Integrity. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction: zero-trust data ingestion, traffic engineering for LLM fleets, algorithmic validation of wearable signals, and resilient data acquisition over legacy interfaces.
 
 ## Zero-Trust Wearables Data Ingestion
 
@@ -34,7 +34,7 @@ The platform was architected as a strictly event-driven, serverless ecosystem on
 
 - **Administrative Control**: To manage participant cohorts securely, an ephemeral Batch ID mechanism was devised. Instead of permanent accounts, administrators generate time-bound identifiers that map to specific study parameters. The onboarding frontend is stateless, retrieving configuration dynamically from the Batch ID, which automatically expires via TTL to reduce the attack surface.
 
-## Traffic Engineering for LLM Endpoints
+## Traffic Engineering for LLM Fleet
 
 This project represents a shift from building *with* LLMs to engineering and managing a distributed fleet of self-deployed hardware and inference engines—a centralized middleware layer was constructed.
 
@@ -83,7 +83,7 @@ Some key features of the system include:
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The theme for 2025 was Systems Engineering for Data Integrity. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction: zero-trust data ingestion, traffic engineering for LLM fleets, algorithmic validation of wearable signals, and resilient data acquisition over legacy interfaces.
 
 ## Zero-Trust Wearables Data Ingestion
 
