@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Year in Review (2025): Systems Engineering"
-date:   2025-12-03 12:00:00 +0800
+date:   2025-12-03 19:30:00 +0800
 categories: jekyll update
 ---
 
@@ -75,12 +75,24 @@ Some key features of the system include:
 
 - **Idempotent Merging Logic**: The pipeline is designed to be re-runnable. The `_merge_with_existing_data` method checks S3 for existing Parquet partitions, loads them, merges newly retrieved data, and deduplicates based on timestamp and station ID. This ensures that re-running the scraper for overlapping dates does not corrupt the dataset, failed runs will automatically be retried without data loss, and the entire historical dataset can be rebuilt from scratch if absolutely necessary.
 
+## Data Lake and Onboarding
+
+This project is primarily a Shiny (Python) application, allowing users to explore AWS Data Lake through a reactive web interface rather than looking at metadata, schemas and even raw data files.
+
+- **State Management via Reactive Caching**: Race conditions—where UI elements rendered before schemas resolved—were eliminated by preloading the AWS Glue catalog into memory at startup via `initialize_data_cache`. Additionally, the reactive graph was hardened by enforcing explicit dependencies in analysis functions, ensuring stale computations are invalidated only when the full context is available.
+
+- **Hybrid Compute & Dual-Layer Caching**: The platform bridges serverless and local compute. Heavy data retrieval is offloaded to AWS Athena, while fine-grained statistical tests (ANOVA, OLS) run in-memory via Pandas. To support this, a Dual-Layer Caching Strategy was implemented: global schema caching for UI responsiveness and per-session query result caching to prevent redundant S3 scans and preserve Athena concurrency limits.
+
+- **Semantic Data Integrity**: To address "schema-on-read" ambiguity, instead of relying on automated detection, the system uses Configuration-Driven Overrides (`ui_config.py`) to strictly enforce data types. This guarantees that identifiers like Subject IDs are treated as categorical variables, disallowing erroneous regression analyses and ensuring robustness of the automated statistical engine.
+
+- **Client-Side Infrastructure Automation**: A PowerShell automation script was used to encapsulate complex ODBC connection parameters—AWS Region, IAM Profiles, and S3 Output locations—into a single execution. It ensures every analyst's local environment is identical, effectively decoupling connectivity troubleshooting from the actual data analysis work.
+
 </div>
 
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction.
+The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and robust in how they handle data. Each project that follows pushes that principle in a different direction.
 
 ## Zero-Trust Wearables Data Ingestion
 
@@ -162,6 +174,21 @@ Key design elements include:
 - **Idempotent Merging Logic**
   The ingestion pipeline is designed to tolerate retries and partial failures. When new data arrives, a merge step checks if there are existing Parquet files in S3 for the same stations and time ranges.
   It then loads the existing data, combines it with the new batch, and removes duplicates based on timestamp and station ID. This means one can safely re-run the scraper for overlapping periods, restart after failures, or even rebuild the entire historical dataset from scratch—without corrupting data or double-counting records.
+
+## Data Lake and Onboarding
+This project is essentially a web dashboard that allows users to easily explore and analyze data stored in the cloud (AWS). Instead of requiring users to write code or look at raw, messy files, it provides a visual interface for clicking through data and running statistics.
+
+- **Stable & Reliable Interface**
+  "Glitches" where the interface attempted to display information prematurely were eliminated by pre-loading the table of contents (catalog) upon startup. The system also ensures that calculations do not execute mid-change; it waits until option selection is completely finished before updating results, effectively preventing transient errors.
+
+- **Smart Processing & Speed**
+  The platform efficiently splits the workload. It leverages the massive power of the cloud to find and retrieve large chunks of data, while detailed statistical calculations are handled instantly by the application itself. Results are also "saved" for the duration of the session, preventing the waste of time and resources on re-downloading the exact same files.
+
+- **Data Type Clarity**
+  Automated systems sometimes misinterpret what data represents (for example, treating a "User ID" number as a value to be added or subtracted). Instead of relying on guesswork, the application uses a strict rulebook (`ui_config.py`) that explicitly defines each piece of data. This prevents nonsensical mathematical errors, such as attempting to calculate the "average" of a User ID.
+
+- **One-Click Setup**
+  Connecting local environments to the cloud usually involves complex, error-prone configuration. This manual process was replaced with a single automated script. This ensures that every analyst's computer is set up identically, allowing teams to focus on actual analysis rather than troubleshooting connectivity issues.
 
 </div>
 
