@@ -16,7 +16,7 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
-The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction: zero-trust data ingestion, traffic engineering for LLM fleets, algorithmic validation of wearable signals, and resilient data acquisition over legacy interfaces.
+The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and robust in how they handle data. Each project that follows pushes that principle in a different direction.
 
 ## Zero-Trust Wearables Data Ingestion
 
@@ -24,27 +24,24 @@ The foundational pillar of the 2025 roadmap was an infrastructure platform engin
 
 The platform was architected as a strictly event-driven, serverless ecosystem on AWS, rejecting monolithic patterns in favor of granular scalability and isolation.
 
-- **Infrastructure as Code & Multi-Environment Strategy**: The entire stack is defined in Terraform, utilizing a modular architecture to enforce strict separation of concerns between networking, storage, and compute. Deployment consistency is guaranteed through workspace-based isolation (dev, stg, prd) and a rigid artifact promotion strategy where immutable build artifacts are propagated from staging to production, ensuring that the code tested is exactly the code deployed.
+- **Infrastructure as Code & Multi-Environment Strategy**: The entire stack is defined in Terraform, utilizing a modular architecture to enforce strict separation of concerns between networking, storage, and compute. Deployment is via CI/CD, with workspace-based isolation (dev, stg, prd) and a rigid artifact promotion strategy where immutable build artifacts are propagated from staging to production.
 
 - **Hybrid Encryption & Identity Federation**: One significant engineering complexity was the "Zero Trust" handling of NRIC data. A custom hybrid encryption scheme was implemented: data is secured in transit using AES-256 and at rest using RSA-2048 asymmetric encryption. This ensures that only data custodians with private key access can decrypt sensitive fields—effectively keeping data anonymized throughout subsequent processing, storage and analysis pipeline.
 
 - **Asynchronous Polling Architecture**: To decouple ingestion from external API constraints, the system utilizes a robust Polling Pattern rather than relying on brittle webhooks for data transfer. A scheduled "Poller" Lambda actively queries the provider for outstanding transaction IDs and pushes them to an SQS Queue, acting as a shock absorber for bursty data availability.
 
-- **OLTP vs. OLAP Separation**: Operational and Analytical data planes were strictly separated. Ingestion is write-optimized, routing payloads immediately to DynamoDB and S3 to handle concurrency. Downstream analysis is read-optimized via a scheduled Incremental Load process that transforms JSON into columnar Parquet format, creating a Data Lakehouse queryable via Amazon Athena at minimal cost.
-
-- **Administrative Control**: To manage participant cohorts securely, an ephemeral Batch ID mechanism was devised. Instead of permanent accounts, administrators generate time-bound identifiers that map to specific study parameters. The onboarding frontend is stateless, retrieving configuration dynamically from the Batch ID, which automatically expires via TTL to reduce the attack surface.
+- **OLTP vs. OLAP Separation**: Operational and Analytical data planes were strictly separated. Ingestion is write-optimized, asynchronously routing payloads to DynamoDB and S3. Downstream analysis is read-optimized via a scheduled Incremental Load process that transforms JSON into columnar Parquet format, creating a Data Lakehouse queryable via Amazon Athena. Large-scale queries can thus be performed downstream without impacting live ingestion workloads, while also preserving cost-efficiency.
 
 ## Traffic Engineering for LLM Fleet
 
-This project represents a shift from building *with* LLMs to engineering and managing a distributed fleet of self-deployed hardware and inference engines—a centralized middleware layer was constructed.
+This project is about managing a distributed fleet of self-deployed LLMs on heterogeneous hardware. A centralized smart proxy and routing layer was constructed.
 
-Unlike a traditional load balancer, this system functions more like a Semantic Resource Scheduler for a private cloud.
 
-- **Semantic & Hardware-Aware Routing**: The system replaces simple load balancing with intelligent traffic engineering. A `WorkloadClassifier` categorizes incoming prompts by intent (e.g., Reasoning, Programming, High-Throughput) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests based on the explicit hardware capabilities of registered endpoints. This ensures that computationally intensive tasks are matched with high-VRAM nodes, while lightweight queries are directed to faster, lower-capacity instances, effectively preventing resource contention and optimizing throughput.
+- **Semantic & Hardware-Aware Routing**: The system routes traffic intelligently—a `WorkloadClassifier` categorizes incoming prompts by intent (e.g., Reasoning, Programming, High-Throughput) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests based on the explicit hardware capabilities of registered endpoints. This smart routing ensures that computationally intensive tasks are matched with high-VRAM nodes, while lightweight queries are directed to faster, lower-capacity ones, effectively preventing resource contention and optimizing throughput.
 
-- **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI Proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats, specifically separating internal "reasoning" traces (chain-of-though) from final text output. The system implements a robust stream processor that buffers and detects provider-specific delimiters (e.g., `<think>` tags or proprietary control tokens) in real-time. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging.
+- **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI Proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats—in particular separating internal "reasoning" traces (chain-of-though) from final text output. The system implements a robust stream processor that buffers and detects provider-specific delimiters (including `<think>` tags or proprietary control tokens) in real-time. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client for easier and standardized client-side consumption, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging (e.g. for context).
 
-- **Real-Time Observability Plane**: To validate these orchestration decisions, a dedicated observability interface was developed using Shiny for Python. Unlike standard chat clients, this dashboard was engineered to expose the router's internal state, visualizing the rationale behind each dispatch. Routing metadata—including workload classification, confidence scores, and the specific hardware specifications (e.g., VRAM capacity, GPU model) of the executing node—is extracted from response headers and displayed alongside the generation. This mechanism provides immediate verification that heavy workloads are correctly landing on high-compute targets, effectively closing the feedback loop on the traffic engineering strategies.
+- **Real-Time Observability Plane**: To validate these orchestration decisions, a dedicated observability interface was developed using Shiny for Python. Unlike standard chat clients, this dashboard was engineered to expose the router's internal state, visualizing the rationale behind specific dispatches. Routing metadata, which includes workload classification, confidence scores, corresponding hardware specifications of the executing node, is extracted from response headers and displayed alongside the generation. This mechanism provides transparent verification that heavy workloads are correctly landing on high-compute targets, allowing for feedback-based fine-tuning and troubleshooting of the smart routing.
 
 ## Algorithmic Rigor in Signal Processing
 
@@ -60,9 +57,9 @@ Upcoming work will introduce an algorithmic validation engine designed to detect
 
 ## Robust Data Acquisition via Browser Automation
 
-To correlate physiological metrics with environmental stressors, a bespoke Robotic Process Automation (RPA) engine was engineered to retrieve weather data locked behind a legacy portal.
+To correlate physiological metrics with environmental stressors, a custom Robotic Process Automation (RPA) engine was engineered to retrieve weather data locked behind a legacy portal lacking modern API access.
 
-HTTP scraping was insufficient due to the target's complex, frame-based architecture and dynamic session management. A robust automation layer was thus built using Selenium to mimic human interaction patterns. This RPA engine autonomously navigates the legacy interface, handling multi-step selection logic for weather stations and parameters, effectively creating a "phantom API" over a GUI-only backend.
+HTTP scraping was insufficient due to the target's complex, frame-based architecture and dynamic session management. A highly-customizable automation layer was thus built using Selenium to autonomously navigates the legacy interface, handling multi-step selection logic for weather stations and parameters, effectively creating a "phantom API" over a GUI-only backend.
 
 The system was designed to operate autonomously in a headless environment, orchestrating the scheduled download of TSV-like files as they are generated. These artifacts are subsequently normalized and synced to an S3 Data Lake, decoupling the downstream analytical layers from the fragility of the acquisition method and ensuring that recent environmental data is always available for correlation.
 
@@ -83,19 +80,17 @@ Some key features of the system include:
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction: zero-trust data ingestion, traffic engineering for LLM fleets, algorithmic validation of wearable signals, and resilient data acquisition over legacy interfaces.
+The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and disciplined in how they handle data. Each project that follows pushes that principle in a different direction.
 
 ## Zero-Trust Wearables Data Ingestion
 
-The core of the 2025 roadmap was an infrastructure platform that safely connects everyday wearable devices to verified national identity—without ever exposing sensitive personal data to people running the system.
+The core platform for 2025 was a secure bridge between consumer wearables and verified national identity. In practical terms: it connects Polar (for heart rate and activity) with SingPass MyInfo (for identity), while making sure that sensitive details like NRIC never appear in plain text to anyone operating or maintaining the system.
 
-In practice, it links Polar wearables (for biometrics like heart rate) with SingPass MyInfo (for verified identity in Singapore). The key design constraint: researchers should be able to analyse health data tied to real people, but database administrators must *never* see NRICs or other PII in plain form.
+The platform is built as a collection of small services on AWS that only activate when needed, instead of one big always-on server. This makes it easier to scale, isolate problems, and keep the system maintainable over time.
 
-The platform runs entirely on AWS as a fully event-driven, serverless system. Instead of one big application server, it is made up of many small, independent functions that only wake up when needed. This keeps costs low, isolates failures, and makes it easy to scale specific parts of the workflow under load.
-
-- **Infrastructure as Code & Multi-Environment Strategy**
-  The entire cloud setup—networks, databases, storage, and compute—is described as code (Terraform). That code is organised into modules so that networking, storage, and compute remain clearly separated.
-  There are distinct environments (dev, staging, production), and deployments follow a strict promotion flow: code is first tested in staging, then the exact same compiled artifacts are promoted to production. This reduces “it works on staging but not in production” failures, because there is no hidden difference between what was tested and what is live.
+- **Scripted Infrastructure & Multi-Environment Strategy**
+  The entire cloud setup—networks, databases, storage, and compute—is described as code (Terraform). This code is organised into modules so that networking, storage, and compute remain clearly separated.
+  There are distinct environments (dev, staging, production), and deployments follow a strict promotion flow: code is first tested in staging, then the exact same compiled artifacts are promoted to production. This reduces “it works on staging but not in production” failures, because there is no difference between what was tested and what is live.
 
 - **Hybrid Encryption & Identity Federation**
   Handling NRIC and other identity data is treated as a “zero trust” problem: the system assumes no internal component or operator should be trusted with raw identity information.
@@ -109,13 +104,9 @@ The platform runs entirely on AWS as a fully event-driven, serverless system. In
   The system keeps “live operations” and “analytics” strictly apart. Incoming data is written immediately into a fast operational store (DynamoDB and S3) optimised for many small writes and high concurrency.
   Separately, a scheduled process transforms this raw JSON into columnar Parquet files and builds a simple “lakehouse” for analysis. This means analysts can query large historical datasets cheaply and quickly (via tools like Athena), without affecting the live ingestion workload.
 
-- **Administrative Control**
-  Participant management is handled through temporary Batch IDs instead of permanent user accounts.
-  Administrators create time-limited Batch IDs that encode which study a participant belongs to and what rules apply. The onboarding web frontend is stateless: it simply looks up the configuration associated with the Batch ID. When the Batch ID expires (via built-in time-to-live), it can no longer be used, which reduces the long-term attack surface and simplifies access control.
-
 ## Traffic Engineering for LLM Endpoints
 
-This project shifts from simply *using* AI models to actively running and orchestrating a private fleet of them across multiple machines. At the centre is a middleware layer that behaves less like a traditional load balancer and more like a “semantic traffic controller” for AI workloads.
+This project is about running and orchestrating a private fleet of LLMs across multiple machines. At the centre is a layer that behaves less like a "smart traffic controller” for AI workloads.
 
 - **Semantic & Hardware-Aware Routing**
   Incoming requests are first classified by a lightweight model (`WorkloadClassifier`) that identifies what kind of job they represent—deep reasoning, code generation, quick chat, batch-style throughput, and so on.
@@ -131,7 +122,7 @@ This project shifts from simply *using* AI models to actively running and orches
 - **Real-Time Observability Plane**
   To make sure routing decisions remain transparent and trustworthy, the system exposes an observability dashboard built with Shiny for Python.
   Instead of just showing chat messages, this dashboard displays *why* a particular node was chosen: the classification result, confidence scores, and the hardware profile of the endpoint that handled the request (GPU type, VRAM, etc.).
-  This creates a closed feedback loop: one can see, in real time, that complex reasoning queries do indeed land on the most capable nodes, while light traffic is efficiently routed elsewhere.
+  This creates a feedback loop: one can see, in real time, that complex reasoning queries do indeed land on the most capable nodes, while light traffic is efficiently routed elsewhere.
 
 ## Algorithmic Rigor in Signal Processing
 
@@ -154,11 +145,9 @@ Devices with consistently low correlations—i.e., they don’t resemble anyone 
 
 ## Robust Data Acquisition via Browser Automation
 
-To relate physiology to environmental conditions (such as heat stress), the system needed historical weather data that was only available through an old, complex web portal. There was no usable API, and traditional HTTP scraping broke on frames, redirects, and brittle session handling.
+To relate physiology to environmental conditions (such as heat stress), the system needed  weather data that was only available through an old, complex web portal. There was no usable API, and traditional HTTP scraping does not work on frames, redirects, or session handling.
 
-To work around this, a dedicated Robotic Process Automation (RPA) engine was built on top of Selenium to behave like a careful, tireless human user.
-
-The automation runs in a headless environment (no visible browser window), repeatedly logging into the portal, selecting the right weather stations and parameters, and downloading data files as they become available. Once downloaded, these files are standardised and stored in S3 so that downstream analytics can treat them as a clean, reliable data source without worrying about how they were obtained.
+To work around this, a dedicated Robotic Process Automation (RPA) engine was built on top of Selenium to runs in a headless environment (no visible browser window), routinely logging into the portal, selecting the right weather stations and parameters, and downloading data files as they become available. Once downloaded, these files are standardised and stored in S3 so that downstream analytics can treat them as a clean, reliable data source without worrying about how they were obtained.
 
 Key design elements include:
 
