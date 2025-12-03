@@ -1,0 +1,181 @@
+---
+layout: post
+title:  "Year in Review (2025)"
+date:   2025-12-03 12:00:00 +0800
+categories: jekyll update
+---
+
+<!-- Toggle Buttons -->
+<div>
+    <strong>View Mode Toggles:</strong>
+  <button onclick="toggleVersion('original')">Original (Default)</button>
+  <button onclick="toggleVersion('english')">Plain English</button>
+</div>
+<br>
+
+<!-- DENSE VERSION -->
+<div id="original" style="display: block;" markdown="1">
+
+## Zero-Trust Wearables Data Ingestion
+
+The foundational pillar of the 2025 roadmap was an infrastructure platform engineered to link consumer wearable biometrics with verified national identity layers. This system bridges Polar AccessLink (biometrics) and SingPass MyInfo (identity), solving the critical challenge of ingesting high-sensitivity health data without exposing Personally Identifiable Information (PII) to intermediate states or database administrators.
+
+The platform was architected as a strictly event-driven, serverless ecosystem on AWS, rejecting monolithic patterns in favor of granular scalability and isolation.
+
+- **Infrastructure as Code & Multi-Environment Strategy**: The entire stack is defined in Terraform, utilizing a modular architecture to enforce strict separation of concerns between networking, storage, and compute. Deployment consistency is guaranteed through workspace-based isolation (dev, stg, prd) and a rigid artifact promotion strategy where immutable build artifacts are propagated from staging to production, ensuring that the code tested is exactly the code deployed.
+
+- **Hybrid Encryption & Identity Federation**: One significant engineering complexity was the "Zero Trust" handling of NRIC data. A custom hybrid encryption scheme was implemented: data is secured in transit using AES-256-GCM and at rest using RSA/ECC asymmetric encryption. This ensures that only data custodians with private key access can decrypt sensitive fields—effectively keeping data anonymized throughout subsequent processing, storage and analysis pipeline.
+
+- **Asynchronous Polling Architecture**: To decouple ingestion from external API constraints, the system utilizes a robust Polling Pattern rather than relying on brittle webhooks for data transfer. A scheduled "Poller" Lambda actively queries the provider for outstanding transaction IDs and pushes them to an SQS Queue, acting as a shock absorber for bursty data availability.
+
+- **OLTP vs. OLAP Separation**: Operational and Analytical data planes were strictly separated. Ingestion is write-optimized, routing payloads immediately to DynamoDB and S3 to handle concurrency. Downstream analysis is read-optimized via a scheduled Incremental Load process that transforms JSON into columnar Parquet format, creating a Data Lakehouse queryable via Amazon Athena at minimal cost.
+
+- **Administrative Control**: To manage participant cohorts securely, an ephemeral Batch ID mechanism was devised. Instead of permanent accounts, administrators generate time-bound identifiers that map to specific study parameters. The onboarding frontend is stateless, retrieving configuration dynamically from the Batch ID, which automatically expires via TTL to reduce the attack surface.
+
+## Traffic Engineering for LLM Endpoints
+
+This project represents a shift from building *with* LLMs to engineering and managing a distributed fleet of self-deployed hardware and inference engines—a centralized middleware layer was constructed.
+
+Unlike a traditional load balancer, this system functions more like a Semantic Resource Scheduler for a private cloud.
+
+- **Semantic & Hardware-Aware Routing**: The system replaces simple load balancing with intelligent traffic engineering. A `WorkloadClassifier` categorizes incoming prompts by intent (e.g., Reasoning, Programming, High-Throughput) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests based on the explicit hardware capabilities of registered endpoints. This ensures that computationally intensive tasks are matched with high-VRAM nodes, while lightweight queries are directed to faster, lower-capacity instances, effectively preventing resource contention and optimizing throughput.
+
+- **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI Proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats, specifically separating internal "reasoning" traces (chain-of-though) from final text output. The system implements a robust stream processor that buffers and detects provider-specific delimiters (e.g., `<think>` tags or proprietary control tokens) in real-time. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging.
+
+- **Real-Time Observability Plane**: To validate these orchestration decisions, a dedicated observability interface was developed using Shiny for Python. Unlike standard chat clients, this dashboard was engineered to expose the router's internal state, visualizing the rationale behind each dispatch. Routing metadata—including workload classification, confidence scores, and the specific hardware specifications (e.g., VRAM capacity, GPU model) of the executing node—is extracted from response headers and displayed alongside the generation. This mechanism provides immediate verification that heavy workloads are correctly landing on high-compute targets, effectively closing the feedback loop on the traffic engineering strategies.
+
+## Algorithmic Rigor in Signal Processing
+
+[fit-diff](https://github.com/zyf0717/fit-diff) is a specialized analytical tool for the validation of wearable sensor data. The complexity lies in transforming messy, asynchronous sensor data into a format suitable for statistical comparison. It tackles the non-trivial problem of synchronizing independent hardware clocks through mathematical optimization.
+
+Since wearable devices record at different frequencies and start times, simple timestamp matching would fail to generate robust statistical comparisons.
+
+- **Adaptive Step-Size Search**: The `determine_optimal_shift` function implements a search algorithm that iteratively shifts the "test" signal against the "reference." It calculates an adaptive step size based on the greatest common divisor (GCD) of the sampling intervals of both files, ensuring the shift resolution matches the data density while attempting to minimize computational overhead.
+
+- **Loss Function Optimization**: The alignment isn't arbitrary; it minimizes a specific loss function (Mean Absolute Error, Mean Squared Error) or maximizes a correlation function (Pearson, Concordance Correlation Coefficient) to find an appropriate temporal offset.
+
+Upcoming work will introduce an algorithmic validation engine designed to detect anomalies within asynchronous data streams—without relying on "benchmark" devices. As participants are expected to perform similar activities, physiological patterns are also expected to somewhat converge; however, variable start times and even clock drift often obscure this similarity. By treating heart rate streams as signals, and applying z-normalization and global cross-correlation, we can mathematically maximize signal overlap to establish a baseline of "expected" behavior. This process serves primarily as a quality gate: rather than just aligning data, it uses low mean correlation scores to flag potential "outlier" devices or sensor failure incidents to be excluded from final analysis.
+
+## Robust Data Acquisition via Browser Automation
+
+To correlate physiological metrics with environmental stressors, a bespoke Robotic Process Automation (RPA) engine was engineered to retrieve weather data locked behind a legacy portal.
+
+HTTP scraping was insufficient due to the target's complex, frame-based architecture and dynamic session management. A robust automation layer was thus built using Selenium to mimic human interaction patterns. This RPA engine autonomously navigates the legacy interface, handling multi-step selection logic for weather stations and parameters, effectively creating a "phantom API" over a GUI-only backend.
+
+The system was designed to operate autonomously in a headless environment, orchestrating the scheduled download of TSV-like files as they are generated. These artifacts are subsequently normalized and synced to an S3 Data Lake, decoupling the downstream analytical layers from the fragility of the acquisition method and ensuring that recent environmental data is always available for correlation.
+
+Some key features of the system include:
+
+- **Fluent Interface Pattern**: The core Automata class wraps the raw Selenium WebDriver in a Fluent Interface. This allows for method chaining, making the automation scripts readable and declarative. Instead of verbose Selenium boilerplate, the code reads like a set of instructions:
+
+  ```python
+  automata.open(url).select(...).input_text(...).click(...).wait(...).click.(...)
+  ```
+
+  Even logic for logins and navigation is encapsulated in high-level methods.
+
+- **Idempotent Merging Logic**: The pipeline is designed to be re-runnable. The `_merge_with_existing_data` method checks S3 for existing Parquet partitions, loads them, merges newly retrieved data, and deduplicates based on timestamp and station ID. This ensures that re-running the scraper for overlapping dates does not corrupt the dataset, failed runs will automatically be retried without data loss, and the entire historical dataset can be rebuilt from scratch if absolutely necessary.
+
+</div>
+
+<!-- ENGLISH VERSION -->
+<div id="english" style="display: none;" markdown="1">
+
+## Zero-Trust Wearables Data Ingestion
+
+The core of the 2025 roadmap was an infrastructure platform that safely connects everyday wearable devices to verified national identity—without ever exposing sensitive personal data to people running the system.
+
+In practice, it links Polar wearables (for biometrics like heart rate) with SingPass MyInfo (for verified identity in Singapore). The key design constraint: researchers should be able to analyse health data tied to real people, but database administrators must *never* see NRICs or other PII in plain form.
+
+The platform runs entirely on AWS as a fully event-driven, serverless system. Instead of one big application server, it is made up of many small, independent functions that only wake up when needed. This keeps costs low, isolates failures, and makes it easy to scale specific parts of the workflow under load.
+
+- **Infrastructure as Code & Multi-Environment Strategy**
+  The entire cloud setup—networks, databases, storage, and compute—is described as code (Terraform). That code is organised into modules so that networking, storage, and compute remain clearly separated.
+  There are distinct environments (dev, staging, production), and deployments follow a strict promotion flow: code is first tested in staging, then the exact same compiled artifacts are promoted to production. This reduces “it works on staging but not in production” failures, because there is no hidden difference between what was tested and what is live.
+
+- **Hybrid Encryption & Identity Federation**
+  Handling NRIC and other identity data is treated as a “zero trust” problem: the system assumes no internal component or operator should be trusted with raw identity information.
+  Data is encrypted while travelling through the system using modern symmetric encryption (AES-256-GCM), and then stored using asymmetric methods (RSA/ECC). Only a very small set of data custodians hold the private keys needed to decrypt identity fields. Everyone else—including database admins—only ever sees anonymised or pseudonymised records. The system can still link records correctly, but the real identity remains protected.
+
+- **Asynchronous Polling Architecture**
+  Instead of relying on fragile webhooks from external providers, the platform uses a controlled polling model. A scheduled “poller” function regularly asks the wearable provider for new or updated records and places the resulting transaction IDs into an SQS queue.
+  This queue acts as a buffer: if a large burst of data arrives, the ingestion system can scale up or down to consume it without overwhelming any single component.
+
+- **OLTP vs. OLAP Separation**
+  The system keeps “live operations” and “analytics” strictly apart. Incoming data is written immediately into a fast operational store (DynamoDB and S3) optimised for many small writes and high concurrency.
+  Separately, a scheduled process transforms this raw JSON into columnar Parquet files and builds a simple “lakehouse” for analysis. This means analysts can query large historical datasets cheaply and quickly (via tools like Athena), without affecting the live ingestion workload.
+
+- **Administrative Control**
+  Participant management is handled through temporary Batch IDs instead of permanent user accounts.
+  Administrators create time-limited Batch IDs that encode which study a participant belongs to and what rules apply. The onboarding web frontend is stateless: it simply looks up the configuration associated with the Batch ID. When the Batch ID expires (via built-in time-to-live), it can no longer be used, which reduces the long-term attack surface and simplifies access control.
+
+## Traffic Engineering for LLM Endpoints
+
+This project shifts from simply *using* AI models to actively running and orchestrating a private fleet of them across multiple machines. At the centre is a middleware layer that behaves less like a traditional load balancer and more like a “semantic traffic controller” for AI workloads.
+
+- **Semantic & Hardware-Aware Routing**
+  Incoming requests are first classified by a lightweight model (`WorkloadClassifier`) that identifies what kind of job they represent—deep reasoning, code generation, quick chat, batch-style throughput, and so on.
+  Based on that classification, an `LLMRouter` sends the request to the most appropriate backend machine. Heavy, long-running tasks go to nodes with large GPUs and high VRAM; lighter queries go to smaller, faster nodes. This prevents a single demanding request from clogging up resources meant for fast responses, and improves overall throughput and latency.
+
+- **Streaming Proxy with Protocol Normalization**
+  A custom FastAPI proxy acts as the single entry point for clients, speaking an OpenAI-compatible API. Behind it, different backends may have slightly different response formats, especially around “reasoning traces” or chain-of-thought output.
+  The proxy’s stream processor watches the Server-Sent Events (SSE) stream in real time, detecting provider-specific markers (for example, tags like `<think>`). It splits the stream into two parallel channels:
+  - one for internal reasoning traces (which can be logged, analysed, or hidden from end users),
+  - one for the final answer sent back to the client.
+  At the same time, an `SSEAccumulator` rebuilds the full response on the server to support conversation history, debugging, and offline analysis.
+
+- **Real-Time Observability Plane**
+  To make sure routing decisions remain transparent and trustworthy, the system exposes an observability dashboard built with Shiny for Python.
+  Instead of just showing chat messages, this dashboard displays *why* a particular node was chosen: the classification result, confidence scores, and the hardware profile of the endpoint that handled the request (GPU type, VRAM, etc.).
+  This creates a closed feedback loop: one can see, in real time, that complex reasoning queries do indeed land on the most capable nodes, while light traffic is efficiently routed elsewhere.
+
+## Algorithmic Rigor in Signal Processing
+
+[fit-diff](https://github.com/zyf0717/fit-diff) is a tool built to compare and validate sensor data from different wearables—say, a chest strap vs. a smartwatch—without assuming that either one is perfect.
+
+The main difficulty is that each device records at its own sampling rate and starts at its own time. One cannot simply line up timestamps and subtract; doing so would produce misleading statistics.
+
+- **Adaptive Step-Size Search**
+  The `determine_optimal_shift` function tackles this by treating one signal as a reference and sliding the other forward and backward in time. At each small time shift, it computes a score describing how well the two signals line up.
+  The step size isn’t arbitrary: it is based on the greatest common divisor (GCD) of the sampling intervals of both devices. This gives a sensible minimum shift that respects the data’s resolution while keeping the search computationally manageable.
+
+- **Loss Function Optimization**
+  To decide which time shift is “best,” the algorithm minimises or maximises a chosen metric—for example:
+  - minimising Mean Absolute Error or Mean Squared Error, or
+  - maximising correlation measures like Pearson or Concordance Correlation Coefficient.
+  The result is a principled estimate of how much one device’s timeline should be shifted to align with another’s, enabling fair comparisons of heart rate, cadence, or other metrics.
+
+Future work extends this from *alignment* to *validation*. Instead of comparing devices against a designated “gold standard,” it looks at how similar participants’ heart rate signals are under similar activities. By standardising (z-normalising) each time series and applying global cross-correlation, the system can estimate how well a given device’s data matches the overall pattern.
+Devices with consistently low correlations—i.e., they don’t resemble anyone else’s physiology in comparable conditions—can be flagged as likely outliers or failing sensors, and excluded before formal analysis.
+
+## Robust Data Acquisition via Browser Automation
+
+To relate physiology to environmental conditions (such as heat stress), the system needed historical weather data that was only available through an old, complex web portal. There was no usable API, and traditional HTTP scraping broke on frames, redirects, and brittle session handling.
+
+To work around this, a dedicated Robotic Process Automation (RPA) engine was built on top of Selenium to behave like a careful, tireless human user.
+
+The automation runs in a headless environment (no visible browser window), repeatedly logging into the portal, selecting the right weather stations and parameters, and downloading data files as they become available. Once downloaded, these files are standardised and stored in S3 so that downstream analytics can treat them as a clean, reliable data source without worrying about how they were obtained.
+
+Key design elements include:
+
+- **Fluent Interface Pattern**
+  The core `Automata` class wraps Selenium in a more readable, chainable API. Instead of low-level driver calls, automation scripts read almost like a set of instructions:
+
+  ```python
+  automata.open(url).select(...).input_text(...).click(...).wait(...).click(...)
+  ```
+  Even multi-step flows such as login, navigation, and file downloads are encapsulated as high-level operations, reducing complexity and making the automation easier to maintain.
+
+- **Idempotent Merging Logic**
+  The ingestion pipeline is designed to tolerate retries and partial failures. When new data arrives, a merge step checks if there are existing Parquet files in S3 for the same stations and time ranges.
+  It then loads the existing data, combines it with the new batch, and removes duplicates based on timestamp and station ID. This means one can safely re-run the scraper for overlapping periods, restart after failures, or even rebuild the entire historical dataset from scratch—without corrupting data or double-counting records.
+
+</div>
+
+<!-- Toggle Script -->
+<script>
+function toggleVersion(id) {
+  document.getElementById('original').style.display = (id === 'original') ? 'block' : 'none';
+  document.getElementById('english').style.display = (id === 'english') ? 'block' : 'none';
+}
+</script>
