@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Year in Review (2025): Infrastructure over Implementation"
+title:  "Year in Review (2025): Systems Engineering for Data Integrity"
 date:   2025-12-03 12:00:00 +0800
 categories: jekyll update
 ---
@@ -16,7 +16,7 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
-The theme for 2025 was Infrastructure over Implementation. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+The theme for 2025 was Systems Engineering for Data Integrity. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
 
 ## Zero-Trust Wearables Data Ingestion
 
@@ -83,7 +83,7 @@ Some key features of the system include:
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The theme for 2025 was Infrastructure over Implementation. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
+The theme for 2025 was Systems Engineering for Data Integrity. It wasn't just about writing code; it was about engineering systems that are secure by design, intelligent in how they use resources, and rigorous in how they handle data. As we move into 2026, these platforms provide a rock-solid foundation for even more advanced work.
 
 ## Zero-Trust Wearables Data Ingestion
 
