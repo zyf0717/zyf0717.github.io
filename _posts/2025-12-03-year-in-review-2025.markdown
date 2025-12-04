@@ -18,19 +18,24 @@ categories: jekyll update
 
 The theme for 2025 was Systems Engineering—not just writing code, but architecting and deploying end-to-end systems that are secure by design, resource-efficient, and robust in data-handling. Each project that follows pushes that principle in a different direction.
 
-## Scalable Architecture for Identity-Linked Biometric Data
+## Scalable Architecture for Identity-Linked Data
 
 The foundational pillar of the 2025 roadmap was an infrastructure platform engineered to link consumer wearable biometrics with verified national identity layers. This system bridges Polar AccessLink (biometrics) and SingPass MyInfo (identity), solving a critical challenge of ingesting high-sensitivity health data without exposing identity fields to intermediate states or database administrators.
 
 The platform was architected as a strictly event-driven, serverless ecosystem on AWS, rejecting monolithic patterns in favor of granular scalability and isolation.
 
-- **Infrastructure as Code & Multi-Environment Strategy**: The entire stack is defined in Terraform, utilizing a modular architecture to enforce strict separation of concerns between networking, storage, and compute. Security (via IAM roles) follows the principle of least privilege. Deployment is via CI/CD, with workspace-based isolation (dev, stg, prd) and a rigid artifact promotion strategy where immutable build artifacts are propagated from staging to production.
-
-- **Hybrid Encryption & Identity Federation**: One significant engineering complexity was the handling of NRIC data. A hybrid application-layer encryption flow was implemented: data is encrypted using AES-256 in transit, and the NRIC is persisted in DynamoDB as an RSA-2048–encrypted payload. This ensures that only designated data custodians with private-key access can recover the plaintext NRIC, while backend services only process plaintext in volatile memory during the encryption transformation.
-
-- **Asynchronous Polling Architecture**: To decouple ingestion from external API constraints, the system utilizes a robust Polling Pattern rather than relying on brittle webhooks for data transfer. A scheduled "Poller" Lambda actively queries the provider for outstanding transaction IDs and pushes them to an SQS Queue, acting as a shock absorber for bursty data availability.
+- **Hybrid Encryption & Identity Federation (updated)**: One significant engineering complexity was the handling of NRIC data. A hybrid application-layer encryption flow was implemented: data is encrypted using AES-256 in transit, and the NRIC is persisted in DynamoDB as an RSA-2048–encrypted payload. This ensures that only designated data custodians with private-key access can recover the plaintext NRIC, while backend services only process plaintext in volatile memory during the encryption transformation.
 
 - **OLTP vs. OLAP Separation**: Operational and Analytical data planes were strictly separated. Ingestion is write-optimized, asynchronously routing payloads to DynamoDB and S3. Downstream analysis is read-optimized via a scheduled Incremental Load process that transforms JSON into columnar Parquet format, creating a Data Lakehouse queryable via Amazon Athena. Large-scale queries can thus be performed downstream without impacting live ingestion workloads, while also preserving cost-efficiency.
+
+- Other areas which have broadly been covered in a [previous post](https://zyf0717.github.io/jekyll/update/2025/05/01/data-systems-infrastructure.html) include:
+
+  - Asynchronous concurrency, SQS buffering, rate-limiting
+  - Infrastructure as Code
+  - CI/CD and Containerization
+  - Observability and Diagnostics
+  - Development Environment and Tooling
+  - LLM-Assisted Development
 
 ## Traffic Engineering for LLM Fleet
 
@@ -41,6 +46,16 @@ This project is about managing a distributed fleet of self-deployed LLMs on hete
 - **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI Proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats—in particular separating internal "reasoning" traces (chain-of-though) from final text output. The system implements a robust stream processor that buffers and detects provider-specific delimiters (including `<think>` tags or proprietary control tokens) in real-time. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client for easier and standardized client-side consumption, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging (e.g. for context).
 
 - **Real-Time Observability Plane**: To validate these orchestration decisions, a dedicated observability interface was developed using Shiny for Python. Unlike standard chat clients, this dashboard was engineered to expose the router's internal state, visualizing the rationale behind specific dispatches. Routing metadata, which includes workload classification, confidence scores, corresponding hardware specifications of the executing node, is extracted from response headers and displayed alongside the generation. This mechanism provides transparent verification that heavy workloads are correctly landing on high-compute targets, allowing for feedback-based fine-tuning and troubleshooting of the smart routing.
+
+- **Stateless Core with Config-Driven Topology**: The control-plane routing layer is stateless at the process level, and all LLM nodes are fully stateless. Endpoints are (re-)discovered and configured via a registry, while conversation state is stored centrally in persistent storage owned by the control plane. For each request, the router reconstructs the conversation from storage and sends the full context to a selected LLM node; these LLM nodes never hold or read conversational state themselves. This keeps the control plane horizontally scalable and simplifies failure recovery: any router instance can handle any request, and failed LLM nodes can be restarted or replaced without migrating in-memory session state.
+
+- **Extensibility and Contract-First Design**: The entire system is built around explicit contracts:
+
+  - a contract for how workloads are classified;
+  - a contract for how endpoints advertise capabilities; and
+  - a contract for how streams (reasoning + content) are emitted and consumed.
+
+  By treating these as stable interfaces, it becomes straightforward to add new workloads (e.g., evaluation, embedding-only, high-token “dump” modes), new endpoints (new nodes, new runtimes), or new visualizations in the observability layer without destabilizing the existing system.
 
 ## Algorithmic Rigor in Signal Processing
 
@@ -101,20 +116,21 @@ The core platform for 2025 was a secure bridge between consumer wearables and ve
 
 The platform is built as a collection of micro-services on AWS that only activate when needed, instead of one big always-on server. This makes it easier to scale, isolate problems, and keep the system maintainable over time.
 
-- **Scripted Infrastructure & Multi-Environment Strategy**
-  The entire cloud setup—networks, databases, storage, and compute—is described as code (Terraform). This code is organised into modules so that networking, storage, and compute remain clearly separated.
-  There are distinct environments (dev, staging, production), and deployments follow a strict promotion flow: code is first tested in staging, then the exact same compiled artifacts are promoted to production. This reduces “it works on staging but not in production” failures, because there is no difference between what was tested and what is live.
-
 - **Hybrid Encryption & Identity Federation**
   Hybrid Encryption & Identity Federation: Handling NRIC data required extra care. The system encrypts this information before it moves between components, and only an encrypted, locked version is stored in the database. A small group of authorised data custodians hold the private key needed to unlock and read the NRIC; backend services see it in readable form only briefly in memory while it is being encrypted, and never store it in plain text.
-
-- **Asynchronous Polling Architecture**
-  Instead of relying on fragile webhooks from external providers, the platform uses a controlled polling model. A scheduled “poller” function regularly asks the wearable provider for new or updated records and places the resulting transaction IDs into an SQS queue.
-  This queue acts as a buffer: if a large burst of data arrives, the ingestion system can scale up or down to consume it without overwhelming any single component.
 
 - **OLTP vs. OLAP Separation**
   The system keeps “live operations” and “analytics” strictly apart. Incoming data is written immediately into a fast operational store (DynamoDB and S3) optimised for many small writes and high concurrency.
   Separately, a scheduled process transforms this raw JSON into columnar Parquet files and builds a simple “lakehouse” for analysis. This means analysts can query large historical datasets cheaply and quickly (via tools like Athena), without affecting the live ingestion workload.
+
+- Other areas which have broadly been covered in a [previous post](https://zyf0717.github.io/jekyll/update/2025/05/01/data-systems-infrastructure.html) include:
+
+  - Asynchronous concurrency, SQS buffering, rate-limiting
+  - Infrastructure as Code
+  - CI/CD and Containerization
+  - Observability and Diagnostics
+  - Development Environment and Tooling
+  - LLM-Assisted Development
 
 ## Traffic Engineering for LLM Endpoints
 
@@ -135,6 +151,18 @@ This project is about running and orchestrating a private fleet of LLMs across m
   To make sure routing decisions remain transparent and trustworthy, the system exposes an observability dashboard built with Shiny for Python.
   Instead of just showing chat messages, this dashboard displays *why* a particular node was chosen: the classification result, confidence scores, and the hardware profile of the endpoint that handled the request (GPU type, VRAM, etc.).
   This creates a feedback loop: one can see, in real time, that complex reasoning queries do indeed land on the most capable nodes, while light traffic is efficiently routed elsewhere.
+
+- **Stateless Core with Config-Driven Topology**
+  The central “traffic controller” is the only part of the system that remembers your past messages. It stores conversation history in a durable, shared store that it can look up when needed. The AI machines behind it don’t keep any memory at all—they simply receive the full context from the controller for each request and send back a reply. Because of this, any AI machine can be added, removed, or restarted at any time without losing conversations or moving fragile in-memory data around.
+
+- **Extensibility and Clear-Rule Design**
+  The system is built around a few very clear, shared rules for how parts talk to each other:
+
+  - a rule for how incoming requests are labelled (e.g. “needs deep reasoning” vs “simple and fast”);
+  - a rule for how each machine describes what it can handle; and
+  - a rule for how model responses are split into “thinking process” and “final answer.”
+
+  Because these rules stay stable even as the system evolves, it is easy to plug in new kinds of work, new machines, or new dashboards without breaking what already exists. New pieces just have to follow the same rules to fit in.
 
 ## Algorithmic Rigor in Signal Processing
 
