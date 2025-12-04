@@ -143,8 +143,10 @@ This project is about running and orchestrating a private fleet of LLMs across m
 - **Streaming Proxy with Protocol Normalization**
   A custom FastAPI proxy acts as the single entry point for clients, speaking an OpenAI-compatible API. Behind it, different backends may have slightly different response formats, especially around “reasoning traces” or chain-of-thought output.
   The proxy’s stream processor watches the Server-Sent Events (SSE) stream in real time, detecting provider-specific markers (for example, tags like `<think>`). It splits the stream into two parallel channels:
+
   - one for internal reasoning traces (which can be logged, analysed, or hidden from end users),
   - one for the final answer sent back to the client.
+
   At the same time, an `SSEAccumulator` rebuilds the full response on the server to support conversation history, debugging, and offline analysis.
 
 - **Real-Time Observability Plane**
