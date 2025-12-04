@@ -9,7 +9,7 @@ categories: jekyll update
 <div>
     <strong>View Mode Toggles:</strong>
   <button onclick="toggleVersion('original')">Original (Default)</button>
-  <button onclick="toggleVersion('english')">Plain English</button>
+  <button onclick="toggleVersion('english')">Plain English (via LLM)</button>
 </div>
 <br>
 
