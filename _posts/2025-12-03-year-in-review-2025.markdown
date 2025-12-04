@@ -16,7 +16,7 @@ categories: jekyll update
 <!-- DENSE VERSION -->
 <div id="original" style="display: block;" markdown="1">
 
-The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and robust in how they handle data. Each project that follows pushes that principle in a different direction.
+The theme for 2025 was Systems Engineering—not just writing code, but architecting and deploying end-to-end systems that are secure by design, resource-efficient, and robust in data-handling. Each project that follows pushes that principle in a different direction.
 
 ## Zero-Trust Wearables Data Ingestion
 
@@ -91,7 +91,7 @@ This project is primarily a Shiny (Python) application, allowing users to explor
 <!-- ENGLISH VERSION -->
 <div id="english" style="display: none;" markdown="1">
 
-The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and robust in how they handle data. Each project that follows pushes that principle in a different direction.
+The theme for 2025 was Systems Engineering—not just writing code, but architecting and deploying end-to-end systems that are secure by design, resource-efficient, and robust in data-handling. Each project that follows pushes that principle in a different direction.
 
 *Note: the following sections are almost completely LLM-generated based on the version marked "Original".*
 
