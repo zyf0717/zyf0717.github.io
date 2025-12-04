@@ -36,7 +36,6 @@ The platform was architected as a strictly event-driven, serverless ecosystem on
 
 This project is about managing a distributed fleet of self-deployed LLMs on heterogeneous hardware. A centralized smart proxy and routing layer was constructed.
 
-
 - **Semantic & Hardware-Aware Routing**: The system routes traffic intelligently—a `WorkloadClassifier` categorizes incoming prompts by intent (e.g., Reasoning, Programming, High-Throughput) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests based on the explicit hardware capabilities of registered endpoints. This smart routing ensures that computationally intensive tasks are matched with high-VRAM nodes, while lightweight queries are directed to faster, lower-capacity ones, effectively preventing resource contention and optimizing throughput.
 
 - **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI Proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats—in particular separating internal "reasoning" traces (chain-of-though) from final text output. The system implements a robust stream processor that buffers and detects provider-specific delimiters (including `<think>` tags or proprietary control tokens) in real-time. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client for easier and standardized client-side consumption, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging (e.g. for context).
@@ -94,11 +93,13 @@ This project is primarily a Shiny (Python) application, allowing users to explor
 
 The theme for 2025 was Systems Engineering—not just writing code, but designing end-to-end systems that are secure by design, resource-efficient, and robust in how they handle data. Each project that follows pushes that principle in a different direction.
 
+*Note: the following sections are almost completely LLM-generated based on the version marked "Original".*
+
 ## Zero-Trust Wearables Data Ingestion
 
 The core platform for 2025 was a secure bridge between consumer wearables and verified national identity. In practical terms: it connects Polar (for heart rate and activity) with SingPass MyInfo (for identity), while making sure that sensitive details like NRIC never appear in plain text to anyone operating or maintaining the system.
 
-The platform is built as a collection of small services on AWS that only activate when needed, instead of one big always-on server. This makes it easier to scale, isolate problems, and keep the system maintainable over time.
+The platform is built as a collection of micro-services on AWS that only activate when needed, instead of one big always-on server. This makes it easier to scale, isolate problems, and keep the system maintainable over time.
 
 - **Scripted Infrastructure & Multi-Environment Strategy**
   The entire cloud setup—networks, databases, storage, and compute—is described as code (Terraform). This code is organised into modules so that networking, storage, and compute remain clearly separated.
