@@ -55,7 +55,7 @@ This project is about managing a distributed fleet of self-deployed LLMs on hete
   - a contract for how endpoints advertise capabilities; and
   - a contract for how streams (reasoning + content) are emitted and consumed.
 
-  By treating these as stable interfaces, it becomes straightforward to add new workloads (e.g., evaluation, embedding-only, high-token “dump” modes), new endpoints (new nodes, new runtimes), or new visualizations in the observability layer without destabilizing the existing system.
+    By treating these as stable interfaces, it becomes straightforward to add new workloads (e.g., evaluation, embedding-only, high-token “dump” modes), new endpoints (new nodes, new runtimes), or new visualizations in the observability layer without destabilizing the existing system.
 
 ## Algorithmic Rigor in Signal Processing
 
@@ -147,7 +147,7 @@ This project is about running and orchestrating a private fleet of LLMs across m
   - one for internal reasoning traces (which can be logged, analysed, or hidden from end users),
   - one for the final answer sent back to the client.
 
-  At the same time, an `SSEAccumulator` rebuilds the full response on the server to support conversation history, debugging, and offline analysis.
+    At the same time, an `SSEAccumulator` rebuilds the full response on the server to support conversation history, debugging, and offline analysis.
 
 - **Real-Time Observability Plane**
   To make sure routing decisions remain transparent and trustworthy, the system exposes an observability dashboard built with Shiny for Python.
@@ -164,7 +164,7 @@ This project is about running and orchestrating a private fleet of LLMs across m
   - a rule for how each machine describes what it can handle; and
   - a rule for how model responses are split into “thinking process” and “final answer.”
 
-  Because these rules stay stable even as the system evolves, it is easy to plug in new kinds of work, new machines, or new dashboards without breaking what already exists. New pieces just have to follow the same rules to fit in.
+    Because these rules stay stable even as the system evolves, it is easy to plug in new kinds of work, new machines, or new dashboards without breaking what already exists. New pieces just have to follow the same rules to fit in.
 
 ## Algorithmic Rigor in Signal Processing
 
@@ -178,9 +178,11 @@ The main difficulty is that each device records at its own sampling rate and sta
 
 - **Loss Function Optimization**
   To decide which time shift is “best,” the algorithm minimises or maximises a chosen metric—for example:
+
   - minimising Mean Absolute Error or Mean Squared Error, or
   - maximising correlation measures like Pearson or Concordance Correlation Coefficient.
-  The result is a principled estimate of how much one device’s timeline should be shifted to align with another’s, enabling fair comparisons of heart rate, cadence, or other metrics.
+
+    The result is a principled estimate of how much one device’s timeline should be shifted to align with another’s, enabling fair comparisons of heart rate, cadence, or other metrics.
 
 Future work extends this from *alignment* to *validation*. Instead of comparing devices against a designated “gold standard,” it looks at how similar participants’ heart rate signals are under similar activities. By standardising (z-normalising) each time series and applying global cross-correlation, the system can estimate how well a given device’s data matches the overall pattern.
 Devices with consistently low correlations—i.e., they don’t resemble anyone else’s physiology in comparable conditions—can be flagged as likely outliers or failing sensors, and excluded before formal analysis.
