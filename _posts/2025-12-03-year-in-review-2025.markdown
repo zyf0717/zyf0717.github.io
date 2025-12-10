@@ -137,6 +137,7 @@ This project is about running and orchestrating a private fleet of LLMs across m
 - **Semantic & Hardware-Aware Routing**
   Incoming requests are first classified by a lightweight model (`WorkloadClassifier`) that identifies what kind of job they represent—deep reasoning, code generation, quick chat, batch-style throughput, and so on.
   Based on that classification, an `LLMRouter` sends the request to the most appropriate backend machine. Heavy, long-running tasks go to nodes with large GPUs and high VRAM; lighter queries go to smaller, faster nodes. This prevents a single demanding request from clogging up resources meant for fast responses, and improves overall throughput and latency.
+  These routing decisions assume that the backend nodes are themselves well-tuned. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post](https://zyf0717.github.io/jekyll/update/2025/08/27/building-llamacpp-strix-halo.html).
 
 - **Streaming Proxy with Protocol Normalization**
   A custom FastAPI proxy acts as the single entry point for clients, speaking an OpenAI-compatible API. Behind it, different backends may have slightly different response formats, especially around “reasoning traces” or chain-of-thought output.
