@@ -24,7 +24,7 @@ Overarching the 2025 roadmap was an infrastructure platform engineered to link c
 
 The platform was designed as a strictly event-driven, serverless ecosystem on AWS, emphasizing granular scalability and isolation.
 
-- **Hybrid Encryption & Identity Federation (updated)**: One significant engineering complexity was the handling of NRIC data. A hybrid application-layer encryption flow was implemented: data is encrypted using AES-256 in transit between services, and is persisted in DynamoDB as an RSA-2048–encrypted payload. This ensures that only designated data custodians holding on to the private-key can recover the plaintext NRIC, while backend services only process plaintext in volatile memory during the encryption transformation.
+- **Identity Federation & Data Privacy (updated)**: One significant engineering complexity was the handling of NRIC data. A layered security flow was implemented: sensitive data is transmitted between services via secure HTTP POST (TLS)—preventing exposure in browser history or server logs—and is persisted in DynamoDB as an RSA-2048–encrypted payload. This ensures that only designated data custodians holding the private-key can recover the plaintext NRIC, while backend services only process plaintext in volatile memory during the transaction.
 
 - **OLTP vs. OLAP Separation**: Operational and analytical data planes were strictly separated. Ingestion is write-optimized, asynchronously routing payloads to DynamoDB and S3. Downstream analytical data is read-optimized via a scheduled incremental load process which transforms JSON into columnar Parquet format, and made queryable via Amazon Athena. Large-scale queries can thus be performed downstream without impacting live ingestion workloads, while also preserving cost-efficiency.
 
@@ -115,7 +115,7 @@ The core platform for 2025 was a secure bridge between consumer wearables and ve
 The platform is built as a collection of micro-services on AWS that only activate when needed, instead of one big always-on server. This makes it easier to scale, isolate problems, and keep the system maintainable over time.
 
 - **Hybrid Encryption & Identity Federation**
-  Hybrid Encryption & Identity Federation: Handling NRIC data required extra care. The system encrypts this information before it moves between components, and only an encrypted, locked version is stored in the database. A small group of authorised data custodians hold the private key needed to unlock and read the NRIC; backend services see it in readable form only briefly in memory while it is being encrypted, and never store it in plain text.
+  Handling NRIC data required extra care. The system leverages TLS-encrypted POST requests for secure transit between components—preventing leakage in logs or browser history—while ensuring that only an asymmetrically encrypted, locked version is stored in the database. A small group of authorised data custodians hold the RSA private key needed to unlock and read the NRIC; backend services see it in readable form only briefly in memory during processing, and never store it in plain text.
 
 - **OLTP vs. OLAP Separation**
   The system keeps “live operations” and “analytics” strictly apart. Incoming data is written immediately into a fast operational store (DynamoDB and S3) optimised for many small writes and high concurrency.
