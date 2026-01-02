@@ -39,7 +39,7 @@ The platform was designed as a strictly event-driven, serverless ecosystem on AW
 
 ## Traffic Engineering for LLM Fleet
 
-This project is about managing a distributed fleet of self-deployed LLMs on heterogeneous hardware. A centralized smart proxy and routing layer was constructed.
+[llm-control-plane](https://github.com/zyf0717/llm-control-plane) is about managing a distributed fleet of self-deployed LLMs on heterogeneous hardware. A centralized smart proxy and routing layer was constructed.
 
 - **Semantic & Hardware-Aware Routing**: The system routes traffic intelligently—a `WorkloadClassifier` categorizes incoming prompts by intent (e.g., reasoning, programming, high-throughput etc.) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests appropriately. By aligning task complexity with hardware capabilities, the routing layer assigns heavy inferential workloads to high-VRAM clusters and trivial queries to agile, low-overhead instances, ensuring optimal utilization of heterogeneous compute resources. These routing decisions assume that LLM nodes are themselves well-optimized. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post](https://zyf0717.github.io/jekyll/update/2025/08/27/building-llamacpp-strix-halo.html).
 
