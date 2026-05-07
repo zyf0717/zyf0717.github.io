@@ -57,6 +57,8 @@ LLMs extend this pattern by compressing boilerplate and first-pass implementatio
 
 ## Conclusion
 
-LLMs and agentic AI do not just make it easier to build software; they make it easier to create artifacts that *look* like systems before anyone has decided whether they should become systems. The real advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
+LLMs and agentic AI do not just make it easier to build software; they make it easier to create artifacts that *look* like systems before anyone has decided whether they should become systems.
+
+The real advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
 
 > **TL;DR:** Agentic AI makes day-1 easier; it also makes day-2 more important.
