@@ -3,13 +3,11 @@ title: Yifei's Blog
 description: Notes on data systems, infrastructure, dashboards, hardware projects, and applied AI.
 
 email: zyf0717@gmail.com
+linkedin_url: https://www.linkedin.com/in/zhengyifei/
 
 url: https://blog.yifei.sg
 baseurl: ""
 lang: en
-
-author:
-  name: Yifei
 
 # Use Minima (v3) via remote_theme
 remote_theme: jekyll/minima
@@ -28,3 +26,6 @@ minima:
     - title: "Email"
       icon: envelope
       url: "mailto:zyf0717@gmail.com"
+    - title: "LinkedIn"
+      icon: linkedin
+      url: "https://www.linkedin.com/in/zhengyifei/"
