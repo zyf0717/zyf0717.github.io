@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Day-1 vs Day-2 in the era of Agentic AI"
+title:  "Day-1 vs. Day-2 in the Era of Agentic AI"
 date:   2026-05-07 12:00:00 +0800
 categories: jekyll update
 ---
