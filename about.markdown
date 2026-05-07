@@ -10,7 +10,7 @@ The older posts are largely project journals and setup notes. The newer posts fo
 
 ## Recent writing
 
-- [Day-1 vs Day-2 in the era of Agentic AI]({% post_url 2026-05-07-day-1-vs-day2-agentic-ai %})
+- [Day-1 vs. Day-2 in the Era of Agentic AI]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %})
 - [Year in Review (2025): Systems Engineering]({% post_url 2025-12-03-year-in-review-2025 %})
 - [Strix Halo Matrix Cores with llama.cpp]({% post_url 2025-08-27-building-llamacpp-strix-halo %})
 - [Year-to-Date: Data, Systems, and Infrastructure]({% post_url 2025-05-01-data-systems-infrastructure %})
@@ -30,7 +30,7 @@ The older posts are largely project journals and setup notes. The newer posts fo
 - [Year-to-Date: Data, Systems, and Infrastructure]({% post_url 2025-05-01-data-systems-infrastructure %})
 - [Strix Halo Matrix Cores with llama.cpp]({% post_url 2025-08-27-building-llamacpp-strix-halo %})
 - [Year in Review (2025): Systems Engineering]({% post_url 2025-12-03-year-in-review-2025 %})
-- [Day-1 vs Day-2 in the era of Agentic AI]({% post_url 2026-05-07-day-1-vs-day2-agentic-ai %})
+- [Day-1 vs. Day-2 in the Era of Agentic AI]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %})
 
 ## Raspberry Pi and home lab
 
