@@ -5,7 +5,7 @@ date:   2020-07-04 12:00:00 +0800
 categories: jekyll update
 ---
 
-This post follows my previous post [Pi cluster (master node Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/06/25/pi-single-node-hadoop-spark.html), and is a continuation for a multi-node Hadoop and Spark setup.
+This post follows my previous post [Pi Cluster (Master Node Hadoop and Spark)]({% post_url 2020-06-25-pi-single-node-hadoop-spark %}), and is a continuation for a multi-node Hadoop and Spark setup.
 
 ## 0. Install JDK
 

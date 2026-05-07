@@ -4,7 +4,7 @@ title:  "Dashboard Deployment on Web Server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
 ---
-After the development of the dashboard, the logical next step is to deploy it. Following my [previous post](https://zyf0717.github.io/jekyll/update/2020/08/17/apache-web-server-gcp.html) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash. As long as the Dash Python script is running, the dashboard can be accessed via any browser with Internet connection.
+After the development of the dashboard, the logical next step is to deploy it. Following my [previous post]({% post_url 2020-08-18-apache-web-server-gcp %}) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash. As long as the Dash Python script is running, the dashboard can be accessed via any browser with Internet connection.
 
 ## 1. Environment setup
 
@@ -53,4 +53,4 @@ The default Dash server port (8050) has to be allowed to allow incoming traffic.
 
 My configurations for GCP can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png), and for AWS [here](https://zyf0717.github.io/assets/images/aws-dash-port-settings.png).
 
-*Update: The current dashboard has been updated and migrated to EC2 on AWS. See [update post](https://zyf0717.github.io/jekyll/update/2024/05/07/dashboard-deployment-aws.html)* for more information.
+*Update: The current dashboard has been updated and migrated to EC2 on AWS. See the [update post]({% post_url 2024-05-07-dashboard-deployment-aws %}) for more information.*

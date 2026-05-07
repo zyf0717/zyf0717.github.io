@@ -28,7 +28,7 @@ The platform was designed as a strictly event-driven, serverless ecosystem on AW
 
 - **OLTP vs. OLAP Separation**: Operational and analytical data planes were strictly separated. Ingestion is write-optimized, asynchronously routing payloads to DynamoDB and S3. Downstream analytical data is read-optimized via a scheduled incremental load process which transforms JSON into columnar Parquet format, and made queryable via Amazon Athena. Large-scale queries can thus be performed downstream without impacting live ingestion workloads, while also preserving cost-efficiency.
 
-- Other areas which have broadly been covered in a [previous post](https://zyf0717.github.io/jekyll/update/2025/05/01/data-systems-infrastructure.html) include:
+- Other areas which have broadly been covered in a [previous post]({% post_url 2025-05-01-data-systems-infrastructure %}) include:
 
   - Asynchronous concurrency, SQS buffering, rate-limiting
   - Infrastructure as Code
@@ -41,7 +41,7 @@ The platform was designed as a strictly event-driven, serverless ecosystem on AW
 
 [llm-control-plane](https://github.com/zyf0717/llm-control-plane) is about managing a distributed fleet of self-deployed LLMs on heterogeneous hardware. A centralized smart proxy and routing layer was constructed.
 
-- **Semantic & Hardware-Aware Routing**: The system routes traffic intelligently—a `WorkloadClassifier` categorizes incoming prompts by intent (e.g., reasoning, programming, high-throughput etc.) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests appropriately. By aligning task complexity with hardware capabilities, the routing layer assigns heavy inferential workloads to high-VRAM clusters and trivial queries to agile, low-overhead instances, ensuring optimal utilization of heterogeneous compute resources. These routing decisions assume that LLM nodes are themselves well-optimized. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post](https://zyf0717.github.io/jekyll/update/2025/08/27/building-llamacpp-strix-halo.html).
+- **Semantic & Hardware-Aware Routing**: The system routes traffic intelligently—a `WorkloadClassifier` categorizes incoming prompts by intent (e.g., reasoning, programming, high-throughput etc.) with a lightweight LLM, enabling the `LLMRouter` to dispatch requests appropriately. By aligning task complexity with hardware capabilities, the routing layer assigns heavy inferential workloads to high-VRAM clusters and trivial queries to agile, low-overhead instances, ensuring optimal utilization of heterogeneous compute resources. These routing decisions assume that LLM nodes are themselves well-optimized. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post]({% post_url 2025-08-27-building-llamacpp-strix-halo %}).
 
 - **Streaming Proxy with Protocol Normalization**: The core of the system is a custom FastAPI proxy designed to intercept and normalize OpenAI-compatible requests. A notable engineering challenge was unifying divergent model output formats—in particular separating internal "reasoning" traces (chain-of-though) from final text output. A robust stream processor that buffers and detects provider-specific delimiters (including `<think>` tags or proprietary control tokens) in real-time was implemented. This logic dynamically bifurcates the incoming Server-Sent Events (SSE) stream into distinct "reasoning" and "content" channels for the client for easier and standardized client-side consumption, while an `SSEAccumulator` simultaneously reconstructs the complete response server-side for conversation history logging (e.g. for context).
 
@@ -121,7 +121,7 @@ The platform is built as a collection of micro-services on AWS that only activat
   The system keeps “live operations” and “analytics” strictly apart. Incoming data is written immediately into a fast operational store (DynamoDB and S3) optimised for many small writes and high concurrency.
   Separately, a scheduled process transforms this raw JSON into columnar Parquet files and builds a simple “lakehouse” for analysis. This means analysts can query large historical datasets cheaply and quickly (via tools like Athena), without affecting the live ingestion workload.
 
-- Other areas which have broadly been covered in a [previous post](https://zyf0717.github.io/jekyll/update/2025/05/01/data-systems-infrastructure.html) include:
+- Other areas which have broadly been covered in a [previous post]({% post_url 2025-05-01-data-systems-infrastructure %}) include:
 
   - Asynchronous concurrency, SQS buffering, rate-limiting
   - Infrastructure as Code
@@ -137,7 +137,7 @@ This project is about running and orchestrating a private fleet of LLMs across m
 - **Semantic & Hardware-Aware Routing**
   Incoming requests are first classified by a lightweight model (`WorkloadClassifier`) that identifies what kind of job they represent—deep reasoning, code generation, quick chat, batch-style throughput, and so on.
   Based on that classification, an `LLMRouter` sends the request to the most appropriate backend machine. Heavy, long-running tasks go to nodes with large GPUs and high VRAM; lighter queries go to smaller, faster nodes. This prevents a single demanding request from clogging up resources meant for fast responses, and improves overall throughput and latency.
-  These routing decisions assume that the backend nodes are themselves well-tuned. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post](https://zyf0717.github.io/jekyll/update/2025/08/27/building-llamacpp-strix-halo.html).
+  These routing decisions assume that the backend nodes are themselves well-tuned. For example, one class of endpoints is backed by custom Vulkan builds of `llama.cpp` on Strix Halo, described in [this post]({% post_url 2025-08-27-building-llamacpp-strix-halo %}).
 
 - **Streaming Proxy with Protocol Normalization**
   A custom FastAPI proxy acts as the single entry point for clients, speaking an OpenAI-compatible API. Behind it, different backends may have slightly different response formats, especially around “reasoning traces” or chain-of-thought output.

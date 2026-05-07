@@ -5,7 +5,7 @@ date:   2020-06-25 21:00:00 +0800
 categories: jekyll update
 ---
 
-This post follows my previous post [Pi cluster (SSH and static IP)](https://zyf0717.github.io/jekyll/update/2020/06/24/pi-ssh-ip.html), and is basically a documentation of my setup of Hadoop and Spark on the master node of my cluster.
+This post follows my previous post [Pi Cluster (SSH and Static IP)]({% post_url 2020-06-24-pi-ssh-ip %}), and is basically a documentation of my setup of Hadoop and Spark on the master node of my cluster.
 
 ## 0. Install JDK
 
@@ -183,4 +183,4 @@ $ jps
 2687 DataNode
 ```
 
-If this were just a single-node "cluster", configuration would stop here. However, I still have four worker nodes to setup, and the next steps are at: [Pi cluster (cluster Hadoop and Spark)](https://zyf0717.github.io/jekyll/update/2020/07/04/pi-clust-hadoop-spark.html)
+If this were just a single-node "cluster", configuration would stop here. However, I still have four worker nodes to setup, and the next steps are at: [Pi Cluster (Worker Node Hadoop and Spark)]({% post_url 2020-07-04-pi-clust-hadoop-spark %})

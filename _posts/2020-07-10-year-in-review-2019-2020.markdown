@@ -62,7 +62,7 @@ It is worth mentioning that [JuliaAcademy](https://juliaacademy.com/) is good re
 
 ## Codewars
 
-For about a month I was obsessed Codewars, and I have written a [blogpost](https://zyf0717.github.io/jekyll/update/2020/05/06/learning-from-codewars.html) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
+For about a month I was obsessed Codewars, and I have written a [blog post]({% post_url 2020-05-06-learning-from-codewars %}) on this. Completing katas on this platform greatly improved my problem solving skills and familiarity with Python and JavaScript.
 
 ## Blogging
 
@@ -70,7 +70,7 @@ In May, I finally created this blog and I am determined to update it regularly s
 
 ## Flutter and Dart
 
-The creation and deployment of mobile apps has always a curiosity of mine, and I have written a [short blogpost](https://zyf0717.github.io/jekyll/update/2020/06/01/fluttering-and-darting.html) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
+The creation and deployment of mobile apps has always a curiosity of mine, and I have written a [short blog post]({% post_url 2020-06-01-fluttering-and-darting %}) on this. My key learning from the short Flutter development course was asynchronous programming and state management.
 
 ## Exercism and HackerRank
 
@@ -92,7 +92,7 @@ I have built my very own compute cluster, which looks like this:
 
 Through having to configure headless Raspberry Pis, I have picked up a few Linux terminal commands and some shell scripting.
 
-Details of my setup process span four blog posts, starting from [this one](https://zyf0717.github.io/jekyll/update/2020/06/23/pi-clustering-hardware.html).
+Details of my setup process span four blog posts, starting from [this one]({% post_url 2020-06-23-pi-clustering-hardware %}).
 
 ## Upcoming plans
 
