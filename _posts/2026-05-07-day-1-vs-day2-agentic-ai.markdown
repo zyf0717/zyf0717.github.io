@@ -29,6 +29,11 @@ Once something is required to run in production, the story changes.
 
 “Production” does not only mean a public-facing application. It can also mean any internal dashboard, recurring report, automation, data pipeline, database, or workflow that has become part of normal operations. The key distinction is not whether failure has consequences—even a one-off script can have consequences—but whether the artifact has become an ongoing dependency. If people expect it to keep working, refresh, run again, feed decisions, or support downstream workflows, it is production in the operational sense.
 
+Two recent real-world examples illustrate this point:
+
+- A CSV-backed web app can be a good day-1 prototype, but it becomes fragile once multiple users need shared access, edits, approvals, or synchronization. At that point, the real problem is no longer the interface; it is state, concurrency, permissions, validation, auditability, and source-of-truth management.
+- A vibe-coded front end can also look complete while ignoring the operational workflow behind it. If non-technical users are expected to maintain the site, the system needs content models, editing interfaces, publishing rules, media handling, access control, and handover documentation. Otherwise, the artifact works only as long as the original creator remains in the loop.
+
 These are aspects that day-1 prompts cannot fully capture, because they usually describe the desired artifact, not the environment it must survive in. Production requires the system to operate under real constraints: changing data, imperfect users, permissions, failures, latency, dependencies, updates, handovers, long-term ownership, and more.
 
 There are also environmental and organizational constraints that code generation alone cannot resolve: hardware, networking, security boundaries, access control, compliance requirements, monitoring, incident response, backup and recovery, and the operational capacity of the team maintaining it.
