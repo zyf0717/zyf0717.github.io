@@ -5,11 +5,11 @@ date:   2026-05-07 12:00:00 +0800
 categories: jekyll update
 ---
 
-The recent Forbes article ([Vibe Coding Will Break Your Company](https://www.forbes.com/sites/jasonwingard/2026/04/23/vibe-coding-will-break-your-company/)) warns that vibe coding goes beyond a software-development trend: it is also a stress test for organizational judgment. LLMs and agentic AI can generate code quickly, but the results may bypass the slower systems that normally protect production environments.
+The recent Forbes article ([Vibe Coding Will Break Your Company](https://www.forbes.com/sites/jasonwingard/2026/04/23/vibe-coding-will-break-your-company/)) warns that vibe coding goes beyond a software-development trend: it is also a stress test for organizational judgment. LLMs and agentic AI can generate code faster than organizations can decide who owns, reviews, secures, or maintains the result.
 
-From an engineering perspective, this is analogous to the gap between day-1 creation and day-2 operation. A working prototype proves that something can be built; it does not however show whether the system and its deployment into an existing environment is secure, maintainable, observable, recoverable, or auditable.
+From an engineering perspective, this is analogous to the gap between day-1 creation and day-2 operation. A working prototype proves that something can be built. It does not prove that the surrounding organization can safely operate it.
 
-The issue is therefore not AI-assisted development itself, but treating generated output as if they are production-ready.
+Either way, the issue is not generation. The issue is premature trust.
 
 > Day-1 proves something can work. Day-2 proves whether the system deserves to exist.
 
@@ -31,13 +31,13 @@ The key distinction is not whether failure has consequences—even a bug in a on
 
 Two practical examples illustrate this point:
 
-- A CSV-backed app may demo well, but to require shared use quickly turns it into a data-management problem: state, concurrency, permissions, validation, and source of truth.
+- A CSV-backed app may demo well. But the moment multiple people treat it as shared infrastructure, the problem is no longer the interface, but state: concurrency, permissions, validation, recovery, and source of truth.
 
-- A vibe-coded front end may look complete, but further non-technical development and maintenance requires content models, editing workflows, publishing controls, media handling, access control, and all around documentation.
+- A vibe-coded front end may look complete while the actual operating model is still missing. If non-technical users are expected to maintain it, the system needs content models, editing workflows, publishing rules, media handling, access control, and handover documentation.
 
 These are aspects that day-1 prompts cannot fully capture because prompts usually describe the desired artifact, not the environment it must survive in.
 
-To survive in production means to operate under real constraints, including: changing data, imperfect users, permissions, failures, latency, dependencies, updates, handovers, security boundaries, compliance requirements, monitoring, incident response, backup and recovery.
+To survive in production means that failure has somewhere to go. The system has to absorb changing data, imperfect users, broken assumptions, permission boundaries, dependency changes, monitoring gaps, handovers, and recovery. Once people depend on an artifact, it has entered the organization’s failure surface.
 
 > **TL;DR:** Day-2 proves whether that artifact can be safely operated and/or maintained. This goes far beyond code generation, and requires engineering judgment, environmental awareness, long-term ownership, and ongoing governance.
 
@@ -73,4 +73,4 @@ The issue at hand is that LLMs and agentic AI do not just make it easier to buil
 
 The real advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
 
-> Agentic AI makes day-1 easier, it also makes day-2 more important.
+> Agentic AI makes day-1 easier. It also makes day-2 more important.
