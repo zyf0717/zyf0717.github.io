@@ -37,7 +37,7 @@ Two practical examples illustrate this point:
 
 These are aspects that day-1 prompts cannot fully capture because prompts usually describe the desired artifact, not the environment it must survive in.
 
-To survive in production means that failure has somewhere to go. The system has to absorb changing data, imperfect users, broken assumptions, permission boundaries, dependency changes, monitoring gaps, handovers, and recovery. Once people depend on an artifact, it has entered the organization’s failure surface.
+To survive in production means that failure has somewhere to go. The system has to absorb changing data, imperfect users, broken assumptions, permission boundaries, dependency changes, monitoring gaps, handovers, and recovery. Once there is dependency, the artifact has entered the organization’s failure surface.
 
 > **TL;DR:** Day-2 proves whether that artifact can be safely operated and/or maintained. This goes far beyond code generation, and requires engineering judgment, environmental awareness, long-term ownership, and ongoing governance.
 
@@ -45,13 +45,13 @@ To survive in production means that failure has somewhere to go. The system has 
 
 The current trend is an extension to earlier abstraction shifts in software engineering.
 
-As the industry moved from machine code to higher-level languages, frameworks, managed runtimes, cloud platforms, and code generators, the value of manually producing low-level mechanics declined, while the value of system understanding increased.
+As the industry moved from machine code to higher-level languages, frameworks, managed runtimes, cloud platforms, and code generators, the value of manually producing lower-level mechanics declined, while the value of system understanding increased.
 
 LLMs extend this pattern by compressing boilerplate and first-pass implementation even further. But they differ from earlier abstraction layers in one major way: they are less deterministic. A compiler, framework, or traditional code generator transforms known inputs into *predictable* outputs; LLMs and agentic systems infer intent, fill gaps, invent structure, choose libraries, make assumptions, and produce *plausible* artifacts that may or may not reflect the real operating constraints.
 
 That matters because production environments are usually built around deterministic expectations: fixed interfaces, repeatable deployments, stable data contracts, known permissions, predictable failure modes, auditable changes, and recoverable states.
 
-Generated code can be made reliable, but only after review, testing, constraint, and integration. To some extent, this can actually be assisted with further LLM prompts, but this requires clear developer intent. Until then, AI-generated code is a proposal, not a system.
+Generated code can be made reliable, but only after review, testing, constraint, and integration. To some extent, this can actually be assisted with further LLM prompts, but this requires clear developer *intent*. Until then, AI-generated code is a proposal, not a system.
 
 The risk becomes even sharper when the LLM or agent remains inside the runtime, because the system is now probabilistic in operation. That requires bounded actions, logging, human review, fallbacks, evaluations, and clear operating limits.
 
@@ -69,8 +69,8 @@ Correspondingly, the value proposition of junior developers also shifts toward u
 
 ## Conclusion
 
-The issue at hand is that LLMs and agentic AI do not just make it easier to build software, they make it easier to create artifacts that *look* like systems before anyone has decided whether they *should* be.
+The main issue is that LLMs and agentic AI do not just make it easier to build, they make it easier to create artifacts that *look* like systems before anyone has decided whether they *should* be.
 
-The real advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
+Ultimately, the development advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
 
 > Agentic AI makes day-1 easier. It also makes day-2 more important.
