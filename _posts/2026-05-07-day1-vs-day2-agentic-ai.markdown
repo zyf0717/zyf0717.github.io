@@ -7,7 +7,7 @@ categories: jekyll update
 
 The recent Forbes article ([Vibe Coding Will Break Your Company](https://www.forbes.com/sites/jasonwingard/2026/04/23/vibe-coding-will-break-your-company/)) warns that vibe coding goes beyond a software-development trend: it is also a stress test for organizational judgment. LLMs and agentic AI can generate code quickly, but the results may bypass the slower systems that normally protect production environments.
 
-From an engineering perspective, this is analogous to the gap between day-1 creation and day-2 operation. A working prototype proves that something can be built; it does not however show whether the system, or its deployment into an existing environment, is secure, maintainable, observable, recoverable, or auditable.
+From an engineering perspective, this is analogous to the gap between day-1 creation and day-2 operation. A working prototype proves that something can be built; it does not however show whether the system and its deployment into an existing environment is secure, maintainable, observable, recoverable, or auditable.
 
 The issue is therefore not AI-assisted development itself, but treating generated output as if they are production-ready.
 
@@ -15,7 +15,7 @@ The issue is therefore not AI-assisted development itself, but treating generate
 
 ## Day-1: The Happy Path
 
-The purpose of a proof-of-concept (aka pilot, prototype, minimum-viable-product etc.) is to demonstrate that a concept can be implemented quickly and cheaply. This is the “happy path,” where everything works as expected under ideal stress-free conditions.
+The purpose of a proof-of-concept (aka pilot, prototype, minimum-viable-product etc.) is to demonstrate that a concept can be implemented quickly and cheaply. This is the “happy path”, where everything works as expected under ideal stress-free conditions.
 
 In the context of AI-assisted development, the barriers-to-entry for day-1 creation have been dramatically reduced. This is great for work with no ongoing operational dependency because the story can end at the day-1 product: one-off scripts, exploratory notebooks, and static content.
 
@@ -37,9 +37,9 @@ Two practical examples illustrate this point:
 
 These are aspects that day-1 prompts cannot fully capture because prompts usually describe the desired artifact, not the environment it must survive in.
 
-To survive in production means to operate under real constraints: changing data, imperfect users, permissions, failures, latency, dependencies, updates, handovers, security boundaries, compliance requirements, monitoring, incident response, backup and recovery, and long-term ownership.
+To survive in production means to operate under real constraints, including: changing data, imperfect users, permissions, failures, latency, dependencies, updates, handovers, security boundaries, compliance requirements, monitoring, incident response, backup and recovery.
 
-> **TL;DR:** Day-2 proves whether that artifact can be safely operated and/or maintained. This requires engineering judgment, environmental awareness, ownership, and governance far beyond code generation.
+> **TL;DR:** Day-2 proves whether that artifact can be safely operated and/or maintained. This goes far beyond code generation, and requires engineering judgment, environmental awareness, long-term ownership, and ongoing governance.
 
 ## The Historical Pattern
 
