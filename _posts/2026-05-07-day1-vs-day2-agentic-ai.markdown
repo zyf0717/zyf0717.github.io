@@ -65,7 +65,7 @@ As code generation becomes cheaper, engineering value moves upward: toward syste
 
 Correspondingly, the value proposition of junior developers also shifts toward understanding generated code, testing, debugging, documenting assumptions, maintaining bounded components, and learning how artifacts behave inside real systems.
 
-[*Sidenote: This does spell some trouble for entry-level roles: can one pick up sound judgment when the first step is to review and test without knowing how to write?*]
+> Sidenote: This does spell some trouble for entry-level roles: can one pick up sound judgment when the first step is to review and test without knowing how to write?
 
 ## Conclusion
 
