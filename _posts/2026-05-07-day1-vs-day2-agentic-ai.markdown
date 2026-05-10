@@ -11,17 +11,15 @@ From an engineering perspective, this is analogous to the gap between day-1 crea
 
 The issue is therefore not AI-assisted development itself, but treating generated output as if they are production-ready.
 
-> **TL;DR**: Day-1 proves something can work. Day-2 proves whether the system deserves to exist.
+> Day-1 proves something can work. Day-2 proves whether the system deserves to exist.
 
 ## Day-1: The Happy Path
 
 The purpose of a proof-of-concept (aka pilot, prototype, minimum-viable-product etc.) is to demonstrate that a concept can be implemented quickly and cheaply. This is the “happy path,” where everything works as expected under ideal stress-free conditions.
 
-In the context of AI-assisted development, the barriers-to-entry for day-1 creation have been torn down. This is great news for work with no ongoing operational dependency: the story can end at the day-1 product. Some examples include one-off scripts, exploratory notebooks, and static content generation.
+In the context of AI-assisted development, the barriers-to-entry for day-1 creation have been dramatically reduced. This is great for work with no ongoing operational dependency because the story can end at the day-1 product: one-off scripts, exploratory notebooks, and static content.
 
-Also, to an increasingly large extent, this day-1 happy path can be executed by non-technical users, i.e. a significant democratization of the ability to *create*.
-
-> **TL;DR:** With AI-assisted development, day-1 artifacts are increasingly accessible to anyone who can describe what they want.
+Also, to an increasingly large extent, this day-1 happy path can be executed by non-technical users as long as they can describe what they want. In other words, a significant democratization of the ability to *create*.
 
 ## Day-2: The Operational Reality
 
@@ -63,11 +61,11 @@ The risk becomes even sharper when the LLM or agent remains inside the runtime, 
 
 That is why the engineering role does not disappear, because engineering judgment is the ability to decide not just whether something can be built, but whether it *should* be built, shipped, operated, maintained, and trusted.
 
-As code generation becomes cheaper, the center of engineering value moves upward: toward system design, operational ownership, architectural review, risk management, and production stewardship—the work traditionally associated with senior, staff, and lead engineers.
+As code generation becomes cheaper, engineering value moves upward: toward system design, operational ownership, architectural review, risk management, and production stewardship—the work traditionally associated with senior, staff, and lead engineers.
 
-Correspondingly, the value proposition of junior developers also shifts toward understanding generated code, testing, debugging, documenting assumptions, maintaining bounded components, and learning how artifacts behave inside real systems. This does spell some trouble for entry-level roles: can one pick up sound judgment when the first step is to review and test without knowing how to write?
+Correspondingly, the value proposition of junior developers also shifts toward understanding generated code, testing, debugging, documenting assumptions, maintaining bounded components, and learning how artifacts behave inside real systems.
 
-> **TL;DR:** As code-generation becomes cheaper, engineering value shifts from producing artifacts to judging, validating, integrating, operating, and maintaining them safely.
+[*Sidenote: This does spell some trouble for entry-level roles: can one pick up sound judgment when the first step is to review and test without knowing how to write?*]
 
 ## Conclusion
 
@@ -75,4 +73,4 @@ The issue at hand is that LLMs and agentic AI do not just make it easier to buil
 
 The real advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
 
-> **TL;DR:** Agentic AI makes day-1 easier; it also makes day-2 more important.
+> Agentic AI makes day-1 easier, it also makes day-2 more important.
