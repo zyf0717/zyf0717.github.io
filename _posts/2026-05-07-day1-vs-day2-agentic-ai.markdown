@@ -15,9 +15,9 @@ Either way, the issue is not generation. The issue is premature trust.
 
 ## Day-1: The Happy Path
 
-The purpose of a proof-of-concept (aka pilot, prototype, minimum-viable-product etc.) is to demonstrate that a concept can be implemented quickly and cheaply. This is the “happy path”, where everything works as expected under ideal stress-free conditions.
+The purpose of a proof-of-concept (or pilot, prototype, minimum-viable-product) is to demonstrate that a concept can be implemented quickly and cheaply. This is the “happy path”, where everything works as expected under ideal stress-free conditions.
 
-In the context of AI-assisted development, the barriers-to-entry for day-1 creation have been dramatically reduced. This is great for work with no ongoing operational dependency because the story can end at the day-1 product: one-off scripts, exploratory notebooks, and static content.
+In the context of AI-assisted development, barriers-to-entry for day-1 creation have been dramatically reduced. This is great for work with no ongoing operational dependency because the story can end at the day-1 product: one-off scripts, exploratory notebooks, and static content.
 
 Also, to an increasingly large extent, this day-1 happy path can be executed by non-technical users as long as they can describe what they want. In other words, a significant democratization of the ability to *create*.
 
@@ -47,7 +47,7 @@ The current trend is an extension to earlier abstraction shifts in software engi
 
 As the industry moved from machine code to higher-level languages, frameworks, managed runtimes, cloud platforms, and code generators, the value of manually producing low-level mechanics declined, while the value of system understanding increased.
 
-LLMs extend this pattern by compressing boilerplate and first-pass implementation even further. But they differ from earlier abstraction layers in one important way: they are less deterministic. A compiler, framework, or traditional code generator transforms known inputs into *predictable* outputs; LLMs and agentic systems infer intent, fill gaps, invent structure, choose libraries, make assumptions, and produce *plausible* artifacts that may or may not reflect the real operating constraints.
+LLMs extend this pattern by compressing boilerplate and first-pass implementation even further. But they differ from earlier abstraction layers in one major way: they are less deterministic. A compiler, framework, or traditional code generator transforms known inputs into *predictable* outputs; LLMs and agentic systems infer intent, fill gaps, invent structure, choose libraries, make assumptions, and produce *plausible* artifacts that may or may not reflect the real operating constraints.
 
 That matters because production environments are usually built around deterministic expectations: fixed interfaces, repeatable deployments, stable data contracts, known permissions, predictable failure modes, auditable changes, and recoverable states.
 
