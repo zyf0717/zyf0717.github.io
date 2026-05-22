@@ -7,8 +7,8 @@ categories: jekyll update
 
 Amid the current [hype around agentic AI](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai) and growing expectations that AI will [reshape, reduce, or displace parts of the workforce](https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/), there have already been numerous, and sometimes spectacular, failures:
 
-- [Air Canada ordered to pay customer who was misled by airline’s chatbot](https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-lawsuit)
 - [Claude-powered AI agent’s confession after deleting a firm’s entire database](https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database)
+- [Air Canada ordered to pay customer who was misled by airline’s chatbot](https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-lawsuit)
 - [Company apologizes after AI support agent invents policy that causes user uproar](https://arstechnica.com/ai/2025/04/cursor-ai-support-bot-invents-fake-policy-and-triggers-user-uproar/)
 - [US eating disorder helpline takes down AI chatbot over harmful advice](https://www.theguardian.com/technology/2023/may/31/eating-disorder-hotline-union-ai-chatbot-harm)
 
@@ -21,6 +21,16 @@ The deeper issue is that these failures were actually due to a *lack* of appropr
 Following my previous post on [Day-1 vs. Day-2 in the Era of Agentic AI]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %}), this post explores autonomy in the context of human staffing and agentic AI.
 
 > **TL;DR**: Autonomy is overrated in most cases, human or AI.
+
+## More Autonomy Means a Larger Decision Space
+
+Humans implicitly suffer from [bounded rationality](https://en.wikipedia.org/wiki/Bounded_rationality) and therefore [choice overload](https://en.wikipedia.org/wiki/Overchoice): an overabundance of options can lead to decision fatigue, analysis paralysis, and post-decision regret.
+
+A parallel dynamic applies to agentic AI, as more autonomy means a larger decision space: more tools, more paths, more states to manage, and more opportunities to act on incomplete or incorrect assumptions.
+
+Because autonomy is not just permission to act—it is also *permission to choose*. Choosing well requires context, constraints, and feedback; without these, failure compounds.
+
+A major problem with unbounded autonomy is therefore not just safety, but also performance degradation.
 
 ## Already Solved: Human Staffing
 
