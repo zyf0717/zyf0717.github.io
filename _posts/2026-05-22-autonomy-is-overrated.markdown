@@ -63,10 +63,12 @@ The key is that these are not merely defensive or control structures—they are 
 
 In this current period of "[Peak of Inflated Expectations](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai#:~:text=Agentic%20AI%20reaches,across%20supporting%20capabilities.)", the appeal of agentic AI autonomy is often overstated.
 
-Organizations (and possibly many individuals) want to believe that complex work can be delegated to AI agents with minimal oversight, minimal friction, and as few keystrokes as possible.
+Organizations (and many individuals) want to believe that complex work can be delegated to free-roaming AI agents with minimal oversight, with as few keystrokes as possible.
 
 But, as argued above, autonomy is not the same as effectiveness. In practice, most roles—human or AI—perform best when authority is bounded, not unlimited.
 
-The goal is therefore not to maximize autonomy, but to scope it to each role’s context, decision rights, and consequences of failure.
+The path forward is therefore not to build ever more autonomous agents, but to design agentic system architectures: *bounded* environments where agents operate in.
+
+Ultimately the goal is not to maximize autonomy, but to scope it to each role’s context, decision rights, and consequences of failure.
 
 **Because the problem is not autonomy, but autonomy without staffing logic.**
