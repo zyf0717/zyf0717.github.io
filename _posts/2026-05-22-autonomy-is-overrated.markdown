@@ -59,7 +59,7 @@ The parallel is obviously not one-to-one, but many of the following are immediat
 
 The key is that these are not merely defensive or control structures—they are also enablers. Clear boundaries, expectations, and escalation paths allow both humans and AI agents to perform with greater confidence *within* assigned roles.
 
-## Conclusion: Autonomy is Overrated
+## Autonomy Is Overrated; Architecture Is Not
 
 In this current period of "[Peak of Inflated Expectations](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai#:~:text=Agentic%20AI%20reaches,across%20supporting%20capabilities.)", the appeal of agentic AI autonomy is often overstated.
 
