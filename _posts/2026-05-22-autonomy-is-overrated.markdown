@@ -24,7 +24,7 @@ Following my previous post on [Day-1 vs. Day-2 in the Era of Agentic AI]({% post
 
 ## Already Solved: Human Staffing
 
-"Staffing" in the human sense is not new: the concept of hiring people to delegate work has been around for millennia. And along with hiring comes job scope and description, roles and responsibilities, performance expectations, accountability, and oversight.
+"Staffing" in the human sense is not new: the concept of hiring people to delegate work to has been around for millennia. And along with hiring comes job scope and description, roles and responsibilities, performance expectations, accountability, and oversight.
 
 After all, staffing is not just about filling a seat; it is about defining the boundaries of work and responsibility.
 
@@ -36,7 +36,7 @@ In other words, there is no one-size-fits-all approach to staffing, precisely be
 
 Deploying an AI agent in an organization is, structurally, not unlike hiring humans: the introduction of a new actor into workflows with specific scope, responsibilities, and also potential for error.
 
-And it follows that the same questions around autonomy, accountability, and oversight should apply: what is this agent permitted to do, who is accountable when it fails, and who is ultimately responsible for its actions and consequences?
+And it follows that the same questions around authority, accountability, and oversight should apply: what is this agent permitted to do, who is accountable when it fails, and who is ultimately responsible for its actions and consequences?
 
 In this case, however, what is missing is the battle-tested framework that guides human staffing—and the corresponding autonomy boundaries. After all, equivalence does not mean identity.
 
