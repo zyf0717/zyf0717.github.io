@@ -71,9 +71,7 @@ The key is that these are not merely defensive or control structures—they are 
 
 ## Autonomy Is Overrated; Architecture Is Not
 
-In this current period of "[Peak of Inflated Expectations](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai#:~:text=Agentic%20AI%20reaches,across%20supporting%20capabilities.)", the appeal of agentic AI autonomy is often overstated.
-
-Organizations (and many individuals) want to believe that complex work can be delegated to free-roaming AI agents with minimal oversight, with as few keystrokes as possible.
+In this current period of "[Peak of Inflated Expectations](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai#:~:text=Agentic%20AI%20reaches,across%20supporting%20capabilities.)", the appeal of agentic AI autonomy is often overstated. Organizations (and many individuals) want to believe that complex work can be delegated to free-roaming AI agents with minimal oversight, with as few keystrokes as possible.
 
 But, as argued above, autonomy is not the same as effectiveness. In practice, most roles—human or AI—perform best when authority is bounded, not unlimited.
 
