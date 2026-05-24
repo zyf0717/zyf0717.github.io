@@ -28,7 +28,7 @@ Humans implicitly suffer from [bounded rationality](https://en.wikipedia.org/wik
 
 A parallel dynamic applies to agentic AI, as more autonomy means a larger decision space: more tools, more paths, more states to manage, and more opportunities to act on incomplete or incorrect assumptions.
 
-Because autonomy is not just permission to act—it is also *permission to choose*. Choosing well requires context, constraints, and feedback; without these, failure compounds.
+Because autonomy is not just permission to act—it is also permission to *choose*. Choosing well requires context, constraints, and feedback; without these, failure compounds.
 
 A major problem with unbounded autonomy is therefore not just safety, but also performance degradation.
 
