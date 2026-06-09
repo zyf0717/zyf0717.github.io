@@ -63,6 +63,8 @@ This is a form of context contamination—or, in economic terms, context debt: p
 
 Context debt is therefore not mainly a problem of context length, but context quality: failed exploration pollutes the working set, while later compaction may preserve the wrong abstractions and discard the missing evidence.
 
+Not to mention the human attention required to clean up after.
+
 This is where stop-losses matter.
 
 Currently, almost all agentic systems already have operational limits, such as max iterations, retry caps, guardrails, and timeouts. But these are technical limits rather than economic ones.
