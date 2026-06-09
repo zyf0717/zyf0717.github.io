@@ -5,7 +5,7 @@ date:   2026-06-09 12:30:00 +0800
 categories: jekyll update
 ---
 
-Following Parts 1 and 2, it is clear that the question is no longer whether agentic AI will occupy significant roles in organisations, but what those roles should be, how they should be bounded, and where human judgment should remain in the loop.
+Following Parts [1]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %}) and [2]({% post_url 2026-05-22-autonomy-is-overrated %}), it is clear that the question is no longer whether agentic AI will occupy significant roles in organisations, but what those roles should be, how they should be bounded, and where human judgment should remain in the loop.
 
 This Part 3 approaches the problem from an economic stance: optimal agentic AI workflow is neither maximum autonomy nor no autonomy, but governed token *allocation*.
 
