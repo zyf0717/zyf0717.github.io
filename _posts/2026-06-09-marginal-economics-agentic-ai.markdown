@@ -13,23 +13,9 @@ This Part 3 approaches the problem from an economic stance: optimal agentic AI w
 
 ## From LLM to Agentic AI
 
-LLMs are, by definition, large language *models*. In other words: they cannot actually execute external actions on their own.
+An LLM cannot execute anything on its own. It needs a harness: tools, memory, state management, permissions, instructions. The harness is not new — developers have been building execution loops for decades. What is new is that an LLM can now sit inside one as a language-based controller, adapting workflows at runtime without explicit branching logic.
 
-In order to make LLMs more useful, we provide them the surrounding *harness*, which includes:
-
-- **tools** that allow read/write;
-- **memory** and **retrieval** systems that handle context;
-- **state** and **workflow** tracking that allows multi-step processes and loops;
-- **permissions** and **policy** that define action boundaries; and
-- **instructions** that *hopefully* specify what the objective is.
-
-The LLM supplies the reasoning and control, and the harness links the model to the execution environment.
-
-And thus we have what is now known as “agentic AI”: systems capable of executing seemingly complex, multi-turn operations.
-
-Many describe this as “autonomous” because the underlying engineering pattern is new to them, when in fact developers have been building (and using) various types of execution harnesses for *decades*. The novelty is that an LLM can now sit inside a suitably configured loop as a language-based controller, adapting workflows at runtime.
-
-But this flexibility comes with a scaling problem: the more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity.
+This flexibility is also the problem. The more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity — and ambiguity, in an agentic system, is not bounded by design. It expands with the search space.
 
 ## Ambiguity Expands the Search Space
 
@@ -75,7 +61,7 @@ This reframes stopping as a feature rather than a failure.
 
 ## Token Allocation as Governance
 
-This also brings the argument back to governance.
+Which brings the argument back to governance — but not governance as it is usually framed.
 
 AI governance is often framed in terms of safety, permissions, compliance, or human approval. But in an agentic world, governance must also include the management of a metered resource: tokens.
 
