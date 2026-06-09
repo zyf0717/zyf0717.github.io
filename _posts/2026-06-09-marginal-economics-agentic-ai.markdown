@@ -59,9 +59,11 @@ The cost of failed exploration is not limited to tokens already spent. In a mult
 
 This existing context is then processed alongside new inputs, and the implication is that the agent is no longer reasoning only about the original already-underspecified task; it is also reasoning through the residue of prior attempts.
 
-This is context debt: past ambiguity becoming future marginal cost, and this is where stop-losses matter.
+This is a form of context contamination—or, in economic terms, context debt: past ambiguity becoming future marginal cost.
 
-Not to mention the larger cost is not always the failed token spend itself, but the human effort required to clean up the resulting failures.
+Context debt is therefore not mainly a problem of context length, but context quality: failed exploration pollutes the working set, while later compaction may preserve the wrong abstractions and discard the missing evidence.
+
+This is where stop-losses matter.
 
 Currently, almost all agentic systems already have operational limits, such as max iterations, retry caps, guardrails, and timeouts. But these are technical limits rather than economic ones.
 
