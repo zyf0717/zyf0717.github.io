@@ -39,7 +39,7 @@ It therefore stands to reason that the more complex and long-running a workflow 
 
 Increasingly complex tasks will trigger more tool calls, context retrieval, intermediate reasoning steps, and validation loops. An unclear task does not merely consume more tokens; it can send the system down the wrong branch entirely, especially when the goal, success criteria, operating boundary, or definition of “good enough” is left undefined.
 
-In human terms, this resembles a client telling a consultant to “look into it” without any concrete requirements. The consultant may work harder, run more analyses, and produce a longer report. And in the end, the output may still be unsatisfactory.
+This is the equivalent of a client telling a consultant to “look into it” without any concrete requirements. The consultant may work harder, run more analyses, and produce a longer report. But as we know all too well, the output may still be unsatisfactory.
 
 ## Autonomy as Spend
 
@@ -61,9 +61,11 @@ This existing context is then processed alongside new inputs, and the implicatio
 
 This is context debt: past ambiguity becoming future marginal cost, and this is where stop-losses matter.
 
-Almost all agentic systems already have operational limits, such as max iterations, retry caps, guardrails, and timeouts. But these are technical limits rather than economic ones.
+Not to mention the larger cost is not always the failed token spend itself, but the human effort required to clean up the resulting failures.
 
-Economically, there should be explicit points where the system stops, compresses context, narrows scope, escalates decisions to a human, switches to a cheaper path, or even declares that the task is no longer economically rational.
+Currently, almost all agentic systems already have operational limits, such as max iterations, retry caps, guardrails, and timeouts. But these are technical limits rather than economic ones.
+
+Economically, there should also be explicit points where the system stops, compresses context, narrows scope, escalates decisions to a human, switches to a cheaper path, or even declares that the task is no longer economically rational.
 
 This reframes stopping as a feature rather than a failure.
 
