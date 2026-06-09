@@ -13,9 +13,9 @@ This Part 3 approaches the problem from an economic stance: optimal agentic AI w
 
 ## From LLM to Agentic AI
 
-An LLM cannot execute anything on its own. It needs a harness: tools, memory, state management, permissions, instructions. The harness is not new — developers have been building execution loops for decades. What is new is that an LLM can now sit inside one as a language-based controller, adapting workflows at runtime without explicit branching logic.
+An LLM cannot execute anything on its own. It needs a harness: tools, memory, state management, permissions, instructions. The harness is not new—developers have been building execution loops for decades. What is new is that an LLM can now sit inside one as a language-based controller, adapting workflows at runtime without explicit branching logic.
 
-This flexibility is also the problem. The more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity — and ambiguity, in an agentic system, is not bounded by design. It expands with the search space.
+This flexibility is also the problem. The more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity—and ambiguity in an agentic system is not bounded by design. It expands with the search space.
 
 ## Ambiguity Expands the Search Space
 
