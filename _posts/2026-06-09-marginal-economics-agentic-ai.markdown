@@ -29,9 +29,9 @@ This is the equivalent of a client telling a consultant to “look into it” wi
 
 ## Autonomy as Spend
 
-The economics here becomes unavoidable: if each additional reasoning step or tool call has a cost, then the central question is not whether the AI *can* continue working, but whether it *should*.
+The economic reality becomes unavoidable: if each additional reasoning step or tool call has a cost, then the central question is not whether the AI *can* continue working, but whether it *should*.
 
-Tokens should be spent only up to the point where the expected marginal return from additional reasoning, tool-use, retrieval, or validation no longer justifies the marginal cost.
+Raw token cost may be relatively linear, but cost per unit of useful progress is almost certainly not: tokens should be spent only up to the point where the expected marginal return from additional reasoning, tool-use, retrieval, or validation no longer justifies the marginal cost.
 
 The implication is that the optimal AI workflow is not maximum autonomy, especially in a problem space that can branch indefinitely.
 
@@ -49,7 +49,7 @@ This is a form of context contamination—or, in economic terms, context debt: p
 
 Context debt is not merely a problem of length, but also quality: failed exploration pollutes the working set, while later compaction may preserve the wrong abstractions and discard the missing evidence.
 
-It could also morph into a human resource allocation problem: the time and effort required to manage and clean up if the task ultimately still goes awry.
+It can also become a human supervision problem: time is spent untangling the agent’s failed branches instead of simply making the original decision.
 
 This is where stop-losses matter.
 
