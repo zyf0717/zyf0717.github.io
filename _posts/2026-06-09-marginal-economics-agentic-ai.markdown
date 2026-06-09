@@ -13,9 +13,9 @@ This Part 3 approaches the problem from an economic stance: optimal agentic AI w
 
 ## From LLM to Agentic AI
 
-An LLM cannot execute anything on its own. It needs a harness: tools, memory, state management, permissions, instructions. The harness is not new—developers have been building execution loops for decades. What is new is that an LLM can now sit inside one as a language-based controller, adapting workflows at runtime without explicit branching logic.
+An LLM cannot execute anything on its own. It requires a harness: tools, memory, state management, permissions, instructions. The harness is not new—developers have been building and utilising execution loops for decades. What is new is that an LLM can now sit inside one as a language-based controller, adapting workflows at runtime without explicit branching logic.
 
-This flexibility is also the problem. The more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity—and ambiguity in an agentic system is not bounded by design. It expands with the search space.
+This flexibility is also the problem. The more the system is allowed to decide for itself, the more tokens it may spend resolving ambiguity, and ambiguity in an agentic system is unbounded by design: it expands with search space.
 
 ## Ambiguity Expands the Search Space
 
@@ -25,13 +25,13 @@ It therefore stands to reason that the more complex and long-running a workflow 
 
 Increasingly complex tasks will trigger more tool calls, context retrieval, intermediate reasoning steps, and validation loops. An unclear task does not merely consume more tokens; it can send the system down the wrong branch entirely, especially when the goal, success criteria, operating boundary, or definition of “good enough” is left undefined.
 
-This is the equivalent of a client telling a consultant to “look into it” without any concrete requirements. The consultant may work harder, run more analyses, and produce a longer report. But as we know all too well, the output may still be unsatisfactory.
+This is the equivalent of a client telling a consultant to “look into it” without any concrete requirements—or worse, saying one thing and meaning another. The consultant may work harder, run more analyses, and produce a longer report. But as we know all too well, the output may still be unsatisfactory.
 
 ## Autonomy as Spend
 
-This is where the economics becomes unavoidable: if each additional reasoning step or tool call has a cost, then the central question is not whether the AI *can* continue working, but whether it *should*.
+The economics here becomes unavoidable: if each additional reasoning step or tool call has a cost, then the central question is not whether the AI *can* continue working, but whether it *should*.
 
-Economically, tokens should be spent only up to the point where the expected marginal return from additional reasoning, tool-use, retrieval, or validation no longer justifies the marginal cost.
+Tokens should be spent only up to the point where the expected marginal return from additional reasoning, tool-use, retrieval, or validation no longer justifies the marginal cost.
 
 The implication is that the optimal AI workflow is not maximum autonomy, especially in a problem space that can branch indefinitely.
 
@@ -43,13 +43,13 @@ A bounded task reduces degrees of freedom: it gives the system less to infer, fe
 
 The cost of failed exploration is not limited to tokens already spent. In a multi-turn agentic workflow, failed branches often leave behind accumulated context, and even when these are no longer useful, they may still remain inside the working context.
 
-This existing context is then processed alongside new inputs, and the implication is that the agent is no longer reasoning only about the original already-underspecified task; it is also reasoning through the residue of prior attempts.
+Existing context is then processed alongside new inputs, and the implication is that the agent is no longer reasoning only about the original already-underspecified task; it is also reasoning through the residue of prior attempts.
 
 This is a form of context contamination—or, in economic terms, context debt: past ambiguity becoming future marginal cost.
 
-Context debt is therefore not mainly a problem of context length, but context quality: failed exploration pollutes the working set, while later compaction may preserve the wrong abstractions and discard the missing evidence.
+Context debt is not merely a problem of length, but also quality: failed exploration pollutes the working set, while later compaction may preserve the wrong abstractions and discard the missing evidence.
 
-Not to mention the human attention required to clean up after.
+It could also morph into a human resource allocation problem: the time and effort required to manage and clean up if the task ultimately still goes awry.
 
 This is where stop-losses matter.
 
@@ -67,9 +67,7 @@ AI governance is often framed in terms of safety, permissions, compliance, or hu
 
 This is why [the staffing analogy]({% post_url 2026-05-22-autonomy-is-overrated %}#:~:text=Already%20Solved%3A%20Human,boundary%20for%20autonomy.) matters. In human organisations, autonomy is rarely unlimited. It is bounded by job scope, decision rights, budget, review, accountability, and escalation paths. The same logic should apply to agentic AI.
 
-A properly governed agentic workflow should therefore specify what the agent can decide, the tools it can use, how much context it can retrieve, how many retries are acceptable, when “good enough” has been achieved, when a cheaper model is sufficient, and when escalation is required.
-
-In the same vein, model routing is not merely an optimisation technique—simple tasks should not be routed to expensive reasoning models by default; ambiguous tasks should not expand indefinitely; failed tasks should not accumulate context debt without limit. These are governance decisions, not merely engineering optimisations.
+A properly governed agentic workflow should therefore specify what the agent can decide, the tools it can use, how much context it can retrieve, how many retries are acceptable, when “good enough” has been achieved, when a cheaper model is sufficient, and when escalation is required. These are governance decisions, not merely engineering optimizations.
 
 This is also why raw token-spend leaderboards are meaningless *per se*. High token-use is not necessarily productivity—it could just be the equivalent of staying late to look busy.
 
