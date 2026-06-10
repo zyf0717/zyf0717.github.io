@@ -49,7 +49,7 @@ A bounded task reduces degrees of freedom: it gives the system less to infer, fe
 
 ## Context Debt
 
-The cost of failed exploration is not limited to tokens already spent. In a multi-turn agentic workflow, failed branches often leave behind accumulated context, and even when these are no longer useful, they may still remain inside the working context.
+The cost of failed exploration is not limited to tokens already spent. Those tokens are sunk; the accumulated context they leave behind is not. In a multi-turn agentic workflow, failed branches often remain inside the working context even after they have stopped being useful.
 
 Existing context is then processed alongside new inputs, and the implication is that the agent is no longer reasoning only about the original already-underspecified task; it is also reasoning through the residue of prior attempts.
 
