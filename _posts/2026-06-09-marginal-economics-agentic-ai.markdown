@@ -41,7 +41,7 @@ An agentic workflow is, in effect, a production function: tokens, context, tools
 
 This is where marginal economics comes in. Tokens should be spent only up to the point where the expected marginal return still justifies the marginal cost. The implication is that the optimal AI workflow is *not* maximum autonomy, but maximum economic efficiency.
 
-After all, it appears that [autonomy is not just overrated]({% post_url 2026-05-22-autonomy-is-overrated %}), it is also not free.
+After all, [autonomy is not just overrated]({% post_url 2026-05-22-autonomy-is-overrated %}), it is also not free.
 
 A bounded task reduces degrees of freedom: it gives the system less to infer, fewer branches to explore, and a clearer point at which to stop. On top of that, this also decreases time-to-output—token processing and generation is not instantaneous after all.
 
