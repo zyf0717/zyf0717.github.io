@@ -75,7 +75,7 @@ The practical question, then, is not simply what the agent is allowed to do, but
 
 AI governance is often framed in terms of safety, permissions, compliance, or human approval. These remain important, but in an agentic world they sit on top of a more basic economic problem: allocating a metered resource under uncertainty.
 
-This is where [the staffing analogy]({% post_url 2026-05-22-autonomy-is-overrated %}#:~=Already%20Solved%3A%20Human,boundary%20for%20autonomy.) still matters. Human autonomy is already constrained by budget, priority, and expected value. Agentic autonomy should be treated the same way, except that every additional step also carries an explicit computational cost.
+This is where [the staffing analogy]({% post_url 2026-05-22-autonomy-is-overrated %}#:~:text=Already%20Solved%3A%20Human,boundary%20for%20autonomy.) still matters. Human autonomy is already constrained by budget, priority, and expected value. Agentic autonomy should be treated the same way, except that every additional step also carries an explicit computational cost.
 
 A properly designed agentic workflow should therefore specify what the agent can decide, which tools it can use, how much context it can retrieve, how many retries are acceptable, when “good enough” has been achieved, when a cheaper model is sufficient, and when escalation is more economical than continued token-spend.
 
