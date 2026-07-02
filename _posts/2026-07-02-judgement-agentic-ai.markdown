@@ -81,6 +81,8 @@ The implication is clear: the scarcity of software production has been significa
 
 In turn, this reveals what the friction of production had previously obscured: the scarcity of judgement over what should be built, shipped, trusted, and maintained.
 
+It would be tempting to conclude that agentic AI is limited to making procedural judgements and making ptogrammed decisions, but a recent paper complicates things.
+
 ## Modeling Tacit Judgement
 
 Judgement that flows from [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) was once thought to be difficult or even impossible to model.
