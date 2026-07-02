@@ -99,7 +99,7 @@ The capacity to operationalize latent patterns also means that agentic AI is con
 
 ## Conclusion: Judgement as a Moving Frontier
 
-Some of what is commonly considered judgement is merely procedural decision-making, and Agentic AI is already excellent at this.
+Some of what is commonly considered judgement is merely procedural decision-making, and agentic AI is already excellent at this.
 
 Some judgement flows from tacit knowledge, and LLMs are increasingly able to approximate parts of this as well.
 
