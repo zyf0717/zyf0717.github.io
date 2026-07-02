@@ -107,6 +107,6 @@ Each time a layer of judgement becomes repeatable, testable, or modeled, it move
 
 Obviously, agentic AI is not a simple drop-in replacement for judgement. It does, however, continuously redraw the boundary between judgement and procedure.
 
-Thus, in this era of agentic AI, judgement is not disappearing—it is simply becoming easier to see what was never judgement in the first place.
+In this era of agentic AI, judgement is not disappearing—it is simply becoming easier to see what was never judgement in the first place.
 
-And when the system gets sharper because hard calls were made, who ends up owning that improvement?
+And when a system gets sharper because hard calls were made, who ends up owning that improvement?
