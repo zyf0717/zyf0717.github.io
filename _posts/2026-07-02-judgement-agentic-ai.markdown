@@ -109,4 +109,6 @@ Obviously, agentic AI is not a simple drop-in replacement for judgement. It does
 
 In this era of agentic AI, judgement is not disappearing—it is simply becoming easier to see what was never judgement in the first place.
 
-And when a system gets sharper because hard calls were made, who ends up owning that improvement?
+And when a system improves because someone made the hard calls, the remaining question is not whether judgement mattered.
+
+It is who gets to own it.
