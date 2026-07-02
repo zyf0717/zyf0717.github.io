@@ -59,13 +59,13 @@ At the same time, using the same example, consider the following questions:
 - If repeated, should the process be automated, and if so, how?
 - Is the real problem the messy spreadsheet, or the upstream process that produced it?
 
-It is immediately apparent that these questions are either frame-setting or frame-challenging, and therefore require real judgement.
+It is immediately apparent that these questions are either frame-setting or frame-challenging, and therefore marks where real judgement *begin*.
 
 Asking such questions essentially turns the situation from single-loop to [double-loop](https://en.wikipedia.org/wiki/Double-loop_learning).
 
-And the key is *not* having the right answer. It is recognizing that these questions need to be asked at all.
+And the key is *not* having the right answer. It is recognizing that *appropriate* questions need to be asked at all.
 
-Because the answers may eventually become procedural, codified, or automated, but formulating the questions themselves will not.
+Because the answers may eventually become procedural, codified, or automated, but framing decisions themselves will not.
 
 This same local situation also scales, from one messy spreadsheet to the software economy as a whole.
 
