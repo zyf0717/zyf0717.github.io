@@ -59,7 +59,7 @@ At the same time, using the same example, consider the following questions:
 - If repeated, should the process be automated, and if so, how?
 - Is the real problem the messy spreadsheet, or the upstream process that produced it?
 
-It is immediately apparent that these *questions* are either frame-setting or frame-challenging, and therefore require real judgement.
+It is immediately apparent that these questions are either frame-setting or frame-challenging, and therefore require real judgement.
 
 Asking such questions essentially turns the situation from single-loop to [double-loop](https://en.wikipedia.org/wiki/Double-loop_learning).
 
@@ -67,9 +67,9 @@ And the key is *not* having the right answer. It is recognizing that these quest
 
 Because the answers may eventually become procedural, codified, or automated, but formulating the questions themselves will not.
 
-## The Revealed Scarcity
+This same local situation also scales, from one messy spreadsheet to the software economy as a whole.
 
-The same distinction scales from one messy spreadsheet to the software economy as a whole.
+## The Revealed Scarcity
 
 ![Figure 12 showing new apps and aggregate usage across iOS, Android, and Chrome app stores](/assets/images/new-apps-and-usage-across-app-stores.png)
 
@@ -81,7 +81,7 @@ The implication is clear: the scarcity of software production has been significa
 
 In turn, this reveals what the friction of production had previously obscured: the scarcity of judgement over what should be built, shipped, trusted, and maintained.
 
-It would be tempting to conclude that agentic AI is limited to making procedural judgements and making ptogrammed decisions, but a recent paper complicates things.
+There is, however, a risk of drawing the boundary too neatly. If the argument stopped here, it would suggest that agentic AI is merely procedural. Reality is much more nuanced and complex than the binary procedural-versus-judgemental after all.
 
 ## Modeling Tacit Judgement
 
@@ -95,16 +95,16 @@ It would be a mistake to say that LLMs cannot make judgement-based decisions. Th
 
 This is why agentic AI can be useful far beyond executing simple checklists. They are very capable of drafting plans, critiquing assumptions, repairing code, and surfacing potential failure modes.
 
-And arguably, LLMs may already be superhuman in the breadth of pattern-based judgement they approximate.
+The capacity to operationalize latent patterns also means that agentic AI is continuously redefining the scope of judgement.
 
 ## Conclusion: Judgement as a Moving Frontier
 
-Some of what is commonly known as judgement is merely procedural decision-making, and Agentic AI is already excellent at this.
+Some of what is commonly considered judgement is merely procedural decision-making, and Agentic AI is already excellent at this.
 
 Some judgement flows from tacit knowledge, and LLMs are increasingly able to approximate parts of this as well.
 
-Each time a layer of judgement becomes repeatable, testable, or modelable, it moves closer to procedure. The frontier then shifts upward again, toward whatever remains unstable, underspecified, or not yet pattern-saturated.
+Each time a layer of judgement becomes repeatable, testable, or modeled, it moves closer to procedure. The frontier then shifts upward again, toward whatever remains unstable, underspecified, or not yet pattern-saturated.
 
-Clearly, agentic AI does not simply replace judgement wholesale. It does, however, continuously redraw the boundary between judgement and procedure.
+Obviously, agentic AI is not a simple drop-in replacement for judgement. It does, however, continuously redraw the boundary between judgement and procedure.
 
 And in this era of agentic AI, judgement is not disappearing. It is simply becoming easier to see what was never judgement in the first place.
