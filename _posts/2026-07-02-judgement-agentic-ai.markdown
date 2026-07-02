@@ -61,7 +61,7 @@ At the same time, using the same example, consider the following questions:
 
 It is immediately apparent that these questions are either frame-setting or frame-challenging, and therefore mark where real judgement begins.
 
-Asking such questions essentially turns the situation from single-loop to [double-loop](https://en.wikipedia.org/wiki/Double-loop_learning).
+In Argyris and Schön’s terms, asking such questions essentially turns the situation from single-loop to [double-loop](https://en.wikipedia.org/wiki/Double-loop_learning).
 
 And the key is *not* having the right answer. It is recognizing that *appropriate* questions need to be asked at all.
 
