@@ -23,9 +23,9 @@ Programmed decisions are those that are routine, repetitive, structured or well-
 
 Non-programmed decisions, on the other hand, are novel, unstructured, and usually consequential or impactful. They cannot be resolved simply by applying an existing procedure.
 
-In other words, the former operate within an accepted frame, and are therefore procedural; the latter require setting, revising, or choosing the frame itself, and it is where real judgement is required.
+In other words, the former operate within an accepted frame, and are therefore procedural; the latter require setting, revising, or choosing the frame itself, and it is where *real* judgement is required.
 
-The problem is that the distinction is often unclear: what is mistaken as *real* judgement is often just *procedural* decision-making under mild ambiguity.
+The problem is that the distinction is often unclear: what is colloquially referred to as "judgement" is often just *procedural* decision-making under mild ambiguity.
 
 ## Agentic AI: Masters of Procedural Decision-Making
 
