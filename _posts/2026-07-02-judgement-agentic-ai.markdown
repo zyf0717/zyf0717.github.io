@@ -69,6 +69,8 @@ Because the answers may eventually become procedural, codified, or automated, bu
 
 ## The Revealed Scarcity
 
+The same distinction scales from one messy spreadsheet to the software economy as a whole.
+
 ![Figure 12 showing new apps and aggregate usage across iOS, Android, and Chrome app stores](/assets/images/new-apps-and-usage-across-app-stores.png)
 
 > **Source:** Figure 12, “New Apps and Their Usage Across App Stores,” in Mert Demirer, Leon Musolff, and Liyuan Yang, “[Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf),” NBER Working Paper No. 35275, 2026.
