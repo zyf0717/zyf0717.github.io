@@ -87,7 +87,7 @@ There is, however, a risk of drawing the boundary too neatly. If the argument st
 
 Judgement that flows from [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) was once thought to be difficult or even impossible to model.
 
-A [2026 paper by Quan Cheng](https://arxiv.org/abs/2603.15238) proposes and argues that the truly valuable capabilities of large language models (LLMs) reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
+A [2026 paper by Quan Cheng](https://arxiv.org/abs/2603.15238) proposes and argues that the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
 
 Real-world usage and observation suggest that agentic AI does not only execute explicit procedures, the underlying LLMs can also approximate some kind of tacit judgement: they infer what fits from high-dimensional learned patterns, including semantic, procedural, stylistic, and logical regularities absorbed from massive prior examples.
 
