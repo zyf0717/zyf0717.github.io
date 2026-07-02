@@ -11,7 +11,7 @@ Judgement, and ultimately decision-making, has been a recurring theme across the
 - [Autonomy is Overrated: Human Staffing vs. Agentic AI]({% post_url 2026-05-22-autonomy-is-overrated %})
 - [The Marginal Economics of Agentic AI]({% post_url 2026-06-09-marginal-economics-agentic-ai %})
 
-Yet, because neither term was explicitly defined, it might not be apparent what either means in the context of agentic AI—especially when some agentic AI loops *appear* capable of making decisions autonomously.
+Yet, because neither term was explicitly defined, it might not be apparent what they mean in the context of agentic AI—especially when some agentic AI loops *appear* capable of making decisions autonomously.
 
 This post examines what judgement still means in the current era of agentic AI.
 
