@@ -5,7 +5,7 @@ permalink: /about/
 description: About Yifei Zheng and selected writing on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and applied AI.
 ---
 
-This site collects longer notes by Yifei Zheng on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and applied AI.
+This site collects notes by Yifei Zheng on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and applied AI.
 
 The older posts are largely project journals and setup notes. The newer posts focus more on production systems, deployment tradeoffs, and operating AI workloads in real environments.
 
