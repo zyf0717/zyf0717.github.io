@@ -1,0 +1,54 @@
+---
+# Only the main Sass file needs front matter.
+---
+
+@import
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "minima/initialize";
+
+@media screen and (max-width: $on-medium) {
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header .wrapper::after {
+    content: none;
+  }
+
+  .site-title {
+    float: none;
+    padding-right: 0;
+  }
+
+  .site-nav {
+    position: static;
+    float: none;
+    border: 0;
+    background-color: transparent;
+    text-align: right;
+  }
+
+  .site-nav label[for="nav-trigger"] {
+    display: none;
+  }
+
+  .site-nav #nav-trigger ~ .nav-items,
+  .site-nav #nav-trigger:checked ~ .nav-items {
+    display: flex;
+    clear: none;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 0;
+  }
+
+  .site-nav #nav-trigger ~ .nav-items .nav-item,
+  .site-nav #nav-trigger:checked ~ .nav-items .nav-item {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    white-space: nowrap;
+  }
+}
