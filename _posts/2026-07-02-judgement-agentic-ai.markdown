@@ -75,7 +75,7 @@ This same local situation also scales, from one messy spreadsheet to the softwar
 
 ![Figure 12 showing new apps and aggregate usage across iOS, Android, and Chrome app stores](/assets/images/new-apps-and-usage-across-app-stores.png)
 
-> **Source:** Figure 12, “New Apps and Their Usage Across App Stores,” in Mert Demirer, Leon Musolff, and Liyuan Yang, “[Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf),” NBER Working Paper No. 35275, 2026.
+> **Source:** Figure 12, “New Apps and Their Usage Across App Stores,” from Mert Demirer, Leon Musolff, and Liyuan Yang, “[Writing Code vs. Shipping Code: Productivity Effects Across Generations of AI Coding Tools](https://www.nber.org/system/files/working_papers/w35275/w35275.pdf),” NBER Working Paper No. 35275, May 2026.
 
 The figure illustrates the distinction between producing software and producing value: new app creation rises sharply, especially for iOS and Chrome, but downstream usage signals such as ratings and downloads do not show a proportional increase.
 
@@ -93,7 +93,7 @@ This used to mark a boundary for automation.
 
 Now LLMs blur and push this boundary.
 
-A [2026 paper by Quan Cheng](https://arxiv.org/abs/2603.15238) argues that the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
+As Cheng argues in "[Why the Valuable Capabilities of LLMs Are Precisely the Unexplainable Ones](https://arxiv.org/abs/2603.15238)," the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
 
 Real-world usage and observation suggest that agentic AI does not only execute explicit procedures, the underlying LLMs can also approximate some kind of tacit judgement: they infer what fits from high-dimensional learned patterns, including semantic, procedural, stylistic, and logical regularities absorbed from massive prior examples.
 
