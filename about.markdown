@@ -2,19 +2,27 @@
 layout: page
 title: About
 permalink: /about/
-description: About Yifei Zheng and selected writing on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and applied AI.
+description: About Yifei Zheng and selected technical writing on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and agentic AI.
 ---
 
-This site collects notes by Yifei Zheng on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and applied AI.
+This site collects technical notes by Yifei Zheng on systems engineering, data platforms, cloud infrastructure, production dashboards, hardware projects, and applied AI.
 
-The older posts are largely project journals and setup notes. The newer posts focus more on production systems, deployment tradeoffs, and operating AI workloads in real environments.
+The older posts are mostly project journals and setup notes. The newer posts focus on production systems, deployment tradeoffs, operational ownership, and operating AI workloads in real environments.
 
-## Recent writing
+## Agentic AI
 
+- [Judgement in the Era of Agentic AI]({% post_url 2026-07-02-judgement-agentic-ai %})
+- [The Marginal Economics of Agentic AI]({% post_url 2026-06-09-marginal-economics-agentic-ai %})
+- [Autonomy is Overrated: Human Staffing vs. Agentic AI]({% post_url 2026-05-22-autonomy-is-overrated %})
 - [Day-1 vs. Day-2 in the Era of Agentic AI]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %})
+
+## Systems and infrastructure
+
 - [Year in Review (2025): Systems Engineering]({% post_url 2025-12-03-year-in-review-2025 %})
 - [Strix Halo Matrix Cores with llama.cpp]({% post_url 2025-08-27-building-llamacpp-strix-halo %})
 - [Year-to-Date: Data, Systems, and Infrastructure]({% post_url 2025-05-01-data-systems-infrastructure %})
+- [Apache Web Server on GCP]({% post_url 2020-08-18-apache-web-server-gcp %})
+- [#MahjulahGCP (Season 2)]({% post_url 2020-09-29-mahjulahgcp-season-2 %})
 
 ## Dashboards and analytics
 
@@ -23,15 +31,6 @@ The older posts are largely project journals and setup notes. The newer posts fo
 - [Dashboard Deployment on Web Server]({% post_url 2020-08-18-dashboard-deployment %})
 - [Dashboard Deployment on AWS]({% post_url 2024-05-07-dashboard-deployment-aws %})
 - [Shiny Dashboard Development]({% post_url 2024-09-07-shiny-dashboard-development %})
-
-## Systems, infrastructure, and AI
-
-- [Apache Web Server on GCP]({% post_url 2020-08-18-apache-web-server-gcp %})
-- [#MahjulahGCP (Season 2)]({% post_url 2020-09-29-mahjulahgcp-season-2 %})
-- [Year-to-Date: Data, Systems, and Infrastructure]({% post_url 2025-05-01-data-systems-infrastructure %})
-- [Strix Halo Matrix Cores with llama.cpp]({% post_url 2025-08-27-building-llamacpp-strix-halo %})
-- [Year in Review (2025): Systems Engineering]({% post_url 2025-12-03-year-in-review-2025 %})
-- [Day-1 vs. Day-2 in the Era of Agentic AI]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %})
 
 ## Raspberry Pi and home lab
 
