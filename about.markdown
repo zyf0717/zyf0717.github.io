@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+hide_title: true
 description: About Yifei Zheng and selected technical writing on systems engineering, data platforms, cloud infrastructure, dashboards, hardware projects, and agentic AI.
 ---
 
