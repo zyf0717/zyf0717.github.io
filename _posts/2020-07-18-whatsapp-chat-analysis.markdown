@@ -55,7 +55,7 @@ The heatmap above also shows that conversations generally occur towards the end 
 
 ## Topics of discussion
 
-![WhatsApp wordcloud](https://zyf0717.github.io/assets/images/whatsapp-wordcloud.png)
+![WhatsApp wordcloud](/assets/images/whatsapp-wordcloud.png)
 
 A word cloud generated from all WhatsApp messages show that some of the most commonly used words include 'lol', 'haha/hahaha', 'la', 'u', 'like'. These words are clearly fillers and do not appear to revolve around any particular topic.
 

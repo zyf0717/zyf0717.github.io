@@ -5,7 +5,7 @@ date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
 ---
 
-![Pi with Ice Tower](https://zyf0717.github.io/assets/images/pi-ice-tower.jpg)
+![Pi with Ice Tower](/assets/images/pi-ice-tower.jpg)
 
 After setting up [SSH for my Raspberry Pi 4B](https://www.raspberrypi.org/documentation/remote-access/ssh/) and [Jupyter](https://jupyter.org/) (using [Anaconda](https://www.anaconda.com/)), I wanted to see if I can remotely start and access a Jupyter server hosted on the Pi.
 
@@ -72,6 +72,6 @@ This command should remain running on the local machine until the Jupyter sessio
 
 Open a browser, and go to `https://localhost:9999`. Use the password entered and verified in Step 1  to authenticate, and Jupyter Lab / Notebook loads thereafter.
 
-![Remote Jupyter terminal](https://zyf0717.github.io/assets/images/pi-jupyter-terminal.png)
+![Remote Jupyter terminal](/assets/images/pi-jupyter-terminal.png)
 
 Voilà!

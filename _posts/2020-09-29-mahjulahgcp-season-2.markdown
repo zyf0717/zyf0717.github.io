@@ -11,7 +11,7 @@ There is currently an ongoing Google event called [#MahjulahGCP](https://events.
 
 Do check out the event [here](https://events.withgoogle.com/majulahgcp-learn-data-analytics-using-google-cloud/), especially if you are interested in learning how to use GCP for machine learning or data analytics, or just to earn the following swags:
 
-![#MahjulahGCP swags](https://zyf0717.github.io/assets/images/mahjulah-gcp-swags.jpg)
+![#MahjulahGCP swags](/assets/images/mahjulah-gcp-swags.jpg)
 
 You will be given 1 month of free access to [Qwiklabs](https://www.qwiklabs.com/) upon registration to complete Quests and Labs.
 

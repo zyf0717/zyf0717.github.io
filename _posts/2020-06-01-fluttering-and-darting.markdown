@@ -5,7 +5,7 @@ date:   2020-06-01 20:00:00 +0800
 categories: jekyll update
 ---
 
-![Screenshot of my Flutter Android app](https://zyf0717.github.io/assets/images/to-do-screenshot.png)
+![Screenshot of my Flutter Android app](/assets/images/to-do-screenshot.png)
 
 During this lockdown period, my plans to setup my own Raspberry Pi compute cluster were pushed back due to extreme delays in shipping. Instead, I completed a [Flutter development course on Udemy](https://www.udemy.com/course/flutter-bootcamp-with-dart/). Despite being completely foreign to mobile app development, I thoroughly enjoyed the course and what Flutter and Dart have to offer.
 

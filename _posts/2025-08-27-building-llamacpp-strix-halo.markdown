@@ -3,6 +3,7 @@ layout: post
 title:  "Strix Halo Matrix Cores with llama.cpp"
 date:   2025-08-27 23:30:00 +0800
 categories: jekyll update
+description: How to build and benchmark llama.cpp with Vulkan on AMD Strix Halo, including driver setup, shader compilation, and performance validation.
 ---
 
 Off-the-shelf GUI frontends such as LM Studio ship their own `llama.cpp` builds for convenience. These builds are designed for broad compatibility, not peak performance. Depending on how they’re compiled and how the GUI orchestrates generation, key optimizations (e.g. cooperative-matrix matmul, Flash Attention, KV cache quantization) may or may not be in play.

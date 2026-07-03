@@ -51,6 +51,6 @@ To kill the process use: `$ pkill -f dashboard_v0.6.py`
 
 The default Dash server port (8050) has to be allowed to allow incoming traffic.
 
-My configurations for GCP can be found [here](https://zyf0717.github.io/assets/images/gcp-dash-port-settings.png), and for AWS [here](https://zyf0717.github.io/assets/images/aws-dash-port-settings.png).
+My configurations for GCP can be found [here](/assets/images/gcp-dash-port-settings.png), and for AWS [here](/assets/images/aws-dash-port-settings.png).
 
 *Update: The current dashboard has been updated and migrated to EC2 on AWS. See the [update post]({% post_url 2024-05-07-dashboard-deployment-aws %}) for more information.*

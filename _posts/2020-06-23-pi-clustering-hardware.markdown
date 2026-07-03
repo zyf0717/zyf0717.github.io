@@ -9,13 +9,13 @@ After many weeks, the hardware I procured to set up my very own compute cluster 
 
 ## 1. Master node
 
-![ODYSSEY mini PC with compatible casing](https://zyf0717.github.io/assets/images/odyssey.jpg)
+![ODYSSEY mini PC with compatible casing](/assets/images/odyssey.jpg)
 
 I have decided to use the [Odyssey mini PC](https://www.seeedstudio.com/ODYSSEY-X86J4105864-p-4447.html) for the master node. It has a Intel Celeron J4105 processor, 8GB RAM and 64GB eMMC. It is no powerhouse, but it is more powerful than any worker node in this cluster while still maintaining low power consumption. Ubuntu desktop 20.04 will be installed on this machine.
 
 ## 2. Worker nodes
 
-![Rapsberry Pi 4B, PoE HAT, network switch](https://zyf0717.github.io/assets/images/pi-cluster.jpg)
+![Rapsberry Pi 4B, PoE HAT, network switch](/assets/images/pi-cluster.jpg)
 
 _Picture taken prior to the arrival of the forth Pi._
 
@@ -33,7 +33,7 @@ At least five ethernet cables are needed to connect all five machines to the net
 
 ## 4. Final setup
 
-![Odyssey-Pi cluster](https://zyf0717.github.io/assets/images/odyssey-pi-cluster.jpg)
+![Odyssey-Pi cluster](/assets/images/odyssey-pi-cluster.jpg)
 
 The [cluster case](https://www.amazon.sg/dp/B07MW3GM1T/ref=pe_12283492_374736162_TE_item) I used for the Pi stack was purchased on Amazon. The fans provided with the cluster case were not used as the PoE HATs I purchased come with CPU fans.
 

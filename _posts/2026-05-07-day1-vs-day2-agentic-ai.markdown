@@ -3,6 +3,7 @@ layout: post
 title:  "Day-1 vs. Day-2 in the Era of Agentic AI"
 date:   2026-05-07 12:00:00 +0800
 categories: jekyll update
+description: Why agentic AI makes prototypes easier but production stewardship harder, using a day-1 versus day-2 frame for engineering judgement.
 ---
 
 The recent Forbes article ([Vibe Coding Will Break Your Company](https://www.forbes.com/sites/jasonwingard/2026/04/23/vibe-coding-will-break-your-company/)) warns that vibe coding goes beyond a software-development trend: it is also a stress test for organizational judgment. LLMs and agentic AI can generate code faster than organizations can decide who owns, reviews, secures, or maintains the result.

@@ -138,7 +138,7 @@ Mentoring is another great aspect of Exercism, where one takes the role of a rev
 
 Students are offered the option of leaving testimonials for their mentors, and it is heartening to receive testimonials like these:
 
-![Exercism testimonials](https://zyf0717.github.io/assets/images/exercism-testimonials.png)
+![Exercism testimonials](/assets/images/exercism-testimonials.png)
 
 ## 4. Other contributions
 

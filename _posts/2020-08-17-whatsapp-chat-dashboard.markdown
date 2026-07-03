@@ -9,7 +9,7 @@ Following my [previous post]({% post_url 2020-07-18-whatsapp-chat-analysis %}), 
 
 The dashboard has not been fully deployed online, so only a screen capture is available for now. The WhatsApp chat used below is identical to that in my previous post.
 
-![Dash dashboard](https://zyf0717.github.io/assets/images/dash-dashboard.png)
+![Dash dashboard](/assets/images/dash-dashboard.png)
 
 During this dashboard-creation process, I have also completed a [Plotly and Dash Udemy course](https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/), which provided a basic level of Dash knowledge. Important takeaways were callbacks with and without state, and layout updating.
 

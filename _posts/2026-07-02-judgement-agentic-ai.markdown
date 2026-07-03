@@ -3,6 +3,8 @@ layout: post
 title:  "Judgement in the Era of Agentic AI"
 date:   2026-07-02 12:00:00 +0800
 categories: jekyll update
+description: "A systems-engineering view of judgement in agentic AI: where procedural decision-making ends, where framing decisions begin, and why AI shifts that frontier."
+image: /assets/images/new-apps-and-usage-across-app-stores.png
 ---
 
 Judgement, and ultimately decision-making, has been a recurring theme across the previous three posts:
