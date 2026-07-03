@@ -87,17 +87,21 @@ There is, however, a risk of drawing the boundary too neatly. If the argument st
 
 ## Modeling Tacit Judgement
 
-Judgement that flows from [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) was once thought to be difficult or even impossible to model.
+Michael Polanyi’s observation in [*The Tacit Dimension*](https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html) that “we can know more than we can tell” captures the difficulty of turning [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and judgement into procedure.
 
-A [2026 paper by Quan Cheng](https://arxiv.org/abs/2603.15238) proposes and argues that the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
+This used to mark a boundary for automation.
+
+Now LLMs blur and push this boundary.
+
+A [2026 paper by Quan Cheng](https://arxiv.org/abs/2603.15238) argues that the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
 
 Real-world usage and observation suggest that agentic AI does not only execute explicit procedures, the underlying LLMs can also approximate some kind of tacit judgement: they infer what fits from high-dimensional learned patterns, including semantic, procedural, stylistic, and logical regularities absorbed from massive prior examples.
 
-It would be a mistake to say that LLMs cannot make judgement-based decisions. They clearly appear to do so, in the limited sense of recognizing fit, mismatch, plausibility, and local coherence—even when no explicit SOP is provided.
+It would thus be a mistake to say that LLMs cannot at least simulate judgement-based decisions. They clearly appear to do so, even if only in a limited sense of recognizing fit, mismatch, plausibility, and local coherence—even when no explicit SOP is provided.
 
-This is why agentic AI can be useful far beyond executing simple checklists. They are very capable of drafting plans, critiquing assumptions, repairing code, and surfacing potential failure modes.
+This is why agentic AI can be useful far beyond executing simple checklists. It is particularly capable at drafting plans, critiquing assumptions, repairing code, and surfacing potential failure modes.
 
-The capacity to operationalize latent patterns also means that agentic AI is continuously redefining the scope of judgement.
+The capacity to operationalise latent patterns also means that agentic AI is continuously redefining the scope of judgement.
 
 ## Conclusion: Judgement as a Moving Frontier
 
@@ -105,7 +109,7 @@ Some of what is commonly considered judgement is merely procedural decision-maki
 
 Some judgement flows from tacit knowledge, and LLMs are increasingly able to approximate parts of this as well.
 
-Each time a layer of judgement becomes repeatable, testable, or modeled, it moves closer to procedure. The frontier then shifts upward again, toward whatever remains unstable, underspecified, or not yet pattern-saturated.
+Each time a layer of judgement becomes repeatable, testable, or modelled, it moves closer to procedure. The frontier then shifts upward again, toward whatever remains unstable, underspecified, or not yet pattern-saturated.
 
 Obviously, agentic AI is not a simple drop-in replacement for judgement. It does, however, continuously redraw the boundary between judgement and procedure.
 
