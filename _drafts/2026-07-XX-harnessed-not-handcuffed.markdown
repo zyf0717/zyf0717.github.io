@@ -28,6 +28,29 @@ The design principle is clear: more is not always better. A good hardness does n
 
 ## Interpretive Entropy
 
-The heart of the matter is interpretive entropy. Not all additional context clarifies: high-signal context can reduce uncertainty; low-signal instructions can increase it by creating more surfaces for ambiguity, conflict, and ultimately misapplication.
+The heart of the matter is interpretive entropy. Not all additional context clarifies: high-signal content can reduce uncertainty; low-signal instructions increases chance of ambiguity or even conflict, which may ultimately lead to misapplication.
 
-In other words: long(er) contexts are better only if they are informative. If they are not, they can be worse than no context at all.
+In other words, long(er) contexts are better only if they are informative; if they are not, they can be worse than no context at all.
+
+The key is to understand the levels at which control is exercised:
+
+- Tier 1: outside-prompt, hard controls
+- Tier 2: inside-prompt, unavoidable controls
+- Tier 3: inside-prompt, soft guidance
+- Everything else: suspicious by default
+
+### Tier 1: Outside-Prompt, Hard Controls
+
+A "hard control" here refers to a constraint that is enforced by the system and cannot be overridden by the LLM's probabilistic interpretation. Such controls include:
+
+- File permissions enforced by the operating system
+- Schema validity enforced by a validation engine
+- Access control enforced by an API gateway
+- Coding standards enforced by a linter
+- Correctness enforced by a tests and checks
+
+It is worth noting that even though "system prompts" sits higher than "user prompts" in the instructions hierarchy, neither fully determines how robust the control is. They are ultimately still natural language interpreted by the model, and thus probabilistic.
+
+### Tier 2: Inside-Prompt, Unavoidable Controls
+
+### Tier 3: Inside-Prompt, Soft Guidance
