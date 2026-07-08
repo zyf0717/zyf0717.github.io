@@ -96,7 +96,7 @@ As discussed previously in [Judgement in the Era of Agentic AI]({% post_url 2026
 
 They can recognize fit, mismatch, plausibility, local coherence, and other patterns without being given an explicit procedure to do so.
 
-Excessive explicit instruction may suppress this capacity, reducing an agent capable of flexible tacit judgement into one primarily occupied with following procedure—a risk reflected in [recent findings that explicit reasoning can itself reduce performance on some implicit-pattern tasks](https://arxiv.org/abs/2410.21333).
+Excessive explicit instruction may suppress this capacity, reducing an agent capable of flexible tacit judgement into one primarily occupied with following procedure.
 
 Though to be fair, this may sometimes be the desired outcome.
 
