@@ -6,7 +6,7 @@ categories: jekyll update
 description: How to build and benchmark llama.cpp with Vulkan on AMD Strix Halo, including driver setup, shader compilation, and performance validation.
 ---
 
-> **UPDATE (2026-07-09):** Refer to my published [`llama-strix-halo`](https://github.com/zyf0717/llama-strix-halo), a reproducible workspace for a Strix Halo setup with pinned `llama.cpp`, Vulkan/HIP build helpers, benchmark wrappers, env capture, and multi-instance `llama-server` management. The instructions below are outdated and will not be maintained.
+> **UPDATE (2026-07-09):** Refer to my published [`llama-strix-halo`](https://github.com/zyf0717/llama-strix-halo), a reproducible workspace for a Strix Halo setup with pinned `llama.cpp`, Vulkan/HIP build helpers, benchmark wrappers, env capture, and multi-instance `llama-server` management. The instructions below are outdated, and should only serve as a historical reference.
 
 Off-the-shelf GUI frontends such as LM Studio ship their own `llama.cpp` builds for convenience. These builds are designed for broad compatibility, not peak performance. Depending on how they’re compiled and how the GUI orchestrates generation, key optimizations (e.g. cooperative-matrix matmul, Flash Attention, KV cache quantization) may or may not be in play.
 
