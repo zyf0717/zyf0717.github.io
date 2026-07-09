@@ -19,7 +19,7 @@ This post examines what judgement still means in the current era of agentic AI.
 
 ## Frame Versus Procedure
 
-Herbert Simon proposed that decisions can be arranged along a continuum, with programmed decisions on one end and non-programmed decisions on the other.
+[Herbert Simon distinguished between programmed and non-programmed decisions](https://en.wikipedia.org/wiki/Problem_structuring_methods).
 
 Programmed decisions are those that are routine, repetitive, structured or well-defined, rely on standard operating procedures (SOPs), have clear lines of responsibility, and are therefore usually delegatable.
 
