@@ -87,7 +87,7 @@ There is, however, a risk of drawing the boundary too neatly. If the argument st
 
 ## Modeling Tacit Judgement
 
-Michael Polanyi’s observation in [*The Tacit Dimension*](https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html) that “we can know more than we can tell” captures the difficulty of turning [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and judgement into procedure.
+Michael Polanyi’s assertion that “we can know more than we can tell” captures the difficulty of turning [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and judgement into procedure.
 
 This used to mark a boundary for automation.
 
