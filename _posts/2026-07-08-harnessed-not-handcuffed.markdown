@@ -112,4 +112,4 @@ Treating every desired behaviour as another prompt instruction is itself a desig
 
 A good harness therefore constrains what must be constrained, exposes what must be exposed, and minimises everything else to leave space for judgement.
 
-Harnessed, not handcuffed.
+In other words: harnessed, not handcuffed.
