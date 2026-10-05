@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": {{ page.url | absolute_url | append: '#profile' | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "@id": {{ site.url | append: '/#person' | jsonify }},
+    "name": {{ site.author.name | jsonify }},
+    "alternateName": "zyf0717",
+    "url": {{ site.url | jsonify }},
+    "sameAs": {{ site.social.links | jsonify }},
+    "knowsAbout": [
+      "Research software engineering",
+      "Scientific computing",
+      "Open-source software",
+      "Data engineering",
+      "Cloud infrastructure",
+      "Python",
+      "R",
+      "Julia",
+      "Heat stress",
+      "Wet-bulb globe temperature",
+      "Biometeorology",
+      "Applied and agentic AI"
+    ]
+  }
+}
+</script>

@@ -1,10 +1,9 @@
-title: Yifei's Blog
-tagline: Technical notes by Yifei Zheng
+title: Yifei Zheng
+tagline: Research software engineer and open-source developer
 
-description: Notes on data systems, infrastructure, dashboards, hardware projects, and applied AI.
+description: Research software engineering, scientific computing, data systems, open-source software, and applied AI across Python, R, Julia, and cloud infrastructure.
 
 email: zyf0717@gmail.com
-linkedin_url: https://www.linkedin.com/in/zhengyifei/
 
 url: https://yifei.sg
 baseurl: ""
@@ -20,7 +19,9 @@ author:
 social:
   name: Yifei Zheng
   links:
+    - https://github.com/zyf0717
     - https://www.linkedin.com/in/zhengyifei/
+    - https://orcid.org/0009-0001-4858-2025
 
 # Use Minima (v3) via remote_theme
 remote_theme: jekyll/minima
@@ -35,10 +36,19 @@ plugins:
 # Minima v3 skin (dark/light/auto follows system preference)
 minima:
   skin: auto
+  nav_pages:
+    - software.markdown
+    - about.markdown
   social_links:
     - title: "Email"
       icon: envelope
       url: "mailto:zyf0717@gmail.com"
+    - title: "GitHub"
+      icon: github
+      url: "https://github.com/zyf0717"
     - title: "LinkedIn"
       icon: linkedin
       url: "https://www.linkedin.com/in/zhengyifei/"
+    - title: "ORCID"
+      icon: orcid
+      url: "https://orcid.org/0009-0001-4858-2025"
