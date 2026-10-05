@@ -1,0 +1,102 @@
+- id: lwbgt
+  name: lwbgt
+  description: >-
+    lwbgt provides a Python package and a CRAN R package for outdoor wet-bulb globe temperature (WBGT) calculations from meteorological inputs using the original Argonne Liljegren calculation.
+    Both packages share a versioned C library with C/FFI and Swift Package Manager (SwiftPM) interfaces and reference-compatible v1 calculations.
+  role: Author and maintainer of the package and its interfaces around the original calculation.
+  relationships: [author, maintainer]
+  programming_languages: [Python, R, C, Swift]
+  keywords: [wet-bulb globe temperature, WBGT, Liljegren model, Argonne Liljegren, meteorological inputs]
+  links:
+    - label: GitHub
+      kind: repository
+      url: https://github.com/zyf0717/lwbgt
+    - label: PyPI
+      kind: registry
+      url: https://pypi.org/project/lwbgt/
+    - label: CRAN
+      kind: registry
+      url: https://cran.r-project.org/package=lwbgt
+    - label: 'DOI: 10.32614/CRAN.package.lwbgt'
+      kind: doi
+      url: https://doi.org/10.32614/CRAN.package.lwbgt
+
+- id: heatstressr
+  name: HeatStressR
+  description: >-
+    HeatStressR is a CRAN R package for calculating heat-stress indices from meteorological observations, including Liljegren wet-bulb globe temperature (WBGT), heat index, and humidex.
+    This independently maintained fork of HeatStress adds vectorized batch calculations, numerical robustness, and row-level diagnostics.
+  role: Author and maintainer of the independent HeatStress fork.
+  relationships: [author, maintainer]
+  programming_languages: [R]
+  keywords: [heat stress, wet-bulb globe temperature, WBGT, Liljegren model, heat index, humidex]
+  links:
+    - label: GitHub
+      kind: repository
+      url: https://github.com/zyf0717/HeatStressR
+    - label: CRAN
+      kind: registry
+      url: https://cran.r-project.org/package=HeatStressR
+    - label: 'DOI: 10.32614/CRAN.package.HeatStressR'
+      kind: doi
+      url: https://doi.org/10.32614/CRAN.package.HeatStressR
+
+- id: heatstressjl
+  name: HeatStress.jl
+  description: >-
+    HeatStress.jl is an independent Julia package for published heat-stress models including Liljegren wet-bulb globe temperature (WBGT), RCC estimated WBGT, National Weather Service (NWS) heat index, humidex, and the Stull wet-bulb temperature approximation.
+    It supports diagnostics and batch or threaded Liljegren calculations.
+  role: Author and maintainer.
+  relationships: [author, maintainer]
+  programming_languages: [Julia]
+  keywords: [heat stress, wet-bulb globe temperature, WBGT, Liljegren model, RCC estimated WBGT, heat index, humidex, wet-bulb temperature]
+  links:
+    - label: GitHub
+      kind: repository
+      url: https://github.com/zyf0717/HeatStress.jl
+    - label: JuliaHub
+      kind: registry
+      url: https://platform.juliahub.com/ui/Packages/General/HeatStress
+
+- id: polar-ble-tools
+  name: polar-ble-tools
+  description: >-
+    polar-ble-tools is a Python package and command-line interface (CLI) for collecting data from Polar Loop Gen 2 and Polar Verity Sense wearables over Bluetooth Low Energy (BLE).
+    It supports on-device PMD offline recording and local PFTP file retrieval without Polar Flow.
+  role: Author and maintainer.
+  relationships: [author, maintainer]
+  programming_languages: [Python]
+  keywords: [Bluetooth Low Energy, BLE, Polar Loop Gen 2, Polar Verity Sense, PMD offline recording, PFTP]
+  links:
+    - label: GitHub
+      kind: repository
+      url: https://github.com/zyf0717/polar-ble-tools
+    - label: PyPI
+      kind: registry
+      url: https://pypi.org/project/polar-ble-tools/
+
+- id: coretemp-for-banglejs
+  name: CoreTemp for Bangle.js
+  description: >-
+    CoreTemp is a JavaScript app in BangleApps for displaying core body and skin temperature from CORE sensors on Bangle.js over Bluetooth Low Energy (BLE).
+    Upstream contributions improve BLE connection handling and ANT+ heart-rate monitor configuration.
+  role: Upstream contributor.
+  relationships: [contributor]
+  programming_languages: [JavaScript]
+  keywords: [Bangle.js, CORE sensor, core body temperature, skin temperature, Bluetooth Low Energy, BLE, ANT+]
+  links:
+    - label: App
+      kind: app
+      url: https://banglejs.com/apps/#coretemp
+    - label: Source
+      kind: repository
+      url: https://github.com/espruino/BangleApps/tree/master/apps/coretemp
+    - label: Documentation
+      kind: documentation
+      url: https://github.com/espruino/BangleApps/blob/master/apps/coretemp/README.md
+    - label: 'Merged PR #4255'
+      kind: contribution
+      url: https://github.com/espruino/BangleApps/pull/4255
+    - label: 'Merged PR #4366'
+      kind: contribution
+      url: https://github.com/espruino/BangleApps/pull/4366

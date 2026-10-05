@@ -1,0 +1,54 @@
+{%- assign software_url = page.url | absolute_url -%}
+{%- assign person_id = site.url | append: '/#person' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ software_url | append: '#page' | jsonify }},
+  "url": {{ software_url | jsonify }},
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "mainEntity": {
+    "@type": "ItemList",
+    "@id": {{ software_url | append: '#projects' | jsonify }},
+    "numberOfItems": {{ site.data.software.size | jsonify }},
+    "itemListElement": [
+      {% for project in site.data.software %}
+      {% assign repository = project.links | where: 'kind', 'repository' | first %}
+      {% assign doi = project.links | where: 'kind', 'doi' | first %}
+      {% assign registries = project.links | where: 'kind', 'registry' %}
+      {% assign apps = project.links | where: 'kind', 'app' %}
+      {% assign same_as = registries | concat: apps | map: 'url' %}
+      {% assign project_url = software_url | append: '#' | append: project.id %}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index | jsonify }},
+        "item": {
+          "@type": "SoftwareSourceCode",
+          "@id": {{ project_url | jsonify }},
+          "url": {{ project_url | jsonify }},
+          "name": {{ project.name | jsonify }},
+          "description": {{ project.description | strip | jsonify }},
+          "codeRepository": {{ repository.url | jsonify }},
+          {% if doi %}
+          "identifier": {{ doi.url | jsonify }},
+          {% endif %}
+          "programmingLanguage": {{ project.programming_languages | jsonify }},
+          {% if project.keywords %}
+          "keywords": {{ project.keywords | jsonify }},
+          {% endif %}
+          {% for relationship in project.relationships %}
+          {{ relationship | jsonify }}: {
+            "@type": "Person",
+            "@id": {{ person_id | jsonify }},
+            "name": {{ site.author.name | jsonify }}
+          },
+          {% endfor %}
+          "sameAs": {{ same_as | jsonify }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
