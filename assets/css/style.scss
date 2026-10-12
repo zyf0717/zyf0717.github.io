@@ -9,8 +9,10 @@
 @media screen and (max-width: $on-medium) {
   .site-header .wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    column-gap: 16px;
   }
 
   .site-header .wrapper::after {
@@ -37,6 +39,7 @@
   .site-nav #nav-trigger ~ .nav-items,
   .site-nav #nav-trigger:checked ~ .nav-items {
     display: flex;
+    flex-wrap: wrap;
     clear: none;
     align-items: center;
     gap: 16px;

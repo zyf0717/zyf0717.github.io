@@ -5,22 +5,24 @@
     <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="footer-col">
         <ul class="contact-list">
           {% if site.email %}
           <li>
             <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
           </li>
           {% endif %}
-          {% if site.linkedin_url %}
+          {% for profile in site.minima.social_links %}
+          {% if site.social.links contains profile.url %}
           <li>
-            <a href="{{ site.linkedin_url }}">LinkedIn</a>
+            <a href="{{ profile.url | escape }}">{{ profile.title | escape }}</a>
           </li>
           {% endif %}
+          {% endfor %}
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col">
         {% if site.description %}
         <p>{{ site.description | escape }}</p>
         {% endif %}
