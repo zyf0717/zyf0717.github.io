@@ -17,9 +17,9 @@
     - label: CRAN
       kind: registry
       url: https://cran.r-project.org/package=lwbgt
-    - label: Julia General
+    - label: JuliaHub
       kind: registry
-      url: https://github.com/JuliaRegistries/General/tree/master/L/LWBGT
+      url: https://platform.juliahub.com/ui/Packages/General/LWBGT
 
 - id: heatstressr
   name: HeatStressR
@@ -34,9 +34,6 @@
     - label: GitHub
       kind: repository
       url: https://github.com/zyf0717/HeatStressR
-    - label: R-universe
-      kind: registry
-      url: https://zyf0717.r-universe.dev/HeatStressR
     - label: CRAN
       kind: registry
       url: https://cran.r-project.org/package=HeatStressR
@@ -77,25 +74,19 @@
 - id: coretemp-for-banglejs
   name: CoreTemp for Bangle.js
   description: >-
-    CoreTemp is a JavaScript app in BangleApps for displaying core body and skin temperature from CORE sensors on Bangle.js over Bluetooth Low Energy (BLE).
-    Upstream contributions improve BLE connection handling and ANT+ heart-rate monitor configuration.
-  role: Upstream contributor.
-  relationships: [contributor]
+    A Bangle.js app for CORE and calera sensors, displaying core and skin temperature, heat strain index, and battery status.
+    Supports BLE connection management, Recorder integration, and ANT+ heart-rate monitor configuration.
+  role: Maintainer.
+  relationships: [maintainer]
   programming_languages: [JavaScript]
-  keywords: [Bangle.js, CORE sensor, core body temperature, skin temperature, Bluetooth Low Energy, BLE, ANT+]
+  keywords: [Bangle.js, CORE sensor, calera sensor, core body temperature, skin temperature, heat strain index, Bluetooth Low Energy, BLE, ANT+, Recorder]
   links:
     - label: App
       kind: app
-      url: https://banglejs.com/apps/#coretemp
+      url: https://banglejs.com/apps/?q=coretemp
     - label: Source
       kind: repository
       url: https://github.com/espruino/BangleApps/tree/master/apps/coretemp
     - label: Documentation
       kind: documentation
       url: https://github.com/espruino/BangleApps/blob/master/apps/coretemp/README.md
-    - label: 'Merged PR #4255'
-      kind: contribution
-      url: https://github.com/espruino/BangleApps/pull/4255
-    - label: 'Merged PR #4366'
-      kind: contribution
-      url: https://github.com/espruino/BangleApps/pull/4366
