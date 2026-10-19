@@ -61,3 +61,9 @@ and Minima to a commit in `_config.yml`. To update:
 
 Commit the updated lockfile with dependency changes. `Gemfile.lock` covers Ruby
 gems; the explicit remote-theme commit pins Minima independently.
+
+The lockfile reproduces local builds. Branch-based Pages uses GitHub's
+preinstalled gem bundle, so some transitive versions can differ and its
+dependency check can warn about missing locked gems before building
+successfully. The Pages gem pin aligns Jekyll and its supported plugins; verify
+the hosted deployment as well as local builds after updates.
