@@ -3,6 +3,8 @@ layout: post
 title:  "Year in Review (August 2019 to July 2020)"
 date:   2020-07-10 10:00:00 +0800
 categories: jekyll update
+tags: [year-in-review]
+description: A review of a year spent learning programming and data science through courses, coding challenges, app development, and cluster computing.
 ---
 
 It has been almost a year since I began my committed journey into programming and data science. It only seems appropriate to look back and review what I have been doing over the past year, and highlight what I have learnt. The sections below occur mostly in chronological order, with some overlaps.

@@ -3,6 +3,8 @@ layout: post
 title:  "Shiny Dashboard Development"
 date:   2024-09-07 10:15:00 +0800
 categories: jekyll update
+tags: [dashboards]
+description: A 2024 progress update on rewriting the chat analysis dashboard with Shiny for Python and improving chat compatibility and usability.
 ---
 Shiny for Python is now available, and so I am taking this opportunity to rewrite my [dashboard]({% post_url 2024-05-07-dashboard-deployment-aws %}).
 

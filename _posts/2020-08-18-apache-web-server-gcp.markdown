@@ -3,6 +3,8 @@ layout: post
 title:  "Apache Web Server on GCP"
 date:   2020-08-18 01:00:00 +0800
 categories: jekyll update
+tags: [cloud]
+description: A 2020 account of setting up an Apache web server on a Google Cloud virtual machine, including virtual hosts, HTTPS, and swap space.
 ---
 
 Following [one of my previous posts]({% post_url 2020-07-18-whatsapp-chat-analysis %}), I have since designed a dashboard to generate basic stats, charts and diagrams based on any WhatsApp chat export. However, it would not be very useful to anyone besides myself should the dashboard be limited to only running locally.

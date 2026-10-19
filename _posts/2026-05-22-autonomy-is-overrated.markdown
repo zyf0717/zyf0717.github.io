@@ -3,6 +3,7 @@ layout: post
 title:  "Autonomy is Overrated: Human Staffing vs. Agentic AI"
 date:   2026-05-22 12:30:00 +0800
 categories: jekyll update
+tags: [agentic-ai]
 description: A staffing-inspired model for bounding agentic AI autonomy with scopes, permissions, oversight, budgets, escalation paths, and accountability.
 ---
 

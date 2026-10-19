@@ -3,6 +3,8 @@ layout: post
 title:  "Jupyter Server on Pi"
 date:   2020-05-23 11:00:00 +0800
 categories: jekyll update
+tags: [raspberry-pi]
+description: A 2020 walkthrough of configuring a Raspberry Pi Jupyter server and accessing it remotely through SSH tunneling.
 ---
 
 ![Pi with Ice Tower](/assets/images/pi-ice-tower.jpg)

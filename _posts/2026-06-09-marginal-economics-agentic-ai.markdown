@@ -3,6 +3,7 @@ layout: post
 title:  "The Marginal Economics of Agentic AI"
 date:   2026-06-09 12:30:00 +0800
 categories: jekyll update
+tags: [agentic-ai]
 description: A marginal-economics model for agentic AI workflows, covering token allocation, ambiguity, context debt, stop-losses, and escalation.
 ---
 

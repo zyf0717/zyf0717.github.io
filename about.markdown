@@ -17,11 +17,7 @@ See my [open-source software and upstream contributions]({{ '/software/' | relat
 ## Profiles
 
 <ul>
-{% for profile in site.minima.social_links %}
-  {% if site.social.links contains profile.url %}
-  <li><a href="{{ profile.url | escape }}">{{ profile.title | escape }}</a></li>
-  {% endif %}
-{% endfor %}
+{% include profile-links.html %}
 </ul>
 
 ## Selected writing
@@ -44,6 +40,6 @@ See my [open-source software and upstream contributions]({{ '/software/' | relat
 - [Shiny Dashboard Development]({% post_url 2024-09-07-shiny-dashboard-development %})
 - [Dashboard Deployment on AWS]({% post_url 2024-05-07-dashboard-deployment-aws %})
 
-[Earlier writing → Archive]({{ '/' | relative_url }})
+[All posts]({{ '/' | relative_url }})
 
 {% include profile-jsonld.html %}

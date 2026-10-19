@@ -1,0 +1,6 @@
+{% for profile_url in site.social.links %}
+  {% assign profile_parts = profile_url | split: '/' %}
+  {% assign hostname = profile_parts[2] | remove_first: 'www.' %}
+  {% assign label = site.social.labels[hostname] | default: hostname %}
+  <li><a href="{{ profile_url | escape }}">{{ label | escape }}</a></li>
+{% endfor %}

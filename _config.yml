@@ -22,9 +22,20 @@ social:
     - https://github.com/zyf0717
     - https://www.linkedin.com/in/zhengyifei/
     - https://orcid.org/0009-0001-4858-2025
+  labels:
+    github.com: GitHub
+    linkedin.com: LinkedIn
+    orcid.org: ORCID
 
 # Use Minima (v3) via remote_theme
-remote_theme: jekyll/minima
+remote_theme: jekyll/minima@4de322363fca5927e6f4012cb94f6dad69ab5e6c
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - _site-drafts
+  - vendor
 
 # GitHub Pages–allowed plugins only
 plugins:
@@ -39,16 +50,3 @@ minima:
   nav_pages:
     - software.markdown
     - about.markdown
-  social_links:
-    - title: "Email"
-      icon: envelope
-      url: "mailto:zyf0717@gmail.com"
-    - title: "GitHub"
-      icon: github
-      url: "https://github.com/zyf0717"
-    - title: "LinkedIn"
-      icon: linkedin
-      url: "https://www.linkedin.com/in/zhengyifei/"
-    - title: "ORCID"
-      icon: orcid
-      url: "https://orcid.org/0009-0001-4858-2025"

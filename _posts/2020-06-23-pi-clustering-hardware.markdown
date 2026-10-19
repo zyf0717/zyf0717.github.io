@@ -3,6 +3,8 @@ layout: post
 title:  "Pi Cluster (Hardware)"
 date:   2020-06-23 16:30:00 +0800
 categories: jekyll update
+tags: [raspberry-pi]
+description: The hardware and networking setup for a home compute cluster using an Odyssey master node and four Raspberry Pi workers.
 ---
 
 After many weeks, the hardware I procured to set up my very own compute cluster has mostly arrived. This post will be the first in a series detailing my setup process and subsequent projects.

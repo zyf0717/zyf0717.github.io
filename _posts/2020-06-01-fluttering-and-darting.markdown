@@ -3,6 +3,8 @@ layout: post
 title:  "Fluttering and Darting"
 date:   2020-06-01 20:00:00 +0800
 categories: jekyll update
+tags: [programming]
+description: Lessons from building a Flutter to-do app, focusing on asynchronous programming and state management in Dart.
 ---
 
 ![Screenshot of my Flutter Android app](/assets/images/to-do-screenshot.png)

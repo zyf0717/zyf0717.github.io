@@ -3,6 +3,8 @@ layout: post
 title:  "Pi Cluster (SSH and Static IP)"
 date:   2020-06-24 22:00:00 +0800
 categories: jekyll update
+tags: [raspberry-pi]
+description: A 2020 account of configuring static IP addresses, hostnames, SSH keys, and remote commands for an Ubuntu Raspberry Pi cluster.
 ---
 
 I am using an Odyssey mini PC with Ubuntu desktop 20.04  for the master node, and four Raspberry Pi 4 Model Bs with Ubuntu server 20.04 for the worker nodes. Please see my previous post [Pi Cluster (Hardware)]({% post_url 2020-06-23-pi-clustering-hardware %}) for more details.

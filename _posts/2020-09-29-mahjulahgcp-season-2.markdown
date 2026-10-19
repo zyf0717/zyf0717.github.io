@@ -3,6 +3,8 @@ layout: post
 title:  "#MahjulahGCP (Season 2)"
 date:   2020-09-29 16:00:00 +0800
 categories: jekyll update
+tags: [cloud]
+description: Reflections on completing the 2020 MahjulahGCP learning programme and exploring data analytics with Google Cloud.
 ---
 
 My [previous post]({% post_url 2020-08-18-apache-web-server-gcp %}) on setting up a Google Cloud Platform (GCP) virtual machine (VM) was one of the few times I ever used GCP. 

@@ -3,6 +3,8 @@ layout: post
 title:  "Pi Cluster (Master Node Hadoop and Spark)"
 date:   2020-06-25 21:00:00 +0800
 categories: jekyll update
+tags: [raspberry-pi]
+description: A 2020 walkthrough of installing Hadoop, Spark, and HDFS on the master node of a home compute cluster.
 ---
 
 This post follows my previous post [Pi Cluster (SSH and Static IP)]({% post_url 2020-06-24-pi-ssh-ip %}), and is basically a documentation of my setup of Hadoop and Spark on the master node of my cluster.

@@ -3,6 +3,7 @@ layout: post
 title:  "Harnessed, Not Handcuffed: The Design Tension in Agentic AI"
 date:   2026-07-08 22:00:00 +0800
 categories: jekyll update
+tags: [agentic-ai]
 description: "Why good agent harnesses must balance structure, context, and control without suppressing model judgement."
 ---
 

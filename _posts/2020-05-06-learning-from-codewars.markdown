@@ -3,6 +3,8 @@ layout: post
 title:  "Learning from Codewars"
 date:   2020-05-06 11:56:00 +0800
 categories: jekyll update
+tags: [programming]
+description: Reflections on learning languages, algorithms, and programming techniques through Codewars challenges and community solutions.
 ---
 
 [![Codewars badge](https://www.codewars.com/users/zyf0717/badges/large)](https://www.codewars.com/users/zyf0717)

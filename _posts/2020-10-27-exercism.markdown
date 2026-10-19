@@ -3,6 +3,8 @@ layout: post
 title:  "Learning and Mentoring on Exercism"
 date:   2020-10-27 14:00:00 +0800
 categories: jekyll update
+tags: [programming]
+description: Lessons from learning and mentoring on Exercism, with examples of abstraction, performance, language-specific practices, and iterative code review.
 ---
 
 [Exercism](https://exercism.io/) is a language-learning platform with an element of mentorship. Unlike [Codewars](https://www.codewars.com/), [HackerRank](https://www.hackerrank.com/) and [LeetCode](https://leetcode.com/) etc., users have the option of submitting code for human review, leading to a strong focus on best practices and improvements via iterations. Notwithstanding, the basis of complete submissions is still the clearing of test cases.

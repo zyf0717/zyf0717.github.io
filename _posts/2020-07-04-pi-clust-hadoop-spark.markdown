@@ -3,6 +3,8 @@ layout: post
 title:  "Pi Cluster (Worker Node Hadoop and Spark)"
 date:   2020-07-04 12:00:00 +0800
 categories: jekyll update
+tags: [raspberry-pi]
+description: A 2020 continuation of the home cluster setup, extending Hadoop, HDFS, and Spark across Raspberry Pi worker nodes.
 ---
 
 This post follows my previous post [Pi Cluster (Master Node Hadoop and Spark)]({% post_url 2020-06-25-pi-single-node-hadoop-spark %}), and is a continuation for a multi-node Hadoop and Spark setup.

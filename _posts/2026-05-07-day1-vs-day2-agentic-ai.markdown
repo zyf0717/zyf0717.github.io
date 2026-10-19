@@ -3,6 +3,7 @@ layout: post
 title:  "Day-1 vs. Day-2 in the Era of Agentic AI"
 date:   2026-05-07 12:00:00 +0800
 categories: jekyll update
+tags: [agentic-ai]
 description: Why agentic AI makes prototypes easier but production stewardship harder, using a day-1 versus day-2 frame for engineering judgement.
 ---
 

@@ -9,16 +9,10 @@
         <ul class="contact-list">
           {% if site.email %}
           <li>
-            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            <a class="u-email" href="mailto:{{ site.email | escape }}">{{ site.email | escape }}</a>
           </li>
           {% endif %}
-          {% for profile in site.minima.social_links %}
-          {% if site.social.links contains profile.url %}
-          <li>
-            <a href="{{ profile.url | escape }}">{{ profile.title | escape }}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
+          {% include profile-links.html %}
         </ul>
       </div>
 

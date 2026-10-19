@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "TBD"
-date:   2026-XX-XX 00:00:00 +0800
 categories: jekyll update
 description: "TBD"
 ---

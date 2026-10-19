@@ -3,6 +3,8 @@ layout: post
 title:  "Dashboard Deployment on Web Server"
 date:   2020-08-18 10:00:00 +0800
 categories: jekyll update
+tags: [dashboards]
+description: A 2020 walkthrough of deploying a Python Dash dashboard on a Google Cloud virtual machine, including its environment, server, and network access.
 ---
 After the development of the dashboard, the logical next step is to deploy it. Following my [previous post]({% post_url 2020-08-18-apache-web-server-gcp %}) on setting up a Google Cloud Platform (GCP) virtual machine (VM), the following steps are a simple way to deploy any dashboard created with Dash. As long as the Dash Python script is running, the dashboard can be accessed via any browser with Internet connection.
 

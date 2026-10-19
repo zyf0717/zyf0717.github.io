@@ -3,6 +3,8 @@ layout: post
 title:  "WhatsApp Chat Analysis"
 date:   2020-07-18 14:30:00 +0800
 categories: jekyll update
+tags: [dashboards]
+description: An exploratory analysis of WhatsApp chat exports using Python and Plotly to examine message activity, interactions, topics, and sentiment.
 ---
 
 A few days back I came across a post whereby the author conducted a thorough analysis of one of his/her WhatsApp chats. A quick Google search yielded a few more posts similar in nature. Analysis was often done in Python or R, and various plotting/graphing packages were used.

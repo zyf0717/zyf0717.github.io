@@ -3,6 +3,7 @@ layout: post
 title:  "Strix Halo Matrix Cores with llama.cpp"
 date:   2025-08-27 23:30:00 +0800
 categories: jekyll update
+tags: [local-llms]
 description: How to build and benchmark llama.cpp with Vulkan on AMD Strix Halo, including driver setup, shader compilation, and performance validation.
 ---
 

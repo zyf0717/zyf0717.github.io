@@ -3,6 +3,8 @@ layout: post
 title:  "Dashboard Deployment on AWS"
 date:   2024-05-07 12:15:00 +0800
 categories: jekyll update
+tags: [dashboards]
+description: A 2024 update on adding Telegram chat support and migrating the chat analysis dashboard from Google Cloud to AWS.
 ---
 
 ## Update
