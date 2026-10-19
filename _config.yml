@@ -31,8 +31,6 @@ social:
 remote_theme: jekyll/minima@4de322363fca5927e6f4012cb94f6dad69ab5e6c
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - README.md
   - _site-drafts
   - vendor
