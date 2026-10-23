@@ -74,9 +74,9 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
 <script defer src="{{ '/assets/js/photography.js' | relative_url }}"></script>
 
 {% if has_instagram %}
-<script async src="https://www.instagram.com/embed.js"></script>
+<script defer src="https://www.instagram.com/embed.js"></script>
 {% endif %}
 {% if has_facebook %}
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v25.0"></script>
+<script defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v25.0"></script>
 {% endif %}
