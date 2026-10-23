@@ -9,7 +9,7 @@ Selected photographs and published features by [Yifei Zheng]({{ '/about/' | rela
 
 Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_kingfishers/) · [@sneks_cant_fly](https://www.instagram.com/sneks_cant_fly/)
 
-<hr class="photography-divider">
+<br>
 
 <div class="photography-grid">
 {% assign has_instagram = false %}
