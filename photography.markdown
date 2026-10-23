@@ -2,10 +2,10 @@
 layout: page
 title: Photography
 permalink: /photography/
-description: Selected photography and published features by Yifei Zheng, including wildlife photography featured by National Geographic Your Shot, the Cornell Lab of Ornithology, NParks, and Nikon.
+description: Published photography features by Yifei Zheng, including wildlife photography featured by National Geographic Your Shot, the Cornell Lab of Ornithology, NParks, and Nikon.
 ---
 
-Selected photographs and published features by [Yifei Zheng]({{ '/about/' | relative_url }}).
+Published photography features by [Yifei Zheng]({{ '/about/' | relative_url }}).
 
 Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_kingfishers/) · [@sneks_cant_fly](https://www.instagram.com/sneks_cant_fly/)
 
