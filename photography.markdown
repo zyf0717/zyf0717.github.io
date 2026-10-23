@@ -12,7 +12,8 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
 <div class="photography-grid">
 {% assign has_instagram = false %}
 {% assign has_facebook = false %}
-{% for entry in site.data.photography %}
+{% assign photographs = site.data.photography | sort: 'date' | reverse %}
+{% for entry in photographs %}
   {% assign preview_url = entry.embed_url | default: entry.url %}
   {% assign preview_parts = preview_url | split: '/' %}
   {% assign preview_host = preview_parts[2] | downcase %}
@@ -37,6 +38,11 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
   {% endif %}
   <article class="photography-card{% if provider == '' %} photography-card--link{% endif %}" id="{{ entry.id | escape }}">
     {% if provider == '' %}
+    {% if entry.image_url %}
+    <a class="photography-card-image" href="{{ entry.url | escape }}">
+      <img src="{{ entry.image_url | escape }}" alt="{{ entry.image_alt | default: entry.title | escape }}" loading="lazy" decoding="async">
+    </a>
+    {% endif %}
     <h2><a href="{{ entry.url | escape }}">{{ entry.title | escape }}</a></h2>
     {% endif %}
     {% if entry.description %}{{ entry.description | markdownify }}{% endif %}
@@ -57,6 +63,8 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
   </article>
 {% endfor %}
 </div>
+
+<script defer src="{{ '/assets/js/photography.js' | relative_url }}"></script>
 
 {% if has_instagram %}
 <script async src="https://www.instagram.com/embed.js"></script>

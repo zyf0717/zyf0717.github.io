@@ -1,45 +1,68 @@
 - id: national-geographic-your-shot
+  date: "2016-02-01"
   title: National Geographic Your Shot
   url: https://www.instagram.com/p/BBONDqQAf7C/
 
 - id: ebird-asia-partnerships
+  date: "2025-12-23"
   title: "Living Bird: Forming eBird Asia Partnerships"
   url: https://www.allaboutbirds.org/news/view-sapsucker-woods-ebird-asia-partnerships/
+  image_url: https://www.allaboutbirds.org/news/wp-content/uploads/2025/11/taiwan-blue-magpie-yifei-zheng-taiwan-616541789-1.33-fi-720x540.jpg
+  image_alt: Taiwan Blue-Magpie perched in a flowering tree, photographed by Yifei Zheng.
   description: >-
     Taiwan Blue-Magpie photograph featured in Living Bird, Winter 2026.
 
 - id: gbbc-2024-asia
-  title: "GBBC 2024: Celebrating Birds, Together — Asia"
+  date: "2024-02-18"
+  title: "GBBC 2024: Crimson Sunbird"
   url: https://www.birdcount.org/bird-and-people-photos-gbbc-2024/#:~:text=Crimson%20Sunbird%20in%20Singapore%20by%20Yifei%20Zheng
+  image_url: https://www.birdcount.org/wp-content/uploads/2024/02/Crimson-Sunbird_Yifei-Zheng_Singapore-ML614882897-edited-720x540.jpg
+  image_alt: Crimson Sunbird in Singapore, photographed by Yifei Zheng.
   description: >-
-    Crimson Sunbird and Oriental Pratincole photographs featured in the GBBC 2024 Asia gallery.
+    Photograph featured in the GBBC 2024 Asia gallery.
+
+- id: gbbc-2024-oriental-pratincole
+  date: "2024-02-18"
+  title: "GBBC 2024: Oriental Pratincole"
+  url: https://www.birdcount.org/bird-and-people-photos-gbbc-2024/#:~:text=Oriental%20Pratincole%20in%20Singapore%20by%20Yifei%20Zheng
+  image_url: https://www.birdcount.org/wp-content/uploads/2024/02/615042623-720x540.jpg
+  image_alt: Oriental Pratincole in Singapore, photographed by Yifei Zheng.
+  description: >-
+    Photograph featured in the GBBC 2024 Asia gallery.
 
 - id: gardens-by-the-bay-oriental-plover
+  date: "2025-04-08"
   title: "Gardens by the Bay: Oriental Plover"
   url: https://www.linkedin.com/posts/gardensbythebay-biodiversity-urbannature-ugcPost-7315306595695882240-bSSo/
   embed_html: |
     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7315306595695882240" width="100%" height="1100" style="border: 0" loading="lazy" title="Gardens by the Bay: Oriental Plover photographs by Yifei Zheng"></iframe>
 
 - id: nikon-coppersmith-barbet
+  date: "2024-05-22"
   title: "Nikon: Coppersmith Barbet"
   url: https://www.instagram.com/p/C7Q9Oc8JLLM/
 
 - id: nikon-black-faced-warblers
+  date: "2025-04-16"
   title: "Nikon: Black-faced Warblers in Bhutan"
   url: https://www.instagram.com/p/DIgGteAAv_u/
 
 - id: nparks-common-flying-dragon
+  date: "2024-02-11"
   title: "NParks: Common Flying Dragon"
   url: https://www.instagram.com/p/C3NNgGbKDM9/
 
 - id: nikon-giant-golden-orbweaver
+  date: "2024-10-26"
   title: "Nikon Asia: Giant Golden Orbweaver"
   url: https://www.instagram.com/p/DBkrqetOcPy/
 
 - id: nikon-barbets-and-kingfishers
+  date: "2024-06-15"
   title: "Nikon Asia: Barbets and Kingfishers"
   url: https://www.instagram.com/p/C8ON7wySPMi/
 
 - id: nikon-parent-and-chicks
+  date: "2025-11-27"
   title: "Nikon Malaysia: Parent and Chicks"
   url: https://www.instagram.com/p/DRjaIDHDSk-/
