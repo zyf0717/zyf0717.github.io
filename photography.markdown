@@ -45,9 +45,7 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
       <img src="{{ entry.image_url | escape }}" alt="{{ entry.image_alt | default: entry.title | escape }}" loading="lazy" decoding="async">
     </a>
     {% endif %}
-    <h2><a href="{{ entry.url | escape }}">{{ entry.title | escape }}</a></h2>
     {% endif %}
-    {% if entry.description %}{{ entry.description | markdownify }}{% endif %}
     {% if provider != '' %}
     <div class="photography-preview">
       {% case provider %}
@@ -62,6 +60,13 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
       {% endcase %}
     </div>
     {% endif %}
+    <div class="photography-caption">
+      {% capture caption %}{% if entry.description %}{{ entry.description }}{% else %}[{{ entry.title }}][source]{% endif %}
+
+[source]: <{{ entry.url }}>
+{% endcapture %}
+      {{ caption | markdownify }}
+    </div>
   </article>
 {% endfor %}
 </div>

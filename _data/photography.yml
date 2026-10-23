@@ -2,6 +2,9 @@
   date: "2016-02-01"
   title: National Geographic Your Shot
   url: https://www.instagram.com/p/BBONDqQAf7C/
+  description: >-
+    Oxford Circus crowd featured on 1 February 2016 by
+    [National Geographic Your Shot][source] as part of its UK-themed weekend selection.
 
 - id: ebird-asia-partnerships
   date: "2025-12-23"
@@ -10,7 +13,9 @@
   image_url: https://www.allaboutbirds.org/news/wp-content/uploads/2025/11/taiwan-blue-magpie-yifei-zheng-taiwan-616541789-1.33-fi-720x540.jpg
   image_alt: Taiwan Blue-Magpie perched in a flowering tree, photographed by Yifei Zheng.
   description: >-
-    Taiwan Blue-Magpie photograph featured in Living Bird, Winter 2026.
+    Taiwan Blue-Magpie featured on 23 December 2025 by the
+    [Cornell Lab of Ornithology][source] in *Living Bird*, Winter 2026,
+    accompanying “Forming eBird Asia Partnerships.”
 
 - id: gbbc-2024-asia
   date: "2024-02-18"
@@ -19,7 +24,9 @@
   image_url: https://www.birdcount.org/wp-content/uploads/2024/02/Crimson-Sunbird_Yifei-Zheng_Singapore-ML614882897-edited-720x540.jpg
   image_alt: Crimson Sunbird in Singapore, photographed by Yifei Zheng.
   description: >-
-    Photograph featured in the GBBC 2024 Asia gallery.
+    Crimson Sunbird featured in 2024 in the
+    [Great Backyard Bird Count’s Asia photo gallery][source], a joint initiative
+    of the Cornell Lab of Ornithology, National Audubon Society, and Birds Canada.
 
 - id: gbbc-2024-oriental-pratincole
   date: "2024-02-18"
@@ -28,12 +35,17 @@
   image_url: https://www.birdcount.org/wp-content/uploads/2024/02/615042623-720x540.jpg
   image_alt: Oriental Pratincole in Singapore, photographed by Yifei Zheng.
   description: >-
-    Photograph featured in the GBBC 2024 Asia gallery.
+    Oriental Pratincole featured in 2024 in the
+    [Great Backyard Bird Count’s Asia photo gallery][source], a joint initiative
+    of the Cornell Lab of Ornithology, National Audubon Society, and Birds Canada.
 
 - id: gardens-by-the-bay-oriental-plover
   date: "2025-04-08"
   title: "Gardens by the Bay: Oriental Plover"
   url: https://www.linkedin.com/posts/gardensbythebay-biodiversity-urbannature-ugcPost-7315306595695882240-bSSo/
+  description: >-
+    Oriental Plover featured on 8 April 2025 by [Gardens by the Bay][source],
+    highlighting a rare sighting in the Gardens.
   embed_html: |
     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7315306595695882240" width="100%" height="1100" style="border: 0" loading="lazy" title="Gardens by the Bay: Oriental Plover photographs by Yifei Zheng"></iframe>
 
@@ -41,28 +53,50 @@
   date: "2024-05-22"
   title: "Nikon: Coppersmith Barbet"
   url: https://www.instagram.com/p/C7Q9Oc8JLLM/
+  description: >-
+    Coppersmith Barbet featured on 22 May 2024 by [Nikon Singapore][source].
 
 - id: nikon-black-faced-warblers
   date: "2025-04-16"
   title: "Nikon: Black-faced Warblers in Bhutan"
   url: https://www.instagram.com/p/DIgGteAAv_u/
+  description: >-
+    Black-faced Warblers in Bhutan featured on 16 April 2025 by [Nikon Singapore][source].
 
 - id: nparks-common-flying-dragon
   date: "2024-02-11"
   title: "NParks: Common Flying Dragon"
   url: https://www.instagram.com/p/C3NNgGbKDM9/
+  description: >-
+    Common Flying Dragon featured on 11 February 2024 by [NParks][source]
+    to celebrate the Year of the Dragon.
 
 - id: nikon-giant-golden-orbweaver
   date: "2024-10-26"
   title: "Nikon Asia: Giant Golden Orbweaver"
   url: https://www.instagram.com/p/DBkrqetOcPy/
+  description: >-
+    Giant Golden Orbweaver featured on 26 October 2024 by [Nikon Asia][source].
 
 - id: nikon-barbets-and-kingfishers
   date: "2024-06-15"
-  title: "Nikon Asia: Barbets and Kingfishers"
+  title: "Nikon Asia: Black-browed Barbet"
   url: https://www.instagram.com/p/C8ON7wySPMi/
+  embed_url: https://www.instagram.com/p/C8ON7nHyRJZ/
+  description: >-
+    Black-browed Barbet featured on 15 June 2024 by [Nikon Asia][source].
+
+- id: nikon-black-backed-dwarf-kingfisher
+  date: "2024-06-15"
+  title: "Nikon Asia: Black-backed Dwarf Kingfisher"
+  url: https://www.instagram.com/p/C8ON7wySPMi/
+  embed_url: https://www.instagram.com/p/C8ON7moytor/
+  description: >-
+    Black-backed Dwarf Kingfisher featured on 15 June 2024 by [Nikon Asia][source].
 
 - id: nikon-parent-and-chicks
   date: "2025-11-27"
-  title: "Nikon Malaysia: Parent and Chicks"
+  title: "Nikon Malaysia: Little Grebe with Chicks"
   url: https://www.instagram.com/p/DRjaIDHDSk-/
+  description: >-
+    Little Grebe parent with chicks featured on 27 November 2025 by [Nikon Malaysia][source].

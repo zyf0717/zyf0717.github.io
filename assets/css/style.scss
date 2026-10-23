@@ -43,18 +43,23 @@
   background-color: #fff;
   color: #262626;
   overflow-wrap: anywhere;
-
-  h2 {
-    margin-top: 0;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
 }
 
 .photography-card--link {
   padding: 20px;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
+
+  .photography-caption {
+    padding: 0;
+  }
+}
+
+.photography-caption {
+  padding: 20px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
 
   a,
   a:visited {

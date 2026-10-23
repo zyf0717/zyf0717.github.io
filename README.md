@@ -39,7 +39,11 @@ an HTTPS `url`. Use the source's publication date, rather than the photograph's
 capture date or the article's last update. Optional `description` supports
 Markdown. Instagram `/p/` and `/reel/` URLs and Facebook `/posts/`,
 `/photos/`, and `/reel/` URLs generate native embeds. Other URLs render editorial
-link cards with titles linking to their sources. Embedded posts omit titles.
+link cards. Every card has a 14px caption beneath its image or embed, without a
+separate title. Write `description` as subject, feature date, organisation, and
+event or publication context where applicable. Use `[Organisation][source]` to
+link to the entry's `url`, and italics only for publication names. Entries without
+a description fall back to their linked title.
 For an article preview, set `image_url` to the publisher-hosted image and
 `image_alt` to a description. The image links to `url` and keeps its proportions.
 
@@ -50,7 +54,7 @@ For an article preview, set `image_url` to the publisher-hosted image and
   url: https://example.org/article/
   image_url: https://example.org/featured-photo.jpg
   image_alt: A bird perched on a flowering branch.
-  description: My photograph accompanies this article.
+  description: A bird featured on 15 January 2026 by [Example Publisher][source].
 
 - id: instagram-feature
   date: "2025-12-01"
@@ -59,8 +63,9 @@ For an article preview, set `image_url` to the publisher-hosted image and
 ```
 
 Set `embed_url` to a provider's canonical permalink when the source URL does not
-embed correctly. For Facebook posts, the post's Embed menu supplies the canonical
-permalink.
+embed correctly. To show individual photos from an Instagram carousel in separate
+cards, use each photo's permalink as `embed_url` and retain the shared post as
+`url`. For Facebook posts, the post's Embed menu supplies the canonical permalink.
 
 For other services, optional `embed_html: |` accepts trusted provider HTML and
 overrides automatic rendering. Include any script required by that custom embed;
