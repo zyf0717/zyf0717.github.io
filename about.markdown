@@ -3,16 +3,16 @@ layout: page
 title: About
 permalink: /about/
 hide_title: true
-description: Yifei Zheng (zyf0717) is a research software engineer working on scientific computing, data systems, cloud infrastructure, and open-source software.
+description: Yifei Zheng (zyf0717) is a research software engineer, open-source developer, and wildlife photographer working across scientific computing, data engineering, cloud infrastructure, and applied AI.
 seo:
   type: WebPage
 ---
 
-Yifei Zheng (zyf0717) is a research software engineer working across scientific computing, data systems, cloud infrastructure, and open-source software.
+I'm Yifei Zheng (zyf0717), a research software engineer and open-source developer working across scientific computing, data engineering, and cloud infrastructure.
 
-My work spans research software engineering and data engineering, mainly using Python, R, and Julia, including heat stress, wet-bulb globe temperature (WBGT), and biometeorology. I also write about applied and agentic AI, production systems, and the operational decisions that connect software to research practice.
+My work uses Python, R, and Julia, with applications in heat stress and biometeorology. I write about applied and agentic AI, production systems, and research practice. I also photograph wildlife on occasion.
 
-See my [open-source software and upstream contributions]({{ '/software/' | relative_url }}).
+Browse my [software projects and contributions]({{ '/software/' | relative_url }}) and [published photography features]({{ '/photography/' | relative_url }}), or explore some of my writing below.
 
 ## Profiles
 
