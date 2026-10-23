@@ -1,0 +1,67 @@
+---
+layout: page
+title: Photography
+permalink: /photography/
+description: Selected photography and published features by Yifei Zheng, including wildlife photography featured by National Geographic Your Shot, the Cornell Lab of Ornithology, NParks, and Nikon.
+---
+
+Selected photographs and published features by [Yifei Zheng]({{ '/about/' | relative_url }}).
+
+Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_kingfishers/) · [@sneks_cant_fly](https://www.instagram.com/sneks_cant_fly/) · [@zheng_yifei](https://www.instagram.com/zheng_yifei/)
+
+<div class="photography-grid">
+{% assign has_instagram = false %}
+{% assign has_facebook = false %}
+{% for entry in site.data.photography %}
+  {% assign preview_url = entry.embed_url | default: entry.url %}
+  {% assign preview_parts = preview_url | split: '/' %}
+  {% assign preview_host = preview_parts[2] | downcase %}
+  {% assign provider = '' %}
+  {% if entry.embed_html %}
+    {% assign provider = 'custom' %}
+  {% elsif preview_parts[0] == 'https:' %}
+    {% if preview_host == 'instagram.com' or preview_host == 'www.instagram.com' %}
+      {% if preview_parts[3] == 'p' or preview_parts[3] == 'reel' %}
+        {% assign provider = 'instagram' %}
+        {% assign has_instagram = true %}
+      {% endif %}
+    {% elsif preview_host == 'facebook.com' or preview_host == 'www.facebook.com' %}
+      {% if preview_url contains '/posts/' or preview_url contains '/photos/' %}
+        {% assign provider = 'facebook-post' %}
+        {% assign has_facebook = true %}
+      {% elsif preview_parts[3] == 'reel' %}
+        {% assign provider = 'facebook-video' %}
+        {% assign has_facebook = true %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  <article class="photography-card{% if provider == '' %} photography-card--link{% endif %}" id="{{ entry.id | escape }}">
+    {% if provider == '' %}
+    <h2><a href="{{ entry.url | escape }}">{{ entry.title | escape }}</a></h2>
+    {% endif %}
+    {% if entry.description %}{{ entry.description | markdownify }}{% endif %}
+    {% if provider != '' %}
+    <div class="photography-preview">
+      {% case provider %}
+      {% when 'custom' %}
+        {{ entry.embed_html }}
+      {% when 'instagram' %}
+        <blockquote class="instagram-media" data-instgrm-permalink="{{ preview_url | escape }}" data-instgrm-version="14"></blockquote>
+      {% when 'facebook-post' %}
+        <div class="fb-post" data-href="{{ preview_url | escape }}" data-show-text="true" data-lazy="true"></div>
+      {% when 'facebook-video' %}
+        <div class="fb-video" data-href="{{ preview_url | escape }}" data-show-text="true" data-lazy="true"></div>
+      {% endcase %}
+    </div>
+    {% endif %}
+  </article>
+{% endfor %}
+</div>
+
+{% if has_instagram %}
+<script async src="https://www.instagram.com/embed.js"></script>
+{% endif %}
+{% if has_facebook %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v25.0"></script>
+{% endif %}

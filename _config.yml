@@ -47,4 +47,5 @@ minima:
   skin: auto
   nav_pages:
     - software.markdown
+    - photography.markdown
     - about.markdown

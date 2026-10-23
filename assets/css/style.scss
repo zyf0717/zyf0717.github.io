@@ -6,6 +6,60 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
+.page-content > .wrapper:has(.photography-grid) {
+  max-width: 1200px;
+}
+
+.photography-grid {
+  column-count: 1;
+  column-gap: 24px;
+
+  @media screen and (min-width: 800px) {
+    column-count: 2;
+  }
+
+  @media screen and (min-width: 1200px) {
+    column-count: 3;
+  }
+}
+
+.photography-card {
+  display: flow-root;
+  break-inside: avoid;
+  box-sizing: border-box;
+  min-width: 0;
+  margin-bottom: 24px;
+  overflow-wrap: anywhere;
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+.photography-card--link {
+  padding: 20px;
+  border: 1px solid $border-color-01;
+  border-radius: 3px;
+}
+
+.photography-preview {
+  position: relative;
+
+  iframe {
+    display: block;
+    max-width: 100%;
+  }
+
+  .instagram-media {
+    box-sizing: border-box;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+}
+
 @media screen and (max-width: $on-medium) {
   .site-header .wrapper {
     display: flex;
