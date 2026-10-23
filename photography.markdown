@@ -7,9 +7,9 @@ description: Selected photography and published features by Yifei Zheng, includi
 
 Selected photographs and published features by [Yifei Zheng]({{ '/about/' | relative_url }}).
 
-Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_kingfishers/) · [@sneks_cant_fly](https://www.instagram.com/sneks_cant_fly/) · [@zheng_yifei](https://www.instagram.com/zheng_yifei/)
+Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_kingfishers/) · [@sneks_cant_fly](https://www.instagram.com/sneks_cant_fly/)
 
----
+<hr class="photography-divider">
 
 <div class="photography-grid">
 {% assign has_instagram = false %}
