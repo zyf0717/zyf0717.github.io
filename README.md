@@ -43,7 +43,8 @@ link cards. Every card has a 14px caption beneath its image or embed, without a
 separate title. Write `description` as subject, feature date, organisation, and
 event or publication context where applicable. Use `[Organisation][source]` to
 link to the entry's `url`, and italics only for publication names. Entries without
-a description fall back to their linked title.
+a description fall back to their linked title. Caption links are underlined,
+marked with ↗, and open in a new tab.
 For an article preview, set `image_url` to the publisher-hosted image and
 `image_alt` to a description. The image links to `url` and keeps its proportions.
 

@@ -65,7 +65,7 @@ Instagram: [@bulbuls_and_kingfishers](https://www.instagram.com/bulbuls_and_king
 
 [source]: <{{ entry.url }}>
 {% endcapture %}
-      {{ caption | markdownify }}
+      {{ caption | markdownify | replace: '<a ', '<a target="_blank" rel="noopener noreferrer" title="Opens in a new tab" ' }}
     </div>
   </article>
 {% endfor %}

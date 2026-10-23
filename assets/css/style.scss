@@ -64,6 +64,18 @@
   a,
   a:visited {
     color: #00376b;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  a::after {
+    content: "\00a0↗";
+    display: inline-block;
+  }
+
+  a:hover,
+  a:focus-visible {
+    text-decoration-thickness: 2px;
   }
 
   > :last-child {
