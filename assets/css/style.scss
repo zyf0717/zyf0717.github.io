@@ -41,13 +41,8 @@
 }
 
 .photography-card--link {
-  padding: 20px;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-
-  .photography-caption {
-    padding: 0;
-  }
 }
 
 .photography-caption {
@@ -80,7 +75,6 @@
 
 .photography-card-image {
   display: block;
-  margin-bottom: 16px;
 
   img {
     display: block;
