@@ -8,11 +8,11 @@ seo:
   type: WebPage
 ---
 
-I'm Yifei Zheng (zyf0717), a research software engineer and open-source developer working across scientific computing, data engineering, and cloud infrastructure.
+Yifei Zheng (zyf0717) is a Research Software Engineer at the [Heat Resilience & Performance Centre (HRPC)](https://medicine.nus.edu.sg/hrpc/), National University of Singapore, and an open-source developer working across scientific computing, data engineering, and cloud infrastructure.
 
-My work uses Python, R, and Julia, with applications in heat stress and biometeorology. I write about applied and agentic AI, production systems, and research practice. I also photograph wildlife on occasion.
+His work uses Python, R, and Julia, with applications in heat stress and biometeorology. Sometimes, he writes about applied and agentic AI, production systems, and research practice. He also photographs birds and other wildlife on occasion.
 
-Browse my [software projects and contributions]({{ '/software/' | relative_url }}) and [published photography features]({{ '/photography/' | relative_url }}), or explore some of my writing below.
+Browse Yifei's [software projects and contributions]({{ '/software/' | relative_url }}) and [published photography features]({{ '/photography/' | relative_url }}), or explore selected writing below.
 
 ## Profiles
 
