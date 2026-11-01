@@ -71,6 +71,23 @@
       kind: registry
       url: https://pypi.org/project/polar-ble-tools/
 
+- id: flash-context
+  name: flash-context
+  description: >-
+    A Python CLI and Model Context Protocol (MCP) server for read-only context exploration and retrieval for AI agents.
+    It delegates searches across code, documentation, configuration, and local text files to a utility model, returning validated file-line citations and source snippets.
+  role: Author and maintainer.
+  relationships: [author, maintainer]
+  programming_languages: [Python]
+  keywords: [AI agents, context retrieval, repository exploration, code search, Model Context Protocol, MCP, CLI]
+  links:
+    - label: GitHub
+      kind: repository
+      url: https://github.com/zyf0717/flash-context
+    - label: PyPI
+      kind: registry
+      url: https://pypi.org/project/flash-context/
+
 - id: coretemp-for-banglejs
   name: CoreTemp for Bangle.js
   description: >-
@@ -90,20 +107,3 @@
     - label: Documentation
       kind: documentation
       url: https://github.com/espruino/BangleApps/blob/master/apps/coretemp/README.md
-
-- id: flash-context
-  name: flash-context
-  description: >-
-    A Python CLI and Model Context Protocol (MCP) server for read-only context exploration and retrieval for AI agents.
-    It delegates searches across code, documentation, configuration, and local text files to a utility model, returning validated file-line citations and source snippets.
-  role: Author and maintainer.
-  relationships: [author, maintainer]
-  programming_languages: [Python]
-  keywords: [AI agents, context retrieval, repository exploration, code search, Model Context Protocol, MCP, CLI]
-  links:
-    - label: GitHub
-      kind: repository
-      url: https://github.com/zyf0717/flash-context
-    - label: PyPI
-      kind: registry
-      url: https://pypi.org/project/flash-context/
