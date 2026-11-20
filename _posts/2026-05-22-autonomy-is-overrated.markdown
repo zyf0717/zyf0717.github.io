@@ -38,8 +38,6 @@ A major problem with unbounded autonomy is therefore not just safety, but also p
 
 "Staffing" in the human sense is not new: the concept of hiring people to delegate work to has been around for millennia. And along with hiring comes job scope and description, roles and responsibilities, performance expectations, accountability, and oversight.
 
-After all, staffing is goes beyond just filling a seat: it is also about defining the boundaries of work and responsibility.
-
 Roles also differ in the degree of autonomy they require: the more complex, strategic, or decision-heavy the work, the more discretion the role must be allowed.
 
 In other words, there is no one-size-fits-all approach to staffing, precisely because there is no universal boundary for autonomy.

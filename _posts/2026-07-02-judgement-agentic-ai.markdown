@@ -47,9 +47,9 @@ Every explicit step above *appears* to require some form of judgement. At the sa
 
 So much so that for this class of spreadsheet-cleaning work, current agentic AI loops have already crossed the practical threshold. In repeated use, they can execute the entire process with minimal prompting and supervision, producing better results faster than a human analyst could.
 
-It is not that the process is trivial or even deterministic, it is that the solution space is saturated, and therefore LLMs are increasingly better trained to handle such cases with appropriate tools.
+The process can be complex and non-deterministic. The solution space is well explored, and LLMs are increasingly well trained to handle these cases with the right tools.
 
-And this is why it may appear confusing to observers. Agentic AI appear to be autonomously making judgement calls, but in reality they are just selecting among routine procedures within a pre-defined frame—programmed decision-making under mild ambiguity.
+And this is why it may appear confusing to observers. Agents appear to be autonomously making judgement calls, but in reality they are just selecting among routine procedures within a pre-defined frame—programmed decision-making under mild ambiguity.
 
 ## Moving from Procedural to Real Judgement
 
@@ -96,7 +96,7 @@ Now LLMs blur and push this boundary.
 
 As Cheng argues in "[Why the Valuable Capabilities of LLMs Are Precisely the Unexplainable Ones](https://arxiv.org/abs/2603.15238)," the truly valuable capabilities of LLMs reside precisely in the part that cannot be fully captured by human-readable discrete rules—because if they could be fully reduced to rules, they would merely reproduce the expert-system paradigm that LLMs have already surpassed.
 
-Real-world usage and observation suggest that agentic AI does not only execute explicit procedures, the underlying LLMs can also approximate some kind of tacit judgement: they infer what fits from high-dimensional learned patterns, including semantic, procedural, stylistic, and logical regularities absorbed from massive prior examples.
+Real-world use suggests that AI agents can follow explicit procedures and that the LLMs behind them can approximate some forms of tacit judgement. The models infer what fits from high-dimensional patterns learned across many examples, including semantic, procedural, stylistic, and logical regularities.
 
 It would thus be a mistake to say that LLMs cannot at least simulate judgement-based decisions. They clearly appear to do so, even if only in a limited sense of recognizing fit, mismatch, plausibility, and local coherence—even when no explicit SOP is provided.
 

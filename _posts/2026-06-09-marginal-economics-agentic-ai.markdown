@@ -37,7 +37,7 @@ But as we know all too well, the output in either situation may still be unsatis
 
 ## Autonomy as Spend
 
-Every reasoning step and tool call costs something, whether to spend more depends on how much progress the next step is likely to make.
+Every reasoning step and tool call costs something. Whether to spend more depends on how much progress the next step is likely to make.
 
 An agentic workflow is, in effect, a production function: tokens, context, tools, time, and supervision are inputs; useful task progress is the output. But while raw token cost may be relatively linear, the cost per unit of useful progress is almost certainly not.
 
@@ -83,4 +83,4 @@ A properly designed agentic workflow should therefore specify what the agent can
 
 After all, escalation to a human is itself a cost comparison: sometimes the cheapest next step is judgement.
 
-And that is is the marginal economics of agentic AI: asking when additional work stops being worth paying for.
+And that is the marginal economics of agentic AI: asking when additional work stops being worth paying for.
