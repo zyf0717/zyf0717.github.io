@@ -30,7 +30,7 @@ Humans implicitly suffer from [bounded rationality](https://en.wikipedia.org/wik
 
 A parallel dynamic applies to agentic AI, as more autonomy means a larger decision space: more tools, more paths, more states to manage, and more opportunities to act on incomplete or incorrect assumptions.
 
-Because autonomy is not just permission to act—it is also permission to *choose*. Choosing well requires context, constraints, and feedback; without these, failure compounds.
+An agent that can choose its own tools needs enough context to know when to use them, clear limits on what it can do with them, and feedback when it chooses poorly. Otherwise, one bad choice can send the rest of the workflow down the wrong path.
 
 A major problem with unbounded autonomy is therefore not just safety, but also performance degradation.
 
@@ -38,7 +38,7 @@ A major problem with unbounded autonomy is therefore not just safety, but also p
 
 "Staffing" in the human sense is not new: the concept of hiring people to delegate work to has been around for millennia. And along with hiring comes job scope and description, roles and responsibilities, performance expectations, accountability, and oversight.
 
-After all, staffing is not just about filling a seat; it is about defining the boundaries of work and responsibility.
+After all, staffing is goes beyond just filling a seat: it is also about defining the boundaries of work and responsibility.
 
 Roles also differ in the degree of autonomy they require: the more complex, strategic, or decision-heavy the work, the more discretion the role must be allowed.
 
@@ -69,16 +69,13 @@ The parallel is obviously not one-to-one, but many of the following are immediat
 | Institutional memory | RAG / context graph / long-term memory |
 | Escalation path | Interrupt / fallback / human handoff |
 
-The key is that these are not merely defensive or control structures—they are also enablers. Clear boundaries, expectations, and escalation paths allow both humans and AI agents to perform with greater confidence *within* assigned roles.
+Clear boundaries give both staff and agents room and confidence to handle routine decisions on their own, and a way to ask for help in situations exceeding their authority.
 
 ## Autonomy Is Overrated; Architecture Is Not
 
 In this current period of "[Peak of Inflated Expectations](https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai#:~:text=Agentic%20AI%20reaches,across%20supporting%20capabilities.)", the appeal of agentic AI autonomy is often overstated. Organizations (and many individuals) want to believe that complex work can be delegated to free-roaming AI agents with minimal oversight, with as few keystrokes as possible.
 
-But, as argued above, autonomy is not the same as effectiveness. In practice, most roles—human or AI—perform best when authority is bounded, not unlimited.
+But, as argued above, autonomy is not the same as effectiveness. In practice, most roles—human or AI—perform best when authority is bounded, not when it is unlimited.
 
-The path forward is therefore not to build ever more autonomous agents, but to design agentic system architectures: *bounded* environments where agents operate in.
+The path forward is therefore to design agentic system architectures: *bounded* environments where agents operate in, because ultimately the goal is to scope autonomy to each role’s context, decision rights, and consequences of failure.
 
-Ultimately the goal is not to maximize autonomy, but to scope it to each role’s context, decision rights, and consequences of failure.
-
-**Because the problem is not autonomy, but autonomy without staffing logic.**

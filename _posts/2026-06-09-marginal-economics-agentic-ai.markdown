@@ -11,7 +11,7 @@ Following Parts [1]({% post_url 2026-05-07-day1-vs-day2-agentic-ai %}) and [2]({
 
 This Part 3 approaches the problem from an economic stance: the optimal agentic AI workflow is neither maximum autonomy nor no autonomy, but economically bounded token *allocation*.
 
-> From ambiguity to context debt to stop-losses, the conclusion is the same: the most economically rational agentic system is not the one that can keep going, but the one that knows when to stop.
+> From ambiguity to context debt to stop-losses, the conclusion is the same: the most economically rational agentic system is the one that knows when to stop instead of the one that keeps going.
 
 ## From LLM to Agentic AI
 
@@ -37,7 +37,7 @@ But as we know all too well, the output in either situation may still be unsatis
 
 ## Autonomy as Spend
 
-Thus, the economic reality becomes unavoidable: if each additional reasoning step or tool call has a cost, then the central question is not whether the AI *can* continue working, but whether it *should*.
+Every reasoning step and tool call costs something, whether to spend more depends on how much progress the next step is likely to make.
 
 An agentic workflow is, in effect, a production function: tokens, context, tools, time, and supervision are inputs; useful task progress is the output. But while raw token cost may be relatively linear, the cost per unit of useful progress is almost certainly not.
 
@@ -69,11 +69,11 @@ Currently, almost all agentic systems already have operational limits, such as m
 
 Economically, there should also be explicit points where the system stops, compresses context, narrows scope, escalates decisions to a human, switches to a cheaper path, or even declares that the task is no longer economically rational.
 
-This reframes stopping as a feature rather than a failure. A stop-loss is not evidence that the agent has failed; it is a mechanism for preventing additional inference budget from being spent on a task whose expected value has already fallen.
+An economic stop-loss lets the agent end a run once the expected value of continuing falls below the cost, even if it still has retries left.
 
 ## From Governance to Allocation
 
-The practical question, then, is not simply what the agent is allowed to do, but how much inference budget the task is worth.
+The practical question, then, is actually how much inference budget the task is worth rather than simply what an agent is allowed to do.
 
 AI governance is often framed in terms of safety, permissions, compliance, or human approval. These remain important, but in an agentic world they sit on top of a more basic economic problem: allocating a metered resource under uncertainty.
 
@@ -81,6 +81,6 @@ This is where [the staffing analogy]({% post_url 2026-05-22-autonomy-is-overrate
 
 A properly designed agentic workflow should therefore specify what the agent can decide, which tools it can use, how much context it can retrieve, how many retries are acceptable, when “good enough” has been achieved, when a cheaper model is sufficient, and when escalation is more economical than continued token-spend.
 
-After all, escalation to a human is itself a cost comparison: sometimes the cheapest next step is not more tokens, but judgment.
+After all, escalation to a human is itself a cost comparison: sometimes the cheapest next step is judgement.
 
-That is the marginal economics of agentic AI: not asking how much work the system can do, but when additional work stops being worth paying for.
+And that is is the marginal economics of agentic AI: asking when additional work stops being worth paying for.

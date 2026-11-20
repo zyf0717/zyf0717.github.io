@@ -11,9 +11,9 @@ The recent Forbes article ([Vibe Coding Will Break Your Company](https://www.for
 
 From an engineering perspective, this is analogous to the gap between day-1 creation and day-2 operation. A working prototype proves that something can be built. It does not prove that the surrounding organization can safely operate it.
 
-Either way, the issue is not generation. The issue is premature trust.
+Either way, the risk is that users start relying on generated code as soon as the demo works.
 
-> Day-1 proves something can work. Day-2 proves whether the system deserves to exist.
+> Day-1 proves something can work, but day-2 proves whether the system deserves to exist.
 
 ## Day-1: The Happy Path
 
@@ -70,9 +70,7 @@ Correspondingly, the value proposition of junior developers also shifts toward u
 > Sidenote: This does spell some trouble for entry-level roles: can one pick up sound judgment when the first step is to review and test without knowing how to write?
 
 ## Conclusion
+The main issue is that LLMs and agentic AI make it easier to create artifacts that *look* like systems, before anyone has decided whether they *should* be.
 
-The main issue is that LLMs and agentic AI do not just make it easier to build, they make it easier to create artifacts that *look* like systems before anyone has decided whether they *should* be.
-
-Ultimately, the development advantage will not go to those who generate the most code or move the fastest, but to those who can judge which artifacts deserve to enter production and which should remain prototypes.
-
-> Agentic AI makes day-1 easier. It also makes day-2 more important.
+So ultimately, the development advantage will go to those who can judge which artifacts deserve to enter production, and which should remain prototypes.
+> Agentic AI can make day-1 easier, while simultaneously making day-2 more important.

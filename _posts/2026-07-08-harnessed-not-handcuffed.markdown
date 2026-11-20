@@ -13,7 +13,7 @@ And indeed, a rapidly growing ecosystem of public repositories supports this, mo
 
 Yet, given limited context windows, it is equally clear that one cannot simply throw every possible context, skill or tool into an agentic system and expect optimal performance.
 
-This is where the tension occurs. The question is not simply how much control an agentic system requires, but where that control should live.
+A harness designer has to decide which rules the system can enforce directly and which ones the model needs to interpret.
 
 ## Documentation from Model Creators
 
@@ -25,8 +25,7 @@ This applies similarly to tools. Anthropic also warns that “one of the most co
 
 [OpenAI](https://developers.openai.com/cookbook/examples/agents_sdk/session_memory) makes the same point operationally: “If too much is carried forward, the model risks distraction, inefficiency, or outright failure,” and even a large context window “can be overwhelmed by uncurated histories, redundant tool results, or noisy retrievals.”
 
-In other words, a good harness does not expose everything upfront; it exposes enough for the model to act decisively.
-
+In other words, a good harness exposes enough for the model to act decisively, not everything upfront.
 > **TL;DR**: More is not always better.
 
 ## Where Control Should Live
